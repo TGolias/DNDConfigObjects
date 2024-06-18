@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Barbarian",
+        "hitDie": 12,
+        "saves": [
+            "strength",
+            "constitution"
+        ]
+    },
+    {
+        "name": "Bard",
+        "hitDie": 8,
+        "saves": [
+            "dexterity",
+            "charisma"
+        ]
+    },
+    {
+        "name": "Cleric",
+        "hitDie": 8,
+        "saves": [
+            "wisdom",
+            "charisma"
+        ]
+    },
+    {
+        "name": "Druid",
+        "hitDie": 8,
+        "saves": [
+            "intelligence",
+            "wisdom"
+        ]
+    },
+    {
+        "name": "Fighter",
+        "hitDie": 10,
+        "saves": [
+            "strength",
+            "constitution"
+        ]
+    },
+    {
+        "name": "Monk",
+        "hitDie": 8,
+        "saves": [
+            "strength",
+            "dexterity"
+        ]
+    },
+    {
+        "name": "Paladin",
+        "hitDie": 10,
+        "saves": [
+            "wisdom",
+            "charisma"
+        ]
+    },
+    {
+        "name": "Ranger",
+        "hitDie": 10,
+        "saves": [
+            "strength",
+            "dexterity"
+        ]
+    },
+    {
+        "name": "Rogue",
+        "hitDie": 8,
+        "saves": [
+            "dexterity",
+            "intelligence"
+        ]
+    },
+    {
+        "name": "Sorcerer",
+        "hitDie": 6,
+        "saves": [
+            "constitution",
+            "charisma"
+        ]
+    },
+    {
+        "name": "Warlock",
+        "hitDie": 8,
+        "saves": [
+            "wisdom",
+            "charisma"
+        ]
+    },
+    {
+        "name": "Wizard",
+        "hitDie": 6,
+        "saves": [
+            "intelligence",
+            "wisdom"
+        ]
+    }
+]
