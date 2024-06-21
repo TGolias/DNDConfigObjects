@@ -1,7 +1,66 @@
 [
     {
         "name": "Acolyte",
-        "skillProficiencies": [],
-        "languages": []
+        "skillProficiencies": ["Insight", "Religion"],
+        "choices": [
+            {
+                "property": "additionalLanguage1",
+                "description": "Additional Language:",
+                "optionsSource": "languages",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "languages": "$VALUE"
+                }
+            },
+            {
+                "property": "additionalLanguage2",
+                "description": "Additional Language:",
+                "optionsSource": "languages",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "languages": "$VALUE"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Charlatan",
+        "skillProficiencies": ["Deception", "Sleight of Hand"],
+        "toolProficiencies": ["Disguise kit", "Forgery kit"]
+    },
+    {
+        "name": "Criminal / Spy",
+        "skillProficiencies": ["Deception", "Stealth"],
+        "toolProficiencies": ["Thieves' tools"]
+    },
+    {
+        "name": "Noble",
+        "skillProficiencies": ["History", "Persuasion"],
+        "choices": [
+            {
+                "property": "additionalLanguage",
+                "description": "Additional Language:",
+                "optionsSource": "languages",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "languages": "$VALUE"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Outlander",
+        "skillProficiencies": ["Athletics", "Survival"],
+        "choices": [
+            {
+                "property": "additionalLanguage",
+                "description": "Additional Language:",
+                "optionsSource": "languages",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "languages": "$VALUE"
+                }
+            }
+        ]
     }
 ]

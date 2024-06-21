@@ -1,2 +1,74 @@
 [
+    {
+        "name": "Acrobatics",
+        "modifier": "dexterity"
+    },
+    {
+        "name": "Animal Handling",
+        "modifier": "wisdom"
+    },
+    {
+        "name": "Arcana",
+        "modifier": "intelligence"
+    },
+    {
+        "name": "Athletics",
+        "modifier": "strength"
+    },
+    {
+        "name": "Deception",
+        "modifier": "charisma"
+    },
+    {
+        "name": "History",
+        "modifier": "intelligence"
+    },
+    {
+        "name": "Insight",
+        "modifier": "wisdom"
+    },
+    {
+        "name": "Intimidation",
+        "modifier": "charisma"
+    },
+    {
+        "name": "Investigation",
+        "modifier": "intelligence"
+    },
+    {
+        "name": "Medicine",
+        "modifier": "wisdom"
+    },
+    {
+        "name": "Nature",
+        "modifier": "intelligence"
+    },
+    {
+        "name": "Perception",
+        "modifier": "wisdom"
+    },
+    {
+        "name": "Performance",
+        "modifier": "charisma"
+    },
+    {
+        "name": "Persuasion",
+        "modifier": "charisma"
+    },
+    {
+        "name": "Religion",
+        "modifier": "intelligence"
+    },
+    {
+        "name": "Sleight of Hand",
+        "modifier": "dexterity"
+    },
+    {
+        "name": "Stealth",
+        "modifier": "dexterity"
+    },
+    {
+        "name": "Survival",
+        "modifier": "wisdom"
+    }
 ]
