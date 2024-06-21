@@ -92,6 +92,7 @@
             "Common",
             "Elvish"
         ],
+        "skillProficiencies": ["Perception"],
         "choices": [
             {
                 "property": "subrace",
@@ -291,7 +292,8 @@
         "languages": [
             "Common",
             "Orc"
-        ]
+        ],
+        "skillProficiencies": ["Intimidation"]
     },
     {
         "name": "Human",
