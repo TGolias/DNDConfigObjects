@@ -1,66 +1,128 @@
 [
     {
         "name": "Acolyte",
+        "abilityScores": ["intelligence", "wisdom", "charisma"],
         "skillProficiencies": ["Insight", "Religion"],
-        "choices": [
-            {
-                "property": "additionalLanguage1",
-                "description": "Additional Language:",
-                "optionsSource": "languages",
-                "optionDisplayProperty": "$VALUE",
-                "choiceToAttributesMapping": {
-                    "languages": "$VALUE"
-                }
-            },
-            {
-                "property": "additionalLanguage2",
-                "description": "Additional Language:",
-                "optionsSource": "languages",
-                "optionDisplayProperty": "$VALUE",
-                "choiceToAttributesMapping": {
-                    "languages": "$VALUE"
-                }
-            }
-        ]
+        "toolProficiencies": ["Calligrapher's Supplies"],
+        "feat": "Magic Initiate (Cleric)"
+    },
+    {
+        "name": "Artisan",
+        "abilityScores": ["strength", "dexterity", "intelligence"],
+        "skillProficiencies": ["Investigation", "Persuasion"],
+        "toolProficiencies": ["Artisan's Tools"],
+        "feat": "Crafter"
     },
     {
         "name": "Charlatan",
+        "abilityScores": ["dexterity", "constitution", "charisma"],
         "skillProficiencies": ["Deception", "Sleight of Hand"],
-        "toolProficiencies": ["Disguise kit", "Forgery kit"]
+        "toolProficiencies": ["Forgery kit"],
+        "feat": "Skilled"
     },
     {
-        "name": "Criminal / Spy",
-        "skillProficiencies": ["Deception", "Stealth"],
-        "toolProficiencies": ["Thieves' tools"]
+        "name": "Criminal",
+        "abilityScores": ["dexterity", "constitution", "intelligence"],
+        "skillProficiencies": ["Sleight of Hand", "Stealth"],
+        "toolProficiencies": ["Thieves' Tools"],
+        "feat": "Alert"
+    },
+    {
+        "name": "Entertainer",
+        "abilityScores": ["strength", "dexterity", "charisma"],
+        "skillProficiencies": ["Acrobatics", "Performance"],
+        "toolProficiencies": ["Musical Instrument"],
+        "feat": "Musician"
+    },
+    {
+        "name": "Farmer",
+        "abilityScores": ["strength", "constitution", "wisdom"],
+        "skillProficiencies": ["Animal Handling", "Nature"],
+        "toolProficiencies": ["Carpenter's Tools"],
+        "feat": "Tough"
+    },
+    {
+        "name": "Francina Family Pedigree",
+        "abilityScores": ["dexterity", "constitution", "charisma"],
+        "skillProficiencies": ["Acrobatics", "Deception"],
+        "toolProficiencies": ["Tinkerer's Tools"],
+        "feat": "Tough"
+    },
+    {
+        "name": "Guard",
+        "abilityScores": ["strength", "intelligence", "wisdom"],
+        "skillProficiencies": ["Athletics", "Perception"],
+        "toolProficiencies": ["Gaming Set"],
+        "feat": "Alert"
+    },
+    {
+        "name": "Guide",
+        "abilityScores": ["dexterity", "constitution", "wisdom"],
+        "skillProficiencies": ["Stealth", "Survival"],
+        "toolProficiencies": ["Cartographer's Tools"],
+        "feat": "Magic Initiate (Druid)"
+    },
+    {
+        "name": "Hermit",
+        "abilityScores": ["constitution", "wisdom", "charisma"],
+        "skillProficiencies": ["Medicine", "Religion"],
+        "toolProficiencies": ["Herbalism Kit"],
+        "feat": "Healer"
+    },
+    {
+        "name": "Merchant",
+        "abilityScores": ["constitution", "intelligence", "charisma"],
+        "skillProficiencies": ["Animal Handling", "Persuasion"],
+        "toolProficiencies": ["Navigator's Tools"],
+        "feat": "Lucky"
     },
     {
         "name": "Noble",
+        "abilityScores": ["strength", "intelligence", "charisma"],
         "skillProficiencies": ["History", "Persuasion"],
-        "choices": [
-            {
-                "property": "additionalLanguage",
-                "description": "Additional Language:",
-                "optionsSource": "languages",
-                "optionDisplayProperty": "$VALUE",
-                "choiceToAttributesMapping": {
-                    "languages": "$VALUE"
-                }
-            }
-        ]
+        "toolProficiencies": ["Gaming Set"],
+        "feat": "Skilled"
     },
     {
         "name": "Outlander",
+        "abilityScores": ["strength", "dexterity", "constitution"],
         "skillProficiencies": ["Athletics", "Survival"],
-        "choices": [
-            {
-                "property": "additionalLanguage",
-                "description": "Additional Language:",
-                "optionsSource": "languages",
-                "optionDisplayProperty": "$VALUE",
-                "choiceToAttributesMapping": {
-                    "languages": "$VALUE"
-                }
-            }
-        ]
+        "toolProficiencies": ["Cartographer's Tools"],
+        "feat": "Tough"
+    },
+    {
+        "name": "Sage",
+        "abilityScores": ["constitution", "intelligence", "wisdom"],
+        "skillProficiencies": ["Arcana", "History"],
+        "toolProficiencies": ["Calligrapher's Supplies"],
+        "feat": "Magic Initiate (Wizard)"
+    },
+    {
+        "name": "Sailor",
+        "abilityScores": ["strength", "dexterity", "wisdom"],
+        "skillProficiencies": ["Acrobatics", "Perception"],
+        "toolProficiencies": ["Navigator's Tools"],
+        "feat": "Tavern Brawler"
+    },
+    {
+        "name": "Scribe",
+        "abilityScores": ["dexterity", "intelligence", "wisdom"],
+        "skillProficiencies": ["Investigation", "Perception"],
+        "toolProficiencies": ["Calligrapher's Supplies"],
+        "feat": "Skilled"
+    },
+    {
+        "name": "Soldier",
+        "abilityScores": ["strength", "dexterity", "constitution"],
+        "skillProficiencies": ["Athletics", "Intimidation"],
+        "toolProficiencies": ["Gaming Set"],
+        "feat": "Savage Attacker"
+    },
+    {
+        "name": "Wayfarer",
+        "abilityScores": ["dexterity", "wisdom", "charisma"],
+        "skillProficiencies": ["Insight", "Stealth"],
+        "toolProficiencies": ["Thieves' Tools"],
+        "feat": "Lucky"
     }
 ]
