@@ -99,20 +99,7 @@
                 "choiceToAttributesMapping": {
                     "skillProficiencies": "name"
                 },
-                "options": [
-                    {
-                        "name": "Insight",
-                        "modifier": "wisdom"
-                    },
-                    {
-                        "name": "Perception",
-                        "modifier": "wisdom"
-                    },
-                    {
-                        "name": "Survival",
-                        "modifier": "wisdom"
-                    }
-                ]
+                "options": ["Insight", "Perception", "Survival"]
             },
             {
                 "property": "elvenLineage",
