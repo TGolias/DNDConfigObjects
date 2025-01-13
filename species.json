@@ -24,8 +24,8 @@
         "darkvision": 60,
         "choices": [
             {
-                "property": "dragonType",
-                "description": "Dragon Type:",
+                "property": "draconicAncestry",
+                "description": "Draconic Ancestry:",
                 "optionsSource": "CUSTOM",
                 "generateCustomOptionSummary": true,
                 "optionDisplayProperty": "name",
@@ -115,8 +115,8 @@
                 ]
             },
             {
-                "property": "subrace",
-                "description": "Subrace:",
+                "property": "elvenLineage",
+                "description": "Elven Lineage:",
                 "optionsSource": "CUSTOM",
                 "generateCustomOptionSummary": true,
                 "optionDisplayProperty": "name",
