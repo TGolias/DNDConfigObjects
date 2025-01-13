@@ -1,0 +1,254 @@
+[
+    {
+        "name": "Aasimar",
+        "speed": 30,
+        "resistances": ["Necrotic", "Radiant"],
+        "darkvision": 60,
+        "choices": [
+            {
+                "property": "size",
+                "description": "Size:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "size": "$VALUE"
+                },
+                "options": ["Medium", "Small"]
+            }
+        ]
+    },
+    {
+        "name": "Dragonborn",
+        "speed": 30,
+        "size": "Medium",
+        "darkvision": 60,
+        "choices": [
+            {
+                "property": "dragonType",
+                "description": "Dragon Type:",
+                "optionsSource": "CUSTOM",
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "resistances": "damageType"
+                },
+                "options": [
+                    {
+                        "name": "Black",
+                        "damageType": "Acid"
+                    },
+                    {
+                        "name": "Blue",
+                        "damageType": "Lightning"
+                    },
+                    {
+                        "name": "Brass",
+                        "damageType": "Fire"
+                    },
+                    {
+                        "name": "Bronze",
+                        "damageType": "Lightning"
+                    },
+                    {
+                        "name": "Copper",
+                        "damageType": "Acid"
+                    },
+                    {
+                        "name": "Gold",
+                        "damageType": "Fire"
+                    },
+                    {
+                        "name": "Green",
+                        "damageType": "Poison"
+                    },
+                    {
+                        "name": "Red",
+                        "damageType": "Fire"
+                    },
+                    {
+                        "name": "Silver",
+                        "damageType": "Cold"
+                    },
+                    {
+                        "name": "White",
+                        "damageType": "Cold"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dwarf",
+        "speed": 30,
+        "size": "Medium",
+        "hpPerLVL": 1,
+        "darkvision": 120,
+        "resistances": ["Poison"]
+    },
+    {
+        "name": "Elf",
+        "speed": 30,
+        "size": "Medium",
+        "darkvision": 60,
+        "choices": [
+            {
+                "property": "keenSenses",
+                "description": "Keen Senses Skill Proficiency:",
+                "optionsSource": "skillproficiencies",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Insight",
+                        "modifier": "wisdom"
+                    },
+                    {
+                        "name": "Perception",
+                        "modifier": "wisdom"
+                    },
+                    {
+                        "name": "Survival",
+                        "modifier": "wisdom"
+                    }
+                ]
+            },
+            {
+                "property": "subrace",
+                "description": "Subrace:",
+                "optionsSource": "CUSTOM",
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "darkvision": "darkvision",
+                    "speed": "speed"
+                },
+                "options": [
+                    {
+                        "name": "Drow",
+                        "darkvision": 120
+                    },
+                    {
+                        "name": "High Elf"
+                    },
+                    {
+                        "name": "Wood Elf",
+                        "speed": 35
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gnome",
+        "speed": 30,
+        "size": "Small",
+        "darkvision": 60
+    },
+    {
+        "name": "Goliath",
+        "speed": 35,
+        "size": "Medium",
+        "darkvision": 60,
+        "choices": [
+            {
+                "property": "giantAncestry",
+                "description": "Giant Ancestry:",
+                "optionsSource": "CUSTOM",
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                },
+                "options": [
+                    {
+                        "name": "Cloud Giant"
+                    },
+                    {
+                        "name": "Fire Giant"
+                    },
+                    {
+                        "name": "Frost Giant"
+                    },
+                    {
+                        "name": "Hill Giant"
+                    },
+                    {
+                        "name": "Stone Giant"
+                    },
+                    {
+                        "name": "Storm Giant"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Halfling",
+        "speed": 30,
+        "size": "Small"
+    },
+    {
+        "name": "Human",
+        "speed": 30,
+        "size": "Medium",
+        "choices": [
+            {
+                "property": "skillful",
+                "description": "Skillful Skill Proficiency:",
+                "optionsSource": "skillproficiencies",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Orc",
+        "speed": 30,
+        "size": "Medium",
+        "darkvision": 120
+    },
+    {
+        "name": "Tiefling",
+        "speed": 30,
+        "darkvision": 60,
+        "choices": [
+            {
+                "property": "size",
+                "description": "Size:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "size": "$VALUE"
+                },
+                "options": ["Medium", "Small"]
+            },
+            {
+                "property": "fiendishLegacy",
+                "description": "Fiendish Legacy:",
+                "optionsSource": "CUSTOM",
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "resistances": "damageType"
+                },
+                "options": [
+                    {
+                        "name": "Abyssal",
+                        "damageType": "Poison"
+                    },
+                    {
+                        "name": "Chthonic",
+                        "damageType": "Necrotic"
+                    },
+                    {
+                        "name": "Infernal",
+                        "damageType": "Fire"
+                    }
+                ]
+            }
+        ]
+    }
+]
