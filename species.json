@@ -94,7 +94,7 @@
             {
                 "property": "keenSenses",
                 "description": "Keen Senses Skill Proficiency:",
-                "optionsSource": "skillproficiencies",
+                "optionsSource": "skillProficiencies",
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
                     "skillProficiencies": "name"
@@ -196,7 +196,7 @@
             {
                 "property": "skillful",
                 "description": "Skillful Skill Proficiency:",
-                "optionsSource": "skillproficiencies",
+                "optionsSource": "skillProficiencies",
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
                     "skillProficiencies": "name"
