@@ -97,7 +97,7 @@
                 "optionsSource": "skillProficiencies",
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
+                    "skillProficiencies": "$VALUE"
                 },
                 "options": ["Insight", "Perception", "Survival"]
             },
