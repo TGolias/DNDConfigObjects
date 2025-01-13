@@ -97,9 +97,19 @@
                 "optionsSource": "skillProficiencies",
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
-                    "skillProficiencies": "$VALUE"
+                    "skillProficiencies": "name"
                 },
-                "options": ["Insight", "Perception", "Survival"]
+                "options": [
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Survival"
+                    }
+                ]
             },
             {
                 "property": "elvenLineage",
