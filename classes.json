@@ -2,97 +2,185 @@
     {
         "name": "Barbarian",
         "hitDie": 12,
-        "saves": [
-            "strength",
-            "constitution"
-        ]
+        "savingThrowProficiencies": ["strength", "constitution"]
     },
     {
         "name": "Bard",
         "hitDie": 8,
-        "saves": [
-            "dexterity",
-            "charisma"
-        ]
+        "savingThrowProficiencies": ["dexterity", "charisma"]
     },
     {
         "name": "Cleric",
         "hitDie": 8,
-        "saves": [
-            "wisdom",
-            "charisma"
-        ]
+        "savingThrowProficiencies": ["wisdom", "charisma"]
     },
     {
         "name": "Druid",
         "hitDie": 8,
-        "saves": [
-            "intelligence",
-            "wisdom"
-        ]
+        "savingThrowProficiencies": ["intelligence", "wisdom"]
     },
     {
         "name": "Fighter",
         "hitDie": 10,
-        "saves": [
-            "strength",
-            "constitution"
-        ]
+        "savingThrowProficiencies": ["strength", "constitution"]
     },
     {
         "name": "Monk",
         "hitDie": 8,
-        "saves": [
-            "strength",
-            "dexterity"
-        ]
+        "savingThrowProficiencies": ["strength", "dexterity"]
     },
     {
         "name": "Paladin",
         "hitDie": 10,
-        "saves": [
-            "wisdom",
-            "charisma"
+        "savingThrowProficiencies": ["wisdom", "charisma"],
+        "weaponProficiencies": ["Simple", "Martial"],
+        "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+        "choices": [
+            {
+                "property": "skillProficiencies",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Medicine"
+                    },
+                    {
+                        "name": "Persuasion"
+                    },
+                    {
+                        "name": "Religion"
+                    }
+                ]
+            }
+        ],
+        "resources": [
+            { "name": "channelDivinity", "displayName": "Channel Divinity Charges", "shortRestRecharge": 1 },
+            { "name": "layOnHands", "displayName": "Lay on Hands Pool" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "channelDivinity": 0, "layOnHands": 5, "preparedSpells": 2 },
+            { "classLevel": 2, "channelDivinity": 0, "layOnHands": 10, "preparedSpells": 3 },
+            { "classLevel": 3, "channelDivinity": 2, "layOnHands": 15, "preparedSpells": 4 },
+            { "classLevel": 4, "channelDivinity": 2, "layOnHands": 20, "preparedSpells": 5 },
+            { "classLevel": 5, "channelDivinity": 2, "layOnHands": 25, "preparedSpells": 6 },
+            { "classLevel": 6, "channelDivinity": 2, "layOnHands": 30, "preparedSpells": 6 },
+            { "classLevel": 7, "channelDivinity": 2, "layOnHands": 35, "preparedSpells": 7 },
+            { "classLevel": 8, "channelDivinity": 2, "layOnHands": 40, "preparedSpells": 7 },
+            { "classLevel": 9, "channelDivinity": 2, "layOnHands": 45, "preparedSpells": 9 },
+            { "classLevel": 10, "channelDivinity": 2, "layOnHands": 50, "preparedSpells": 9 },
+            { "classLevel": 11, "channelDivinity": 3, "layOnHands": 55, "preparedSpells": 10 },
+            { "classLevel": 12, "channelDivinity": 3, "layOnHands": 60, "preparedSpells": 10 },
+            { "classLevel": 13, "channelDivinity": 3, "layOnHands": 65, "preparedSpells": 11 },
+            { "classLevel": 14, "channelDivinity": 3, "layOnHands": 70, "preparedSpells": 11 },
+            { "classLevel": 15, "channelDivinity": 3, "layOnHands": 75, "preparedSpells": 12 },
+            { "classLevel": 16, "channelDivinity": 3, "layOnHands": 80, "preparedSpells": 12 },
+            { "classLevel": 17, "channelDivinity": 3, "layOnHands": 85, "preparedSpells": 14 },
+            { "classLevel": 18, "channelDivinity": 3, "layOnHands": 90, "preparedSpells": 14 },
+            { "classLevel": 19, "channelDivinity": 3, "layOnHands": 95, "preparedSpells": 15 },
+            { "classLevel": 20, "channelDivinity": 3, "layOnHands": 100, "preparedSpells": 15 }
+        ],
+        "features": [
+            {
+                "classLevel": 1,
+                "name": "Lay on Hands",
+                "actions": [
+                    {
+                        "actionName": "Lay on Hands (HP)",
+                        "actionType": "bonus",
+                        "range": ["touch", "self"],
+                        "effectType": "healing",
+                        "resource": "layOnHands",
+                        "cost": {
+                            "type": "variable",
+                            "min": 1,
+                            "max": 100,
+                            "default": 5
+                        },
+                        "calcuation": {
+                            "cost": 1
+                        }
+                    },
+                    {
+                        "actionName": "Lay on Hands (Poisoned)",
+                        "actionType": "bonus",
+                        "range": ["touch", "self"],
+                        "effectType": "condition",
+                        "resource": "layOnHands",
+                        "cost": {
+                            "type": "static",
+                            "amount": 5
+                        },
+                        "calcuation": {
+                            "remove": "Poisoned"
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 1,
+                "name": "Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "type": "static",
+                        "value": "charisma"
+                    },
+                    "spellsKnown": {
+                        "type": "resource",
+                        "resource": "preparedSpells",
+                        "validSpellLists": ["Paladin"]
+                    }
+                }
+            },
+            {
+                "classLevel": 1,
+                "name": "Weapon Mastery",
+                "weaponmastery": {
+                    "weaponsMastered": {
+                        "type": "static",
+                        "amount": 2
+                    }
+                }
+            }
         ]
     },
     {
         "name": "Ranger",
         "hitDie": 10,
-        "saves": [
-            "strength",
-            "dexterity"
-        ]
+        "savingThrowProficiencies": ["strength", "dexterity"]
     },
     {
         "name": "Rogue",
         "hitDie": 8,
-        "saves": [
-            "dexterity",
-            "intelligence"
-        ]
+        "savingThrowProficiencies": ["dexterity", "intelligence"]
     },
     {
         "name": "Sorcerer",
         "hitDie": 6,
-        "saves": [
-            "constitution",
-            "charisma"
-        ]
+        "savingThrowProficiencies": ["constitution", "charisma"]
     },
     {
         "name": "Warlock",
         "hitDie": 8,
-        "saves": [
-            "wisdom",
-            "charisma"
-        ]
+        "savingThrowProficiencies": ["wisdom", "charisma"]
     },
     {
         "name": "Wizard",
         "hitDie": 6,
-        "saves": [
-            "intelligence",
-            "wisdom"
-        ]
+        "savingThrowProficiencies": ["intelligence", "wisdom"]
     }
 ]

@@ -1,0 +1,22 @@
+[
+    { "spellCasterLevel": 1, "slotLevel1": 2, "slotLevel2": 0, "slotLevel3": 0, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 2, "slotLevel1": 3, "slotLevel2": 0, "slotLevel3": 0, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 3, "slotLevel1": 4, "slotLevel2": 2, "slotLevel3": 0, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 4, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 0, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 5, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 2, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 6, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 0, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 7, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 1, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 8, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 2, "slotLevel5": 0, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 9, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 1, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 10, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 0, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 11, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 12, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 0, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 13, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 14, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 0, "slotLevel9": 0 },
+    { "spellCasterLevel": 15, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 1, "slotLevel9": 0 },
+    { "spellCasterLevel": 16, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 1, "slotLevel9": 0 },
+    { "spellCasterLevel": 17, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 2, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 1, "slotLevel9": 1 },
+    { "spellCasterLevel": 18, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 3, "slotLevel6": 1, "slotLevel7": 1, "slotLevel8": 1, "slotLevel9": 1 },
+    { "spellCasterLevel": 19, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 3, "slotLevel6": 2, "slotLevel7": 1, "slotLevel8": 1, "slotLevel9": 1 },
+    { "spellCasterLevel": 20, "slotLevel1": 4, "slotLevel2": 3, "slotLevel3": 3, "slotLevel4": 3, "slotLevel5": 3, "slotLevel6": 2, "slotLevel7": 2, "slotLevel8": 1, "slotLevel9": 1 }
+]

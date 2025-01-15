@@ -90,6 +90,22 @@
         "speed": 30,
         "size": "Medium",
         "darkvision": 60,
+        "features": [
+            {
+                "level": 1,
+                "name": "Fey Ancestry",
+                "abilities": {
+                    "conditionResistance": ["Charmed"]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Trance",
+                "abilities": {
+                    "conditionImmunity": ["Sleep"]
+                }
+            }
+        ],
         "choices": [
             {
                 "property": "keenSenses",
@@ -112,6 +128,29 @@
                 ]
             },
             {
+                "property": "elvenLineageSpellcastingAbility",
+                "description": "Elven Linage Spellcasting Ability:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "spellcastingability": "value"
+                },
+                "options": [
+                    {
+                        "name": "Intelligence",
+                        "value": "intelligence"
+                    },
+                    {
+                        "name": "Wisdom",
+                        "value": "wisdom"
+                    },
+                    {
+                        "name": "Charisma",
+                        "value": "charisma"
+                    }
+                ]
+            },
+            {
                 "property": "elvenLineage",
                 "description": "Elven Lineage:",
                 "optionsSource": "CUSTOM",
@@ -119,19 +158,168 @@
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
                     "darkvision": "darkvision",
-                    "speed": "speed"
+                    "speed": "speed",
+                    "features": "features"
                 },
                 "options": [
                     {
                         "name": "Drow",
-                        "darkvision": 120
+                        "darkvision": 120,
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Elven Lineage (Lvl 1)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "cantripsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Dancing Lights"]
+                                    }
+                                }
+                            },
+                            {
+                                "level": 3,
+                                "name": "Elven Lineage (Lvl 3)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Faerie Fire"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            },
+                            {
+                                "level": 5,
+                                "name": "Elven Lineage (Lvl 5)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Darkness"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            }
+                        ]
                     },
                     {
-                        "name": "High Elf"
+                        "name": "High Elf",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Elven Lineage (Lvl 1)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "cantripsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "validSpellLists": ["Wizard"],
+                                        "longRestReplace": 1
+                                    }
+                                }
+                            },
+                            {
+                                "level": 3,
+                                "name": "Elven Lineage (Lvl 3)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Detect Magic"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            },
+                            {
+                                "level": 5,
+                                "name": "Elven Lineage (Lvl 5)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Misty Step"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            }
+                        ]
                     },
                     {
                         "name": "Wood Elf",
-                        "speed": 35
+                        "speed": 35,
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Elven Lineage (Lvl 1)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "cantripsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Druidcraft"]
+                                    }
+                                }
+                            },
+                            {
+                                "level": 3,
+                                "name": "Elven Lineage (Lvl 3)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Longstrider"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            },
+                            {
+                                "level": 5,
+                                "name": "Elven Lineage (Lvl 5)",
+                                "spellcasting": {
+                                    "ability": {
+                                        "type": "variable",
+                                        "value": "spellcastingability"
+                                    },
+                                    "spellsKnown": {
+                                        "type": "static",
+                                        "amount": 1,
+                                        "predetermined": ["Pass without Trace"],
+                                        "freeUses": 1
+                                    }
+                                }
+                            }
+                        ]
                     }
                 ]
             }

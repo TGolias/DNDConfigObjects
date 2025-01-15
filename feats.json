@@ -1,2 +1,12 @@
 [
+    
+    {
+        "name": "Tough",
+        "prerequisite": {
+            "level": 1
+        },
+        "abilities": {
+            "hpPerLVL": 2
+        }
+    }
 ]
