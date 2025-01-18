@@ -37,7 +37,7 @@
         "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
         "choices": [
             {
-                "property": "skillProficiencies",
+                "property": "classSkills",
                 "description": "Skill Proficiencies:",
                 "optionsSource": "skillProficiencies",
                 "multipleSelections": 2,
