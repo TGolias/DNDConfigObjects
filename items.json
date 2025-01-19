@@ -5,10 +5,8 @@
         "rarity": "Rare",
         "attunement": true,
         "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution score is already 19 or higher.",
-        "abilities": {
-            "abilityScoreOverride": {
-                "constitution": 19
-            }
+        "aspects": {
+            "constitutionOverride": 19
         }
     },
     {
@@ -18,7 +16,7 @@
         "rarity": "Standard",
         "attunement": true,
         "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
-        "abilities": {
+        "aspects": {
             "armorClass": {
                 "calcuation": [
                     {
@@ -36,7 +34,7 @@
         "rarity": "Standard",
         "attunement": true,
         "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
-        "abilities": {
+        "aspects": {
             "armorClass": {
                 "calcuation": [
                     {

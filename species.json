@@ -94,14 +94,14 @@
             {
                 "level": 1,
                 "name": "Fey Ancestry",
-                "abilities": {
+                "aspects": {
                     "conditionResistance": ["Charmed"]
                 }
             },
             {
                 "level": 1,
                 "name": "Trance",
-                "abilities": {
+                "aspects": {
                     "conditionImmunity": ["Sleep"]
                 }
             }
