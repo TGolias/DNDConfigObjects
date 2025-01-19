@@ -5,7 +5,7 @@
         "prerequisite": {
             "level": 1
         },
-        "abilities": {
+        "aspects": {
             "hpPerLVL": 2
         }
     }

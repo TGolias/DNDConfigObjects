@@ -133,7 +133,7 @@
                 "optionsSource": "CUSTOM",
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
-                    "spellcastingability": "value"
+                    "elvenLineageSpellcastingAbility": "value"
                 },
                 "options": [
                     {
@@ -171,13 +171,21 @@
                                 "name": "Elven Lineage (Lvl 1)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "cantripsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Dancing Lights"]
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Dancing Lights"]
                                     }
                                 }
                             },
@@ -186,13 +194,21 @@
                                 "name": "Elven Lineage (Lvl 3)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Faerie Fire"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Faerie Fire"],
                                         "freeUses": 1
                                     }
                                 }
@@ -202,13 +218,21 @@
                                 "name": "Elven Lineage (Lvl 5)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Darkness"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Darkness"],
                                         "freeUses": 1
                                     }
                                 }
@@ -223,12 +247,20 @@
                                 "name": "Elven Lineage (Lvl 1)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "cantripsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
                                         "validSpellLists": ["Wizard"],
                                         "longRestReplace": 1
                                     }
@@ -239,13 +271,21 @@
                                 "name": "Elven Lineage (Lvl 3)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Detect Magic"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Detect Magic"],
                                         "freeUses": 1
                                     }
                                 }
@@ -255,13 +295,21 @@
                                 "name": "Elven Lineage (Lvl 5)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Misty Step"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Misty Step"],
                                         "freeUses": 1
                                     }
                                 }
@@ -277,13 +325,21 @@
                                 "name": "Elven Lineage (Lvl 1)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "cantripsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Druidcraft"]
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Druidcraft"]
                                     }
                                 }
                             },
@@ -292,13 +348,21 @@
                                 "name": "Elven Lineage (Lvl 3)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Longstrider"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Longstrider"],
                                         "freeUses": 1
                                     }
                                 }
@@ -308,13 +372,21 @@
                                 "name": "Elven Lineage (Lvl 5)",
                                 "spellcasting": {
                                     "ability": {
-                                        "type": "variable",
-                                        "value": "spellcastingability"
+                                        "calcuation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
                                     },
                                     "spellsKnown": {
-                                        "type": "static",
-                                        "amount": 1,
-                                        "predetermined": ["Pass without Trace"],
+                                        "calcuation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": ["Pass without Trace"],
                                         "freeUses": 1
                                     }
                                 }

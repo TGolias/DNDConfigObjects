@@ -106,13 +106,14 @@
                         "effectType": "healing",
                         "resource": "layOnHands",
                         "cost": {
-                            "type": "variable",
-                            "min": 1,
-                            "max": 100,
-                            "default": 5
-                        },
-                        "calcuation": {
-                            "cost": 1
+                            "calcuation": [
+                                {
+                                    "type": "userInput",
+                                    "min": 1,
+                                    "max": 100,
+                                    "default": 5
+                                }
+                            ]
                         }
                     },
                     {
@@ -122,11 +123,12 @@
                         "effectType": "condition",
                         "resource": "layOnHands",
                         "cost": {
-                            "type": "static",
-                            "amount": 5
-                        },
-                        "calcuation": {
-                            "remove": "Poisoned"
+                            "calcuation": [
+                                {
+                                    "type": "static",
+                                    "value": 5
+                                }
+                            ]
                         }
                     }
                 ]
@@ -136,12 +138,20 @@
                 "name": "Spellcasting",
                 "spellcasting": {
                     "ability": {
-                        "type": "static",
-                        "value": "charisma"
+                        "calcuation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
                     },
                     "spellsKnown": {
-                        "type": "resource",
-                        "resource": "preparedSpells",
+                        "calcuation": [
+                            {
+                                "type": "resource",
+                                "value": "preparedSpells"
+                            }
+                        ],
                         "validSpellLists": ["Paladin"]
                     }
                 }
@@ -151,8 +161,12 @@
                 "name": "Weapon Mastery",
                 "weaponmastery": {
                     "weaponsMastered": {
-                        "type": "static",
-                        "amount": 2
+                        "calcuation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ]
                     }
                 }
             }

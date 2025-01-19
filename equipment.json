@@ -1,2 +1,54 @@
 [
+    {
+        "name": "Amulet of Health",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "attunement": true,
+        "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution score is already 19 or higher.",
+        "abilities": {
+            "abilityScoreOverride": {
+                "constitution": 19
+            }
+        }
+    },
+    {
+        "name": "Shield",
+        "type": "Armor",
+        "armorType": "Shield",
+        "rarity": "Standard",
+        "attunement": true,
+        "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
+        "abilities": {
+            "armorClass": {
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Studded Leather Armor",
+        "type": "Armor",
+        "armorType": "Light",
+        "rarity": "Standard",
+        "attunement": true,
+        "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
+        "abilities": {
+            "armorClass": {
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": 12
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "dexterityModifier"
+                    }
+                ]
+            }
+        }
+    }
 ]
