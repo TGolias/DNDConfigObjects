@@ -2,32 +2,228 @@
     {
         "name": "Barbarian",
         "hitDie": 12,
-        "savingThrowProficiencies": ["strength", "constitution"]
+        "savingThrowProficiencies": ["strength", "constitution"],
+        "weaponProficiencies": ["Simple", "Martial"],
+        "armorTraining": ["Light", "Medium", "Shields"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Animal Handling"
+                    },
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Nature"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Survival"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Bard",
         "hitDie": 8,
-        "savingThrowProficiencies": ["dexterity", "charisma"]
+        "savingThrowProficiencies": ["dexterity", "charisma"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": ["Light"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 3,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                }
+            }
+        ]
     },
     {
         "name": "Cleric",
         "hitDie": 8,
-        "savingThrowProficiencies": ["wisdom", "charisma"]
+        "savingThrowProficiencies": ["wisdom", "charisma"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": ["Light", "Medium", "Shields"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "History"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Medicine"
+                    },
+                    {
+                        "name": "Persuasion"
+                    },
+                    {
+                        "name": "Religion"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Druid",
         "hitDie": 8,
-        "savingThrowProficiencies": ["intelligence", "wisdom"]
+        "savingThrowProficiencies": ["intelligence", "wisdom"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": ["Light", "Shields"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Animal Handling"
+                    },
+                    {
+                        "name": "Arcana"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Medicine"
+                    },
+                    {
+                        "name": "Nature"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Religion"
+                    },
+                    {
+                        "name": "Survival"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Fighter",
         "hitDie": 10,
-        "savingThrowProficiencies": ["strength", "constitution"]
+        "savingThrowProficiencies": ["strength", "constitution"],
+        "weaponProficiencies": ["Simple", "Martial"],
+        "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Acrobatics"
+                    },
+                    {
+                        "name": "Animal Handling"
+                    },
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "History"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Persuasion"
+                    },
+                    {
+                        "name": "Survival"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Monk",
         "hitDie": 8,
-        "savingThrowProficiencies": ["strength", "dexterity"]
+        "savingThrowProficiencies": ["strength", "dexterity"],
+        "weaponProficiencies": ["Light"],
+        "armorTraining": [],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Acrobatics"
+                    },
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "History"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Religion"
+                    },
+                    {
+                        "name": "Stealth"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Paladin",
@@ -175,26 +371,220 @@
     {
         "name": "Ranger",
         "hitDie": 10,
-        "savingThrowProficiencies": ["strength", "dexterity"]
+        "savingThrowProficiencies": ["strength", "dexterity"],
+        "weaponProficiencies": ["Simple", "Martial"],
+        "armorTraining": ["Light", "Medium", "Shields"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 3,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Animal Handling"
+                    },
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Investigation"
+                    },
+                    {
+                        "name": "Nature"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Stealth"
+                    },
+                    {
+                        "name": "Survival"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Rogue",
         "hitDie": 8,
-        "savingThrowProficiencies": ["dexterity", "intelligence"]
+        "savingThrowProficiencies": ["dexterity", "intelligence"],
+        "weaponProficiencies": ["Light", "Finesse"],
+        "armorTraining": ["Light"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 4,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Acrobatics"
+                    },
+                    {
+                        "name": "Athletics"
+                    },
+                    {
+                        "name": "Deception"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Investigation"
+                    },
+                    {
+                        "name": "Perception"
+                    },
+                    {
+                        "name": "Persuasion"
+                    },
+                    {
+                        "name": "Sleight of Hand"
+                    },
+                    {
+                        "name": "Stealth"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Sorcerer",
         "hitDie": 6,
-        "savingThrowProficiencies": ["constitution", "charisma"]
+        "savingThrowProficiencies": ["constitution", "charisma"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": [],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Arcana"
+                    },
+                    {
+                        "name": "Deception"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Persuasion"
+                    },
+                    {
+                        "name": "Religion"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Warlock",
         "hitDie": 8,
-        "savingThrowProficiencies": ["wisdom", "charisma"]
+        "savingThrowProficiencies": ["wisdom", "charisma"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": ["Light"],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Arcana"
+                    },
+                    {
+                        "name": "Deception"
+                    },
+                    {
+                        "name": "History"
+                    },
+                    {
+                        "name": "Intimidation"
+                    },
+                    {
+                        "name": "Investigation"
+                    },
+                    {
+                        "name": "Nature"
+                    },
+                    {
+                        "name": "Religion"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Wizard",
         "hitDie": 6,
-        "savingThrowProficiencies": ["intelligence", "wisdom"]
+        "savingThrowProficiencies": ["intelligence", "wisdom"],
+        "weaponProficiencies": ["Simple"],
+        "armorTraining": [],
+        "choices": [
+            {
+                "property": "classSkills",
+                "description": "Skill Proficiencies:",
+                "optionsSource": "skillProficiencies",
+                "multipleSelections": 2,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "skillProficiencies": "name"
+                },
+                "options": [
+                    {
+                        "name": "Arcana"
+                    },
+                    {
+                        "name": "History"
+                    },
+                    {
+                        "name": "Insight"
+                    },
+                    {
+                        "name": "Investigation"
+                    },
+                    {
+                        "name": "Medicine"
+                    },
+                    {
+                        "name": "Nature"
+                    },
+                    {
+                        "name": "Religion"
+                    }
+                ]
+            }
+        ]
     }
 ]
