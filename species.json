@@ -448,8 +448,17 @@
     {
         "name": "Human",
         "speed": 30,
-        "size": "Medium",
         "choices": [
+            {
+                "property": "size",
+                "description": "Size:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "$VALUE",
+                "choiceToAttributesMapping": {
+                    "size": "$VALUE"
+                },
+                "options": ["Medium", "Small"]
+            },
             {
                 "property": "skillful",
                 "description": "Skillful Skill Proficiency:",
