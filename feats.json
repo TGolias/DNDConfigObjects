@@ -1,7 +1,136 @@
 [
-    
+    {
+        "name": "Ability Score Increase",
+        "type": "General",
+        "repeatable": true,
+        "prerequisite": {
+            "level": 4
+        },
+        "choices": [
+            {
+                "property": "firstStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "strength": "strength",
+                    "dexterity": "dexterity",
+                    "constitution": "constitution",
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma"
+                },
+                "options": [
+                    {
+                        "name": "Strength",
+                        "strength": 1
+                    },
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
+                    },
+                    {
+                        "name": "Constitution",
+                        "constitution": 1
+                    },
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    }
+                ]
+            },
+            {
+                "property": "secondStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "strength": "strength",
+                    "dexterity": "dexterity",
+                    "constitution": "constitution",
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma"
+                },
+                "options": [
+                    {
+                        "name": "Strength",
+                        "strength": 1
+                    },
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
+                    },
+                    {
+                        "name": "Constitution",
+                        "constitution": 1
+                    },
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Elven Accuracy",
+        "type": "General",
+        "prerequisite": {
+            "level": 4
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "dexterity": "dexterity",
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma"
+                },
+                "options": [
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
+                    },
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    }
+                ]
+            }
+        ]
+    },   
     {
         "name": "Tough",
+        "type": "Origin",
         "prerequisite": {
             "level": 1
         },

@@ -365,6 +365,13 @@
                         ]
                     }
                 }
+            },
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
