@@ -367,6 +367,13 @@
                 }
             },
             {
+                "classLevel": 2,
+                "name": "Fighting Style",
+                "feat": {
+                    "restrictedTypes": ["Fighting Style"]
+                }
+            },
+            {
                 "classLevel": 4,
                 "name": "Feat",
                 "feat": {

@@ -3,9 +3,18 @@
         "name": "Ability Score Increase",
         "type": "General",
         "repeatable": true,
-        "prerequisite": {
-            "level": 4
-        },
+        "prerequisite": [
+            {
+                "type": "aspect",
+                "value": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            }
+        ],
         "choices": [
             {
                 "property": "firstStatIncrease",
@@ -90,11 +99,58 @@
         ]
     },
     {
+        "name": "Archery",
+        "type": "Fighting Style",
+        "prerequisites": [
+            {
+                "type": "aspect",
+                "value": "featureNames",
+                "includes": [
+                    {
+                        "type": "static",
+                        "value": "Fighting Style"
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "weaponAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.weaponRange",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Ranged"
+                            }
+                        ]
+                    }
+                ],
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Elven Accuracy",
         "type": "General",
-        "prerequisite": {
-            "level": 4
-        },
+        "prerequisite": [
+            {
+                "type": "aspect",
+                "value": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            }
+        ],
         "choices": [
             {
                 "property": "additionalStatIncrease",
@@ -131,9 +187,18 @@
     {
         "name": "Tough",
         "type": "Origin",
-        "prerequisite": {
-            "level": 1
-        },
+        "prerequisite": [
+            {
+                "type": "aspect",
+                "value": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        ],
         "aspects": {
             "hpPerLVL": 2
         }

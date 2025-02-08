@@ -33,6 +33,7 @@
         "weaponRange": "Ranged",
         "range": "80/320",
         "properties": ["Reload 6", "Misfire 2"],
+        "tags": ["Pepperbox", "Martial", "Ranged"],
         "rarity": "None",
         "weight": 5,
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
