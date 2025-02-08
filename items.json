@@ -3,6 +3,7 @@
         "name": "Amulet of Health",
         "type": "Wondrous item",
         "rarity": "Rare",
+        "weight": 1,
         "attunement": true,
         "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution score is already 19 or higher.",
         "aspects": {
@@ -10,11 +11,54 @@
         }
     },
     {
+        "name": "Backpack",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "container": true,
+        "containerCapacity": 30,
+        "weight": 5,
+        "description": "A backpack can hold one cubic foot or 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
+    },
+    {
+        "name": "Bedroll",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "weight": 7,
+        "description": "You never know where you're going to sleep, and a bedroll helps you get better sleep in a hayloft or on the cold ground. A bedroll consists of bedding and a blanket thin enough to be rolled up and tied. In an emergency, it can double as a stretcher."
+    },
+    {
+        "name": "Pepperbox",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "properties": ["Reload 6", "Misfire 2"],
+        "rarity": "None",
+        "weight": 5,
+        "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Ration",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "stackable": true,
+        "weight": 2,
+        "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
+    },
+    {
         "name": "Shield",
         "type": "Armor",
         "armorType": "Shield",
-        "rarity": "Standard",
-        "attunement": true,
+        "rarity": "None",
+        "weight": 6,
         "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
         "aspects": {
             "armorClassBonus": {
@@ -31,8 +75,8 @@
         "name": "Studded Leather Armor",
         "type": "Armor",
         "armorType": "Light",
-        "rarity": "Standard",
-        "attunement": true,
+        "rarity": "None",
+        "weight": 13,
         "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
         "aspects": {
             "armorClass": {
@@ -48,5 +92,18 @@
                 ]
             }
         }
+    },
+    {
+        "name": "The Gun of Hole-iness",
+        "type": "Template",
+        "templateOf": "Pepperbox"
+    },
+    {
+        "name": "Waterskin",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "fillable": true,
+        "weight": 5,
+        "description": "A waterskin can hold up to 4 pints of liquid."
     }
 ]
