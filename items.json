@@ -31,6 +31,7 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
+        "range": "80/320",
         "properties": ["Reload 6", "Misfire 2"],
         "rarity": "None",
         "weight": 5,
