@@ -588,7 +588,7 @@
                         "calcuation": [
                             {
                                 "type": "parameter",
-                                "value": "preparedSpells"
+                                "propertyPath": "preparedSpells"
                             }
                         ],
                         "validSpellLists": ["Paladin"]
