@@ -5,8 +5,8 @@
         "repeatable": true,
         "prerequisite": [
             {
-                "type": "aspect",
-                "value": "level",
+                "type": "config",
+                "propertyPath": "level",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -141,12 +141,22 @@
         "type": "General",
         "prerequisite": [
             {
-                "type": "aspect",
-                "value": "level",
+                "type": "config",
+                "propertyPath": "level",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
                         "value": 4
+                    }
+                ]
+            },
+            {
+                "type": "config",
+                "propertyPath": "species.name",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": "Elf"
                     }
                 ]
             }
@@ -189,8 +199,8 @@
         "type": "Origin",
         "prerequisite": [
             {
-                "type": "aspect",
-                "value": "level",
+                "type": "config",
+                "propertyPath": "level",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
