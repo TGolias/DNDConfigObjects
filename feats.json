@@ -3,7 +3,7 @@
         "name": "Ability Score Increase",
         "type": "General",
         "repeatable": true,
-        "prerequisite": [
+        "prerequisites": [
             {
                 "type": "config",
                 "propertyPath": "level",
@@ -139,7 +139,7 @@
     {
         "name": "Elven Accuracy",
         "type": "General",
-        "prerequisite": [
+        "prerequisites": [
             {
                 "type": "config",
                 "propertyPath": "level",
@@ -197,7 +197,7 @@
     {
         "name": "Tough",
         "type": "Origin",
-        "prerequisite": [
+        "prerequisites": [
             {
                 "type": "config",
                 "propertyPath": "level",
