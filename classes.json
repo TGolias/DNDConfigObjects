@@ -36,6 +36,43 @@
                     }
                 ]
             }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
         ]
     },
     {
