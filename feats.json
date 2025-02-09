@@ -106,12 +106,10 @@
                 "type": "aspect",
                 "value": "featureNames",
                 "includes": [
-                    [
-                        {
-                            "type": "static",
-                            "value": "Fighting Style"
-                        }
-                    ]
+                    {
+                        "type": "static",
+                        "value": "Fighting Style"
+                    }
                 ]
             }
         ],
