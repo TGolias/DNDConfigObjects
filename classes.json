@@ -55,6 +55,43 @@
                     "skillProficiencies": "name"
                 }
             }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
         ]
     },
     {
@@ -90,6 +127,43 @@
                         "name": "Religion"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -135,6 +209,43 @@
                         "name": "Survival"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -184,6 +295,64 @@
                     }
                 ]
             }
+        ],
+        "features": [
+            {
+                "classLevel": 1,
+                "name": "Fighting Style",
+                "feat": {
+                    "restrictedTypes": ["Fighting Style"]
+                }
+            },
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 6,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 14,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
         ]
     },
     {
@@ -222,6 +391,43 @@
                         "name": "Stealth"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -379,6 +585,34 @@
                 "feat": {
                     "restrictedTypes": []
                 }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -424,6 +658,50 @@
                         "name": "Survival"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 2,
+                "name": "Fighting Style",
+                "feat": {
+                    "restrictedTypes": ["Fighting Style"]
+                }
+            },
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -476,6 +754,50 @@
                     }
                 ]
             }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 10,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
         ]
     },
     {
@@ -514,6 +836,43 @@
                         "name": "Religion"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     },
@@ -557,6 +916,43 @@
                     }
                 ]
             }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
         ]
     },
     {
@@ -598,6 +994,43 @@
                         "name": "Religion"
                     }
                 ]
+            }
+        ],
+        "features": [
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
             }
         ]
     }
