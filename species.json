@@ -185,7 +185,11 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Dancing Lights"]
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Dancing Lights"
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -208,8 +212,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Faerie Fire"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Faerie Fire",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -232,8 +240,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Darkness"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Darkness",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             }
@@ -285,8 +297,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Detect Magic"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Detect Magic",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -309,8 +325,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Misty Step"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Misty Step",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             }
@@ -339,7 +359,11 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Druidcraft"]
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Druidcraft"
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -362,8 +386,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Longstrider"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Longstrider",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -386,8 +414,12 @@
                                                 "value": 1
                                             }
                                         ],
-                                        "predeterminedSelections": ["Pass without Trace"],
-                                        "freeUses": 1
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Pass without Trace",
+                                                "freeUses": 1
+                                            }
+                                        ]
                                     }
                                 }
                             }

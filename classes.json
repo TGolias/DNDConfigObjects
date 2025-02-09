@@ -587,7 +587,7 @@
                     "spellsKnown": {
                         "calcuation": [
                             {
-                                "type": "resource",
+                                "type": "classResource",
                                 "value": "preparedSpells"
                             }
                         ],
