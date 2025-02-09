@@ -168,7 +168,7 @@
                         "features": [
                             {
                                 "level": 1,
-                                "name": "Elven Lineage (Lvl 1)",
+                                "name": "Elven Lineage",
                                 "spellcasting": {
                                     "ability": {
                                         "calcuation": [
@@ -191,7 +191,7 @@
                             },
                             {
                                 "level": 3,
-                                "name": "Elven Lineage (Lvl 3)",
+                                "name": "Elven Lineage",
                                 "spellcasting": {
                                     "ability": {
                                         "calcuation": [
@@ -215,7 +215,7 @@
                             },
                             {
                                 "level": 5,
-                                "name": "Elven Lineage (Lvl 5)",
+                                "name": "Elven Lineage",
                                 "spellcasting": {
                                     "ability": {
                                         "calcuation": [
