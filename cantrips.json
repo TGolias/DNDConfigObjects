@@ -459,7 +459,7 @@
         "challengeType": "none",
         "type": ["aspect"],
         "aspect": {
-            "weaponAttackModifier": {
+            "alternateWeaponAttackModifier": {
                 "conditions": [
                     {
                         "type": "or",
@@ -498,7 +498,7 @@
                     }
                 ]
             },
-            "weaponDamageModifier": {
+            "alternateWeaponDamageModifier": {
                 "conditions": [
                     {
                         "type": "or",
@@ -1015,7 +1015,7 @@
         "challengeType": "none",
         "type": ["aspect"],
         "aspect": {
-            "weaponAttackModifier": {
+            "alternateWeaponAttackModifier": {
                 "calcuation": [
                     {
                         "type": "parameter",
@@ -1023,7 +1023,7 @@
                     }
                 ]
             },
-            "weaponDamageModifier": {
+            "alternateWeaponDamageModifier": {
                 "calcuation": [
                     {
                         "type": "parameter",

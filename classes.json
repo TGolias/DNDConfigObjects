@@ -5,6 +5,7 @@
         "savingThrowProficiencies": ["strength", "constitution"],
         "weaponProficiencies": ["Simple", "Martial"],
         "armorTraining": ["Light", "Medium", "Shields"],
+        "spellSlotLevelProgression": 0,
         "choices": [
             {
                 "property": "classSkills",
@@ -81,6 +82,7 @@
         "savingThrowProficiencies": ["dexterity", "charisma"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": ["Light"],
+        "spellSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
@@ -137,6 +139,7 @@
         "savingThrowProficiencies": ["wisdom", "charisma"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": ["Light", "Medium", "Shields"],
+        "spellSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
@@ -210,6 +213,7 @@
         "savingThrowProficiencies": ["intelligence", "wisdom"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": ["Light", "Shields"],
+        "spellSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
@@ -292,6 +296,7 @@
         "savingThrowProficiencies": ["strength", "constitution"],
         "weaponProficiencies": ["Simple", "Martial"],
         "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+        "spellSlotLevelProgression": 0,
         "choices": [
             {
                 "property": "classSkills",
@@ -398,6 +403,7 @@
         "savingThrowProficiencies": ["strength", "dexterity"],
         "weaponProficiencies": ["Light"],
         "armorTraining": [],
+        "spellSlotLevelProgression": 0,
         "choices": [
             {
                 "property": "classSkills",
@@ -474,6 +480,7 @@
         "savingThrowProficiencies": ["wisdom", "charisma"],
         "weaponProficiencies": ["Simple", "Martial"],
         "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+        "spellSlotLevelProgression": 2,
         "choices": [
             {
                 "property": "classSkills",
@@ -574,7 +581,7 @@
             },
             {
                 "classLevel": 1,
-                "name": "Spellcasting",
+                "name": "Paladin Spellcasting",
                 "spellcasting": {
                     "ability": {
                         "calcuation": [
@@ -659,6 +666,7 @@
         "savingThrowProficiencies": ["strength", "dexterity"],
         "weaponProficiencies": ["Simple", "Martial"],
         "armorTraining": ["Light", "Medium", "Shields"],
+        "spellSlotLevelProgression": 2,
         "choices": [
             {
                 "property": "classSkills",
@@ -748,6 +756,7 @@
         "savingThrowProficiencies": ["dexterity", "intelligence"],
         "weaponProficiencies": ["Light", "Finesse"],
         "armorTraining": ["Light"],
+        "spellSlotLevelProgression": 0,
         "choices": [
             {
                 "property": "classSkills",
@@ -843,6 +852,7 @@
         "savingThrowProficiencies": ["constitution", "charisma"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": [],
+        "spellSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
@@ -919,6 +929,8 @@
         "savingThrowProficiencies": ["wisdom", "charisma"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": ["Light"],
+        "spellSlotLevelProgression": 0,
+        "pactSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
@@ -998,6 +1010,7 @@
         "savingThrowProficiencies": ["intelligence", "wisdom"],
         "weaponProficiencies": ["Simple"],
         "armorTraining": [],
+        "spellSlotLevelProgression": 1,
         "choices": [
             {
                 "property": "classSkills",
