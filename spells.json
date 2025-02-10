@@ -44,7 +44,7 @@
         "components": ["V"],
         "duration": "Up to 1 minute",
         "concentration": true,
-        "description": "You try to compel a creature into a duel. One creature that you can see within range makes a Wisdom saving throw. On a failed save, the target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you. The spell ends if you make an attack roll against a creature other than the target, if you cast a spell on an enemy other than the target, if an ally of yours damages the target, or if you end your turn more than 30 feet away from the target.",
+        "description": "You try to compel a creature into a duel. One creature that you can see within range makes a Wisdom saving throw. On a failed save, the target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you.\n\nThe spell ends if you make an attack roll against a creature other than the target, if you cast a spell on an enemy other than the target, if an ally of yours damages the target, or if you end your turn more than 30 feet away from the target.",
         "challengeType": "savingThrow",
         "savingThrowType": "wisdom",
         "type": ["debuff"],
@@ -93,7 +93,7 @@
         "components": ["V", "S"],
         "duration": "10 minutes",
         "concentration": true,
-        "description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic. The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
+        "description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.\n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
         "challengeType": "none",
         "type": ["utility"]
     },
@@ -174,6 +174,67 @@
         }
     },
     {
+        "name": "Hellish Rebuke",
+        "level": 1,
+        "school": "Evocation",
+        "spellLists": ["Warlock"],
+        "castingTime": ["Reaction"],
+        "castingCondition": "Must be made in response to taking damage from a creature that you can see within 60 feet of yourself.",
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "The creature that damaged you is momentarily surrounded by green flames. It makes a Dexterity saving throw, taking 2d10 Fire damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 1.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "damageType": "Fire",
+            "halfOnSave": true
+        }
+    },
+    {
+        "name": "Inflict Wounds",
+        "level": 1,
+        "school": "Necromancy",
+        "spellLists": ["Cleric"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "A creature you touch makes a Constitution saving throw, taking 2d10 Necrotic damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 1.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["damage"],
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "damageType": "Necrotic",
+            "halfOnSave": true
+        }
+    },
+    {
         "name": "Searing Smite",
         "level": 1,
         "school": "Evocation",
@@ -200,7 +261,7 @@
             "calcuation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 6
                 }
             ],
             "description": "Fire damage taken then a Constitution saving throw at the start of each of its turn. If the saving throw succeeds, the spell is ended."
