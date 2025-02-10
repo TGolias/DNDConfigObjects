@@ -20,11 +20,534 @@
         "description": "A backpack can hold one cubic foot or 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
     },
     {
+        "name": "Battleaxe",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Versatile"],
+        "tags": ["Battleaxe", "Martial", "Melee", "Versatile"],
+        "mastery": "Topple",
+        "rarity": "None",
+        "weight": 4,
+        "description": "Like an axe: but for battle.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Slashing"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
         "name": "Bedroll",
         "type": "Adventuring Gear",
         "rarity": "None",
         "weight": 7,
         "description": "You never know where you're going to sleep, and a bedroll helps you get better sleep in a hayloft or on the cold ground. A bedroll consists of bedding and a blanket thin enough to be rolled up and tied. In an emergency, it can double as a stretcher."
+    },
+    {
+        "name": "Blowgun",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": "25/100",
+        "properties": ["Loading"],
+        "tags": ["Blowgun", "Martial", "Ranged", "Loading"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 1,
+        "description": "A gun that you can blow.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "static",
+                    "value": 1
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Club",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": ["Light"],
+        "tags": ["Club", "Simple", "Melee", "Light"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 2,
+        "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Dagger",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": "20/60",
+        "properties": ["Finesse", "Light", "Thrown"],
+        "tags": ["Dagger", "Simple", "Melee", "Finesse", "Light", "Thrown"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 1,
+        "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Dart",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Ranged",
+        "range": "20/60",
+        "properties": ["Finesse", "Thrown"],
+        "tags": ["Dart", "Simple", "Ranged", "Finesse", "Thrown"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 0.25,
+        "description": "Bullseye.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Flail",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": [],
+        "tags": ["Flail", "Martial", "Melee"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 2,
+        "description": "A stick with a hurty thing chained to it.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Glaive",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Reach", "Two-Handed"],
+        "tags": ["Glaive", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
+        "mastery": "Graze",
+        "rarity": "None",
+        "weight": 6,
+        "description": "Like a Halberd: but with the Graze property.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Greataxe",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Greataxe", "Martial", "Melee", "Heavy", "Two-Handed"],
+        "mastery": "Cleave",
+        "rarity": "None",
+        "weight": 7,
+        "description": "Like an axe: but greater.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 12
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Greatclub",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": ["Two-Handed"],
+        "tags": ["Greatclub", "Simple", "Melee", "Two-Handed"],
+        "mastery": "Push",
+        "rarity": "None",
+        "weight": 10,
+        "description": "Like a Club: but greater.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Greatsword",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Greatsword", "Martial", "Melee", "Heavy", "Two-Handed"],
+        "mastery": "Graze",
+        "rarity": "None",
+        "weight": 6,
+        "description": "Like a sword: but greater.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Halberd",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Reach", "Two-Handed"],
+        "tags": ["Halberd", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
+        "mastery": "Cleave",
+        "rarity": "None",
+        "weight": 6,
+        "description": "Like a Glaive: but with the Cleave property.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Hand Crossbow",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": "30/120",
+        "properties": ["Light", "Loading"],
+        "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 3,
+        "description": "A 'Light' Crossbow (not 'Light Crossbow') that can be held in one hand.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Handaxe",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": "20/60",
+        "properties": ["Light", "Thrown"],
+        "tags": ["Handaxe", "Simple", "Melee", "Light", "Thrown"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Good for chopping wood and heads.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Heavy Crossbow",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": "100/400",
+        "properties": ["Heavy", "Loading", "Two-Handed"],
+        "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Loading", "Two-Handed"],
+        "mastery": "Push",
+        "rarity": "None",
+        "weight": 18,
+        "description": "Like a Crossbow: but heavier.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Javelin",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": "30/120",
+        "properties": ["Thrown"],
+        "tags": ["Javelin", "Simple", "Melee", "Thrown"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 2,
+        "description": "A spear designed primarily to be thrown.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Lance",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Reach", "Two-Handed", "One-Handed-Mounted"],
+        "tags": ["Lance", "Martial", "Melee", "Heavy", "Reach", "Two-Handed", "One-Handed-Mounted"],
+        "mastery": "Topple",
+        "rarity": "None",
+        "weight": 6,
+        "description": "Long pointy stick that can be one-handed if you are mounted: Better go buy a horse.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Light Crossbow",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Ranged",
+        "range": "80/320",
+        "properties": ["Loading", "Two-Handed"],
+        "tags": ["Light Crossbow", "Simple", "Ranged", "Loading", "Two-Handed"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 5,
+        "description": "-and you call this thing the 'Light Crossbow' despite the fact that it lacks the 'Light' property?",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Light Hammer",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": "20/60",
+        "properties": ["Light", "Thrown"],
+        "tags": ["Light Hammer", "Simple", "Melee", "Light", "Thrown"],
+        "mastery": "Nick",
+        "rarity": "None",
+        "weight": 2,
+        "description": "A fine tool both in and out of combat. Famously sold by Tessler Kefflin.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Longbow",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": "150/600",
+        "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Like a bow: but longer.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Longsword",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Versatile"],
+        "tags": ["Longsword", "Martial", "Melee", "Versatile"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 3,
+        "description": "Like a sword: but longer.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Slashing"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Mace",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": [],
+        "tags": ["Mace", "Simple", "Melee"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 4,
+        "description": "A heavy club, typically having a metal head and spikes. Favored weapon of many iconic Clerics.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Maul",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Maul", "Martial", "Melee", "Heavy", "Two-Handed"],
+        "mastery": "Topple",
+        "rarity": "None",
+        "weight": 10,
+        "description": "Like a hammer: but greater.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Morningstar",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": [],
+        "tags": ["Morningstar", "Martial", "Melee"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 4,
+        "description": "Not a great star to see pointed at you in the morning.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
+        }
     },
     {
         "name": "Pepperbox",
@@ -34,6 +557,7 @@
         "range": "80/320",
         "properties": ["Reload 6", "Misfire 2"],
         "tags": ["Pepperbox", "Martial", "Ranged"],
+        "mastery": "Vex",
         "rarity": "None",
         "weight": 5,
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
@@ -48,12 +572,126 @@
         }
     },
     {
+        "name": "Pike",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Reach", "Two-Handed"],
+        "tags": ["Pike", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
+        "mastery": "Push",
+        "rarity": "None",
+        "weight": 18,
+        "description": "Long pushy stick. Why it so heavy tho?",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Quarterstaff",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": ["Versatile"],
+        "tags": ["Quarterstaff", "Simple", "Melee", "Versatile"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 4,
+        "description": "A staff that is larger than a quarter.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Bludgeoning"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Rapier",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Finesse"],
+        "tags": ["Rapier", "Martial", "Melee", "Finesse"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 2,
+        "description": "A great way for weak bitches that don't use magic to still do something in combat.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
         "name": "Ration",
         "type": "Adventuring Gear",
         "rarity": "None",
         "stackable": true,
         "weight": 2,
         "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
+    },
+    {
+        "name": "Scimitar",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Finesse", "Light"],
+        "tags": ["Scimitar", "Martial", "Melee", "Finesse", "Light"],
+        "mastery": "Nick",
+        "rarity": "None",
+        "weight": 3,
+        "description": "Like a sword: but curvier.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Shortsword",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Finesse", "Light"],
+        "tags": ["Shortsword", "Martial", "Melee", "Finesse", "Light"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Like a sword: but shorter.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Piercing"
+        }
     },
     {
         "name": "Shield",
@@ -71,6 +709,102 @@
                     }
                 ]
             }
+        }
+    },
+    {
+        "name": "Shortbow",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Ranged",
+        "range": "80/320",
+        "properties": ["Two-Handed"],
+        "tags": ["Shortbow", "Simple", "Ranged", "Two-Handed"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Isn't this a little short for a bow?",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Sickle",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": ["Light"],
+        "tags": ["Sickle", "Simple", "Melee", "Light"],
+        "mastery": "Nick",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Used for harvesting crops and heads.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
+    {
+        "name": "Sling",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Ranged",
+        "range": "80/320",
+        "properties": [],
+        "tags": ["Sling", "Simple", "Ranged"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 0,
+        "description": "Time to slay some Goliaths.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Spear",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": "20/60",
+        "properties": ["Versatile", "Thrown"],
+        "tags": ["Spear", "Simple", "Melee", "Versatile", "Thrown"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 3,
+        "description": "A spear designed primarily to jab people with.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6
+                }
+            ],
+            "damageType": "Piercing"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
         }
     },
     {
@@ -101,11 +835,123 @@
         "templateOf": "Pepperbox"
     },
     {
+        "name": "Trident",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "range": "20/60",
+        "properties": ["Thrown", "Versatile"],
+        "tags": ["Trident", "Martial", "Melee", "Thrown", "Versatile"],
+        "mastery": "Topple",
+        "rarity": "None",
+        "weight": 4,
+        "description": "Who the fuck do you think you are weilding this thing?! King Neptune?!",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "Warhammer",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Versatile"],
+        "tags": ["Warhammer", "Martial", "Melee", "Versatile"],
+        "mastery": "Push",
+        "rarity": "None",
+        "weight": 5,
+        "description": "Like an hammer: but for war.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Bludgeoning"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Bludgeoning"
+        }
+    },
+    {
+        "name": "War Pick",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Versatile"],
+        "tags": ["War Pick", "Martial", "Melee", "Versatile"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 2,
+        "description": "Like an pick: but for war.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8
+                }
+            ],
+            "damageType": "Piercing"
+        },
+        "twoHandedDamage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
         "name": "Waterskin",
         "type": "Adventuring Gear",
         "rarity": "None",
         "fillable": true,
         "weight": 5,
         "description": "A waterskin can hold up to 4 pints of liquid."
-    }
+    },
+    {
+        "name": "Whip",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Finesse", "Reach"],
+        "tags": ["Whip", "Martial", "Melee", "Finesse", "Reach"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "weight": 3,
+        "description": "Can also be used outside the bedroom.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "damageType": "Slashing"
+        }
+    },
 ]
