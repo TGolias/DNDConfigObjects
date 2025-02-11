@@ -548,7 +548,7 @@
                     {
                         "actionName": "Lay on Hands (HP)",
                         "actionType": "bonus",
-                        "range": ["touch", "self"],
+                        "range": "Touch",
                         "effectType": "healing",
                         "resource": "layOnHands",
                         "cost": {
@@ -565,7 +565,7 @@
                     {
                         "actionName": "Lay on Hands (Poisoned)",
                         "actionType": "bonus",
-                        "range": ["touch", "self"],
+                        "range": "Touch",
                         "effectType": "condition",
                         "resource": "layOnHands",
                         "cost": {

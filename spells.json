@@ -58,7 +58,7 @@
         "school": "Abjuration",
         "spellLists": ["Bard", "Cleric", "Druid", "Paladin", "Ranger"],
         "castingTime": ["Action"],
-        "range": ["Touch", "Self"],
+        "range": "Touch",
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 2d8 for each spell slot level above 1.",
@@ -174,6 +174,24 @@
         }
     },
     {
+        "name": "Faerie Fire",
+        "level": 1,
+        "school": "Evocation",
+        "spellLists": ["Bard", "Druid"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can't benefit from the Invisible condition.\n\nAttack rolls against an affected creature or object have Advantage if the attacker can see it.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "dexterity",
+        "type": ["debuff"],
+        "debuff": {
+            "description": "Attack rolls against affected creatures or objects have advantage and they can't benefit from the invisible condition."
+        }
+    },
+    {
         "name": "Hellish Rebuke",
         "level": 1,
         "school": "Evocation",
@@ -232,6 +250,23 @@
             ],
             "damageType": "Necrotic",
             "halfOnSave": true
+        }
+    },
+    {
+        "name": "Longstrider",
+        "level": 1,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Druid", "Ranger", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of dirt"],
+        "duration": "1 hour",
+        "description": "You touch a creature. The target's Speed increases by 10 feet until the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
+        "challengeType": "none",
+        "type": ["aspect"],
+        "aspect": {
+            "speedBonus": 10
         }
     },
     {
@@ -299,5 +334,48 @@
         "debuff": {
             "description": "If the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and have the Prone condition."
         }
+    },
+    {
+        "name": "Darkness",
+        "level": 2,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "M"],
+        "materialComponents": ["bat fur", "a piece of coal"],
+        "duration": "Up to 10 minutes",
+        "concentration": true,
+        "description": "For the duration, magical Darkness spreads from a point within range and fills a 15-foot-radius Sphere. Darkvision can't see through it, and nonmagical light can't illuminate it.\n\nAlternatively, you cast the spell on an object that isn't being worn or carried, causing the Darkness to fill a 15-foot Emanation originating from that object. Covering that object with something opaque, such as a bowl or helm, blocks the Darkness.\n\nIf any of this spell's area overlaps with an area of Bright Light or Dim Light created by a spell of level 2 or lower, that other spell is dispelled.",
+        "challengeType": "none",
+        "type": ["utility"]
+    },
+    {
+        "name": "Misty Step",
+        "level": 2,
+        "school": "Conjuration",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Bonus Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
+        "challengeType": "none",
+        "type": ["utility"]
+    },
+    {
+        "name": "Pass without Trace",
+        "level": 2,
+        "school": "Abjuration",
+        "spellLists": ["Druid", "Ranger"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["ashes from a burned mistletoe"],
+        "duration": "Up to 1 hour",
+        "concentration": true,
+        "description": "You radiate a concealing aura in a 30-foot Emanation for the duration. While in the aura, you and each creature you choose have a +10 bonus to Dexterity (Stealth) checks and leave no tracks.",
+        "challengeType": "none",
+        "type": ["utility"]
     }
 ]
