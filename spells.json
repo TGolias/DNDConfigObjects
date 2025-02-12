@@ -153,8 +153,12 @@
                     "value": 8,
                     "multiplier": [
                         {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
                             "type": "static",
-                            "value": 2
+                            "value": 1
                         }
                     ]
                 }
@@ -167,8 +171,12 @@
                             "value": 8,
                             "multiplier": [
                                 {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel"
+                                },
+                                {
                                     "type": "static",
-                                    "value": 3
+                                    "value": 2
                                 }
                             ]
                         }
@@ -218,8 +226,12 @@
                     "value": 10,
                     "multiplier": [
                         {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
                             "type": "static",
-                            "value": 2
+                            "value": 1
                         }
                     ]
                 }
@@ -248,8 +260,12 @@
                     "value": 10,
                     "multiplier": [
                         {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
                             "type": "static",
-                            "value": 2
+                            "value": 1
                         }
                     ]
                 }
@@ -293,7 +309,13 @@
             "calcuation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ]
                 }
             ],
             "damageType": "Fire"
@@ -302,7 +324,13 @@
             "calcuation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ]
                 }
             ],
             "description": "Fire damage taken then a Constitution saving throw at the start of each of its turn. If the saving throw succeeds, the spell is ended."
@@ -329,8 +357,12 @@
                     "value": 6,
                     "multiplier": [
                         {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
                             "type": "static",
-                            "value": 2
+                            "value": 1
                         }
                     ]
                 }
