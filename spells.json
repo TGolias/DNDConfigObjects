@@ -72,7 +72,13 @@
                     "multiplier": [
                         {
                             "type": "static",
-                            "value": 2
+                            "value": 2,
+                            "multiplier": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel"
+                                }
+                            ]
                         }
                     ]
                 },
