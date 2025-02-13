@@ -46,7 +46,148 @@
         "abilityScores": ["dexterity", "constitution", "charisma"],
         "skillProficiencies": ["Acrobatics", "Deception"],
         "toolProficiencies": ["Tinkerer's Tools"],
-        "feat": "Tough"
+        "feat": "Tough",
+        "itemDescriptionAddendum": {
+            "conditions": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "item.type",
+                    "includes": [
+                        {
+                            "type": "static",
+                            "value": "Weapon"
+                        }
+                    ]
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "item.tags",
+                    "includes": [
+                        {
+                            "type": "static",
+                            "value": "Firearm"
+                        }
+                    ]
+                }
+            ],
+            "calcuation": [
+                {
+                    "type": "static",
+                    "value": "<b>Magic Bullets.</b> Due to your family's relationship with their divine patron, firearms can be loaded with magic bullets that appear to look, function, fire and sound like normal bullets aside from radiating a magical glow. They do not deal damage like a normal bullet would though: They are instead used for spellcasting. <b>These bullets are your only means of spellcasting.</b>\n\nThere are two types of magic bullets: Focus bullets and Imbued bullets. Only one bullet type can exist at a time, meaning if you create an Imbued bullet, all pre-existing Focus bullets vanish and vice-versa.\n\n<b>Focus Bullets.</b> These bullets give off a red glow and are simply a one-time use focus for a spell, class effect, or other magical effect. Focus bullets reduce a spell's somatic components to the mere act of pulling the trigger, meaning the spell, magical class effect or other magic effect is chosen at the time of firing the gun. Once Focus bullets are loaded into the chamber they will last indefinitely until fired. The time to fire each bullet corresponds to the desired spell, magical class effect or other magic effect's corresponding action type or time (such as bonus action, standard action, reaction, 1 minute, etc). For spells that take longer than one action to cast (such as 1 minute) the gun is fired at the start of casting time, but the bullet remains until either the casting is completed or canceled. Any caster that needs a spell focus can utilize firing a Focus bullet as their spellcasting focus as long as they are the one firing the Focus bullet.\n\n<b>Imbued Bullets.</b> These bullets give off a blue glow and have a specific spell, magical class effect or other magic effect channeled into them when loaded. The resources for the corresponding spell, class effect or magical effect (spell slot, class resource, components, etc) must be consumed upon loading each Imbued bullet. The corresponding action type or time for the imbued spell, class effect or magical effect must then be consumed when pulling the trigger to cast it. The person who pulls the trigger does not have to be the one who loaded it, does not have to be proficient with firearms, and does not even have to be a magic caster. The properties of the spell, class effect or other magical effect, such as spell save DC, spell attack bonus, and spell casting ability, are the same as if they were cast by the person who loaded the Imbued bullet in. If one of the properties is concentration, then the person who loads the Imbued bullet must start concentrating on it as soon as it is loaded. When the person who loaded the Imbued bullet stops concentrating, the bullet disappears if it hasn't been fired yet. If it has been fired, the spell, class effect or other magical effect ends instead. Any imbued bullets remaining in the gun disappear entirely when the person who originally loaded them in takes a short or long rest. The imbued bullets can be fired in any order, as cycling the chamber to the bullet you'd like to fire off can be considered part of the action, bonus action or reaction for firing the spell, magical class effect or other magic effect.\n\n<b>Reloading.</b> Magic bullets are magically resupplied to the wielder's hand via the divine patron on the command <b>Reload</b>, which requires a verbal component. The amount of magic bullets supplied by the divine patron will be the exact amount requested. Magic bullets that are not loaded into or leave the chamber of the gun for more than 6 seconds disappear entirely.\n\nIf magic bullets are able to be struck or crushed hard enough by something other than the hammer of a gun (within 6 seconds so that the Focus bullets don't disappear), they can be used as a spellcasting focus that way.\n\nThe maximum number of Imbued bullets that can exist at once is equal to your proficiency bonus. There is no limit for the maximum number of Focus bullets.\n\n<b>Magical Versatility.</b> Magical effects that could normally only be applied on a melee attack, such as the paladin's smites, can be applied to ranged weapon attacks as well, as long as a weapon containing at least one magic bullet is in the wielder's hand at the time of the ranged weapon attack's hit.\n\nBecause the magical effects of the bullet simply depend on the magic bullet being struck by the hammer of the gun, the gun they are loaded into does not actually need to be aimed: Though, the wielder may choose to do so for dramatic effect.\n\n<b>Disarmed.</b> If disarmed, the wielder is affected as any other caster losing their focus would, though that alone would not end concentration or spells cast prior to being disarmed.\n\nIf connection is severed with the divine patron, each magic bullet that remains loaded can be used on any spell, class effect or other magical effect, but no new magic bullets can be acquired for reloading without a new divine patron."
+                }
+            ]
+        },
+        "spellCastingConditionAddendum": {
+            "conditions": [
+                {
+                    "type": "or",
+                    "values": [
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Banishing Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Blinding Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Divine Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Searing Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Shining Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Staggering Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Thunderous Smite"
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Wrathful Smite"
+                                    }
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "calcuation": [
+                {
+                    "type": "static",
+                    "value": "<b>Magic Bullets.</b> This spell can also be cast immediately after hitting a target with a Ranged weapon as long as a weapon containing at least one magic bullet is in the wielder's hand at the time of the ranged weapon attack's hit."
+                }
+            ]
+        }
     },
     {
         "name": "Guard",

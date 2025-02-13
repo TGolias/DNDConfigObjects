@@ -494,7 +494,7 @@
                 "calcuation": [
                     {
                         "type": "parameter",
-                        "propertyPath": "spellcastingAbilityModifier"
+                        "propertyPath": "spellcastingAbility"
                     }
                 ]
             },
@@ -533,7 +533,7 @@
                 "calcuation": [
                     {
                         "type": "parameter",
-                        "propertyPath": "spellcastingAbilityModifier"
+                        "propertyPath": "spellcastingAbility"
                     }
                 ]
             },
@@ -1019,7 +1019,7 @@
                 "calcuation": [
                     {
                         "type": "parameter",
-                        "propertyPath": "spellcastingAbilityModifier"
+                        "propertyPath": "spellcastingAbility"
                     }
                 ]
             },
@@ -1027,7 +1027,7 @@
                 "calcuation": [
                     {
                         "type": "parameter",
-                        "propertyPath": "spellcastingAbilityModifier"
+                        "propertyPath": "spellcastingAbility"
                     }
                 ],
                 "damageType": "Radiant"

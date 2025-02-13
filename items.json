@@ -556,7 +556,7 @@
         "weaponRange": "Ranged",
         "range": "80/320",
         "properties": ["Reload 6", "Misfire 2"],
-        "tags": ["Pepperbox", "Martial", "Ranged"],
+        "tags": ["Pepperbox", "Firearm", "Martial", "Ranged"],
         "mastery": "Vex",
         "rarity": "None",
         "weight": 5,

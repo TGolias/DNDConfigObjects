@@ -161,6 +161,118 @@
                 ]
             }
         ],
+        "aspects": {
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "or",
+                        "values": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spellcastingAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "dexterity"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spellcastingAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "intelligence"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spellcastingAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "wisdom"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spellcastingAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "charisma"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once."
+                    }
+                ]
+            },
+            "weaponAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "or",
+                        "values": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "attackAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "dexterity"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "attackAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "intelligence"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "attackAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "wisdom"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "attackAbility",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "charisma"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once."
+                    }
+                ]
+            }
+        },
         "choices": [
             {
                 "property": "additionalStatIncrease",
