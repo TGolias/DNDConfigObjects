@@ -167,46 +167,54 @@
                     {
                         "type": "or",
                         "values": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "spellcastingAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "dexterity"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "spellcastingAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "intelligence"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "spellcastingAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "wisdom"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "spellcastingAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "charisma"
-                                    }
-                                ]
-                            }
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "spellcastingAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "dexterity"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "spellcastingAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "intelligence"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "spellcastingAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "wisdom"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "spellcastingAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "charisma"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
                     }
                 ],
@@ -222,46 +230,54 @@
                     {
                         "type": "or",
                         "values": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "attackAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "dexterity"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "attackAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "intelligence"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "attackAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "wisdom"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "attackAbility",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "charisma"
-                                    }
-                                ]
-                            }
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "dexterity"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "intelligence"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "wisdom"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "charisma"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
                     }
                 ],
