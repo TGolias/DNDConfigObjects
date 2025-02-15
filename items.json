@@ -61,7 +61,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "25/100",
+        "range": {
+            "normal": 25,
+            "long": 100
+        },
         "properties": ["Loading"],
         "tags": ["Blowgun", "Martial", "Ranged", "Loading"],
         "mastery": "Vex",
@@ -104,7 +107,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Melee",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Finesse", "Light", "Thrown"],
         "tags": ["Dagger", "Simple", "Melee", "Finesse", "Light", "Thrown"],
         "mastery": "Slow",
@@ -126,7 +132,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Ranged",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Finesse", "Thrown"],
         "tags": ["Dart", "Simple", "Ranged", "Finesse", "Thrown"],
         "mastery": "Vex",
@@ -280,7 +289,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "30/120",
+        "range": {
+            "normal": 30,
+            "long": 120
+        },
         "properties": ["Light", "Loading"],
         "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading"],
         "mastery": "Vex",
@@ -302,7 +314,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Melee",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Light", "Thrown"],
         "tags": ["Handaxe", "Simple", "Melee", "Light", "Thrown"],
         "mastery": "Vex",
@@ -324,7 +339,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "100/400",
+        "range": {
+            "normal": 100,
+            "long": 400
+        },
         "properties": ["Heavy", "Loading", "Two-Handed"],
         "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Loading", "Two-Handed"],
         "mastery": "Push",
@@ -346,7 +364,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Melee",
-        "range": "30/120",
+        "range": {
+            "normal": 30,
+            "long": 120
+        },
         "properties": ["Thrown"],
         "tags": ["Javelin", "Simple", "Melee", "Thrown"],
         "mastery": "Slow",
@@ -389,7 +410,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Ranged",
-        "range": "80/320",
+        "range": {
+            "normal": 80,
+            "long": 320
+        },
         "properties": ["Loading", "Two-Handed"],
         "tags": ["Light Crossbow", "Simple", "Ranged", "Loading", "Two-Handed"],
         "mastery": "Slow",
@@ -411,7 +435,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Melee",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Light", "Thrown"],
         "tags": ["Light Hammer", "Simple", "Melee", "Light", "Thrown"],
         "mastery": "Nick",
@@ -433,7 +460,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "150/600",
+        "range": {
+            "normal": 150,
+            "long": 600
+        },
         "properties": ["Heavy", "Two-Handed"],
         "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
         "mastery": "Slow",
@@ -554,7 +584,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "80/320",
+        "range": {
+            "normal": 80,
+            "long": 320
+        },
         "properties": ["Reload 6", "Misfire 2"],
         "tags": ["Pepperbox", "Firearm", "Martial", "Ranged"],
         "mastery": "Vex",
@@ -656,7 +689,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Ranged",
-        "range": "40/120",
+        "range": {
+            "normal": 40,
+            "long": 120
+        },
         "properties": ["Reload 6", "Misfire 2"],
         "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
         "mastery": "Sap",
@@ -744,7 +780,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Ranged",
-        "range": "80/320",
+        "range": {
+            "normal": 80,
+            "long": 320
+        },
         "properties": ["Two-Handed"],
         "tags": ["Shortbow", "Simple", "Ranged", "Two-Handed"],
         "mastery": "Vex",
@@ -787,7 +826,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Ranged",
-        "range": "80/320",
+        "range": {
+            "normal": 80,
+            "long": 320
+        },
         "properties": [],
         "tags": ["Sling", "Simple", "Ranged"],
         "mastery": "Slow",
@@ -809,7 +851,10 @@
         "type": "Weapon",
         "weaponType": "Simple",
         "weaponRange": "Melee",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Versatile", "Thrown"],
         "tags": ["Spear", "Simple", "Melee", "Versatile", "Thrown"],
         "mastery": "Slow",
@@ -867,7 +912,10 @@
         "type": "Weapon",
         "weaponType": "Martial",
         "weaponRange": "Melee",
-        "range": "20/60",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
         "properties": ["Thrown", "Versatile"],
         "tags": ["Trident", "Martial", "Melee", "Thrown", "Versatile"],
         "mastery": "Topple",

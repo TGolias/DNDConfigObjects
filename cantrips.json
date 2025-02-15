@@ -763,92 +763,83 @@
         "spellLists": ["Cleric", "Druid"],
         "castingTime": ["Action"],
         "range": {
-            "calcuation": [
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "aspect",
-                            "value": "tier",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": 1
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "static",
-                            "value": 15
-                        }
-                    ]
-                },
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "aspect",
-                            "value": "tier",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": 2
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                },
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "aspect",
-                            "value": "tier",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": 3
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "static",
-                            "value": 60
-                        }
-                    ]
-                },
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "aspect",
-                            "value": "tier",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": 4
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "static",
-                            "value": 120
-                        }
-                    ]
-                }
-            ]
+            "normal": {
+                "calcuation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "aspect",
+                                "value": "tier",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": 4
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": 120
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "if-then",
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": 3
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 60
+                                    }
+                                ],
+                                "else": [
+                                    {
+                                        "type": "if-then",
+                                        "if": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "tier",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 2
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "then": [
+                                            {
+                                                "type": "static",
+                                                "value": 30
+                                            }
+                                        ],
+                                        "else": [
+                                            {
+                                                "type": "static",
+                                                "value": 15
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         "components": ["V", "S"],
         "duration": "Instantaneous",

@@ -5,6 +5,47 @@
     },
     {
         "name": "Ranged",
-        "description": "You can make ranged attacks only against targets within a specified range. If a ranged attack, such as one made with a spell, has a single range, you can't attack a target beyond this range. Some ranged attacks, such as those made with a Longbow, have two ranges. The smaller number is the normal range, and the larger number is the long range. Your attack roll has Disadvantage when your target is beyond normal range, and you can't attack a target beyond long range.\n\n<b>Ranged Attacks in Close Combat.</b> Aiming a ranged attack is more difficult when a foe is next to you. When you make a ranged attack roll with a weapon, a spell, or some other means, you have Disadvantage on the roll if you are within 5 feet of an enemy who can see you and doesn't have the <b>Incapacitated</b> condition."
+        "description": "You can make ranged attacks only against targets within a specified range. If a ranged attack, such as one made with a spell, has a single range, you can't attack a target beyond this range. Some ranged attacks, such as those made with a Longbow, have two ranges. The smaller number is the normal range, and the larger number is the long range. Your attack roll has Disadvantage when your target is beyond normal range, and you can't attack a target beyond long range.\n\n<b>Ranged Attacks in Close Combat.</b> Aiming a ranged attack is more difficult when a foe is next to you. When you make a ranged attack roll with a weapon, a spell, or some other means, you have Disadvantage on the roll if you are within 5 feet of an enemy who can see you and doesn't have the <b>Incapacitated</b> condition.",
+        "weaponAttackAddendum": {
+            "calcuation": [
+                {
+                    "type": "static",
+                    "value": "<b>Ranged.</b> You have Disadvantage on the attack roll if "
+                },
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.range.long"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "you are over "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.range.long"
+                        },
+                        {
+                            "type": "static",
+                            "value": " feet away from the target or "
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": "you are within 5 feet of an enemy who can see you and doesn't have the <b>Incapacitated</b> condition."
+                }
+            ]
+        }
     }
 ]
