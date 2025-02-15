@@ -652,6 +652,34 @@
         "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
     },
     {
+        "name": "Revolver",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": "40/120",
+        "properties": ["Reload 6", "Misfire 2"],
+        "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
+        "mastery": "Sap",
+        "rarity": "None",
+        "weight": 3,
+        "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
+        "damage": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ],
+            "damageType": "Piercing"
+        }
+    },
+    {
         "name": "Scimitar",
         "type": "Weapon",
         "weaponType": "Martial",
