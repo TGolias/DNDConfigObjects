@@ -27,7 +27,7 @@
                         },
                         {
                             "type": "parameter",
-                            "propertyPath": "weapon.range.long"
+                            "propertyPath": "weapon.range.normal"
                         },
                         {
                             "type": "static",
