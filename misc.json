@@ -43,7 +43,7 @@
                 },
                 {
                     "type": "static",
-                    "value": "you are within 5 feet of an enemy who can see you and doesn't have the <b>Incapacitated</b> condition."
+                    "value": "you are within 5 feet of an enemy who can see you and doesn't have the <b>Incapacitated</b> condition.\n\n(<b>Paralyzed</b>, <b>Petrified</b>, <b>Stunned</b>, and <b>Unconscious</b> each also make a creature <b>Incapacitated,</b>)"
                 }
             ]
         }
