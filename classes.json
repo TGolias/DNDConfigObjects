@@ -616,17 +616,7 @@
                             "weaponmastery": "name"
                         }
                     }
-                ],
-                "weaponmastery": {
-                    "weaponsMastered": {
-                        "calcuation": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            }
-                        ]
-                    }
-                }
+                ]
             },
             {
                 "classLevel": 2,
