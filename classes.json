@@ -610,10 +610,22 @@
                         "property": "weaponMasteries",
                         "description": "Weapon Masteries:",
                         "optionsSource": "items",
+                        "optionsSourceFilter": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "option.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weapon"
+                                    }
+                                ]
+                            }
+                        ],
                         "multipleSelections": 2,
                         "optionDisplayProperty": "name",
                         "choiceToAttributesMapping": {
-                            "weaponmastery": "name"
+                            "weaponmasteries": "name"
                         }
                     }
                 ]
