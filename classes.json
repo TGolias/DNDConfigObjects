@@ -605,6 +605,18 @@
             {
                 "classLevel": 1,
                 "name": "Weapon Mastery",
+                "choices": [
+                    {
+                        "property": "weaponMasteries",
+                        "description": "Weapon Masteries:",
+                        "optionsSource": "items",
+                        "multipleSelections": 2,
+                        "optionDisplayProperty": "name",
+                        "choiceToAttributesMapping": {
+                            "weaponmastery": "name"
+                        }
+                    }
+                ],
                 "weaponmastery": {
                     "weaponsMastered": {
                         "calcuation": [
