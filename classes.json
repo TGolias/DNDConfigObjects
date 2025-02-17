@@ -514,8 +514,8 @@
             }
         ],
         "resources": [
-            { "name": "channelDivinity", "displayName": "Channel Divinity Charges", "shortRestRecharge": 1 },
-            { "name": "layOnHands", "displayName": "Lay on Hands Pool" },
+            { "name": "layOnHands", "displayName": "Lay on Hands Pool", "show": true },
+            { "name": "channelDivinity", "displayName": "Channel Divinity Charges", "shortRestRecharge": 1, "show": true },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
         ],
         "resourcesPerLevel": [
@@ -546,33 +546,116 @@
                 "name": "Lay on Hands",
                 "actions": [
                     {
-                        "actionName": "Lay on Hands (HP)",
-                        "actionType": "bonus",
+                        "name": "Heal",
+                        "actionTime": ["Bonus Action"],
                         "range": "Touch",
-                        "effectType": "healing",
-                        "resource": "layOnHands",
-                        "cost": {
+                        "duration": "Instantaneous",
+                        "description": "As a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.",
+                        "challengeType": "none",
+                        "type": ["healing"],
+                        "healing": {
                             "calcuation": [
                                 {
-                                    "type": "userInput",
-                                    "min": 1,
-                                    "max": 100,
-                                    "default": 5
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.hpToSpend"
+                                }
+                            ]
+                        },
+                        "userInput": [
+                            {
+                                "name": "hpToSpend",
+                                "type": "numberField",
+                                "required": true,
+                                "min": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ],
+                                "max": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "remainingResources"
+                                    }
+                                ]
+                            }
+                        ],
+                        "cost": {
+                            "resourceType": "layOnHands",
+                            "calcuation": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.hpToSpend"
                                 }
                             ]
                         }
                     },
                     {
-                        "actionName": "Lay on Hands (Poisoned)",
-                        "actionType": "bonus",
+                        "name": "Remove Conditions",
+                        "actionTime": ["Bonus Action"],
                         "range": "Touch",
-                        "effectType": "condition",
-                        "resource": "layOnHands",
+                        "duration": "Instantaneous",
+                        "description": "As a Bonus Action, you can touch a creature (which could be yourself) to remove the Poisoned condition from the creature at the cost of expending 5 Hit Points from the pool of healing power; those points don't also restore Hit Points to the creature.\n\n<b>Paladin Level 14.</b> When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: Blinded, Charmed, Deafened, Frightened, Paralyzed or Stunned. You must expend 5 Hit Points from the pool of healing power for each of these conditions you remove; those points don't also restore Hit Points to the creature.",
+                        "challengeType": "none",
+                        "type": ["healing"],
+                        "healing": {
+                            "conditions": {
+                                "calcuation": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.conditionsToHeal"
+                                    }
+                                ]
+                            }
+                        },
+                        "userInput": [
+                            {
+                                "name": "conditionsToHeal",
+                                "type": "checkboxList",
+                                "required": true,
+                                "values": [
+                                    {
+                                        "type": "if-then",
+                                        "if": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "classLevel",
+                                                "lessThan": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 14
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "then": [
+                                            {
+                                                "type": "static",
+                                                "value": ["Poisoned"]
+                                            }
+                                        ],
+                                        "else": [
+                                            {
+                                                "type": "static",
+                                                "value": ["Blinded", "Charmed", "Deafened", "Frightened", "Paralyzed", "Poisoned", "Stunned"]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
                         "cost": {
+                            "resourceType": "layOnHands",
                             "calcuation": [
                                 {
-                                    "type": "static",
-                                    "value": 5
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.conditionsToHeal.length",
+                                    "multiplier": [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
                                 }
                             ]
                         }
