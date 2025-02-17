@@ -564,6 +564,7 @@
                         "userInput": [
                             {
                                 "name": "hpToSpend",
+                                "displayName": "Heal",
                                 "type": "numberField",
                                 "required": true,
                                 "min": [
@@ -611,6 +612,7 @@
                         "userInput": [
                             {
                                 "name": "conditionsToHeal",
+                                "displayName": "Remove Conditions",
                                 "type": "checkboxList",
                                 "required": true,
                                 "values": [
