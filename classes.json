@@ -599,14 +599,12 @@
                         "challengeType": "none",
                         "type": ["restore"],
                         "restore": {
-                            "conditions": {
-                                "calcuation": [
-                                    {
-                                        "type": "parameter",
-                                        "propertyPath": "userInput.conditionsToHeal"
-                                    }
-                                ]
-                            }
+                            "calcuation": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.conditionsToHeal"
+                                }
+                            ]
                         },
                         "userInput": [
                             {
@@ -619,7 +617,7 @@
                                         "if": [
                                             {
                                                 "type": "parameter",
-                                                "propertyPath": "classLevel",
+                                                "propertyPath": "resource.classLevel",
                                                 "lessThan": [
                                                     {
                                                         "type": "static",
