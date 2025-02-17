@@ -566,7 +566,6 @@
                                 "name": "hpToSpend",
                                 "displayName": "Heal",
                                 "type": "numberField",
-                                "required": true,
                                 "min": [
                                     {
                                         "type": "static",
@@ -598,8 +597,8 @@
                         "duration": "Instantaneous",
                         "description": "As a Bonus Action, you can touch a creature (which could be yourself) to remove the Poisoned condition from the creature at the cost of expending 5 Hit Points from the pool of healing power; those points don't also restore Hit Points to the creature.\n\n<b>Paladin Level 14.</b> When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: Blinded, Charmed, Deafened, Frightened, Paralyzed or Stunned. You must expend 5 Hit Points from the pool of healing power for each of these conditions you remove; those points don't also restore Hit Points to the creature.",
                         "challengeType": "none",
-                        "type": ["healing"],
-                        "healing": {
+                        "type": ["restore"],
+                        "restore": {
                             "conditions": {
                                 "calcuation": [
                                     {
@@ -614,7 +613,6 @@
                                 "name": "conditionsToHeal",
                                 "displayName": "Remove Conditions",
                                 "type": "checkboxList",
-                                "required": true,
                                 "values": [
                                     {
                                         "type": "if-then",
