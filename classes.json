@@ -514,8 +514,8 @@
             }
         ],
         "resources": [
-            { "name": "layOnHands", "displayName": "Lay on Hands Pool", "show": true },
-            { "name": "channelDivinity", "displayName": "Channel Divinity Charges", "shortRestRecharge": 1, "show": true },
+            { "name": "layOnHands", "displayName": "Lay on Hands Pool" },
+            { "name": "channelDivinity", "displayName": "Channel Divinity Charges", "shortRestRecharge": 1 },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
         ],
         "resourcesPerLevel": [
