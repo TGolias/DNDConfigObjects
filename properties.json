@@ -128,7 +128,7 @@
             "calcuation": [
                 {
                     "type": "static",
-                    "value": "<b>Light.</b> When you take the Attack action on your turn and attack with a Light weapon, you can make one extra attack as a Bonus Action later on the same turn.\n\nThat extra attack must be made with a different Light weapon, and you don't add your ability modifier to the extra attack's damage unless that modfier is negative."
+                    "value": "<b>Light.</b> When you take the Attack action on your turn, you can make one extra attack as a Bonus Action later on the same turn.\n\nThat extra attack must be made with a different Light weapon, and you don't add your ability modifier to the extra attack's damage unless that modfier is negative."
                 }
             ]
         }
@@ -139,12 +139,12 @@
     },
     {
         "name": "Misfire",
-        "description": "Whenever you make an attack roll with a firearm, and the dice roll is equal to or lower than the weapon's Misfire score, the weapon misfires. The attack misses, and the weapon cannot be used again until you spend an action to try and repair it. To repair your firearm, you must make a successful Tinker's Tools check (DC equal to 8 + misfire score). If your check fails, the weapon is broken and must be mended out of combat at a quarter of the cost of the firearm. Creatures who use a firearm without being proficient increase the weapon's misfire score by 1.",
+        "description": "Whenever you make an attack roll with a firearm, and the dice roll is equal to or lower than the weapon's Misfire score, the weapon misfires. The attack misses, and the weapon cannot be used again until you spend an action to try and repair it.\n\nTo repair your firearm, you must make a successful Tinker's Tools check (DC equal to 8 + misfire score). If your check fails, the weapon is broken and must be mended out of combat at a quarter of the cost of the firearm. Creatures who use a firearm without being proficient increase the weapon's misfire score by 1.",
         "weaponAttackAddendum": {
             "calcuation": [
                 {
                     "type": "static",
-                    "value": "<b>Misfire.</b> Whenever you make an attack roll with a firearm, and the dice roll is equal to or lower than "
+                    "value": "<b>Misfire.</b> Whenever you make an attack roll, and the dice roll is equal to or lower than "
                 },
                 {
                     "type": "parameter",
@@ -152,7 +152,7 @@
                 },
                 {
                     "type": "static",
-                    "value": ", the weapon misfires. The attack misses, and the weapon cannot be used again until you spend an action to try and repair it. To repair your firearm, you must make a successful Tinker's Tools check DC"
+                    "value": ", the weapon misfires. The attack misses, and the weapon cannot be used again until you spend an action to try and repair it.\n\nTo repair your firearm, you must make a successful Tinker's Tools check DC"
                 },
                 {
                     "type": "math",

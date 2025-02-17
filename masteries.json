@@ -18,7 +18,7 @@
             "calcuation": [
                 {
                     "type": "static",
-                    "value": "<b>Graze.</b> If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to the ability modifier you used to make the attack roll. This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier.\n\n"
+                    "value": "<b>Graze.</b> If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to "
                 },
                 {
                     "type": "aspect",
@@ -31,6 +31,10 @@
                 {
                     "type": "parameter",
                     "value": "weapon.damage.damageType"
+                },
+                {
+                    "type": "static",
+                    "value": ". This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier."
                 }
             ]
         }
