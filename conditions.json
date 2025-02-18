@@ -71,8 +71,8 @@
     },
     {
         "name": "Resistance",
-        "type": ["damagetypes"],
-        "description": "If you have Resistance to a damage type, damage of that type is halved against you (round down). Resistance is applied only once to an instance of damage.",
+        "type": ["damagetypes", "conditions"],
+        "description": "If you have Resistance to a damage type, damage of that type is halved against you (round down). Resistance is applied only once to an instance of damage.\n\nWhen you have resistance to a condition you roll saving throws involving the condition with advantage.",
         "highlightColor": "Good"
     },
     {
@@ -94,8 +94,8 @@
     },
     {
         "name": "Vulnerability",
-        "type": ["damagetypes"],
-        "description": "If you have Vulnerability to a damage type, damage of that type is doubled against you. Vulnerability is applied only once to an instance of damage.",
+        "type": ["damagetypes", "conditions"],
+        "description": "If you have Vulnerability to a damage type, damage of that type is doubled against you. Vulnerability is applied only once to an instance of damage.\n\nWhen you have vulnerability to a condition you roll saving throws involving the condition with disadvantage.",
         "highlightColor": "Terrible"
     }
 ]
