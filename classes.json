@@ -546,7 +546,7 @@
                 "name": "Lay on Hands",
                 "actions": [
                     {
-                        "name": "Lay on Hands (Heal)",
+                        "name": "Lay on Hands - Heal",
                         "actionTime": ["Bonus Action"],
                         "range": "Touch",
                         "duration": "Instantaneous",
@@ -591,7 +591,7 @@
                         }
                     },
                     {
-                        "name": "Lay on Hands (Restore)",
+                        "name": "Lay on Hands - Restore",
                         "actionTime": ["Bonus Action"],
                         "range": "Touch",
                         "duration": "Instantaneous",
@@ -763,12 +763,19 @@
                             "calcuation": [
                                 {
                                     "type": "static",
-                                    "propertyPath": 1
+                                    "value": 1
                                 }
                             ]
                         }
                     }
                 ]
+            },
+            {
+                "classLevel": 3,
+                "name": "Paladin Subclass",
+                "subclass": {
+                    "class": "Paladin"
+                }
             },
             {
                 "classLevel": 4,
