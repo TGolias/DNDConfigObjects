@@ -4,7 +4,7 @@
         "class": "Paladin",
         "features": [
             {
-                "classLevel": 2,
+                "classLevel": 3,
                 "name": "Paladin Oath Spells",
                 "spellcasting": {
                     "ability": {
@@ -24,19 +24,17 @@
                         ],
                         "predeterminedSelections": [
                             {
-                                "spellName": "Hellish Rebuke",
-                                "freeUses": 1
+                                "spellName": "Hellish Rebuke"
                             },
                             {
-                                "spellName": "Inflict Wounds",
-                                "freeUses": 1
+                                "spellName": "Inflict Wounds"
                             }
                         ]
                     }
                 }
             },
             {
-                "classLevel": 2,
+                "classLevel": 3,
                 "name": "Paladin Oath Channel Divinity",
                 "actions": [
                     {
