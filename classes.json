@@ -546,7 +546,7 @@
                 "name": "Lay on Hands",
                 "actions": [
                     {
-                        "name": "Heal",
+                        "name": "Lay on Hands (Heal)",
                         "actionTime": ["Bonus Action"],
                         "range": "Touch",
                         "duration": "Instantaneous",
@@ -591,7 +591,7 @@
                         }
                     },
                     {
-                        "name": "Remove Conditions",
+                        "name": "Lay on Hands (Restore)",
                         "actionTime": ["Bonus Action"],
                         "range": "Touch",
                         "duration": "Instantaneous",
@@ -717,6 +717,58 @@
                 "feat": {
                     "restrictedTypes": ["Fighting Style"]
                 }
+            },
+            {
+                "classLevel": 2,
+                "name": "Paladin's Smite",
+                "spellcasting": {
+                    "ability": {
+                        "calcuation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calcuation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Divine Smite",
+                                "freeUses": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Channel Divinity",
+                "actions": [
+                    {
+                        "name": "Divine Sense",
+                        "actionTime": ["Bonus Action"],
+                        "range": 60,
+                        "duration": "10 minutes",
+                        "description": "As a Bonus Action, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the Incapacitated condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell.",
+                        "challengeType": "none",
+                        "type": ["utility"],
+                        "cost": {
+                            "resourceType": "channelDivinity",
+                            "calcuation": [
+                                {
+                                    "type": "static",
+                                    "propertyPath": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 "classLevel": 4,
