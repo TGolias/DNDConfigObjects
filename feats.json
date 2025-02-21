@@ -284,7 +284,7 @@
                 "calcuation": [
                     {
                         "type": "static",
-                        "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll using Dexterity, Intelligence, Wisdom, or Charisma, you can reroll one of the dice once."
+                        "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll, you can reroll one of the dice once."
                     }
                 ]
             }
