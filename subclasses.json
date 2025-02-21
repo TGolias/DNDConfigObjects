@@ -5,7 +5,7 @@
         "features": [
             {
                 "classLevel": 3,
-                "name": "Paladin Oath Spells",
+                "name": "Oathbreaker Paladin Spells",
                 "spellcasting": {
                     "ability": {
                         "calcuation": [
@@ -35,7 +35,7 @@
             },
             {
                 "classLevel": 3,
-                "name": "Paladin Oath Channel Divinity",
+                "name": "Oathbreaker Paladin Channel Divinity",
                 "actions": [
                     {
                         "name": "Control Undead",
