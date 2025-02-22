@@ -141,8 +141,8 @@
                                     "type": "if-then",
                                     "if": [
                                         {
-                                            "type": "parameter",
-                                            "propertyPath": "resource.classLevel",
+                                            "type": "aspect",
+                                            "value": "classLevelBard",
                                             "lessThan": [
                                                 {
                                                     "type": "static",
@@ -162,8 +162,8 @@
                                             "type": "if-then",
                                             "if": [
                                                 {
-                                                    "type": "parameter",
-                                                    "propertyPath": "resource.classLevel",
+                                                    "type": "aspect",
+                                                    "value": "classLevelBard",
                                                     "lessThan": [
                                                         {
                                                             "type": "static",
@@ -183,8 +183,8 @@
                                                     "type": "if-then",
                                                     "if": [
                                                         {
-                                                            "type": "parameter",
-                                                            "propertyPath": "resource.classLevel",
+                                                            "type": "aspect",
+                                                            "value": "classLevelBard",
                                                             "lessThan": [
                                                                 {
                                                                     "type": "static",
