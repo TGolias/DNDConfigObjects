@@ -96,7 +96,7 @@
             }
         ],
         "resources": [
-            { "name": "bardicInspiration", "displayName": "Lay on Hands", "uses": { "calcuation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
+            { "name": "bardicInspiration", "displayName": "Bardic Inspiration", "uses": { "calcuation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
             { "name": "bardicDie", "displayName": "Bardic Die" },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
