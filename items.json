@@ -82,6 +82,24 @@
         }
     },
     {
+        "name": "Chain Mail",
+        "type": "Armor",
+        "armorType": "Heavy",
+        "rarity": "None",
+        "weight": 55,
+        "description": "AC: 16. Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
+        "aspects": {
+            "armorClass": {
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": 16
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Club",
         "type": "Weapon",
         "weaponType": "Simple",
@@ -713,6 +731,37 @@
                 }
             ],
             "damageType": "Piercing"
+        }
+    },
+    {
+        "name": "Scale Mail",
+        "type": "Armor",
+        "armorType": "Medium",
+        "rarity": "None",
+        "weight": 45,
+        "description": "AC: 14 + Dex modifier (max 2). This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
+        "aspects": {
+            "armorClass": {
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": 14
+                    },
+                    {
+                        "type": "lowestOf",
+                        "values": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "dexterityModifier"
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     },
     {
