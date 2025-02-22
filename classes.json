@@ -97,31 +97,30 @@
         ],
         "resources": [
             { "name": "bardicInspiration", "displayName": "Bardic Inspiration", "uses": { "calcuation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
-            { "name": "bardicDie", "displayName": "Bardic Die" },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
         ],
         "resourcesPerLevel": [
-            { "classLevel": 1, "bardicDie": 6, "cantrips": 2, "preparedSpells": 4 },
-            { "classLevel": 2, "bardicDie": 6, "cantrips": 2, "preparedSpells": 5 },
-            { "classLevel": 3, "bardicDie": 6, "cantrips": 2, "preparedSpells": 6 },
-            { "classLevel": 4, "bardicDie": 6, "cantrips": 3, "preparedSpells": 7 },
-            { "classLevel": 5, "bardicDie": 8, "cantrips": 3, "preparedSpells": 9 },
-            { "classLevel": 6, "bardicDie": 8, "cantrips": 3, "preparedSpells": 10 },
-            { "classLevel": 7, "bardicDie": 8, "cantrips": 3, "preparedSpells": 11 },
-            { "classLevel": 8, "bardicDie": 8, "cantrips": 3, "preparedSpells": 12 },
-            { "classLevel": 9, "bardicDie": 8, "cantrips": 3, "preparedSpells": 14 },
-            { "classLevel": 10, "bardicDie": 10, "cantrips": 4, "preparedSpells": 15 },
-            { "classLevel": 11, "bardicDie": 10, "cantrips": 4, "preparedSpells": 16 },
-            { "classLevel": 12, "bardicDie": 10, "cantrips": 4, "preparedSpells": 16 },
-            { "classLevel": 13, "bardicDie": 10, "cantrips": 4, "preparedSpells": 17 },
-            { "classLevel": 14, "bardicDie": 10, "cantrips": 4, "preparedSpells": 17 },
-            { "classLevel": 15, "bardicDie": 12, "cantrips": 4, "preparedSpells": 18 },
-            { "classLevel": 16, "bardicDie": 12, "cantrips": 4, "preparedSpells": 18 },
-            { "classLevel": 17, "bardicDie": 12, "cantrips": 4, "preparedSpells": 19 },
-            { "classLevel": 18, "bardicDie": 12, "cantrips": 4, "preparedSpells": 20 },
-            { "classLevel": 19, "bardicDie": 12, "cantrips": 4, "preparedSpells": 21 },
-            { "classLevel": 20, "bardicDie": 12, "cantrips": 4, "preparedSpells": 22 }
+            { "classLevel": 1, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 2, "cantrips": 2, "preparedSpells": 5 },
+            { "classLevel": 3, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 4, "cantrips": 3, "preparedSpells": 7 },
+            { "classLevel": 5, "cantrips": 3, "preparedSpells": 9 },
+            { "classLevel": 6, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 7, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 8, "cantrips": 3, "preparedSpells": 12 },
+            { "classLevel": 9, "cantrips": 3, "preparedSpells": 14 },
+            { "classLevel": 10, "cantrips": 4, "preparedSpells": 15 },
+            { "classLevel": 11, "cantrips": 4, "preparedSpells": 16 },
+            { "classLevel": 12, "cantrips": 4, "preparedSpells": 16 },
+            { "classLevel": 13, "cantrips": 4, "preparedSpells": 17 },
+            { "classLevel": 14, "cantrips": 4, "preparedSpells": 17 },
+            { "classLevel": 15, "cantrips": 4, "preparedSpells": 18 },
+            { "classLevel": 16, "cantrips": 4, "preparedSpells": 18 },
+            { "classLevel": 17, "cantrips": 4, "preparedSpells": 19 },
+            { "classLevel": 18, "cantrips": 4, "preparedSpells": 20 },
+            { "classLevel": 19, "cantrips": 4, "preparedSpells": 21 },
+            { "classLevel": 20, "cantrips": 4, "preparedSpells": 22 }
         ],
         "features": [
             {
@@ -135,7 +134,84 @@
                         "duration": "1 hour",
                         "description": "As a Bonus Action, you can inspire another creature within 60 feet of yourself who can see or hear you. That creature gains one of your Bardic Inspiration dice. A creature can have only one Bardic Inspiration die at a time.\n\nOnce within the next hour when the creature fails a D20 Test, the creature can roll the Bardic Inspiration die and add the number rolled to the d20, potentially turning the failure into a success. A Bardic Inspiration die is expended when it's rolled.",
                         "challengeType": "none",
-                        "type": ["utility"],
+                        "buff": {
+                            "calcuation": [
+                                {
+                                    "type": "if-then",
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "resource.classLevel",
+                                            "lessThan": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 5
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "dieroll",
+                                            "value": 6
+                                        }
+                                    ],
+                                    "else": [
+                                        {
+                                            "type": "if-then",
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "resource.classLevel",
+                                                    "lessThan": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 10
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "dieroll",
+                                                    "value": 8
+                                                }
+                                            ],
+                                            "else": [
+                                                {
+                                                    "type": "if-then",
+                                                    "if": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "resource.classLevel",
+                                                            "lessThan": [
+                                                                {
+                                                                    "type": "static",
+                                                                    "value": 15
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "then": [
+                                                        {
+                                                            "type": "dieroll",
+                                                            "value": 10
+                                                        }
+                                                    ],
+                                                    "else": [
+                                                        {
+                                                            "type": "dieroll",
+                                                            "value": 12
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "description": "rolled for Bardic Inspiration die."
+                        },
                         "cost": {
                             "resourceType": "bardicInspiration",
                             "calcuation": [
