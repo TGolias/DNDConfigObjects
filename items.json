@@ -750,14 +750,18 @@
                     {
                         "type": "lowestOf",
                         "values": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            },
-                            {
-                                "type": "aspect",
-                                "value": "dexterityModifier"
-                            }
+                            [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "aspect",
+                                    "value": "dexterityModifier"
+                                }
+                            ]
                         ]
                     }
                 ]
