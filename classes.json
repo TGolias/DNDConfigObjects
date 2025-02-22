@@ -95,7 +95,67 @@
                 }
             }
         ],
+        "resources": [
+            { "name": "bardicInspiration", "displayName": "Lay on Hands", "uses": { "calcuation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
+            { "name": "bardicDie", "displayName": "Bardic Die" },
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "bardicDie": 6, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 2, "bardicDie": 6, "cantrips": 2, "preparedSpells": 5 },
+            { "classLevel": 3, "bardicDie": 6, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 4, "bardicDie": 6, "cantrips": 3, "preparedSpells": 7 },
+            { "classLevel": 5, "bardicDie": 8, "cantrips": 3, "preparedSpells": 9 },
+            { "classLevel": 6, "bardicDie": 8, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 7, "bardicDie": 8, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 8, "bardicDie": 8, "cantrips": 3, "preparedSpells": 12 },
+            { "classLevel": 9, "bardicDie": 8, "cantrips": 3, "preparedSpells": 14 },
+            { "classLevel": 10, "bardicDie": 10, "cantrips": 4, "preparedSpells": 15 },
+            { "classLevel": 11, "bardicDie": 10, "cantrips": 4, "preparedSpells": 16 },
+            { "classLevel": 12, "bardicDie": 10, "cantrips": 4, "preparedSpells": 16 },
+            { "classLevel": 13, "bardicDie": 10, "cantrips": 4, "preparedSpells": 17 },
+            { "classLevel": 14, "bardicDie": 10, "cantrips": 4, "preparedSpells": 17 },
+            { "classLevel": 15, "bardicDie": 12, "cantrips": 4, "preparedSpells": 18 },
+            { "classLevel": 16, "bardicDie": 12, "cantrips": 4, "preparedSpells": 18 },
+            { "classLevel": 17, "bardicDie": 12, "cantrips": 4, "preparedSpells": 19 },
+            { "classLevel": 18, "bardicDie": 12, "cantrips": 4, "preparedSpells": 20 },
+            { "classLevel": 19, "bardicDie": 12, "cantrips": 4, "preparedSpells": 21 },
+            { "classLevel": 20, "bardicDie": 12, "cantrips": 4, "preparedSpells": 22 }
+        ],
         "features": [
+            {
+                "classLevel": 1,
+                "name": "Bard Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calcuation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "cantripsKnown": {
+                        "calcuation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "cantrips"
+                            }
+                        ],
+                        "validSpellLists": ["Bard"]
+                    },
+                    "spellsKnown": {
+                        "calcuation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "validSpellLists": ["Bard"]
+                    }
+                }
+            },
             {
                 "classLevel": 4,
                 "name": "Feat",
