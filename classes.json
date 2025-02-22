@@ -153,7 +153,7 @@
                                     ],
                                     "then": [
                                         {
-                                            "type": "dieroll",
+                                            "type": "dieRoll",
                                             "value": 6
                                         }
                                     ],
@@ -174,7 +174,7 @@
                                             ],
                                             "then": [
                                                 {
-                                                    "type": "dieroll",
+                                                    "type": "dieRoll",
                                                     "value": 8
                                                 }
                                             ],
@@ -195,13 +195,13 @@
                                                     ],
                                                     "then": [
                                                         {
-                                                            "type": "dieroll",
+                                                            "type": "dieRoll",
                                                             "value": 10
                                                         }
                                                     ],
                                                     "else": [
                                                         {
-                                                            "type": "dieroll",
+                                                            "type": "dieRoll",
                                                             "value": 12
                                                         }
                                                     ]
