@@ -448,10 +448,44 @@
                 "generateCustomOptionSummary": true,
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
+                    "features": "features"
                 },
                 "options": [
                     {
-                        "name": "Cloud Giant"
+                        "name": "Cloud Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Cloud Giant",
+                                "actions": [
+                                    {
+                                        "name": "Cloud's Jaunt",
+                                        "actionTime": ["Bonus Action"],
+                                        "range": 30,
+                                        "duration": "Instantaneous",
+                                        "description": "As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.",
+                                        "challengeType": "none",
+                                        "type": ["utility"],
+                                        "cost": {
+                                            "Uses": {
+                                                "calcuation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calcuation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "name": "Fire Giant"
