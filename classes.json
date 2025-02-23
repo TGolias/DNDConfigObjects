@@ -258,6 +258,46 @@
                 }
             },
             {
+                "classLevel": 2,
+                "name": "Expertise",
+                "choices": [
+                    {
+                        "property": "expertise",
+                        "description": "Expertise:",
+                        "optionsSource": "skillProficiencies",
+                        "multipleSelections": 2,
+                        "optionDisplayProperty": "name",
+                        "optionsSourceFilter": [
+                            {
+                                "type": "aspect",
+                                "value": "skillProficiencies",
+                                "includes": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "option.name"
+                                    }
+                                ]
+                            }
+                        ],
+                        "choiceToAttributesMapping": {
+                            "expertise": "name"
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 2,
+                "name": "Jack of All Trades",
+                "halfSkillProficiencies": ["Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"]
+            },
+            {
+                "classLevel": 3,
+                "name": "Paladin Subclass",
+                "subclass": {
+                    "class": "Bard"
+                }
+            },
+            {
                 "classLevel": 4,
                 "name": "Feat",
                 "feat": {
@@ -270,6 +310,34 @@
                 "feat": {
                     "restrictedTypes": []
                 }
+            },
+            {
+                "classLevel": 9,
+                "name": "Additional Expertise",
+                "choices": [
+                    {
+                        "property": "additionalExpertise",
+                        "description": "Additional Expertise:",
+                        "optionsSource": "skillProficiencies",
+                        "multipleSelections": 2,
+                        "optionDisplayProperty": "name",
+                        "optionsSourceFilter": [
+                            {
+                                "type": "aspect",
+                                "value": "skillProficiencies",
+                                "includes": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "option.name"
+                                    }
+                                ]
+                            }
+                        ],
+                        "choiceToAttributesMapping": {
+                            "expertise": "name"
+                        }
+                    }
+                ]
             },
             {
                 "classLevel": 12,

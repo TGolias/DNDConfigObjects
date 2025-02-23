@@ -1,5 +1,41 @@
 [
     {
+        "name": "College of Valor",
+        "class": "Bard",
+        "features": [
+            {
+                "classLevel": 3,
+                "name": "Combat Inspiration",
+                "featureActionDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "featureAction.name",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Bardic Inspiration"
+                                }
+                            ]
+                        }
+                    ],
+                    "calcuation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Combat Inspiration.</b> A creature that has a Bardic Inspiration die from you can also use it for one of the following effects.\n\n<b>Defense.</b> When the creature is hit by an attack roll, that creature can use its Reaction to roll the Bardic Inspiration die and add the number rolled to its AC against that attack, potentially causing the attack to miss.\n\n<b>Offense.</b> Immediately after the creature hits a target with an attack roll, the creature can roll the Bardic Inspiration die and add the number rolled to the attack's damage against the target."
+                        }
+                    ]
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Martial Training",
+                "weaponProficiencies": ["Martial"],
+                "armorTraining": ["Medium", "Shields"]
+            }
+        ]
+    },
+    {
         "name": "Oathbreaker",
         "class": "Paladin",
         "features": [
