@@ -509,12 +509,6 @@
                             "type": "static",
                             "value": "The target has Advantage on Strength checks and Strength saving throws."
                         }
-                    ],
-                    "else": [
-                        {
-                            "type": "static",
-                            "value": ""
-                        }
                     ]
                 }
             ]
@@ -530,18 +524,12 @@
                             "lessThan": [
                                 {
                                     "type": "static",
-                                    "value": "Enlarge"
+                                    "value": "Reduce"
                                 }
                             ]
                         }
                     ],
                     "then": [
-                        {
-                            "type": "static",
-                            "value": ""
-                        }
-                    ],
-                    "else": [
                         {
                             "type": "static",
                             "value": "The target has Disadvantage on Strength checks and Strength saving throws."
