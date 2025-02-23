@@ -496,7 +496,7 @@
                         {
                             "type": "parameter",
                             "propertyPath": "userInput.enlargeOrReduce",
-                            "lessThan": [
+                            "equals": [
                                 {
                                     "type": "static",
                                     "value": "Enlarge"
@@ -521,7 +521,7 @@
                         {
                             "type": "parameter",
                             "propertyPath": "userInput.enlargeOrReduce",
-                            "lessThan": [
+                            "equals": [
                                 {
                                     "type": "static",
                                     "value": "Reduce"
@@ -547,7 +547,7 @@
                             {
                                 "type": "parameter",
                                 "propertyPath": "userInput.enlargeOrReduce",
-                                "lessThan": [
+                                "equals": [
                                     {
                                         "type": "static",
                                         "value": "Enlarge"
@@ -577,7 +577,7 @@
                         {
                             "type": "parameter",
                             "propertyPath": "userInput.enlargeOrReduce",
-                            "lessThan": [
+                            "equals": [
                                 {
                                     "type": "static",
                                     "value": "Enlarge"
@@ -612,7 +612,7 @@
                         {
                             "type": "parameter",
                             "propertyPath": "userInput.enlargeOrReduce",
-                            "lessThan": [
+                            "equals": [
                                 {
                                     "type": "static",
                                     "value": "Enlarge"
