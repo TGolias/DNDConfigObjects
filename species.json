@@ -467,7 +467,7 @@
                                         "challengeType": "none",
                                         "type": ["utility"],
                                         "cost": {
-                                            "Uses": {
+                                            "uses": {
                                                 "calcuation": [
                                                     {
                                                         "type": "aspect",
