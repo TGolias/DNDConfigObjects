@@ -206,6 +206,58 @@
         }
     },
     {
+        "name": "Feather Fall",
+        "level": 1,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Reaction"],
+        "castingCondition": "When you or a creature you can see wihin 60 feet of you falls",
+        "range": 60,
+        "components": ["V", "M"],
+        "materialComponents": ["a small feather or piece of down"],
+        "duration": "1 minute",
+        "description": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature.",
+        "challengeType": "none",
+        "type": ["utility"]
+    },
+    {
+        "name": "Healing Word",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Bard", "Cleric", "Druid"],
+        "castingTime": ["Bonus Action"],
+        "range": 60,
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "A creature of your choice that you can see within range regains Hit Points equal to 2d4 plus your spellcasting ability modifier.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 2d4 for each spell slot level above 1.",
+        "challengeType": "none",
+        "type": ["healing"],
+        "healing": {
+            "calcuation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2,
+                            "multiplier": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "spellcastingAbilityModifier"
+                }
+            ]
+        }
+    },
+    {
         "name": "Hellish Rebuke",
         "level": 1,
         "school": "Evocation",
@@ -334,6 +386,26 @@
                 }
             ],
             "description": "Fire damage taken then a Constitution saving throw at the start of each of its turn. If the saving throw succeeds, the spell is ended."
+        }
+    },
+    {
+        "name": "Silvery Barbs",
+        "level": 1,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Reaction"],
+        "castingCondition": "When a creature you can see within 60 feel of yourself succeeds on an attack roll, an ability check or a saving throw",
+        "range": "Self",
+        "components": ["V"],
+        "duration": "1 minute",
+        "description": "You magically distract the triggering creature and turn its momentary uncertainty into encouragement for another creature. The triggering creature must reroll the d20 and use the lower roll.\n\nYou can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this spell at a time.",
+        "challengeType": "none",
+        "type": ["buff", "debuff"],
+        "buff": {
+            "description": "The chosen target has Advantage on the next attack roll, ability check, or saving throw it makes within 1 minute."
+        },
+        "debuff": {
+            "description": "The triggering creature must reroll the d20 and use the lower roll."
         }
     },
     {
