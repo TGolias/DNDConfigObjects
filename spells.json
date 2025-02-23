@@ -461,6 +461,236 @@
         "type": ["utility"]
     },
     {
+        "name": "Enlarge / Reduce",
+        "level": 2,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Druid", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of powered iron"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "For the duration, the spell enlarges or reduces a creature or an object you can see within range (see the chosen effect below). A targeted object must be neither worn nor carried. If the target is an unwilling creature, it can make a Constitution saving throw. On a successful save, the spell has no effect.\n\nEverything that a targeted creature is wearing and carrying changes size with it. Any item it drops returns to normal size at once. A thrown weapon or piece of ammunition returns to normal size immediately after it hits or misses a target.\n\n<b>Enlarge.</b> The target's size increases by one category—from Medium to Large, for example. The target also has Advantage on Strength checks and Strength saving throws. The target's attacks with its enlarged weapons or Unarmed Strikes deal an extra 1d4 damage on a hit.\n\n<b>Reduce.</b> The target's size decreases by one category—from Medium to Small, for example. The target also has Disadvantage on Strength checks and Strength saving throws. The target's attacks with its reduced weapons or Unarmed Strikes deal 1d4 less damage on a hit (this can't reduce the damage below 1).",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["buff", "debuff"],
+        "userInput": [
+            {
+                "name": "enlargeOrReduce",
+                "displayName": "Enlarge or Reduce?",
+                "type": "selectList",
+                "values": {
+                    "type": "static",
+                    "value": ["Enlarge", "Reduce"]
+                }
+            }
+        ],
+        "buff": {
+            "calcuation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.enlargeOrReduce",
+                            "lessThan": [
+                                {
+                                    "type": "static",
+                                    "value": "Enlarge"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "The target has Advantage on Strength checks and Strength saving throws."
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        "debuff": {
+            "calcuation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.enlargeOrReduce",
+                            "lessThan": [
+                                {
+                                    "type": "static",
+                                    "value": "Enlarge"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": ""
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": "The target has Disadvantage on Strength checks and Strength saving throws."
+                        }
+                    ]
+                }
+            ]
+        },
+        "aspect": {
+            "sizeBonus": {
+                "calcuation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.enlargeOrReduce",
+                                "lessThan": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enlarge"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": -1
+                            }
+                        ]
+                    }
+                ]
+            },
+            "weaponDamageBonus": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.enlargeOrReduce",
+                            "lessThan": [
+                                {
+                                    "type": "static",
+                                    "value": "Enlarge"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": -1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "unarmedDamageBonus": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.enlargeOrReduce",
+                            "lessThan": [
+                                {
+                                    "type": "static",
+                                    "value": "Enlarge"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": -1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Mirror Image",
+        "level": 2,
+        "school": "Illusion",
+        "spellLists": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "duration": "1 minute",
+        "description": "Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real.\n\nEach time a creature hits you with an attack roll during the spell's duration, roll a d6 for each of your remaining duplicates. If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed.\b\bA creature is unaffected by this spell if it has the <b>Blinded</b> condition, <b>Blindsight</b>, or <b>Truesight</b>.",
+        "challengeType": "none",
+        "type": ["utility"],
+        "resources": [
+            {
+                "name": "illusoryDuplicates",
+                "displayName": "Illusory Duplicates",
+                "uses": 3
+            }
+        ],
+        "aspect": {
+            "armorClassAddendum": {
+                "calcuation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Mirror Image.</b> Each time a creature hits you with an attack roll during the spell's duration, roll "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "resources.illusoryDuplicates"
+                    },
+                    {
+                        "type": "static",
+                        "value": "d6 (one for each of your remaining duplicates). If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Misty Step",
         "level": 2,
         "school": "Conjuration",
