@@ -12,7 +12,7 @@
         "savingThrowType": "dexterity",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -41,7 +41,7 @@
         "type": ["buff"],
         "buff": {
             "displayIn": ["ACMenu"],
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -62,7 +62,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10,
@@ -115,7 +115,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "attackRolls": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "aspect",
                     "value": "tier"
@@ -123,7 +123,7 @@
             ]
         },
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -156,7 +156,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10,
@@ -203,7 +203,7 @@
         "type": ["buff"],
         "buff": {
             "displayIn": ["SkillMenu"],
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -276,7 +276,7 @@
         "savingThrowType": "intelligence",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -291,7 +291,7 @@
             "damageType": "Psychic"
         },
         "debuff": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -326,7 +326,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 12,
@@ -377,7 +377,7 @@
         "challengeType": "attackRoll",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -409,7 +409,7 @@
         "type": ["buff"],
         "buff": {
             "displayIn": ["HPMenu"],
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -431,7 +431,7 @@
         "savingThrowType": "dexterity",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -491,7 +491,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "parameter",
                         "propertyPath": "spellcastingAbility"
@@ -530,7 +530,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "parameter",
                         "propertyPath": "spellcastingAbility"
@@ -569,7 +569,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "if-then",
                         "if": [
@@ -694,7 +694,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": "Force"
@@ -715,7 +715,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -742,7 +742,7 @@
         "challengeType": "attackRoll",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -764,7 +764,7 @@
         "castingTime": ["Action"],
         "range": {
             "normal": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "if-then",
                         "if": [
@@ -859,7 +859,7 @@
         "challengeType": "attackRoll",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -902,7 +902,7 @@
         "challengeType": "attackRoll",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -933,7 +933,7 @@
         "savingThrowType": "constitution",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -961,7 +961,7 @@
         "savingThrowType": "wisdom",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -975,7 +975,7 @@
             ],
             "alternateDamage": [
                 {
-                    "calcuation": [
+                    "calculation": [
                         {
                             "type": "dieRoll",
                             "value": 12,
@@ -1007,7 +1007,7 @@
         "type": ["aspect"],
         "aspect": {
             "alternateWeaponAttackModifier": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "parameter",
                         "propertyPath": "spellcastingAbility"
@@ -1015,7 +1015,7 @@
                 ]
             },
             "alternateWeaponDamageModifier": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "parameter",
                         "propertyPath": "spellcastingAbility"
@@ -1024,7 +1024,7 @@
                 "damageType": "Radiant"
             },
             "weaponDamageBonus": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "if-then",
                         "if": [
@@ -1118,7 +1118,7 @@
         "savingThrowType": "wisdom",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -1150,7 +1150,7 @@
         "savingThrowType": "constitution",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,

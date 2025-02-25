@@ -7,7 +7,7 @@
         "name": "Burst Fire",
         "description": "As an action, you can expend 10 pieces of a Burst Fire weapon's ammunition to spray shots in a 10-foot Cube within the weapon's normal range. Each creature in that area must succeed on a DC 15 Dexterity saving throw or take damage. Roll the weapon's damage once, and apply it to each creature that failed the save.",
         "weaponAttackAddendum": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "static",
                     "value": "<b>Burst Fire.</b> As an action, you can expend 10 pieces of a Burst Fire weapon's ammunition to spray shots in a 10-foot Cube within the weapon's normal range. Each creature in that area must succeed on a DC 15 Dexterity saving throw or take damage. Roll the weapon's damage once, and apply it to each creature that failed the save."
@@ -19,7 +19,7 @@
         "name": "Explosive",
         "description": "Upon a hit, everything within 5 ft of the target must make a Dexterity saving throw (DC equal to 8 + your proficiency bonus + your Dexterity modifier) or suffer 1d8 fire damage. If the weapon misses, the ammunition fails to detonate, or bounces away harmlessly before doing so.",
         "weaponAttackAddendum": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "static",
                     "value": "<b>Explosive.</b> Upon a hit, everything within 5 ft of the target must make a Dexterity saving throw DC"
@@ -56,7 +56,7 @@
         "name": "Heavy",
         "description": "You have Disadvantage on attack rolls with a Heavy weapon if it's a Melee weapon and your Strength score isn't at least 13 or if it's a Ranged weapon and your Dexterity score isn't at least 13.",
         "weaponAttackAddendum": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "if-then",
                     "if": [
@@ -125,7 +125,7 @@
         "name": "Light",
         "description": "When you take the Attack action on your turn and attack with a Light weapon, you can make one extra attack as a Bonus Action later on the same turn.\n\nThat extra attack must be made with a different Light weapon, and you don't add your ability modifier to the extra attack's damage unless that modfier is negative.",
         "weaponAttackAddendum": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "static",
                     "value": "<b>Light.</b> When you take the Attack action on your turn, you can make one extra attack as a Bonus Action later on the same turn.\n\nThat extra attack must be made with a different Light weapon, and you don't add your ability modifier to the extra attack's damage unless that modfier is negative."
@@ -141,7 +141,7 @@
         "name": "Misfire",
         "description": "Whenever you make an attack roll with a firearm, and the dice roll is equal to or lower than the weapon's Misfire score, the weapon misfires. The attack misses, and the weapon cannot be used again until you spend an action to try and repair it.\n\nTo repair your firearm, you must make a successful Tinker's Tools check (DC equal to 8 + misfire score). If your check fails, the weapon is broken and must be mended out of combat at a quarter of the cost of the firearm. Creatures who use a firearm without being proficient increase the weapon's misfire score by 1.",
         "weaponAttackAddendum": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "static",
                     "value": "<b>Misfire.</b> Whenever you make an attack roll, and the dice roll is equal to or lower than "

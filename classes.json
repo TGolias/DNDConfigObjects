@@ -96,7 +96,7 @@
             }
         ],
         "resources": [
-            { "name": "bardicInspiration", "displayName": "Bardic Inspiration", "uses": { "calcuation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
+            { "name": "bardicInspiration", "displayName": "Bardic Inspiration", "uses": { "calculation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
         ],
@@ -136,7 +136,7 @@
                         "challengeType": "none",
                         "type": ["buff"],
                         "buff": {
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "if-then",
                                     "if": [
@@ -215,7 +215,7 @@
                         },
                         "cost": {
                             "resourceType": "bardicInspiration",
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "static",
                                     "value": 1
@@ -230,7 +230,7 @@
                 "name": "Bard Spellcasting",
                 "spellcasting": {
                     "ability": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "static",
                                 "value": "charisma"
@@ -238,7 +238,7 @@
                         ]
                     },
                     "cantripsKnown": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "cantrips"
@@ -247,7 +247,7 @@
                         "validSpellLists": ["Bard"]
                     },
                     "spellsKnown": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "preparedSpells"
@@ -783,7 +783,7 @@
                         "challengeType": "none",
                         "type": ["healing"],
                         "healing": {
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "parameter",
                                     "propertyPath": "userInput.hpToSpend"
@@ -811,7 +811,7 @@
                         ],
                         "cost": {
                             "resourceType": "layOnHands",
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "parameter",
                                     "propertyPath": "userInput.hpToSpend"
@@ -828,7 +828,7 @@
                         "challengeType": "none",
                         "type": ["restore"],
                         "restore": {
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "parameter",
                                     "propertyPath": "userInput.conditionsToHeal"
@@ -873,7 +873,7 @@
                         ],
                         "cost": {
                             "resourceType": "layOnHands",
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "parameter",
                                     "propertyPath": "userInput.conditionsToHeal.length",
@@ -894,7 +894,7 @@
                 "name": "Paladin Spellcasting",
                 "spellcasting": {
                     "ability": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "static",
                                 "value": "charisma"
@@ -902,7 +902,7 @@
                         ]
                     },
                     "spellsKnown": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "preparedSpells"
@@ -952,7 +952,7 @@
                 "name": "Paladin's Smite",
                 "spellcasting": {
                     "ability": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "static",
                                 "value": "charisma"
@@ -960,7 +960,7 @@
                         ]
                     },
                     "spellsKnown": {
-                        "calcuation": [
+                        "calculation": [
                             {
                                 "type": "static",
                                 "value": 1
@@ -989,7 +989,7 @@
                         "type": ["utility"],
                         "cost": {
                             "resourceType": "channelDivinity",
-                            "calcuation": [
+                            "calculation": [
                                 {
                                     "type": "static",
                                     "value": 1

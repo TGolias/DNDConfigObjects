@@ -31,7 +31,7 @@
         "weight": 4,
         "description": "Like an axe: but for battle.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -40,7 +40,7 @@
             "damageType": "Slashing"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -72,7 +72,7 @@
         "weight": 1,
         "description": "A gun that you can blow.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "static",
                     "value": 1
@@ -90,7 +90,7 @@
         "description": "AC: 16. Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
             "armorClass": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": 16
@@ -111,7 +111,7 @@
         "weight": 2,
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -136,7 +136,7 @@
         "weight": 1,
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -161,7 +161,7 @@
         "weight": 0.25,
         "description": "Bullseye.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -182,7 +182,7 @@
         "weight": 2,
         "description": "A stick with a hurty thing chained to it.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -203,7 +203,7 @@
         "weight": 6,
         "description": "Like a Halberd: but with the Graze property.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -224,7 +224,7 @@
         "weight": 7,
         "description": "Like an axe: but greater.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 12
@@ -245,7 +245,7 @@
         "weight": 10,
         "description": "Like a Club: but greater.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -266,7 +266,7 @@
         "weight": 6,
         "description": "Like a sword: but greater.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -293,7 +293,7 @@
         "weight": 6,
         "description": "Like a Glaive: but with the Cleave property.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -318,7 +318,7 @@
         "weight": 3,
         "description": "A 'Light' Crossbow (not 'Light Crossbow') that can be held in one hand.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -343,7 +343,7 @@
         "weight": 2,
         "description": "Good for chopping wood and heads.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -368,7 +368,7 @@
         "weight": 18,
         "description": "Like a Crossbow: but heavier.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -393,7 +393,7 @@
         "weight": 2,
         "description": "A spear designed primarily to be thrown.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -414,7 +414,7 @@
         "weight": 6,
         "description": "Long pointy stick that can be one-handed if you are mounted: Better go buy a horse.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -439,7 +439,7 @@
         "weight": 5,
         "description": "-and you call this thing the 'Light Crossbow' despite the fact that it lacks the 'Light' property?",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -464,7 +464,7 @@
         "weight": 2,
         "description": "A fine tool both in and out of combat. Famously sold by Tessler Kefflin.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -489,7 +489,7 @@
         "weight": 2,
         "description": "Like a bow: but longer.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -510,7 +510,7 @@
         "weight": 3,
         "description": "Like a sword: but longer.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -519,7 +519,7 @@
             "damageType": "Slashing"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -540,7 +540,7 @@
         "weight": 4,
         "description": "A heavy club, typically having a metal head and spikes. Favored weapon of many iconic Clerics.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -561,7 +561,7 @@
         "weight": 10,
         "description": "Like a hammer: but greater.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -588,7 +588,7 @@
         "weight": 4,
         "description": "Not a great star to see pointed at you in the morning.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -613,7 +613,7 @@
         "weight": 5,
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -634,7 +634,7 @@
         "weight": 18,
         "description": "Long pushy stick. Why it so heavy tho?",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -655,7 +655,7 @@
         "weight": 4,
         "description": "A staff that is larger than a quarter.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -664,7 +664,7 @@
             "damageType": "Bludgeoning"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -685,7 +685,7 @@
         "weight": 2,
         "description": "A great way for weak bitches that don't use magic to still do something in combat.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -718,7 +718,7 @@
         "weight": 3,
         "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -742,7 +742,7 @@
         "description": "AC: 14 + Dex modifier (max 2). This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
             "armorClass": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": 14
@@ -780,7 +780,7 @@
         "weight": 3,
         "description": "Like a sword: but curvier.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -801,7 +801,7 @@
         "weight": 2,
         "description": "Like a sword: but shorter.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -819,7 +819,7 @@
         "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
         "aspects": {
             "armorClassBonus": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": 2
@@ -844,7 +844,7 @@
         "weight": 2,
         "description": "Isn't this a little short for a bow?",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -865,7 +865,7 @@
         "weight": 2,
         "description": "Used for harvesting crops and heads.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -890,7 +890,7 @@
         "weight": 0,
         "description": "Time to slay some Goliaths.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -915,7 +915,7 @@
         "weight": 3,
         "description": "A spear designed primarily to jab people with.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6
@@ -924,7 +924,7 @@
             "damageType": "Piercing"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -942,7 +942,7 @@
         "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
         "aspects": {
             "armorClass": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": 12
@@ -976,7 +976,7 @@
         "weight": 4,
         "description": "Who the fuck do you think you are weilding this thing?! King Neptune?!",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -985,7 +985,7 @@
             "damageType": "Piercing"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -1006,7 +1006,7 @@
         "weight": 5,
         "description": "Like an hammer: but for war.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -1015,7 +1015,7 @@
             "damageType": "Bludgeoning"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -1036,7 +1036,7 @@
         "weight": 2,
         "description": "Like an pick: but for war.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8
@@ -1045,7 +1045,7 @@
             "damageType": "Piercing"
         },
         "twoHandedDamage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10
@@ -1074,7 +1074,7 @@
         "weight": 3,
         "description": "Can also be used outside the bedroom.",
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4

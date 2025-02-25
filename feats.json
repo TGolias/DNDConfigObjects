@@ -127,7 +127,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": 2
@@ -218,7 +218,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll, you can reroll one of the dice once."
@@ -281,7 +281,7 @@
                         ]
                     }
                 ],
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll, you can reroll one of the dice once."

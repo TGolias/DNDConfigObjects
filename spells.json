@@ -15,7 +15,7 @@
         "type": ["buff", "aspect"],
         "buff": {
             "displayIn": ["SavingThrowMenu"],
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4
@@ -25,7 +25,7 @@
         },
         "aspect": {
             "weaponAttackBonus": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "dieRoll",
                         "value": 4
@@ -65,7 +65,7 @@
         "challengeType": "none",
         "type": ["healing"],
         "healing": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -117,7 +117,7 @@
         "type": ["aspect"],
         "aspect": {
             "weaponDamageBonus": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "dieRoll",
                         "value": 4,
@@ -147,7 +147,7 @@
         "challengeType": "none",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 8,
@@ -165,7 +165,7 @@
             ],
             "alternateDamage": [
                 {
-                    "calcuation": [
+                    "calculation": [
                         {
                             "type": "dieRoll",
                             "value": 8,
@@ -233,7 +233,7 @@
         "challengeType": "none",
         "type": ["healing"],
         "healing": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 4,
@@ -272,7 +272,7 @@
         "savingThrowType": "dexterity",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10,
@@ -306,7 +306,7 @@
         "savingThrowType": "constitution",
         "type": ["damage"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 10,
@@ -358,7 +358,7 @@
         "savingThrowType": "constitution",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -373,7 +373,7 @@
             "damageType": "Fire"
         },
         "debuff": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -423,7 +423,7 @@
         "savingThrowType": "strength",
         "type": ["damage", "debuff"],
         "damage": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "dieRoll",
                     "value": 6,
@@ -489,7 +489,7 @@
             }
         ],
         "buff": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "if-then",
                     "if": [
@@ -514,7 +514,7 @@
             ]
         },
         "debuff": {
-            "calcuation": [
+            "calculation": [
                 {
                     "type": "if-then",
                     "if": [
@@ -540,7 +540,7 @@
         },
         "aspect": {
             "sizeBonus": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "if-then",
                         "if": [
@@ -663,7 +663,7 @@
         ],
         "aspect": {
             "armorClassAddendum": {
-                "calcuation": [
+                "calculation": [
                     {
                         "type": "static",
                         "value": "<b>Mirror Image.</b> Each time a creature hits you with an attack roll during the spell's duration, roll "
