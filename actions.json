@@ -35,11 +35,13 @@
     },
     {
         "name": "Search",
-        "description": "When you take the Search action, you make a Wisdom check to discern something that isn't obvious. The DM decides which skills are applicable when you take this action, depending on what you're trying to detect.\n\n<b>Insight</b> - Creature's state of mind\n\n<b>Medicine</b> - Creature's ailment or cause of death\n\n<b>Perception</b> - Concealed creature or object\n\n<b>Survival</b> - Tracks or food"
+        "description": "When you take the Search action, you make a Wisdom check to discern something that isn't obvious. The DM decides which skills are applicable when you take this action, depending on what you're trying to detect.\n\n<b>Insight</b> - Creature's state of mind\n\n<b>Medicine</b> - Creature's ailment or cause of death\n\n<b>Perception</b> - Concealed creature or object\n\n<b>Survival</b> - Tracks or food",
+        "showSkills": ["Insight", "Medicine", "Perception", "Survival"]
     },
     {
         "name": "Study",
-        "description": "When you take the Study action, you make an Intelligence check to study your memory, a book, a clue, or another source of knowledge and call to mind an important piece of information about it.\n\n<b>Arcana</b> - Spells, magic items, eldritch symbols, magical traditions, planes of existence, and certain creatures (Aberrations, Constructs, Elementals, Fey, and Monstrosities)\n\n<b>History</b> - Historic events and people, ancient civilizations, wars, and certain creatures (Giants and Humanoids)\n\n<b>Investigation</b> - Traps, ciphers, riddles, and gadgetry\n\n<b>Nature</b> - Terrain, flora, weather, and certain creatures (Beasts, Dragons, Oozes, and Plants)\n\n<b>Religion</b> - Deities, religious hierarchies and rites, holy symbols, cults, and certain crea- tures (Celestials, Fiends, and Undead)"
+        "description": "When you take the Study action, you make an Intelligence check to study your memory, a book, a clue, or another source of knowledge and call to mind an important piece of information about it.\n\n<b>Arcana</b> - Spells, magic items, eldritch symbols, magical traditions, planes of existence, and certain creatures (Aberrations, Constructs, Elementals, Fey, and Monstrosities)\n\n<b>History</b> - Historic events and people, ancient civilizations, wars, and certain creatures (Giants and Humanoids)\n\n<b>Investigation</b> - Traps, ciphers, riddles, and gadgetry\n\n<b>Nature</b> - Terrain, flora, weather, and certain creatures (Beasts, Dragons, Oozes, and Plants)\n\n<b>Religion</b> - Deities, religious hierarchies and rites, holy symbols, cults, and certain creatures (Celestials, Fiends, and Undead)",
+        "showSkills": ["Arcana", "History", "Investigation", "Nature", "Religion"]
     },
     {
         "name": "Utilitze",

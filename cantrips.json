@@ -458,7 +458,7 @@
         "description": "A Club or Quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. If the attack deals damage, it can be Force damage or the weapon's normal damage type (your choice).\n\nThe spell ends early if you cast it again or if you let go of the weapon.\n\n<b>Cantrip Upgrade.</b> The weapon's damage die changes when you reach levels 5 (d10), 11 (d12), and 17 (2d6).",
         "challengeType": "none",
         "type": ["aspect"],
-        "aspect": {
+        "aspects": {
             "alternateWeaponAttackModifier": {
                 "conditions": [
                     {
@@ -887,7 +887,17 @@
         "duration": "Up to 1 minute",
         "description": "You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time.\n\n<b>Altered Eyes.</b> You alter the appearance of your eyes for 1 minute.\n\n<b>Booming Voice.</b> Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks.\n\n<b>Fire Play.</b> You cause flames to flicker, brighten, dim, or change color for 1 minute.\n\n<b>Invisible Hand.</b> You instantaneously cause an unlocked door or window to fly open or slam shut.\n\n<b>Phantom Sound.</b> You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\n<b>Tremors.</b> You cause harmless tremors in the ground for 1 minute.",
         "challengeType": "none",
-        "type": ["utility"]
+        "type": ["utility"],
+        "aspects": {
+            "skillProficiencyIntimidationAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Thaumaturgy.</b> For the duration, you have Advantage on Charisma (Intimidation) checks."
+                    }
+                ]
+            }
+        } 
     },
     {
         "name": "Thorn Whip",
@@ -1005,7 +1015,7 @@
         "description": "Guided by a flash of magical insight, you make one attack with the weapon used in the spell's casting. The attack uses your spellcasting ability for the attack and damage rolls instead of using Strength or Dexterity. If the attack deals damage, it can be Radiant damage or the weapon's normal damage type (your choice).\n\n<b>Cantrip Upgrade.</b> Whether you deal Radiant damage or the weapon's normal damage type, the attack deals extra Radiant damage when you reach levels 5 (1d6), 11 (2d6), and 17 (3d6).",
         "challengeType": "none",
         "type": ["aspect"],
-        "aspect": {
+        "aspects": {
             "alternateWeaponAttackModifier": {
                 "calculation": [
                     {

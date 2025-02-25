@@ -23,7 +23,7 @@
             ],
             "description": "added to saving throws before the spell ends."
         },
-        "aspect": {
+        "aspects": {
             "weaponAttackBonus": {
                 "calculation": [
                     {
@@ -115,7 +115,7 @@
         "description": "Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant damage on a hit.",
         "challengeType": "none",
         "type": ["aspect"],
-        "aspect": {
+        "aspects": {
             "weaponDamageBonus": {
                 "calculation": [
                     {
@@ -339,7 +339,7 @@
         "description": "You touch a creature. The target's Speed increases by 10 feet until the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
         "challengeType": "none",
         "type": ["aspect"],
-        "aspect": {
+        "aspects": {
             "speedBonus": 10
         }
     },
@@ -507,7 +507,7 @@
                     "then": [
                         {
                             "type": "static",
-                            "value": "The target has Advantage on Strength checks and Strength saving throws."
+                            "value": "The target's size increases by one category, has Advantage on Strength checks and Strength saving throws, and deals an extra 1d4 to the damage of weapon attacks and unarmed strikes."
                         }
                     ]
                 }
@@ -532,13 +532,13 @@
                     "then": [
                         {
                             "type": "static",
-                            "value": "The target has Disadvantage on Strength checks and Strength saving throws."
+                            "value": "The target's size decreases by one category, has Disadvantage on Strength checks and Strength saving throws, and subtracts 1d4 from the damage of weapon attacks and unarmed strikes."
                         }
                     ]
                 }
             ]
         },
-        "aspect": {
+        "aspects": {
             "sizeBonus": {
                 "calculation": [
                     {
@@ -570,76 +570,142 @@
                     }
                 ]
             },
-            "weaponDamageBonus": [
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "parameter",
-                            "propertyPath": "userInput.enlargeOrReduce",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": "Enlarge"
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "dieRoll",
-                            "value": 4
-                        }
-                    ],
-                    "else": [
-                        {
-                            "type": "dieRoll",
-                            "value": 4,
-                            "multiplier": [
-                                {
-                                    "type": "static",
-                                    "value": -1
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "unarmedDamageBonus": [
-                {
-                    "type": "if-then",
-                    "if": [
-                        {
-                            "type": "parameter",
-                            "propertyPath": "userInput.enlargeOrReduce",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": "Enlarge"
-                                }
-                            ]
-                        }
-                    ],
-                    "then": [
-                        {
-                            "type": "dieRoll",
-                            "value": 4
-                        }
-                    ],
-                    "else": [
-                        {
-                            "type": "dieRoll",
-                            "value": 4,
-                            "multiplier": [
-                                {
-                                    "type": "static",
-                                    "value": -1
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "weaponDamageBonus": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.enlargeOrReduce",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enlarge"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "dieRoll",
+                                "value": 4
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "dieRoll",
+                                "value": 4,
+                                "multiplier": [
+                                    {
+                                        "type": "static",
+                                        "value": -1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "unarmedDamageBonus": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.enlargeOrReduce",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enlarge"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "dieRoll",
+                                "value": 4
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "dieRoll",
+                                "value": 4,
+                                "multiplier": [
+                                    {
+                                        "type": "static",
+                                        "value": -1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "strengthSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.enlargeOrReduce",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enlarge"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": "<b>Enlarge.</b> The target has Advantage on Strength saving throws."
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": "<b>Reduce.</b> The target has Disadvantage on Strength saving throws."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "skillProficiencyAthleticsAddendum": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.enlargeOrReduce",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enlarge"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": "<b>Enlarge.</b> The target has Advantage on Strength checks."
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": "<b>Reduce.</b> The target has Disadvantage on Strength checks."
+                            }
+                        ]
+                    }
+                ]
+            }
         }
     },
     {
@@ -661,7 +727,7 @@
                 "uses": 3
             }
         ],
-        "aspect": {
+        "aspects": {
             "healthMenuAddendum": {
                 "calculation": [
                     {
@@ -707,7 +773,7 @@
         "description": "You radiate a concealing aura in a 30-foot Emanation for the duration. While in the aura, you and each creature you choose have a +10 bonus to Dexterity (Stealth) checks and leave no tracks.",
         "challengeType": "none",
         "type": ["utility"],
-        "aspect": {
+        "aspects": {
             "skillProficiencyStealthBonus": {
                 "calculation": [
                     {

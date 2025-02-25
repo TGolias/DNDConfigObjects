@@ -287,6 +287,69 @@
                         "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll, you can reroll one of the dice once."
                     }
                 ]
+            },
+            "unarmedAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "or",
+                        "values": [
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "dexterity"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "intelligence"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "wisdom"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "attackAbility",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "charisma"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Elven Accuracy.</b> Whenever you have advantage on an attack roll, you can reroll one of the dice once."
+                    }
+                ]
             }
         },
         "choices": [
