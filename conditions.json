@@ -41,23 +41,27 @@
         "name": "Incapacitated",
         "description": "While you have the Incapacitated condition, you experience the following effects.\n\n<b>Inactive.</b> You can't take any action, Bonus Action, or Reaction.\n\n<b>No Concentration.</b> Your Concentration is broken.\n\n<b>Speechless.</b>You can't speak.\n\n<b>Surprised.</b> If you're Incapacitated when you roll Initiative, you have Disadvantage on the roll.",
         "highlightColor": "Terrible",
-        "initiativeAddendum": [
-            {
-                "type": "static",
-                "value": "<b>Incapacitated.</b> If you're Incapacitated when you roll Initiative, you have Disadvantage on the roll."
-            }
-        ]
+        "initiativeAddendum":  {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Incapacitated.</b> If you're Incapacitated when you roll Initiative, you have Disadvantage on the roll."
+                }
+            ]
+        }
     },
     {
         "name": "Invisible",
         "description": "While you have the Invisible condition, you experience the following effects.\n\n<b>Surprise.</b> If you're Invisible when you roll Initiative, you have Advantage on the roll.\n\n<b>Concealed.</b> You aren't affected by any effect that requires its target to be seen unless the effect's creator can somehow see you. Any equipment you are wearing or carrying is also concealed.\n\n<b>Attacks Affected.</b> Attack rolls against you have Disadvantage, and your attack rolls have Advantage. If a creature can somehow see you, you don't gain this benefit against that creature.",
         "highlightColor": "Good",
-        "initiativeAddendum": [
-            {
-                "type": "static",
-                "value": "<b>Invisible.</b> If you're Invisible when you roll Initiative, you have Advantage on the roll."
-            }
-        ]
+        "initiativeAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Invisible.</b> If you're Invisible when you roll Initiative, you have Advantage on the roll."
+                }
+            ]
+        }
     },
     {
         "name": "Paralyzed",
