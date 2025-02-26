@@ -251,6 +251,22 @@
         "description": "While you have the Paralyzed condition, you experience the following effects.\n\n<b>Incapacitated.</b> You have the Incapacitated condition.\n\n<b>Speed 0.</b> Your Speed is 0 and can't increase.\n\n<b>Saving Throws Affected.</b> You automatically fail Strength and Dexterity saving throws.\n\n<b>Attacks Affected.</b> Attack rolls against you have Advantage.\n\n<b>Automatic Critical Hits.</b> Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you.",
         "additionalConditions": ["Incapacitated"],
         "highlightColor": "Terrible",
+        "forcedSpeed": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 0
+                }
+            ]
+        },
+        "speedAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Paralyzed.</b> Your Speed is 0 and can't increase."
+                }
+            ]
+        },
         "strengthSavingThrowAddendum": {
             "calculation": [
                 {
@@ -273,6 +289,22 @@
         "description": "While you have the Petrified condition, you experience the following effects.\n\n<b>Turned to Inanimate Substance.</b> You are transformed, along with any nonmagical objects you are wearing and carrying, into a solid inanimate substance (usually stone). Your weight increases by a factor of ten, and you cease aging.\n\n<b>Incapacitated.</b> You have the Incapacitated condition.\n\n<b>Speed 0.</b> Your Speed is 0 and can't increase.\n\n<b>Attacks Affected.</b> Attack rolls against you have Advantage.\n\n<b>Saving Throws Affected.</b> You automatically fail Strength and Dexterity saving throws.\n\n<b>Resist Damage.</b> You have Resistance to all damage.\n\n<b>Poison Immunity.</b> You have Immunity to the Poisoned condition.",
         "additionalConditions": ["Incapacitated"],
         "highlightColor": "Terrible",
+        "forcedSpeed": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 0
+                }
+            ]
+        },
+        "speedAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Unconscious.</b> Your Speed is 0 and can't increase."
+                }
+            ]
+        },
         "strengthSavingThrowAddendum": {
             "calculation": [
                 {
@@ -394,6 +426,22 @@
         "description": "While you have the Unconscious condition, you experience the following effects.\n\n<b>Inert.</b> You have the Incapacitated and Prone conditions, and you drop whatever you're holding. When this condition ends, you remain Prone.\n\n<b>Speed 0.</b> Your Speed is 0 and can't increase.\n\n<b>Attacks Affected.</b> Attack rolls against you have Advantage.\n\n<b>Saving Throws Affected.</b> You automatically fail Strength and Dexterity saving throws.\n\n<b>Automatic Critical Hits.</b> Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you.\n\n<b>Unaware.</b> You're unaware of your surroundings.",
         "additionalConditions": ["Incapacitated", "Prone"],
         "highlightColor": "Terrible",
+        "forcedSpeed": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 0
+                }
+            ]
+        },
+        "speedAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Unconscious.</b> Your Speed is 0 and can't increase."
+                }
+            ]
+        },
         "strengthSavingThrowAddendum": {
             "calculation": [
                 {
