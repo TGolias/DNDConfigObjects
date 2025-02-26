@@ -15,7 +15,7 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": "<b>Blinded.</b> Your attack rolls have Disadvantage.."
+                    "value": "<b>Blinded.</b> Your attack rolls have Disadvantage."
                 }
             ]
         }

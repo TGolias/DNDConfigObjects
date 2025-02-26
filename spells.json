@@ -24,11 +24,35 @@
             "description": "added to saving throws before the spell ends."
         },
         "aspects": {
-            "weaponAttackBonus": {
+            "allAttackBonus": {
                 "calculation": [
                     {
                         "type": "dieRoll",
                         "value": 4
+                    }
+                ]
+            },
+            "allAttackAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bless.</b> The target adds 1d4 to attack rolls."
+                    }
+                ]
+            },
+            "allSavingThrowBonus": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4
+                    }
+                ]
+            },
+            "allSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bless.</b> The target adds 1d4 to saving throws."
                     }
                 ]
             }
