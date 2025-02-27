@@ -144,16 +144,18 @@
                 "calculation": [
                     {
                         "type": "dieRoll",
-                        "value": 4,
-                        "multiplier": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            }
-                        ]
+                        "value": 4
                     }
                 ],
                 "damageType": "Radiant"
+            },
+            "weaponAttackAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Divine Favor.</b> Your attacks with weapons deal an extra 1d4 Radiant damage on a hit."
+                    }
+                ]
             }
         }
     },
