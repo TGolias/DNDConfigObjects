@@ -34,19 +34,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -75,10 +75,10 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": 1
+                    "value": 1,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -122,10 +122,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -147,10 +147,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -172,10 +172,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -193,10 +193,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -214,10 +214,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -235,10 +235,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 12
+                    "value": 12,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -256,10 +256,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -283,10 +283,10 @@
                             "type": "static",
                             "value": 2
                         }
-                    ]
+                    ],
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -304,10 +304,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -329,10 +329,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -354,10 +354,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -379,10 +379,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -404,10 +404,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -425,10 +425,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -450,10 +450,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -475,10 +475,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -500,10 +500,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -521,19 +521,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -551,10 +551,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -578,10 +578,10 @@
                             "type": "static",
                             "value": 2
                         }
-                    ]
+                    ],
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -599,10 +599,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -624,10 +624,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -645,10 +645,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -666,19 +666,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -696,10 +696,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -735,10 +735,10 @@
                             "type": "static",
                             "value": 2
                         }
-                    ]
+                    ],
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -799,10 +799,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -820,10 +820,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -863,10 +863,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -884,10 +884,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     },
     {
@@ -909,10 +909,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -934,19 +934,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 6
+                    "value": 6,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -995,19 +995,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -1025,19 +1025,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Bludgeoning"
                 }
-            ],
-            "damageType": "Bludgeoning"
+            ]
         }
     },
     {
@@ -1055,19 +1055,19 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 8
+                    "value": 8,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         },
         "twoHandedDamage": {
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         }
     },
     {
@@ -1093,10 +1093,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 4
+                    "value": 4,
+                    "diceType": "Slashing"
                 }
-            ],
-            "damageType": "Slashing"
+            ]
         }
     }
 ]

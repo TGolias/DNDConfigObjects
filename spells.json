@@ -144,10 +144,10 @@
                 "calculation": [
                     {
                         "type": "dieRoll",
-                        "value": 4
+                        "value": 4,
+                        "diceType": "Radiant"
                     }
-                ],
-                "damageType": "Radiant"
+                ]
             },
             "weaponAttackAddendum": {
                 "calculation": [
@@ -186,7 +186,8 @@
                             "type": "static",
                             "value": 1
                         }
-                    ]
+                    ],
+                    "diceType": "Radiant"
                 }
             ],
             "alternateDamage": [
@@ -204,13 +205,13 @@
                                     "type": "static",
                                     "value": 2
                                 }
-                            ]
+                            ],
+                            "diceType": "Radiant"
                         }
                     ],
                     "description": "if the target is undead."
                 }
-            ],
-            "damageType": "Radiant"
+            ]
         }
     },
     {
@@ -311,11 +312,10 @@
                             "type": "static",
                             "value": 1
                         }
-                    ]
+                    ],
+                    "diceType": "Fire"
                 }
-            ],
-            "damageType": "Fire",
-            "halfOnSave": true
+            ]
         }
     },
     {
@@ -345,11 +345,10 @@
                             "type": "static",
                             "value": 1
                         }
-                    ]
+                    ],
+                    "diceType": "Necrotic"
                 }
-            ],
-            "damageType": "Necrotic",
-            "halfOnSave": true
+            ]
         }
     },
     {
@@ -393,10 +392,10 @@
                             "type": "parameter",
                             "propertyPath": "slotLevel"
                         }
-                    ]
+                    ],
+                    "diceType": "Fire"
                 }
-            ],
-            "damageType": "Fire"
+            ]
         },
         "debuff": {
             "calculation": [
@@ -462,10 +461,10 @@
                             "type": "static",
                             "value": 1
                         }
-                    ]
+                    ],
+                    "diceType": "Thunder"
                 }
-            ],
-            "damageType": "Thunder"
+            ]
         },
         "debuff": {
             "description": "If the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and have the Prone condition."

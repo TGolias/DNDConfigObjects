@@ -21,10 +21,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Acid"
                 }
-            ],
-            "damageType": "Acid"
+            ]
         }
     },
     {
@@ -71,10 +71,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Necrotic"
                 }
-            ],
-            "damageType": "Necrotic"
+            ]
         }
     },
     {
@@ -126,10 +126,10 @@
             "calculation": [
                 {
                     "type": "dieRoll",
-                    "value": 10
+                    "value": 10,
+                    "diceType": "Force"
                 }
-            ],
-            "damageType": "Force"
+            ]
         }
     },
     {
@@ -165,10 +165,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Fire"
                 }
-            ],
-            "damageType": "Fire"
+            ]
         }
     },
     {
@@ -285,10 +285,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Psychic"
                 }
-            ],
-            "damageType": "Psychic"
+            ]
         },
         "debuff": {
             "calculation": [
@@ -335,10 +335,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Poison"
                 }
-            ],
-            "damageType": "Poison"
+            ]
         }
     },
     {
@@ -386,10 +386,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Cold"
                 }
-            ],
-            "damageType": "Cold"
+            ]
         },
         "debuff": {
             "description": "Their speed is reduced by 10 feet until the start of your next turn."
@@ -440,10 +440,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Radiant"
                 }
-            ],
-            "damageType": "Radiant"
+            ]
         }
     },
     {
@@ -589,72 +589,61 @@
                                 "type": "dieRoll",
                                 "value": 8
                             }
-                        ]
-                    },
-                    {
-                        "type": "if-then",
-                        "if": [
-                            {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": 2
-                                    }
-                                ]
-                            }
                         ],
-                        "then": [
+                        "else": [
                             {
-                                "type": "dieRoll",
-                                "value": 10
-                            }
-                        ]
-                    },
-                    {
-                        "type": "if-then",
-                        "if": [
-                            {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
+                                "type": "if-then",
+                                "if": [
                                     {
-                                        "type": "static",
-                                        "value": 3
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": 2
+                                            }
+                                        ]
                                     }
-                                ]
-                            }
-                        ],
-                        "then": [
-                            {
-                                "type": "dieRoll",
-                                "value": 12
-                            }
-                        ]
-                    },
-                    {
-                        "type": "if-then",
-                        "if": [
-                            {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
+                                ],
+                                "then": [
                                     {
-                                        "type": "static",
-                                        "value": 4
+                                        "type": "dieRoll",
+                                        "value": 10
                                     }
-                                ]
-                            }
-                        ],
-                        "then": [
-                            {
-                                "type": "dieRoll",
-                                "value": 6,
-                                "multiplier": [
+                                ],
+                                "else": [
                                     {
-                                        "type": "static",
-                                        "value": 2
+                                        "type": "if-then",
+                                        "if": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "tier",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 3
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "then": [
+                                            {
+                                                "type": "dieRoll",
+                                                "value": 12
+                                            }
+                                        ],
+                                        "else": [
+                                            {
+                                                "type": "dieRoll",
+                                                "value": 6,
+                                                "multiplier": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 2
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -662,7 +651,7 @@
                     }
                 ]
             },
-            "damageType": {
+            "alternateWeaponDamageType": {
                 "conditions": [
                     {
                         "type": "or",
@@ -724,10 +713,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Lightning"
                 }
-            ],
-            "damageType": "Lightning"
+            ]
         }
     },
     {
@@ -751,10 +740,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": ["Acid", "Cold", "Fire", "Lightning", "Poison", "Psychic", "Thunder"]
                 }
-            ],
-            "damageType": ["Acid", "Cold", "Fire", "Lightning", "Poison", "Psychic", "Thunder"]
+            ]
         }
     },
     {
@@ -868,10 +857,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Radiant"
                 }
-            ],
-            "damageType": "Radiant"
+            ]
         },
         "debuff": {
             "description": "They emit dim light in a 10-foot radius and can't benefit from the Invisible condition until the end of your next turn."
@@ -921,10 +910,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Piercing"
                 }
-            ],
-            "damageType": "Piercing"
+            ]
         },
         "debuff": {
             "description": "If the target is Large or smaller, you can pull it up to 10 feet closer to you."
@@ -952,10 +941,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Thunder"
                 }
-            ],
-            "damageType": "Thunder"
+            ]
         }
     },
     {
@@ -980,7 +969,8 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Necrotic"
                 }
             ],
             "alternateDamage": [
@@ -994,13 +984,13 @@
                                     "type": "aspect",
                                     "value": "tier"
                                 }
-                            ]
+                            ],
+                            "diceType": "Necrotic"
                         }
                     ],
                     "description": "if the target is missing any of its Hit Points."
                 }
-            ],
-            "damageType": "Necrotic"
+            ]
         }
     },
     {
@@ -1030,88 +1020,46 @@
                         "type": "parameter",
                         "propertyPath": "spellcastingAbility"
                     }
-                ],
-                "damageType": "Radiant"
+                ]
             },
-            "weaponDamageBonus": {
+            "alternateWeaponDamageType": {
                 "calculation": [
                     {
-                        "type": "if-then",
-                        "if": [
-                            {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": 2
-                                    }
-                                ]
-                            }
-                        ],
-                        "then": [
-                            {
-                                "type": "dieRoll",
-                                "value": 6
-                            }
-                        ]
-                    },
+                        "type": "static",
+                        "value": "Radiant"
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "condition": [
                     {
-                        "type": "if-then",
-                        "if": [
+                        "type": "aspect",
+                        "value": "tier",
+                        "greaterThanOrEqualTo": [
                             {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": 3
-                                    }
-                                ]
-                            }
-                        ],
-                        "then": [
-                            {
-                                "type": "dieRoll",
-                                "value": 6,
-                                "multiplier": [
-                                    {
-                                        "type": "static",
-                                        "value": 2
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "if-then",
-                        "if": [
-                            {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": 4
-                                    }
-                                ]
-                            }
-                        ],
-                        "then": [
-                            {
-                                "type": "dieRoll",
-                                "value": 6,
-                                "multiplier": [
-                                    {
-                                        "type": "static",
-                                        "value": 3
-                                    }
-                                ]
+                                "type": "static",
+                                "value": 2
                             }
                         ]
                     }
                 ],
-                "damageType": "Radiant"
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 6,
+                        "multiplier": [
+                            {
+                                "type": "aspect",
+                                "value": "tier"
+                            },
+                            {
+                                "type": "static",
+                                "value": -1
+                            }
+                        ],
+                        "diceType": "Radiant"
+                    }
+                ]
             }
         }
     },
@@ -1137,10 +1085,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Psychic"
                 }
-            ],
-            "damageType": "Psychic"
+            ]
         },
         "debuff": {
             "description": "Target has Disadvantage on the next attack roll it makes before the end of its next turn."
@@ -1169,10 +1117,10 @@
                             "type": "aspect",
                             "value": "tier"
                         }
-                    ]
+                    ],
+                    "diceType": "Radiant"
                 }
-            ],
-            "damageType": "Radiant"
+            ]
         }
     }
 ]
