@@ -53,16 +53,33 @@
         "buff": {
             "calculation": [
                 {
-                    "type": "static",
-                    "value": "Ally has Advantage on the next "
-                },
-                {
-                    "type": "parameter",
-                    "propertyPath": "userInput.assistanceType"
-                },
-                {
-                    "type": "static",
-                    "value": " roll they make. This benefit expires if the ally doesn't use it before the start of your next turn."
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.assistanceType"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "Ally has Advantage on the next <b>"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.assistanceType"
+                        },
+                        {
+                            "type": "static",
+                            "value": "</b> roll they make. This benefit expires if the ally doesn't use it before the start of your next turn."
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": "(none)"
+                        }
+                    ]
                 }
             ]
         },
@@ -125,20 +142,41 @@
         "buff": {
             "calculation": [
                 {
-                    "type": "static",
-                    "value": "<b>When</b> "
-                },
-                {
-                    "type": "parameter",
-                    "propertyPath": "userInput.trigger"
-                },
-                {
-                    "type": "static",
-                    "value": " <b>I will</b> "
-                },
-                {
-                    "type": "parameter",
-                    "propertyPath": "userInput.action"
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.trigger"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.action"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "<b>When</b> "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.trigger"
+                        },
+                        {
+                            "type": "static",
+                            "value": " <b>I will</b> "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.action"
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": "(none)"
+                        }
+                    ]
                 }
             ]
         },
