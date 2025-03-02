@@ -121,6 +121,7 @@
         "range": "Self",
         "duration": "1 turn",
         "concentration": true,
+        "type": ["buff"],
         "buff": {
             "calculation": [
                 {
