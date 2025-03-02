@@ -465,7 +465,7 @@
                                         "duration": "Instantaneous",
                                         "description": "As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.",
                                         "challengeType": "none",
-                                        "type": ["utility"],
+                                        "type": [],
                                         "cost": {
                                             "uses": {
                                                 "calculation": [
