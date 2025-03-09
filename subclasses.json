@@ -82,18 +82,14 @@
                         "challengeType": "savingThrow",
                         "savingThrowType": "wisdom",
                         "type": ["creatures"],
-                        "creatures": [
-                            {
-                                "statblock": {
-                                    "calculation": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "userInput.undeadCreatureType"
-                                        }
-                                    ]
+                        "creatures": {
+                            "calculation": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.undeadCreatureType"
                                 }
-                            }
-                        ],
+                            ]
+                        },
                         "cost": {
                             "resourceType": "channelDivinity",
                             "calculation": [
