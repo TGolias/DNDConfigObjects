@@ -769,7 +769,7 @@
                     },
                     {
                         "type": "parameter",
-                        "propertyPath": "resources.illusoryDuplicates"
+                        "propertyPath": "playerConfigForObject.remainingResources.illusoryDuplicates"
                     },
                     {
                         "type": "static",
