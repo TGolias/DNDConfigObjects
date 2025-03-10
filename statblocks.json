@@ -1,12 +1,405 @@
 [
     {
+        "name": "Otherworldly Steed",
+        "size": "Large",
+        "creatureType": {
+            "calculation": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "activeEffect.userInput.creatureType"
+                }
+            ]
+        },
+        "alignment": "Neutral",
+        "hp": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5
+                },
+                {
+                    "type": "static",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "activeEffect.castAtLevel"
+                        }
+                    ]
+                }
+            ]
+        },
+        "cr": {
+            "calculation": [
+                {
+                    "type": "aspect",
+                    "value": "level"
+                }
+            ]
+        },
+        "abilityScores": {
+            "strength": 18,
+            "dexterity": 12,
+            "constitution": 14,
+            "intelligence": 6,
+            "wisdom": 12,
+            "charisma": 8
+        },
+        "precomputedAspects": {
+            "castAtLevel": {
+                "calculation": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "activeEffect.castAtLevel"
+                    }
+                ]
+            }
+        },
+        "aspects": {
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 10
+                    },
+                    {
+                        "type": "static",
+                        "value": 1,
+                        "multiplier": [
+                            {
+                                "type": "aspect",
+                                "value": "castAtLevel"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "hitDiceOverride": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 10,
+                        "multiplier": [
+                            {
+                                "type": "aspect",
+                                "value": "castAtLevel"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "speed": 60,
+            "flySpeed": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "aspect",
+                                "value": "castAtLevel",
+                                "greaterThanOrEqualTo": [
+                                    {
+                                        "type": "static",
+                                        "value": 4
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": 60
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": 0
+                            }
+                        ]
+                    }
+                ]
+            },
+            "savingThrowProficiencies": ["wisdom"],
+            "languages": ["Telepathy 1 mile (works only with you)"],
+            "features": [
+                {
+                    "name": "Life Bond",
+                    "parentAspects": {
+                        "healingAddendum": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "<b>Life Bond.</b> When you regain Hit Points from a level 1+ spell, the steed regains the same number of Hit Points if you're within 5 feet of it."
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Otherworldly Slam",
+                    "actions": [
+                        {
+                            "name": "Otherworldly Slam",
+                            "actionTime": ["Action"],
+                            "range": 5,
+                            "duration": "Instantaneous",
+                            "description": "<b>Melee Attack Roll:</b> Bonus equals your spell attack modifier, reach 5ft.\b\b<b>Hit:</b> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey) or Necrotic (Fiend) damage.",
+                            "challengeType": "attackRoll",
+                            "useParentForCalculation": true,
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "if-then",
+                                        "if": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "creatureType",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Celestial"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "then": [
+                                            {
+                                                "type": "dieRoll",
+                                                "value": 8,
+                                                "diceType": "Radiant"
+                                            },
+                                            {
+                                                "type": "aspect",
+                                                "value": "castAtLevel"
+                                            }
+                                        ],
+                                        "else": [
+                                            {
+                                                "type": "if-then",
+                                                "if": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "creatureType",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Fey"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "dieRoll",
+                                                        "value": 8,
+                                                        "diceType": "Psychic"
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "castAtLevel"
+                                                    }
+                                                ],
+                                                "else": [
+                                                    {
+                                                        "type": "dieRoll",
+                                                        "value": 8,
+                                                        "diceType": "Necrotic"
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "castAtLevel"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Fell Glare",
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "value": "creatureType",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Fiend"
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "name": "Fell Glare",
+                            "actionTime": ["Bonus Action"],
+                            "range": 60,
+                            "duration": "1 turn",
+                            "description": "<b>Wisdom Saving Throw:</b> DC equals your spell save DC, one creature within 60 feet the steed can see.\n\n<b>Failure:</b> The target has the Frightened condition until the end of your next turn.",
+                            "challengeType": "savingThrow",
+                            "savingThrowType": "wisdom",
+                            "useParentForCalculation": true,
+                            "type": ["debuff"],
+                            "debuff": {
+                                "conditions": ["Frightened"]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Fey Step",
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "value": "creatureType",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Fey"
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "name": "Fey Step",
+                            "actionTime": ["Bonus Action"],
+                            "range": 5,
+                            "duration": "1 turn",
+                            "description": "The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself.",
+                            "challengeType": "none",
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Healing Touch",
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "value": "creatureType",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Celestial"
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "name": "Healing Touch",
+                            "actionTime": ["Bonus Action"],
+                            "range": 5,
+                            "duration": "1 turn",
+                            "description": "One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.",
+                            "challengeType": "none",
+                            "type": ["Healing"],
+                            "healing": {
+                                "calculation": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 8,
+                                        "multiplier": [
+                                            {
+                                                "type": "static",
+                                                "value": 2,
+                                                "multiplier": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "slotLevel"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "aspect",
+                                        "value": "castAtLevel"
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Zombie",
         "size": "Medium",
         "creatureType": "Undead",
         "alignment": "Neutral Evil",
         "hp": {
-            "d8": 2,
-            "static": 6
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": 6
+                }
+            ]
         },
         "cr": 0.25,
         "abilityScores": {
