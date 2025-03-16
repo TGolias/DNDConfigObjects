@@ -440,6 +440,7 @@
                             "actionTime": ["Action"],
                             "range": 5,
                             "duration": "Instantaneous",
+                            "description": "Melee Attack Roll: +3, reach 5ft. Hit: 5 (1d8 + 1) Bludgeoning damage.",
                             "challengeType": "attackRoll",
                             "attackRollType": "unarmedAttack",
                             "type": ["damage"],
