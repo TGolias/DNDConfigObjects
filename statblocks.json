@@ -146,6 +146,7 @@
                             "duration": "Instantaneous",
                             "description": "<b>Melee Attack Roll:</b> Bonus equals your spell attack modifier, reach 5ft.\b\b<b>Hit:</b> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey) or Necrotic (Fiend) damage.",
                             "challengeType": "attackRoll",
+                            "attackRollType": "spellAttack",
                             "useParentForCalculation": true,
                             "type": ["damage"],
                             "damage": {
@@ -440,6 +441,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "challengeType": "attackRoll",
+                            "attackRollType": "unarmedAttack",
                             "type": ["damage"],
                             "damage": {
                                 "calculation": [

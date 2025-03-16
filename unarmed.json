@@ -5,6 +5,7 @@
         "range": 5,
         "description": "<b>Damage.</b> You make an attack roll against the target. Your bonus to the roll equals your Strength modifier plus your Proficiency Bonus. On a hit, the target takes Bludgeoning damage equal to 1 plus your Strength modifier.",
         "challengeType": "attackRoll",
+        "attackRollType": "unarmedAttack",
         "type": ["damage"]
     },
     {

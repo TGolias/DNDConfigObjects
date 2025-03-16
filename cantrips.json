@@ -59,6 +59,7 @@
         "duration": "Instantaneous",
         "description": "Channeling the chill of the grave, make a melee spell attack against a target within reach. On a hit, the target takes 1d10 Necrotic damage, and it can't regain Hit Points until the end of your next turn.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -112,6 +113,7 @@
         "duration": "Instantaneous",
         "description": "Your hurl a beam of crackling energy. Make a ranged spell attack against one creature or object in range. On a hit, the target takes 1d10 Force damage.\n\n<b>Cantrip Upgrade.</b> The spell creates two beams at level 5, three beams at level 11, and four beams at level 17. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "attackRolls": {
             "calculation": [
@@ -153,6 +155,7 @@
         "duration": "Instantaneous",
         "description": "You hurl a mote of fire at a creature or an object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Fire damage. A flammable object hit by this spell starts burning if it isn't being worn or carried.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -322,6 +325,7 @@
         "duration": "Instantaneous",
         "description": "You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d12 Poison damage.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d12 when you reach levels 5 (2d12), 11 (3d12), and 17 (4d12).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -373,6 +377,7 @@
         "duration": "Instantaneous",
         "description": "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 Cold damage, and its Speed is reduced by 10 feet until the start of your next turn.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -699,6 +704,7 @@
         "duration": "Instantaneous",
         "description": "Lightning springs from you to a creature that you try to touch. Make a melee spell attack against the target. On a hit, the target takes 1d8 Lightning damage, and it can't make Opportunity Attacks until the start of its next turn.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -726,6 +732,7 @@
         "duration": "Instantaneous",
         "description": "You cast sorcerous energy at one creature or object within range. Make a ranged attack roll against the target. On a hit, the target takes 1d8 damage of a type you choose: Acid, Cold, Fire, Lightning, Poison, Psychic, or Thunder.\n\nIf you roll an 8 on a d8 for this spell, you can roll another d8, and add it to the damage. When you cast this spell, the maximum number of these d8s you can add to the spell's damage equals your spellcasting ability modifier.\n\n<b>Cantrip Upgrade.</b> This damage increases by 1d8 when you reach level 5 (2d8), 11 (3d8), and 17 (4d8).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -843,6 +850,7 @@
         "duration": "Instantaneous",
         "description": "You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d8 Radiant damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the Invisible condition.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -896,6 +904,7 @@
         "duration": "Instantaneous",
         "description": "You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target takes 1d6 Piercing damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6), and 17 (4d6).",
         "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
