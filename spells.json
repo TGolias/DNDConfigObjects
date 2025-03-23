@@ -519,7 +519,7 @@
                         "multiplier": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "slotLevel"
+                                "propertyPath": "playerConfigForObject.castAtLevel"
                             },
                             {
                                 "type": "static",
