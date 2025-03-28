@@ -1014,6 +1014,46 @@
                 }
             },
             {
+                "classLevel": 5,
+                "name": "Extra Attack",
+                "allAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Faithful Steed",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Find Steed",
+                                "freeUses": 1
+                            }
+                        ]
+                    }
+                }
+            },
+            {
                 "classLevel": 8,
                 "name": "Feat",
                 "feat": {
