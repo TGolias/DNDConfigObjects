@@ -313,7 +313,7 @@
                             "name": "Fey Step",
                             "actionTime": ["Bonus Action"],
                             "range": 5,
-                            "duration": "1 turn",
+                            "duration": "Instantaneous",
                             "description": "The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself.",
                             "challengeType": "none",
                             "type": [],
@@ -355,7 +355,7 @@
                             "name": "Healing Touch",
                             "actionTime": ["Bonus Action"],
                             "range": 5,
-                            "duration": "1 turn",
+                            "duration": "Instantaneous",
                             "description": "One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.",
                             "challengeType": "none",
                             "type": ["healing"],
@@ -367,13 +367,7 @@
                                         "multiplier": [
                                             {
                                                 "type": "static",
-                                                "value": 2,
-                                                "multiplier": [
-                                                    {
-                                                        "type": "parameter",
-                                                        "propertyPath": "slotLevel"
-                                                    }
-                                                ]
+                                                "value": 2
                                             }
                                         ]
                                     },
