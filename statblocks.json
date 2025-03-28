@@ -29,14 +29,7 @@
                 }
             ]
         },
-        "cr": {
-            "calculation": [
-                {
-                    "type": "aspect",
-                    "value": "level"
-                }
-            ]
-        },
+        "cr": 0,
         "abilityScores": {
             "strength": 18,
             "dexterity": 12,
@@ -51,6 +44,14 @@
                     {
                         "type": "parameter",
                         "propertyPath": "activeEffect.castAtLevel"
+                    }
+                ]
+            },
+            "parentSpellcastingFeature": {
+                "calculation": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "actionObject.feature.name"
                     }
                 ]
             }
@@ -83,6 +84,19 @@
                             {
                                 "type": "aspect",
                                 "value": "castAtLevel"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "proficiencyBonusOverride": {
+                "calculation": [
+                    {
+                        "type": "parentCalculation",
+                        "calculation": [
+                            {
+                                "type": "aspect",
+                                "value": "proficiencyBonus"
                             }
                         ]
                     }
@@ -124,6 +138,20 @@
             "languages": ["Telepathy 1 mile (works only with you)"],
             "features": [
                 {
+                    "classLevel": 1,
+                    "name": "Steed Spellcasting",
+                    "spellcasting": {
+                        "fromParentFeature": {
+                            "calculation": [
+                                {
+                                    "type": "aspect",
+                                    "value": "parentSpellcastingFeature"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "Life Bond",
                     "parentAspects": {
                         "healingAddendum": {
@@ -147,7 +175,6 @@
                             "description": "<b>Melee Attack Roll:</b> Bonus equals your spell attack modifier, reach 5ft.\b\b<b>Hit:</b> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey) or Necrotic (Fiend) damage.",
                             "challengeType": "attackRoll",
                             "attackRollType": "spellAttack",
-                            "useParentForCalculation": true,
                             "type": ["damage"],
                             "damage": {
                                 "calculation": [
@@ -244,7 +271,6 @@
                             "description": "<b>Wisdom Saving Throw:</b> DC equals your spell save DC, one creature within 60 feet the steed can see.\n\n<b>Failure:</b> The target has the Frightened condition until the end of your next turn.",
                             "challengeType": "savingThrow",
                             "savingThrowType": "wisdom",
-                            "useParentForCalculation": true,
                             "type": ["debuff"],
                             "debuff": {
                                 "conditions": ["Frightened"]
