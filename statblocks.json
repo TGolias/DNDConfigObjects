@@ -358,7 +358,7 @@
                             "duration": "1 turn",
                             "description": "One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.",
                             "challengeType": "none",
-                            "type": ["Healing"],
+                            "type": ["healing"],
                             "healing": {
                                 "calculation": [
                                     {
