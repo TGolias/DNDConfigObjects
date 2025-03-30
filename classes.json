@@ -1016,7 +1016,15 @@
             {
                 "classLevel": 5,
                 "name": "Extra Attack",
-                "allAttackAddendum": {
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
                     "calculation": [
                         {
                             "type": "static",
