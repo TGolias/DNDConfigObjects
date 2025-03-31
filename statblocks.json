@@ -158,7 +158,31 @@
                             "calculation": [
                                 {
                                     "type": "static",
-                                    "value": "<b>Life Bond.</b> When you regain Hit Points from a level 1+ spell, the steed regains the same number of Hit Points if you're within 5 feet of it."
+                                    "value": "<b>Life Bond.</b> When you regain Hit Points from a level 1+ spell, "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.name"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": " regains the same number of Hit Points if you're within 5 feet of it."
+                                }
+                            ]
+                        },
+                        "healthMenuAddendum": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "<b>Life Bond.</b> When you regain Hit Points from a level 1+ spell, "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.name"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": " regains the same number of Hit Points if you're within 5 feet of it."
                                 }
                             ]
                         }
