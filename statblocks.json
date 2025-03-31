@@ -166,7 +166,7 @@
                                 },
                                 {
                                     "type": "static",
-                                    "value": " regains the same number of Hit Points if you're within 5 feet of it."
+                                    "value": " regains the same number of Hit Points if you're within 5 feet of them."
                                 }
                             ]
                         },
@@ -182,7 +182,7 @@
                                 },
                                 {
                                     "type": "static",
-                                    "value": " regains the same number of Hit Points if you're within 5 feet of it."
+                                    "value": " regains the same number of Hit Points if you're within 5 feet of them."
                                 }
                             ]
                         }
