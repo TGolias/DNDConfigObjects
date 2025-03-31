@@ -3,8 +3,9 @@
         "name": "Amulet of Health",
         "type": "Wondrous item",
         "rarity": "Rare",
-        "weight": 1,
+        "equippable": true,
         "attunement": true,
+        "weight": 1,
         "description": "Your Constitution score is 19 while you wear this amulet. It has no effect on you if your Constitution score is already 19 or higher.",
         "aspects": {
             "constitutionOverride": 19
@@ -28,6 +29,7 @@
         "tags": ["Battleaxe", "Martial", "Melee", "Versatile"],
         "mastery": "Topple",
         "rarity": "None",
+        "equippable": true,
         "weight": 4,
         "description": "Like an axe: but for battle.",
         "damage": {
@@ -69,6 +71,7 @@
         "tags": ["Blowgun", "Martial", "Ranged", "Loading"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 1,
         "description": "A gun that you can blow.",
         "damage": {
@@ -86,6 +89,7 @@
         "type": "Armor",
         "armorType": "Heavy",
         "rarity": "None",
+        "equippable": true,
         "weight": 55,
         "description": "AC: 16. Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
@@ -116,6 +120,7 @@
         "tags": ["Club", "Simple", "Melee", "Light"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
@@ -141,6 +146,7 @@
         "tags": ["Dagger", "Simple", "Melee", "Finesse", "Light", "Thrown"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 1,
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
@@ -166,6 +172,7 @@
         "tags": ["Dart", "Simple", "Ranged", "Finesse", "Thrown"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 0.25,
         "description": "Bullseye.",
         "damage": {
@@ -187,6 +194,7 @@
         "tags": ["Flail", "Martial", "Melee"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "A stick with a hurty thing chained to it.",
         "damage": {
@@ -208,6 +216,7 @@
         "tags": ["Glaive", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
         "mastery": "Graze",
         "rarity": "None",
+        "equippable": true,
         "weight": 6,
         "description": "Like a Halberd: but with the Graze property.",
         "damage": {
@@ -229,6 +238,7 @@
         "tags": ["Greataxe", "Martial", "Melee", "Heavy", "Two-Handed"],
         "mastery": "Cleave",
         "rarity": "None",
+        "equippable": true,
         "weight": 7,
         "description": "Like an axe: but greater.",
         "damage": {
@@ -250,6 +260,7 @@
         "tags": ["Greatclub", "Simple", "Melee", "Two-Handed"],
         "mastery": "Push",
         "rarity": "None",
+        "equippable": true,
         "weight": 10,
         "description": "Like a Club: but greater.",
         "damage": {
@@ -271,6 +282,7 @@
         "tags": ["Greatsword", "Martial", "Melee", "Heavy", "Two-Handed"],
         "mastery": "Graze",
         "rarity": "None",
+        "equippable": true,
         "weight": 6,
         "description": "Like a sword: but greater.",
         "damage": {
@@ -298,6 +310,7 @@
         "tags": ["Halberd", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
         "mastery": "Cleave",
         "rarity": "None",
+        "equippable": true,
         "weight": 6,
         "description": "Like a Glaive: but with the Cleave property.",
         "damage": {
@@ -323,6 +336,7 @@
         "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "A 'Light' Crossbow (not 'Light Crossbow') that can be held in one hand.",
         "damage": {
@@ -348,6 +362,7 @@
         "tags": ["Handaxe", "Simple", "Melee", "Light", "Thrown"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Good for chopping wood and heads.",
         "damage": {
@@ -373,6 +388,7 @@
         "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Loading", "Two-Handed"],
         "mastery": "Push",
         "rarity": "None",
+        "equippable": true,
         "weight": 18,
         "description": "Like a Crossbow: but heavier.",
         "damage": {
@@ -398,6 +414,7 @@
         "tags": ["Javelin", "Simple", "Melee", "Thrown"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "A spear designed primarily to be thrown.",
         "damage": {
@@ -419,6 +436,7 @@
         "tags": ["Lance", "Martial", "Melee", "Heavy", "Reach", "Two-Handed", "One-Handed-Mounted"],
         "mastery": "Topple",
         "rarity": "None",
+        "equippable": true,
         "weight": 6,
         "description": "Long pointy stick that can be one-handed if you are mounted: Better go buy a horse.",
         "damage": {
@@ -444,6 +462,7 @@
         "tags": ["Light Crossbow", "Simple", "Ranged", "Loading", "Two-Handed"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 5,
         "description": "-and you call this thing the 'Light Crossbow' despite the fact that it lacks the 'Light' property?",
         "damage": {
@@ -469,6 +488,7 @@
         "tags": ["Light Hammer", "Simple", "Melee", "Light", "Thrown"],
         "mastery": "Nick",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "A fine tool both in and out of combat. Famously sold by Tessler Kefflin.",
         "damage": {
@@ -494,6 +514,7 @@
         "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Like a bow: but longer.",
         "damage": {
@@ -515,6 +536,7 @@
         "tags": ["Longsword", "Martial", "Melee", "Versatile"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "Like a sword: but longer.",
         "damage": {
@@ -545,6 +567,7 @@
         "tags": ["Mace", "Simple", "Melee"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 4,
         "description": "A heavy club, typically having a metal head and spikes. Favored weapon of many iconic Clerics.",
         "damage": {
@@ -566,6 +589,7 @@
         "tags": ["Maul", "Martial", "Melee", "Heavy", "Two-Handed"],
         "mastery": "Topple",
         "rarity": "None",
+        "equippable": true,
         "weight": 10,
         "description": "Like a hammer: but greater.",
         "damage": {
@@ -593,6 +617,7 @@
         "tags": ["Morningstar", "Martial", "Melee"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 4,
         "description": "Not a great star to see pointed at you in the morning.",
         "damage": {
@@ -618,6 +643,7 @@
         "tags": ["Pepperbox", "Firearm", "Martial", "Ranged"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 5,
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
         "damage": {
@@ -639,6 +665,7 @@
         "tags": ["Pike", "Martial", "Melee", "Heavy", "Reach", "Two-Handed"],
         "mastery": "Push",
         "rarity": "None",
+        "equippable": true,
         "weight": 18,
         "description": "Long pushy stick. Why it so heavy tho?",
         "damage": {
@@ -660,6 +687,7 @@
         "tags": ["Quarterstaff", "Simple", "Melee", "Versatile"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 4,
         "description": "A staff that is larger than a quarter.",
         "damage": {
@@ -690,6 +718,7 @@
         "tags": ["Rapier", "Martial", "Melee", "Finesse"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "A great way for weak bitches that don't use magic to still do something in combat.",
         "damage": {
@@ -723,6 +752,7 @@
         "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
         "damage": {
@@ -746,6 +776,7 @@
         "type": "Armor",
         "armorType": "Medium",
         "rarity": "None",
+        "equippable": true,
         "weight": 45,
         "description": "AC: 14 + Dex modifier (max 2). This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
@@ -793,6 +824,7 @@
         "tags": ["Scimitar", "Martial", "Melee", "Finesse", "Light"],
         "mastery": "Nick",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "Like a sword: but curvier.",
         "damage": {
@@ -814,6 +846,7 @@
         "tags": ["Shortsword", "Martial", "Melee", "Finesse", "Light"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Like a sword: but shorter.",
         "damage": {
@@ -831,6 +864,7 @@
         "type": "Armor",
         "armorType": "Shield",
         "rarity": "None",
+        "equippable": true,
         "weight": 6,
         "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
         "aspects": {
@@ -857,6 +891,7 @@
         "tags": ["Shortbow", "Simple", "Ranged", "Two-Handed"],
         "mastery": "Vex",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Isn't this a little short for a bow?",
         "damage": {
@@ -878,6 +913,7 @@
         "tags": ["Sickle", "Simple", "Melee", "Light"],
         "mastery": "Nick",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Used for harvesting crops and heads.",
         "damage": {
@@ -903,6 +939,7 @@
         "tags": ["Sling", "Simple", "Ranged"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 0,
         "description": "Time to slay some Goliaths.",
         "damage": {
@@ -928,6 +965,7 @@
         "tags": ["Spear", "Simple", "Melee", "Versatile", "Thrown"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "A spear designed primarily to jab people with.",
         "damage": {
@@ -954,6 +992,7 @@
         "type": "Armor",
         "armorType": "Light",
         "rarity": "None",
+        "equippable": true,
         "weight": 13,
         "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
         "aspects": {
@@ -989,6 +1028,7 @@
         "tags": ["Trident", "Martial", "Melee", "Thrown", "Versatile"],
         "mastery": "Topple",
         "rarity": "None",
+        "equippable": true,
         "weight": 4,
         "description": "Who the fuck do you think you are weilding this thing?! King Neptune?!",
         "damage": {
@@ -1019,6 +1059,7 @@
         "tags": ["Warhammer", "Martial", "Melee", "Versatile"],
         "mastery": "Push",
         "rarity": "None",
+        "equippable": true,
         "weight": 5,
         "description": "Like an hammer: but for war.",
         "damage": {
@@ -1049,6 +1090,7 @@
         "tags": ["War Pick", "Martial", "Melee", "Versatile"],
         "mastery": "Sap",
         "rarity": "None",
+        "equippable": true,
         "weight": 2,
         "description": "Like an pick: but for war.",
         "damage": {
@@ -1087,6 +1129,7 @@
         "tags": ["Whip", "Martial", "Melee", "Finesse", "Reach"],
         "mastery": "Slow",
         "rarity": "None",
+        "equippable": true,
         "weight": 3,
         "description": "Can also be used outside the bedroom.",
         "damage": {
