@@ -441,15 +441,13 @@
             "features": [
                 {
                     "name": "Undead Fortitude",
-                    "aspects": {
-                        "healthMenuAddendum": {
-                            "calculation": [
-                                {
-                                    "type": "static",
-                                    "value": "<b>Undead Fortitude.</b> If damage reduces the zombie to 0 Hit Points, it makes a Constitution saving throw (DC 5 plus the damage taken) unless the damage is Radiant or from a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead."
-                                }
-                            ]
-                        }
+                    "healthMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Undead Fortitude.</b> If damage reduces the zombie to 0 Hit Points, it makes a Constitution saving throw (DC 5 plus the damage taken) unless the damage is Radiant or from a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead."
+                            }
+                        ]
                     }
                 },
                 {
