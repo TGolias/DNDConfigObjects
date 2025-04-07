@@ -632,7 +632,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "userInput.enlargeOrReduce",
+                                "propertyPath": "playerConfigForObject.userInput.enlargeOrReduce",
                                 "equals": [
                                     {
                                         "type": "static",
@@ -663,7 +663,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "userInput.enlargeOrReduce",
+                                "propertyPath": "playerConfigForObject.userInput.enlargeOrReduce",
                                 "equals": [
                                     {
                                         "type": "static",
@@ -700,7 +700,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "userInput.enlargeOrReduce",
+                                "propertyPath": "playerConfigForObject.userInput.enlargeOrReduce",
                                 "equals": [
                                     {
                                         "type": "static",
@@ -737,7 +737,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "userInput.enlargeOrReduce",
+                                "propertyPath": "playerConfigForObject.userInput.enlargeOrReduce",
                                 "equals": [
                                     {
                                         "type": "static",
@@ -768,7 +768,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "userInput.enlargeOrReduce",
+                                "propertyPath": "playerConfigForObject.userInput.enlargeOrReduce",
                                 "equals": [
                                     {
                                         "type": "static",
