@@ -21,6 +21,15 @@
         "description": "A backpack can hold one cubic foot or 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
     },
     {
+        "name": "Bag of Holding",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "container": true,
+        "containerCapacity": 500,
+        "weight": 15,
+        "description": "This bag has an interior space considerably larger than its outside dimensions, roughly 2 feet in diameter at the mouth and 4 feet deep. The bag can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. The bag weighs 15 pounds, regardless of its contents. Retrieving an item from the bag requires an action.\n\nIf the bag is overloaded, pierced, or torn, it ruptures and is destroyed, and its contents are scattered in the Astral Plane. If the bag is turned inside out, its contents spill forth, unharmed, but the bag must be put right before it can be used again. Breathing creatures inside the bag can survive up to a number of minutes equal to 10 divided by the number of creatures (minimum 1 minute), after which time they begin to suffocate.\n\nPlacing a bag of holding inside an extradimensional space created by a handy haversack, portable hole, or similar item instantly destroys both items and opens a gate to the Astral Plane. The gate originates where the one item was placed inside the other. Any creature within 10 feet of the gate is sucked through it to a random location on the Astral Plane. The gate then closes. The gate is one-way only and can't be reopened."
+    },
+    {
         "name": "Battleaxe",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -55,8 +64,81 @@
         "name": "Bedroll",
         "type": "Adventuring Gear",
         "rarity": "None",
+        "stackable": true,
         "weight": 7,
         "description": "You never know where you're going to sleep, and a bedroll helps you get better sleep in a hayloft or on the cold ground. A bedroll consists of bedding and a blanket thin enough to be rolled up and tied. In an emergency, it can double as a stretcher."
+    },
+    {
+        "name": "Belt of Cloud Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Legendary",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 27. If your Strength is already equal to or greater than 27, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 27
+        }
+    },
+    {
+        "name": "Belt of Fire Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Very rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 25. If your Strength is already equal to or greater than 25, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 25
+        }
+    },
+    {
+        "name": "Belt of Frost Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Very rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 23. If your Strength is already equal to or greater than 23, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 23
+        }
+    },
+    {
+        "name": "Belt of Hill Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 21. If your Strength is already equal to or greater than 21, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 21
+        }
+    },
+    {
+        "name": "Belt of Stone Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Very rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 23. If your Strength is already equal to or greater than 23, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 23
+        }
+    },
+    {
+        "name": "Belt of Storm Giant Strength",
+        "type": "Wondrous item",
+        "rarity": "Legendary",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While wearing this belt, your Strength score changes to 29. If your Strength is already equal to or greater than 29, the item has no effect on you.",
+        "aspects": {
+            "strengthOverride": 29
+        }
     },
     {
         "name": "Blowgun",
@@ -631,6 +713,14 @@
         }
     },
     {
+        "name": "Parchment of the Stenographarian",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "attunement": true,
+        "weight": 0,
+        "description": "When attuned, the parchment will magically write down everything you say. Your works will appear on the parchment, as you say them. There is a catch, however. It will write down EVERYTHING you say (even coughs and sighs), and as there is only one piece of parchment - when it reaches the bottom of the page - it starts anew at the top, overwriting whatever was there. You need to stay very quiet if you want your words kept for posterity. The parchment says attuned to you as long as you live, and it will record your words, no matter how far away it is from you, and no matter what plane or planet may separate you."
+    },
+    {
         "name": "Pepperbox",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -677,6 +767,142 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Potion of Greater Healing",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "challengeType": "none",
+            "type": ["healing"],
+            "healing": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 4
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            }
+        },
+        "weight": 0.5,
+        "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 4d4+4 Hit Points. The potion's red liquid glimmers when agitated."
+    },
+    {
+        "name": "Potion of Healing",
+        "type": "Potion",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "challengeType": "none",
+            "type": ["healing"],
+            "healing": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        },
+        "weight": 0.5,
+        "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 2d4+2 Hit Points. The potion's red liquid glimmers when agitated."
+    },
+    {
+        "name": "Potion of Superior Healing",
+        "type": "Potion",
+        "rarity": "Rare",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "challengeType": "none",
+            "type": ["healing"],
+            "healing": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 8
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": 8
+                    }
+                ]
+            }
+        },
+        "weight": 0.5,
+        "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 8d4+8 Hit Points. The potion's red liquid glimmers when agitated."
+    },
+    {
+        "name": "Potion of Supreme Healing",
+        "type": "Potion",
+        "rarity": "Very rare",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "challengeType": "none",
+            "type": ["healing"],
+            "healing": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 10
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": 20
+                    }
+                ]
+            }
+        },
+        "weight": 0.5,
+        "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 10d4+20 Hit Points. The potion's red liquid glimmers when agitated."
     },
     {
         "name": "Quarterstaff",
@@ -736,6 +962,7 @@
         "type": "Adventuring Gear",
         "rarity": "None",
         "stackable": true,
+        "consumable": true,
         "weight": 2,
         "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
     },
@@ -873,6 +1100,25 @@
                     {
                         "type": "static",
                         "value": 2
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Shield of Evasion",
+        "type": "Armor",
+        "armorType": "Shield",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 6,
+        "description": "A shield that magically evades projectiles, leaving you wide open as it moves out of the way of any incoming projectiles. Giving you -1 AC.",
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
                     }
                 ]
             }
@@ -1051,6 +1297,14 @@
         }
     },
     {
+        "name": "Vase of Cancer",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 5,
+        "description": "When the user opens the lid, any nearby crabs will look in its direction for a small amount of time."
+    },
+    {
         "name": "Warhammer",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -1111,14 +1365,6 @@
                 }
             ]
         }
-    },
-    {
-        "name": "Waterskin",
-        "type": "Adventuring Gear",
-        "rarity": "None",
-        "fillable": true,
-        "weight": 5,
-        "description": "A waterskin can hold up to 4 pints of liquid."
     },
     {
         "name": "Whip",
