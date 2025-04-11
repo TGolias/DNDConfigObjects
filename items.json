@@ -511,10 +511,10 @@
                         }
                     ]
                 }
-            },
-            "weight": 0.5,
-            "description": "This iridescent liquid grants the drinker something approaching resistance to bludgeoning, piercing and slashing damage for one minute, but can continue for up to five minutes provided the user takes at least 1 point of damage each round. The damage reduction must be tracked for the duration as the drinker will suffer all of that damage in a single lump after the effect ends. This damage <b>cannot</b> be further reduced as it is simply the mind catching up to what very well may be beyond fatal damage."
-        }
+            }
+        },
+        "weight": 0.5,
+        "description": "This iridescent liquid grants the drinker something approaching resistance to bludgeoning, piercing and slashing damage for one minute, but can continue for up to five minutes provided the user takes at least 1 point of damage each round. The damage reduction must be tracked for the duration as the drinker will suffer all of that damage in a single lump after the effect ends. This damage <b>cannot</b> be further reduced as it is simply the mind catching up to what very well may be beyond fatal damage."
     },
     {
         "name": "Javelin",
@@ -758,10 +758,10 @@
                         }
                     ]
                 }
-            },
-            "weight": 0.5,
-            "description": "The imbiber ceases to taste for 30 minutes during and after drinking, after which point they will universally report the distant aftertaste of having licked a piece of coal. Those who consume it have advantage against poison for 30 minutes, but become poisoned for an hour afterwards."
-        }
+            }
+        },
+        "weight": 0.5,
+        "description": "The imbiber ceases to taste for 30 minutes during and after drinking, after which point they will universally report the distant aftertaste of having licked a piece of coal. Those who consume it have advantage against poison for 30 minutes, but become poisoned for an hour afterwards."
     },
     {
         "name": "Morningstar",
