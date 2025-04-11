@@ -484,6 +484,39 @@
         }
     },
     {
+        "name": "Iron Golem's Might",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "1 minute",
+            "challengeType": "none",
+            "type": ["buff", "debuff"],
+            "buff": {
+                "description": "Resistance to Bludgeoning, Piercing and Slashing damage."
+            },
+            "debuff": {
+                "description": "All reduced damage taken all at once when effect ends."
+            },
+            "aspects": {
+                "resistances": ["Bludgeoning", "Piercing", "Slashing"],
+                "healthMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Iron Golem's Might.</b> Any Bludgeoning, Piercing or Slashing damage reduced via resistance must be tracked. When the effect of <b>Iron Golem's Might</b> ends, all reduced damage is taken all at once."
+                        }
+                    ]
+                }
+            },
+            "weight": 0.5,
+            "description": "This iridescent liquid grants the drinker something approaching resistance to bludgeoning, piercing and slashing damage for one minute, but can continue for up to five minutes provided the user takes at least 1 point of damage each round. The damage reduction must be tracked for the duration as the drinker will suffer all of that damage in a single lump after the effect ends. This damage <b>cannot</b> be further reduced as it is simply the mind catching up to what very well may be beyond fatal damage."
+        }
+    },
+    {
         "name": "Javelin",
         "type": "Weapon",
         "weaponType": "Simple",
@@ -688,6 +721,46 @@
                     "diceType": "Bludgeoning"
                 }
             ]
+        }
+    },
+    {
+        "name": "Milk of Potash",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "30 minutes",
+            "challengeType": "none",
+            "type": ["buff", "debuff"],
+            "buff": {
+                "description": "Advantage against poison."
+            },
+            "debuff": {
+                "description": "Become poisoned for an hour after the effect of the potion wears off."
+            },
+            "aspects": {
+                "skillProficiencyAllAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Milk of Potash.</b> Advantage against poison."
+                        }
+                    ]
+                },
+                "allSavingThrowAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Milk of Potash.</b> Advantage against poison."
+                        }
+                    ]
+                }
+            },
+            "weight": 0.5,
+            "description": "The imbiber ceases to taste for 30 minutes during and after drinking, after which point they will universally report the distant aftertaste of having licked a piece of coal. Those who consume it have advantage against poison for 30 minutes, but become poisoned for an hour afterwards."
         }
     },
     {
@@ -1301,6 +1374,7 @@
         "type": "Wondrous item",
         "rarity": "Uncommon",
         "equippable": true,
+        "holdable": true,
         "weight": 5,
         "description": "When the user opens the lid, any nearby crabs will look in its direction for a small amount of time."
     },
