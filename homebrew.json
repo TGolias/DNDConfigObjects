@@ -1,0 +1,312 @@
+[
+    {
+        "name": "Luck Points",
+        "resources": [
+            { 
+                "name": "luckPoints", 
+                "displayName": "Luck Points", 
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 100
+                        }
+                    ]
+                }
+            }
+        ],
+        "features": [
+            {
+                "name": "Use Luck Points",
+                "actions": [
+                    {
+                        "name": "Use Luck Points",
+                        "actionTime": ["Free"],
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "You can expend luck points and add them to any d20 roll you are making. The only limit to how many luck points you can expect, is how many luck points you have.",
+                        "challengeType": "none",
+                        "type": [],
+                        "userInput": [
+                            {
+                                "name": "luckPointsToSpend",
+                                "displayName": "Luck Points to Spend",
+                                "type": "numberField",
+                                "min": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ],
+                                "max": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "resource.remainingUses"
+                                    }
+                                ]
+                            }
+                        ],
+                        "cost": {
+                            "resourceType": "luckPoints",
+                            "calculation": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.luckPointsToSpend"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Spellscar",
+        "userInput": [
+            {
+                "name": "skillPoints",
+                "displayName": "Skill Points",
+                "type": "numberField",
+                "min": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "spellfireCharges",
+                "displayName": "Spellfire Charges",
+                "type": "numberField",
+                "min": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            {
+                "name": "conditionsToHeal",
+                "displayName": "Remove Conditions",
+                "type": "checkboxList",
+                "values": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "resource.classLevel",
+                                "lessThan": [
+                                    {
+                                        "type": "static",
+                                        "value": 14
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": ["Poisoned"]
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": ["Blinded", "Charmed", "Deafened", "Frightened", "Paralyzed", "Poisoned", "Stunned"]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "resources": [
+            { 
+                "name": "spellfireCharges", 
+                "displayName": "Spellfire Charges", 
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.spellfireCharges"
+                        }
+                    ]
+                }
+            }
+        ],
+        "features": [
+            {
+                "name": "Shifting Weave",
+                "actions": [
+                    {
+                        "name": "Shifting Weave",
+                        "actionTime": ["Action"],
+                        "range": "Touch",
+                        "duration": "Instantaneous",
+                        "description": "Once per day, you can restore the lowest level spell slot to another spellscar weilder who also utilizes spell slots, granted you have spell slots available to expend. This consumes your chosen spell slot.",
+                        "challengeType": "none",
+                        "type": [],
+                        "cost": {
+                            "uses": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "choices": [
+            {
+                "property": "spellscarFeatures",
+                "description": "Giant Ancestry:",
+                "optionsSource": "CUSTOM",
+                "multipleSelections": 2,
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "features": "features"
+                },
+                "options": [
+                    {
+                        "name": "Spellfire Bolts",
+                        "features": [
+                            {
+                                "name": "Spellfire Bolts",
+                                "actions": [
+                                    {
+                                        "name": "Spellfire Bolts",
+                                        "actionTime": ["Action"],
+                                        "range": 60,
+                                        "duration": "Instantaneous",
+                                        "description": "As a magic action, you can expend charges to make a melee or a ranged (maximum range 60ft) spell attack to a creature or an object.\n\nYour class's main ability score is your spellcasting ability and you add your proficiency bonus. On a successful hit, the target suffers 1d6 fire or radiant damage per charge released.",
+                                        "challengeType": "none",
+                                        "type": [],
+                                        "userInput": [
+                                            {
+                                                "name": "spellfireChargesToSpend",
+                                                "displayName": "Spellfire Charges to Spend",
+                                                "type": "numberField",
+                                                "min": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ],
+                                                "max": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "resource.remainingUses"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.spellfireChargesToSpend"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Gravity Strike",
+                        "conditions": [
+                            {
+                                "type": "aspect",
+                                "value": "spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Gravity Strike",
+                                "actions": [
+                                    {
+                                        "name": "Gravity Strike",
+                                        "actionTime": ["Action"],
+                                        "range": "Self",
+                                        "duration": "Until Next Weapon Attack",
+                                        "description": "Expend a charge as part of your attack action. Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement.",
+                                        "challengeType": "none",
+                                        "type": [],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Echoes of Valor",
+                        "conditions": [
+                            {
+                                "type": "aspect",
+                                "value": "spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Gravity Strike"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Echoes of Valor",
+                                "actions": [
+                                    {
+                                        "name": "Echoes of Valor",
+                                        "actionTime": ["Action"],
+                                        "range": "Self",
+                                        "duration": "Until Next Weapon Attack",
+                                        "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",
+                                        "challengeType": "none",
+                                        "type": [],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
