@@ -135,7 +135,7 @@
         "choices": [
             {
                 "property": "spellscarFeatures",
-                "description": "Giant Ancestry:",
+                "description": "Spellscar Skills:",
                 "optionsSource": "CUSTOM",
                 "multipleSelections": 2,
                 "generateCustomOptionSummary": true,
