@@ -137,7 +137,14 @@
                 "property": "spellscarFeatures",
                 "description": "Spellscar Skills:",
                 "optionsSource": "CUSTOM",
-                "multipleSelections": 2,
+                "multipleSelections": {
+                    "calculation": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.skillPoints"
+                        }
+                    ]
+                },
                 "generateCustomOptionSummary": true,
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
