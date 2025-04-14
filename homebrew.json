@@ -202,9 +202,19 @@
                         "name": "Gravity Strike",
                         "conditions": [
                             {
-                                "type": "aspect",
-                                "value": "featureNames",
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
                                 "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
                                     {
                                         "type": "static",
                                         "value": "Spellfire Bolts"
@@ -242,9 +252,39 @@
                         "name": "Echoes of Valor",
                         "conditions": [
                             {
-                                "type": "aspect",
-                                "value": "featureNames",
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
                                 "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Gravity Strike"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
                                     {
                                         "type": "static",
                                         "value": "Gravity Strike"
