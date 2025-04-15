@@ -4,7 +4,8 @@
         "resources": [
             { 
                 "name": "luckPoints", 
-                "displayName": "Luck Points", 
+                "displayName": "Luck Points",
+                "longRestRecharge": 0,
                 "uses": {
                     "calculation": [
                         {
