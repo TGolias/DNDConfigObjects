@@ -165,7 +165,22 @@
                                         "duration": "Instantaneous",
                                         "description": "As a magic action, you can expend charges to make a melee or a ranged (maximum range 60ft) spell attack to a creature or an object.\n\nYour class's main ability score is your spellcasting ability and you add your proficiency bonus. On a successful hit, the target suffers 1d6 fire or radiant damage per charge released.",
                                         "challengeType": "none",
-                                        "type": [],
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 6,
+                                                    "multiplier": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.spellfireChargesToSpend"
+                                                        }
+                                                    ],
+                                                    "diceType": "Fire"
+                                                }
+                                            ]
+                                        },
                                         "userInput": [
                                             {
                                                 "name": "spellfireChargesToSpend",
@@ -235,6 +250,16 @@
                                         "description": "Expend a charge as part of your attack action. Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement.",
                                         "challengeType": "none",
                                         "type": [],
+                                        "aspects": {
+                                            "weaponAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Gravity Strike.</b> Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement."
+                                                    }
+                                                ]
+                                            }
+                                        },
                                         "cost": {
                                             "resourceType": "spellfireCharges",
                                             "calculation": [
@@ -305,6 +330,16 @@
                                         "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",
                                         "challengeType": "none",
                                         "type": [],
+                                        "aspects": {
+                                            "weaponAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Echoes of Valor.</b> Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action."
+                                                    }
+                                                ]
+                                            }
+                                        },
                                         "cost": {
                                             "resourceType": "spellfireCharges",
                                             "calculation": [
