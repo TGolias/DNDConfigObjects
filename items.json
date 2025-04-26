@@ -268,6 +268,32 @@
         }
     },
     {
+        "name": "Derringer",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
+        "properties": ["Light", "Reload 1", "Misfire 1"],
+        "tags": ["Derringer", "Firearm", "Martial", "Ranged"],
+        "mastery": "Nick",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 1,
+        "description": "A small, low caliber, single-shot handgun. It lacks a moving action, but is easily concealable and quick to draw and stow.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Flail",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -786,6 +812,32 @@
         }
     },
     {
+        "name": "Palm Pistol",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 40,
+            "long": 160
+        },
+        "properties": ["Light", "Reload 1", "Misfire 1"],
+        "tags": ["Palm Pistol", "Firearm", "Martial", "Ranged"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 1,
+        "description": "A small single-shot pistol designed to be concealed in the palm of the hand.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Parchment of the Stenographarian",
         "type": "Wondrous item",
         "rarity": "Rare",
@@ -831,6 +883,32 @@
         "equippable": true,
         "weight": 18,
         "description": "Long pushy stick. Why it so heavy tho?",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Pistol",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 30,
+            "long": 90
+        },
+        "properties": ["Reload 4", "Misfire 1"],
+        "tags": ["Pistol", "Firearm", "Martial", "Ranged"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 3,
+        "description": "A pistol with a four-round capacity cylinder. When viewed from front or rear the cylinder seems to resemble a four-leaf clover.",
         "damage": {
             "calculation": [
                 {
