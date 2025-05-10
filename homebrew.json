@@ -128,7 +128,19 @@
                                     "value": 1
                                 }
                             ]
-                        }
+                        },
+                        "userInput": [
+                            {
+                                "name": "spellSlotToConsume",
+                                "type": "consumeSpellSlot",
+                                "minLevel": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
