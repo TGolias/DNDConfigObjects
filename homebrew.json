@@ -255,7 +255,7 @@
                                 "actions": [
                                     {
                                         "name": "Gravity Strike",
-                                        "actionTime": ["Action"],
+                                        "actionTime": ["Free"],
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
                                         "description": "Expend a charge as part of your attack action. Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement.",
@@ -335,7 +335,7 @@
                                 "actions": [
                                     {
                                         "name": "Echoes of Valor",
-                                        "actionTime": ["Action"],
+                                        "actionTime": ["Free"],
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
                                         "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",

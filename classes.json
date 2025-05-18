@@ -1062,6 +1062,115 @@
                 }
             },
             {
+                "classLevel": 3,
+                "name": "Aura of Protection",
+                "actions": [
+                    {
+                        "name": "Aura of Protection",
+                        "actionTime": ["Free"],
+                        "range": 10,
+                        "duration": "Indefinitely",
+                        "description": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition. You and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.",
+                        "challengeType": "none",
+                        "type": [],
+                        "aspects": {
+                            "allSavingThrowBonus": {
+                                "calculation": [
+                                    {
+                                        "type": "if-then",
+                                        "if": [
+                                            {
+                                                "type": "config",
+                                                "propertyPath": "currentStatus"
+                                            },
+                                            {
+                                                "type": "config",
+                                                "propertyPath": "currentStatus.conditions"
+                                            },
+                                            {
+                                                "type": "math",
+                                                "values": [
+                                                    {
+                                                        "type": "config",
+                                                        "propertyPath": "currentStatus.conditions",
+                                                        "map": [
+                                                            {
+                                                                "type": "parameter",
+                                                                "propertyPath": "value.name"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "includes": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Incapacitated"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "then": [
+                                            {
+                                                "type": "static",
+                                                "value": 0
+                                            }
+                                        ],
+                                        "else": [
+                                            {
+                                                "type": "highestOf",
+                                                "values": [
+                                                    [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 1
+                                                        }
+                                                    ],
+                                                    [
+                                                        {
+                                                            "type": "aspect",
+                                                            "value": "charismaModifier"
+                                                        }
+                                                    ]
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "allSavingThrowAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Aura of Protection.</b> You and your allies in the aura gain a bonus to saving throws equal to "
+                                    },
+                                    {
+                                        "type": "highestOf",
+                                        "values": [
+                                            [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "aspect",
+                                                    "value": "charismaModifier"
+                                                }
+                                            ]
+                                        ]
+                                    },
+                                    {
+                                        "type": "static",
+                                        "value": " while you do not have the Incapacitated condition."
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            {
                 "classLevel": 8,
                 "name": "Feat",
                 "feat": {
