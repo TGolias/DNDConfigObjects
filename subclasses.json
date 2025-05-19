@@ -36,6 +36,161 @@
         ]
     },
     {
+        "name": "Oath of the Watchers",
+        "class": "Paladin",
+        "features": [
+            {
+                "classLevel": 3,
+                "name": "Oath of the Watchers Paladin Spells",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Alarm"
+                            },
+                            {
+                                "spellName": "Detect Magic"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Channel Divinity",
+                "actions": [
+                    {
+                        "name": "Watcher's Will",
+                        "actionTime": ["Action"],
+                        "range": 30,
+                        "duration": "1 minute",
+                        "description": "You can use your Channel Divinity to invest your presence with the warding power of your faith. As an action, you can choose a number of creatures you can see within 30 feet of you, up to a number equal to your Charisma modifier (minimum of one creature). For 1 minute, you and the chosen creatures have advantage on Intelligence, Wisdom, and Charisma saving throws.",
+                        "challengeType": "none",
+                        "type": ["buff"],
+                        "buff": {
+                            "calculation": [
+                                {
+                                    "type": "highestOf",
+                                    "values": [
+                                        [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "type": "aspect",
+                                                "value": "charismaModifier"
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                }
+                            ]
+                        },
+                        "aspects": {
+                            "intelligenceSavingThrowAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Watcher's Will.</b> Advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                    }
+                                ]
+                            },
+                            "wisdomSavingThrowAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Watcher's Will.</b> Advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                    }
+                                ]
+                            },
+                            "charismaSavingThrowAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Watcher's Will.</b> Advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                    }
+                                ]
+                            }
+                        },
+                        "cost": {
+                            "resourceType": "channelDivinity",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Abjure the Extraplanar",
+                        "actionTime": ["Action"],
+                        "range": 30,
+                        "duration": "1 minute",
+                        "description": "You can use your Channel Divinity to castigate unworldly beings. As an action, you present your holy symbol and each aberration, celestial, elemental, fey, or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.\n\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action.",
+                        "challengeType": "savingThrow",
+                        "savingThrowType": "wisdom",
+                        "type": ["debuff"],
+                        "debuff": {
+                            "calculation": [
+                                {
+                                    "type": "highestOf",
+                                    "values": [
+                                        [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "type": "aspect",
+                                                "value": "charismaModifier"
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                }
+                            ]
+                        },
+                        "cost": {
+                            "resourceType": "channelDivinity",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Oathbreaker",
         "class": "Paladin",
         "features": [
