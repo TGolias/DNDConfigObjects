@@ -41,7 +41,7 @@
         "features": [
             {
                 "classLevel": 3,
-                "name": "Oath of the Watchers Paladin Spells",
+                "name": "Oath of the Watchers Paladin Spells Lvl3",
                 "spellcasting": {
                     "ability": {
                         "calculation": [
@@ -64,6 +64,126 @@
                             },
                             {
                                 "spellName": "Detect Magic"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Oath of the Watchers Paladin Spells Lvl5",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Moonbeam"
+                            },
+                            {
+                                "spellName": "See Invisibility"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 9,
+                "name": "Oath of the Watchers Paladin Spells Lvl9",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Counterspell"
+                            },
+                            {
+                                "spellName": "Nondetection"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 13,
+                "name": "Oath of the Watchers Paladin Spells Lvl13",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Aura of Purity"
+                            },
+                            {
+                                "spellName": "Banishment"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 17,
+                "name": "Oath of the Watchers Paladin Spells Lvl13",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Hold Monster"
+                            },
+                            {
+                                "spellName": "Scrying"
                             }
                         ]
                     }
@@ -196,7 +316,7 @@
         "features": [
             {
                 "classLevel": 3,
-                "name": "Oathbreaker Paladin Spells",
+                "name": "Oathbreaker Paladin Spells Lvl3",
                 "spellcasting": {
                     "ability": {
                         "calculation": [
@@ -219,6 +339,126 @@
                             },
                             {
                                 "spellName": "Inflict Wounds"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Oathbreaker Paladin Spells Lvl5",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Crown of Madness"
+                            },
+                            {
+                                "spellName": "Darkness"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 9,
+                "name": "Oathbreaker Paladin Spells Lvl9",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Animate Dead"
+                            },
+                            {
+                                "spellName": "Bestow Curse"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 13,
+                "name": "Oathbreaker Paladin Spells Lvl13",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Blight"
+                            },
+                            {
+                                "spellName": "Confusion"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 17,
+                "name": "Oathbreaker Paladin Spells Lvl13",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Contagion"
+                            },
+                            {
+                                "spellName": "Dominate Person"
                             }
                         ]
                     }

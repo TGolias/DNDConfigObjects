@@ -1,5 +1,19 @@
 [
     {
+        "name": "Alarm",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Ranger", "Wizard"],
+        "castingTime": ["1 minute", "Ritual"],
+        "range": 30,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a bell and silver wire"],
+        "duration": "8 hours",
+        "description": "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is audible or mental:\n\n<b>Audible Alarm.</b> The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\n<b>Mental Alarm.</b> You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you're asleep.",
+        "challengeType": "none",
+        "type": []
+    },
+    {
         "name": "Bless",
         "level": 1,
         "school": "Divination",
@@ -385,7 +399,7 @@
         "castingCondition": "Must be made immediately after hitting a target with a Melee weapon or an Unarmed Strike",
         "range": "Self",
         "components": ["V"],
-        "duration": "Instantaneous",
+        "duration": "1 minute",
         "description": "As you hit the target, it takes an extra 1d6 Fire damage from the attack. At the start of each of its turns until the spell ends, the target takes 1d6 Fire damage and then makes a Constitution saving throw. On a failed save, the spell continues. On a successful save, the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> All the damage increases by 1d6 for each spell slot level above 1.",
         "challengeType": "savingThrow",
         "savingThrowType": "constitution",
@@ -479,6 +493,39 @@
         }
     },
     {
+        "name": "Wrathful Smite",
+        "level": 1,
+        "school": "Necromancy",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Bonus Action"],
+        "castingCondition": "Must be made immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+        "range": "Self",
+        "components": ["V"],
+        "duration": "1 minute",
+        "description": "The target takes an extra 1d6 Necrotic damage from the attack, and it must succeed on a Wisdom saving throw or have the Frightened condition until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "strength",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Necrotic"
+                }
+            ]
+        },
+        "debuff": {
+            "conditions": ["Frightened"]
+        }
+    },
+    {
         "name": "Aid",
         "level": 2,
         "school": "Abjuration",
@@ -529,6 +576,25 @@
                     }
                 ]
             }
+        }
+    },
+    {
+        "name": "Crown of Madness",
+        "level": 2,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "One creature that you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The creature succeeds automatically if it isn't Humanoid.\n\nA spectral crown appears on the Charmed target's head, and it must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success.\n\nOn your later turns, you must take the Magic action to maintain control of the target, or the spell ends.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "description": "The target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success."
         }
     },
     {
@@ -914,6 +980,40 @@
         "type": []
     },
     {
+        "name": "Moonbeam",
+        "level": 2,
+        "school": "Evocation",
+        "spellLists": ["Druid"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a moonseed leaf"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder, and you can take a Magic action on later turns to move the Cylinder up to 60 feet. When the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder. On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters the spell's area or ends its turn there. A creature makes this save only once per turn.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 2.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        },
+        "debuff": {
+            "description": "On a failed save, if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder."
+        }
+    },
+    {
         "name": "Pass without Trace",
         "level": 2,
         "school": "Abjuration",
@@ -945,5 +1045,53 @@
                 ]
             }
         } 
+    },
+    {
+        "name": "See Invisibility",
+        "level": 2,
+        "school": "Divination",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of talc"],
+        "duration": "1 hour",
+        "description": "For the duration, you see creatures and objects that have the Invisible condition as if they were visible, and you can see into the Ethereal Plane. Creatures and objects there appear ghostly.",
+        "challengeType": "none",
+        "type": []
+    },
+    {
+        "name": "Shining Smite",
+        "level": 2,
+        "school": "Transmutation",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Bonus Action"],
+        "castingCondition": "Must be made immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+        "range": "Self",
+        "components": ["V"],
+        "duration": "1 minute",
+        "concentration": true,
+        "description": "The target hit by the strike takes an extra 2d6 Radiant damage from the attack. Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 2.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "strength",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        },
+        "debuff": {
+            "description": "Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition."
+        }
     }
 ]
