@@ -167,6 +167,31 @@
         }
     },
     {
+        "name": "Burnt Toast of Fire Resistance",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "1 hour",
+            "challengeType": "none",
+            "type": ["buff", "debuff"],
+            "buff": {
+                "description": "Fire resistance for 1 hour."
+            },
+            "debuff": {
+                "description": "Everything tastes and smells burnt for the next 24 hours making you unable to discern anything that relies on taste or scent."
+            },
+            "aspects": {
+                "resistances": ["Fire"]
+            }
+        },
+        "weight": 0.5,
+        "description": "Burnt Toast that upon being consumed (treat it like a potion) grants the consumer fire resistance for 1 hour. However, everything tastes and smells burnt for the next 24 hours making you unable to discern anything that relies on taste or scent."
+    },
+    {
         "name": "Chain Mail",
         "type": "Armor",
         "armorType": "Heavy",
@@ -1411,6 +1436,32 @@
         "name": "The Gun of Hole-iness",
         "type": "Template",
         "templateOf": "Pepperbox"
+    },
+    {
+        "name": "The Ring of Spotlight",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "equippable": true,
+        "weight": 1,
+        "description": "This magical item grants the user advantage on Performance checks. Magically a single light shines down from above onto the user like a spotlight upon making any performance check while wearing this. You automatically fail any stealth checks while this is active.",
+        "aspects": {
+            "skillProficiencyPerformanceAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>The Ring of Spotlight.</b> Advantage on Performance checks as a single light Magically shines down from above onto you."
+                    }
+                ]
+            },
+            "skillProficiencyStealthAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>The Ring of Spotlight.</b> You automatically fail any stealth checks while the Ring of Spotlight is active."
+                    }
+                ]
+            }
+        }
     },
     {
         "name": "Trident",
