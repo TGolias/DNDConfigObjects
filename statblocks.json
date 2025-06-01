@@ -291,7 +291,7 @@
                             "name": "Fell Glare",
                             "actionTime": ["Bonus Action"],
                             "range": 60,
-                            "duration": "1 turn",
+                            "duration": "1 round",
                             "description": "<b>Wisdom Saving Throw:</b> DC equals your spell save DC, one creature within 60 feet the steed can see.\n\n<b>Failure:</b> The target has the Frightened condition until the end of your next turn.",
                             "challengeType": "savingThrow",
                             "savingThrowType": "wisdom",

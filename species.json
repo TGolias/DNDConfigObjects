@@ -461,7 +461,7 @@
                                     {
                                         "name": "Cloud's Jaunt",
                                         "actionTime": ["Bonus Action"],
-                                        "range": 30,
+                                        "range": "Self",
                                         "duration": "Instantaneous",
                                         "description": "As a Bonus Action, you magically teleport up to 30 feet to an unoccupied space you can see.",
                                         "challengeType": "none",
@@ -488,19 +488,325 @@
                         ]
                     },
                     {
-                        "name": "Fire Giant"
+                        "name": "Fire Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Fire's Burn",
+                                "actions": [
+                                    {
+                                        "name": "Fire's Burn",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "When you hit a target with an attack roll and deal damage to it.",
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "When you hit a target with an attack roll and deal damage to it, you can also deal 1d10 Fire damage to that target.",
+                                        "challengeType": "none",
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 10,
+                                                    "diceType": "Fire"
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "uses": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
-                        "name": "Frost Giant"
+                        "name": "Frost Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Frost's Chill",
+                                "actions": [
+                                    {
+                                        "name": "Frost's Chill",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "When you hit a target with an attack roll and deal damage to it.",
+                                        "range": "Self",
+                                        "duration": "1 round",
+                                        "description": "When you hit a target with an attack roll and deal damage to it, you can also deal 1d6 Cold damage to that target and reduce its Speed by 10 feet until the start of your next turn.",
+                                        "challengeType": "none",
+                                        "type": ["damage", "debuff"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 6,
+                                                    "diceType": "Cold"
+                                                }
+                                            ]
+                                        },
+                                        "debuff": {
+                                            "description": "Target's Speed is reduced by 10 feet until the start of your next turn."
+                                        },
+                                        "cost": {
+                                            "uses": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
-                        "name": "Hill Giant"
+                        "name": "Hill Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Hill's Tumble",
+                                "actions": [
+                                    {
+                                        "name": "Hill's Tumble",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "When you hit a Large or smaller creature with an attack roll and deal damage to it.",
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the Prone condition.",
+                                        "challengeType": "none",
+                                        "type": ["debuff"],
+                                        "debuff": {
+                                            "conditions": ["Prone"]
+                                        },
+                                        "cost": {
+                                            "uses": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
-                        "name": "Stone Giant"
+                        "name": "Stone Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Stone's Endurance",
+                                "actions": [
+                                    {
+                                        "name": "Stone's Endurance",
+                                        "actionTime": ["Reaction"],
+                                        "actionCondition": "When you take damage.",
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "When you take damage, you can take a Reaction to roll 1d12. Add your Constitution modifier to the number rolled and reduce the damage by that total.",
+                                        "challengeType": "none",
+                                        "type": ["buff"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 12
+                                                },
+                                                {
+                                                    "type": "aspect",
+                                                    "value": "charismaModifier"
+                                                }
+                                            ],
+                                            "description": "reduced from the damage taken."
+                                        },
+                                        "cost": {
+                                            "uses": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
-                        "name": "Storm Giant"
+                        "name": "Storm Giant",
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Storm's Thunder",
+                                "actions": [
+                                    {
+                                        "name": "Storm's Thunder",
+                                        "actionTime": ["Reaction"],
+                                        "actionCondition": "When you take damage from a creature within 60 feet of you.",
+                                        "range": 60,
+                                        "duration": "Instantaneous",
+                                        "description": "When you take damage from a creature within 60 feet of you, you can take a Reaction to deal 1d8 Thunder damage to that creature.",
+                                        "challengeType": "none",
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 8,
+                                                    "diceType": "Thunder"
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "uses": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "proficiencyBonus"
+                                                    }
+                                                ]
+                                            },
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "features": [
+            {
+                "level": 1,
+                "name": "Powerful Build",
+                "aspects": {
+                    "skillProficiencyAthleticsAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
+                            }
+                        ]
+                    },
+                    "skillProficiencyAcrobaticsAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
+                            }
+                        ]
+                    },
+                    "carryBonus": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "carryBonusAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Powerful Build.</b> You count as one size larger when determining your carrying capacity."
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "level": 5,
+                "name": "Large Form",
+                "actions": [
+                    {
+                        "name": "Large Form",
+                        "actionTime": ["Bonus Action"],
+                        "range": 30,
+                        "duration": "10 minutes",
+                        "description": "You can change your size to Large as a Bonus Action if you're in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have Advantage on Strength checks, and your Speed increases by 10 feet. Once you use this trait, you can't use it again until you finish a Long Rest.",
+                        "challengeType": "none",
+                        "type": [],
+                        "cost": {
+                            "uses": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        "aspects": {
+                            "sizeBonus": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "speedBonus": 10,
+                            "skillProficiencyAthleticsAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Large Form.</b> You have Advantage on Strength checks."
+                                    }
+                                ]
+                            }
+                        }
                     }
                 ]
             }
