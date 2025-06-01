@@ -120,7 +120,7 @@
         "actionTime": ["Action"],
         "actionCondition": "When you're Heavily Obscured or behind Three-Quarters Cover or Total Cover and out of any enemy's line of sight.",
         "range": "Self",
-        "duration": "Instantaneous",
+        "duration": "Indefinitely",
         "type": ["buff"],
         "buff": {
             "calculation": [
