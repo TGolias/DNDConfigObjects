@@ -347,6 +347,107 @@
                         ]
                     },
                     {
+                        "name": "Sea Elf",
+                        "speedAddendum": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "<b>Sea Elf.</b> Your swim speed is equal to your walking speed."
+                                }
+                            ]
+                        },
+                        "features": [
+                            {
+                                "level": 1,
+                                "name": "Sea Tongue",
+                                "languages": ["Primordial"]
+                            },
+                            {
+                                "level": 1,
+                                "name": "Elven Lineage",
+                                "spellcasting": {
+                                    "ability": {
+                                        "calculation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
+                                    },
+                                    "cantripsKnown": {
+                                        "calculation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Shape Water"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "level": 3,
+                                "name": "Elven Lineage",
+                                "spellcasting": {
+                                    "ability": {
+                                        "calculation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
+                                    },
+                                    "spellsKnown": {
+                                        "calculation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Create or Destroy Water",
+                                                "freeUses": 1
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "level": 5,
+                                "name": "Elven Lineage",
+                                "spellcasting": {
+                                    "ability": {
+                                        "calculation": [
+                                            {
+                                                "type": "aspect",
+                                                "value": "elvenLineageSpellcastingAbility"
+                                            }
+                                        ]
+                                    },
+                                    "spellsKnown": {
+                                        "calculation": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "predeterminedSelections": [
+                                            {
+                                                "spellName": "Rime's Binding Ice",
+                                                "freeUses": 1
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
                         "name": "Wood Elf",
                         "speed": 35,
                         "features": [
@@ -434,6 +535,96 @@
                                 }
                             }
                         ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Frog Man",
+        "speed": 30,
+        "size": "Medium",
+        "darkvision": 60,
+        "features": [
+            {
+                "level": 1,
+                "name": "Amphibious",
+                "healthMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Amphibious.</b> You can breathe in both air and water."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Powerful Legs",
+                "speedAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Legs.</b> Your jump height has an additional 10 feet."
+                        }
+                    ]
+                },
+                "skillProficiencyAthleticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Legs.</b> Your jump height has an additional 10 feet."
+                        }
+                    ]
+                },
+                "skillProficiencyAcrobaticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Legs.</b> Your jump height has an additional 10 feet."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Tongue Slap",
+                "alternateUnarmedDamageCalculation": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 6,
+                            "diceType": "Bludgeoning"
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Tongue Slap.</b> Your tongue is a powerful natural weapon, which you can use to make unarmed strikes. If you hit with it, you deal bludgeoning damage equal to 1d6 + your Strength modifier."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Camouflage",
+                "skillProficiencyStealthAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Camouflage.</b> You are proficient in the Stealth skill."
+                        }
+                    ]
+                },
+                "actions": [
+                    {
+                        "name": "Burrow",
+                        "actionTime": ["Bonus Action"],
+                        "actionCondition": "When you are around loose terrain (sand, gravel, mud, fresh tilled dirt, fresh snow, etc) that can be burrowed into.",
+                        "templateType": "actions",
+                        "templateOf": "Hide"
                     }
                 ]
             }
