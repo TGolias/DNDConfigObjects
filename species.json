@@ -94,15 +94,25 @@
             {
                 "level": 1,
                 "name": "Fey Ancestry",
-                "aspects": {
-                    "conditionResistance": ["Charmed"]
+                "allSavingThrowAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fey Ancestry.</b> You have Advantage on saving throws you make to avoid or end the Charmed condition."
+                        }
+                    ]
                 }
             },
             {
                 "level": 1,
                 "name": "Trance",
-                "aspects": {
-                    "conditionImmunity": ["Sleep"]
+                "healthMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Trance.</b> You don't need to sleep, and magic can't put you to sleep. You can finish a Long Rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness."
+                        }
+                    ]
                 }
             }
         ],
@@ -725,39 +735,37 @@
             {
                 "level": 1,
                 "name": "Powerful Build",
-                "aspects": {
-                    "skillProficiencyAthleticsAddendum": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
-                            }
-                        ]
-                    },
-                    "skillProficiencyAcrobaticsAddendum": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
-                            }
-                        ]
-                    },
-                    "carryBonus": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ]
-                    },
-                    "carryBonusAddendum": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Powerful Build.</b> You count as one size larger when determining your carrying capacity."
-                            }
-                        ]
-                    }
+                "skillProficiencyAthleticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
+                        }
+                    ]
+                },
+                "skillProficiencyAcrobaticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Build.</b> You have Advantage on any ability check you make to end the Grappled condition."
+                        }
+                    ]
+                },
+                "carryBonus": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 1
+                        }
+                    ]
+                },
+                "carryBonusAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Powerful Build.</b> You count as one size larger when determining your carrying capacity."
+                        }
+                    ]
                 }
             },
             {
@@ -838,6 +846,27 @@
                 "optionDisplayProperty": "name",
                 "choiceToAttributesMapping": {
                     "skillProficiencies": "name"
+                }
+            }
+        ],
+        "features": [
+            {
+                "level": 1,
+                "name": "Resourceful",
+                "heroicInspirationLongRestRecharge": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": true
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Versatile",
+                "feat": {
+                    "restrictedTypes": ["Origin"]
                 }
             }
         ]
