@@ -21,6 +21,19 @@
         }
     },
     {
+        "name": "Burning",
+        "description": "A burning creature or object takes 1d4 Fire damage at the start of each of its turns. As an action, you can extinguish fire on yourself by giving yourself the Prone condition and rolling on the ground. The fire also goes out if it is doused, submerged, or suffocated.",
+        "highlightColor": "Bad",
+        "healthMenuAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "A burning creature or object takes 1d4 Fire damage at the start of each of its turns."
+                }
+            ]
+        }
+    },
+    {
         "name": "Charmed",
         "description": "While you have the Charmed condition, you experience the following effects.\n\n<b>Can't Harm the Charmer.</b> You can't attack the charmer or target the charmer with damaging abilities or magical effects.\n\n<b>Social Advantage.</b> The charmer has Advantage on any ability check to interact with you socially.",
         "highlightColor": "Bad"

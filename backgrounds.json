@@ -28,6 +28,13 @@
         "feat": "Alert"
     },
     {
+        "name": "Enchanting Performer",
+        "abilityScores": ["dexterity", "constitution", "charisma"],
+        "skillProficiencies": ["Arcana", "Performance"],
+        "toolProficiencies": ["Jeweler's Tools"],
+        "feat": "Metamagic Adept"
+    },
+    {
         "name": "Entertainer",
         "abilityScores": ["strength", "dexterity", "charisma"],
         "skillProficiencies": ["Acrobatics", "Performance"],

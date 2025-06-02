@@ -1,5 +1,113 @@
 [
     {
+        "name": "Acid",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Attack"],
+            "range": 20,
+            "duration": "Instantaneous",
+            "challengeType": "savingThrow",
+            "savingThrowType": "dexterity",
+            "savingThrowCalculation": [
+                {
+                    "type": "static",
+                    "value": 8
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "dexterityModifier"
+                },
+                {
+                    "type": "aspect",
+                    "value": "proficiencyBonus"
+                }
+            ],
+            "type": ["damage"],
+            "damage": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 6,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "diceType": "Acid"
+                    }
+                ]
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 25
+        },
+        "description": "When you take the Attack action, you can replace one of your attacks with throwing a vial of Acid. Target one creature or object you can see within 20 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus) or take 2d6 Acid damage."
+    },
+    {
+        "name": "Alchemist's Fire",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Attack"],
+            "range": 20,
+            "duration": "Indefinitely",
+            "challengeType": "savingThrow",
+            "savingThrowType": "dexterity",
+            "savingThrowCalculation": [
+                {
+                    "type": "static",
+                    "value": 8
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "dexterityModifier"
+                },
+                {
+                    "type": "aspect",
+                    "value": "proficiencyBonus"
+                }
+            ],
+            "type": ["damage", "debuff"],
+            "damage": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "diceType": "Fire"
+                    }
+                ]
+            },
+            "debuff": {
+                "conditions": ["Charmed"]
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 50
+        },
+        "description": "When you take the Attack action, you can replace one of your attacks with throwing a flask of Alchemist's Fire. Target one creature or object you can see within 20 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus) or take 1d4 Fire damage and start burning."
+    },
+    {
+        "name": "Alchemist's Supplies",
+        "tags": ["Alchemist's Supplies", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Identify a substance (DC 15)", "Start a fire (DC 15)"],
+        "craft": ["Acid", "Alchemist's Fire", "Component Pouch", "Oil", "Paper", "Perfume"],
+        "rarity": "None",
+        "weight": 8,
+        "cost": {
+            "gold": 50
+        }
+    },
+    {
         "name": "Amulet of Health",
         "type": "Wondrous item",
         "rarity": "Rare",
@@ -18,6 +126,9 @@
         "container": true,
         "containerCapacity": 30,
         "weight": 5,
+        "cost": {
+            "gold": 2
+        },
         "description": "A backpack can hold one cubic foot or 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
     },
     {
@@ -30,6 +141,46 @@
         "description": "This bag has an interior space considerably larger than its outside dimensions, roughly 2 feet in diameter at the mouth and 4 feet deep. The bag can hold up to 500 pounds, not exceeding a volume of 64 cubic feet. The bag weighs 15 pounds, regardless of its contents. Retrieving an item from the bag requires an action.\n\nIf the bag is overloaded, pierced, or torn, it ruptures and is destroyed, and its contents are scattered in the Astral Plane. If the bag is turned inside out, its contents spill forth, unharmed, but the bag must be put right before it can be used again. Breathing creatures inside the bag can survive up to a number of minutes equal to 10 divided by the number of creatures (minimum 1 minute), after which time they begin to suffocate.\n\nPlacing a bag of holding inside an extradimensional space created by a handy haversack, portable hole, or similar item instantly destroys both items and opens a gate to the Astral Plane. The gate originates where the one item was placed inside the other. Any creature within 10 feet of the gate is sucked through it to a random location on the Astral Plane. The gate then closes. The gate is one-way only and can't be reopened."
     },
     {
+        "name": "Bagpipes",
+        "tags": ["Bagpipes", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 6,
+        "cost": {
+            "gold": 30
+        }
+    },
+    {
+        "name": "Basic Poison",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Self",
+            "duration": "1 minute",
+            "challengeType": "none",
+            "type": ["damage"],
+            "damage": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "diceType": "Poison"
+                    }
+                ]
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 100
+        },
+        "description": "As a Bonus Action, you can use a vial of Basic Poison to coat one weapon or up to three pieces of ammunition. A creature that takes Piercing or Slashing damage from the poisoned weapon or ammunition takes an extra 1d4 Poison damage. Once applied, the poison retains potency for 1 minute or until its damage is dealt, whichever comes first."
+    },
+    {
         "name": "Battleaxe",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -40,6 +191,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 4,
+        "cost": {
+            "gold": 10
+        },
         "description": "Like an axe: but for battle.",
         "damage": {
             "calculation": [
@@ -66,6 +220,9 @@
         "rarity": "None",
         "stackable": true,
         "weight": 7,
+        "cost": {
+            "gold": 1
+        },
         "description": "You never know where you're going to sleep, and a bedroll helps you get better sleep in a hayloft or on the cold ground. A bedroll consists of bedding and a blanket thin enough to be rolled up and tied. In an emergency, it can double as a stretcher."
     },
     {
@@ -155,6 +312,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 1,
+        "cost": {
+            "gold": 10
+        },
         "description": "A gun that you can blow.",
         "damage": {
             "calculation": [
@@ -164,6 +324,19 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Brewer's Supplies",
+        "tags": ["Brewer's Supplies", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Detect poisoned drink (DC 15)", "Identify alcohol (DC 10)"],
+        "craft": ["Antitoxin"],
+        "rarity": "None",
+        "weight": 9,
+        "cost": {
+            "gold": 20
         }
     },
     {
@@ -189,7 +362,49 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 2
+        },
         "description": "Burnt Toast that upon being consumed (treat it like a potion) grants the consumer fire resistance for 1 hour. However, everything tastes and smells burnt for the next 24 hours making you unable to discern anything that relies on taste or scent."
+    },
+    {
+        "name": "Calligrapher's Supplies",
+        "tags": ["Calligrapher's Supplies", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Write text with impressive flourishes that guard against forgery (DC 15)"],
+        "craft": ["Ink", "Spell Scroll"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 10
+        }
+    },
+    {
+        "name": "Carpenter's Tools",
+        "tags": ["Carpenter's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "strength",
+        "utilize": ["Seal or pry open a door or container (DC 20)"],
+        "craft": ["Club", "Greatclub", "Quarterstaff", "Barrel", "Chest", "Ladder", "Pole", "Portable Ram", "Torch"],
+        "rarity": "None",
+        "weight": 6,
+        "cost": {
+            "gold": 8
+        }
+    },
+    {
+        "name": "Cartographer's Tools",
+        "tags": ["Cartographer's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Draft a map of a small area (DC 15)"],
+        "craft": ["Map"],
+        "rarity": "None",
+        "weight": 6,
+        "cost": {
+            "gold": 15
+        }
     },
     {
         "name": "Chain Mail",
@@ -198,6 +413,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 55,
+        "cost": {
+            "gold": 75
+        },
         "description": "AC: 16. Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath the mail to prevent chafing and to cushion the impact of blows. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
             "skillProficiencyStealthAddendum": {
@@ -229,6 +447,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "silver": 1
+        },
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
             "calculation": [
@@ -238,6 +459,32 @@
                     "diceType": "Bludgeoning"
                 }
             ]
+        }
+    },
+    {
+        "name": "Cobbler's Tools",
+        "tags": ["Cobbler's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Modify footwear to give Advantage on the wearer's next Dexterity (Acrobatics) check (DC 15)"],
+        "craft": ["Climber's Kit"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 5
+        }
+    },
+    {
+        "name": "Cook's Utensils",
+        "tags": ["Cook's Utensils", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Improve food's flavor (DC 10)", "Detect spoiled or poisoned food (DC 15)"],
+        "craft": ["Rations"],
+        "rarity": "None",
+        "weight": 8,
+        "cost": {
+            "gold": 1
         }
     },
     {
@@ -255,6 +502,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 1,
+        "cost": {
+            "gold": 2
+        },
         "description": "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.",
         "damage": {
             "calculation": [
@@ -281,6 +531,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 0.25,
+        "cost": {
+            "copper": 5
+        },
         "description": "Bullseye.",
         "damage": {
             "calculation": [
@@ -307,6 +560,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 1,
+        "cost": {
+            "gold": 50
+        },
         "description": "A small, low caliber, single-shot handgun. It lacks a moving action, but is easily concealable and quick to draw and stow.",
         "damage": {
             "calculation": [
@@ -316,6 +572,67 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Dice Set",
+        "tags": ["Dice Set", "Gaming Set"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Discern whether someone is cheating (DC 10)", "Win the game (DC 20)"],
+        "rarity": "None",
+        "weight": 0,
+        "cost": {
+            "silver": 1
+        }
+    },
+    {
+        "name": "Disguise Kit",
+        "tags": ["Disguise Kit"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Apply makeup (DC 10)"],
+        "craft": ["Costume"],
+        "rarity": "None",
+        "weight": 3,
+        "cost": {
+            "gold": 25
+        }
+    },
+    {
+        "name": "Dragonchess Set",
+        "tags": ["Dragonchess Set", "Gaming Set"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Discern whether someone is cheating (DC 10)", "Win the game (DC 20)"],
+        "rarity": "None",
+        "weight": 0,
+        "cost": {
+            "gold": 1
+        }
+    },
+    {
+        "name": "Drum",
+        "tags": ["Drum", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 3,
+        "cost": {
+            "gold": 6
+        }
+    },
+    {
+        "name": "Dulcimer",
+        "tags": ["Dulcimer", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 10,
+        "cost": {
+            "gold": 25
         }
     },
     {
@@ -329,6 +646,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 10
+        },
         "description": "A stick with a hurty thing chained to it.",
         "damage": {
             "calculation": [
@@ -338,6 +658,30 @@
                     "diceType": "Bludgeoning"
                 }
             ]
+        }
+    },
+    {
+        "name": "Flute",
+        "tags": ["Flute", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 1,
+        "cost": {
+            "gold": 2
+        }
+    },
+    {
+        "name": "Forgery Kit",
+        "tags": ["Forgery Kit"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Mimic 10 or fewer words of someone else's handwriting (DC 15)", "Duplicate a wax seal (DC 20)"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 15
         }
     },
     {
@@ -351,6 +695,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 20
+        },
         "description": "Like a Halberd: but with the Graze property.",
         "damage": {
             "calculation": [
@@ -360,6 +707,19 @@
                     "diceType": "Slashing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Glassblower's Tools",
+        "tags": ["Glassblower's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Discern what a glass object held in the past 24 hours (DC 15)"],
+        "craft": ["Glass Bottle", "Magnifying Glass", "Spyglass", "Vial"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 30
         }
     },
     {
@@ -373,6 +733,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 7,
+        "cost": {
+            "gold": 30
+        },
         "description": "Like an axe: but greater.",
         "damage": {
             "calculation": [
@@ -395,6 +758,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 10,
+        "cost": {
+            "silver": 2
+        },
         "description": "Like a Club: but greater.",
         "damage": {
             "calculation": [
@@ -417,6 +783,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 50
+        },
         "description": "Like a sword: but greater.",
         "damage": {
             "calculation": [
@@ -445,6 +814,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 20
+        },
         "description": "Like a Glaive: but with the Cleave property.",
         "damage": {
             "calculation": [
@@ -471,6 +843,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 75
+        },
         "description": "A 'Light' Crossbow (not 'Light Crossbow') that can be held in one hand.",
         "damage": {
             "calculation": [
@@ -497,6 +872,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 5
+        },
         "description": "Good for chopping wood and heads.",
         "damage": {
             "calculation": [
@@ -523,6 +901,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 18,
+        "cost": {
+            "gold": 50
+        },
         "description": "Like a Crossbow: but heavier.",
         "damage": {
             "calculation": [
@@ -533,6 +914,69 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Herbalism Kit",
+        "tags": ["Herbalism Kit"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Identify a plant (DC 10)"],
+        "craft": ["Antitoxin", "Candle", "Healer's Kit", "Potion of Healing"],
+        "rarity": "None",
+        "weight": 3,
+        "cost": {
+            "gold": 5
+        }
+    },
+    {
+        "name": "Horn",
+        "tags": ["Horn", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 3
+        }
+    },
+    {
+        "name": "Hunting Trap",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Utilize"],
+            "range": "Self",
+            "duration": "Indefinitely",
+            "challengeType": "savingThrow",
+            "savingThrowType": "dexterity",
+            "savingThrowCalculation": [
+                {
+                    "type": "static",
+                    "value": 13
+                }
+            ],
+            "type": ["damage", "debuff"],
+            "damage": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "diceType": "Piercing"
+                    }
+                ]
+            },
+            "debuff": {
+                "description": "Creature's Speed is reduced to O until the start of its next turn. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet). A creature can use its action to make a DC 13 Strength (Athletics) check, freeing itself or another creature within its reach on a success. Each failed check deals 1 Piercing damage to the trapped creature."
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 5
+        },
+        "description": "As a Utilize action, you can set a Hunting Trap, which is a sawtooth steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 Piercing damage and have its Speed reduced to O until the start of its next turn. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet). A creature can use its action to make a DC 13 Strength (Athletics) check, freeing itself or another creature within its reach on a success. Each failed check deals 1 Piercing damage to the trapped creature."
     },
     {
         "name": "Iron Golem's Might",
@@ -565,6 +1009,9 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 5
+        },
         "description": "This iridescent liquid grants the drinker something approaching resistance to bludgeoning, piercing and slashing damage for one minute, but can continue for up to five minutes provided the user takes at least 1 point of damage each round. The damage reduction must be tracked for the duration as the drinker will suffer all of that damage in a single lump after the effect ends. This damage <b>cannot</b> be further reduced as it is simply the mind catching up to what very well may be beyond fatal damage."
     },
     {
@@ -582,6 +1029,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "silver": 5
+        },
         "description": "A spear designed primarily to be thrown.",
         "damage": {
             "calculation": [
@@ -591,6 +1041,19 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Jeweler's Tools",
+        "tags": ["Jeweler's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Discern a gem's value (DC 15)"],
+        "craft": ["Arcane Focus", "Holy Symbol"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 25
         }
     },
     {
@@ -604,6 +1067,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 10
+        },
         "description": "Long pointy stick that can be one-handed if you are mounted: Better go buy a horse.",
         "damage": {
             "calculation": [
@@ -613,6 +1079,19 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Leatherworker's Tools",
+        "tags": ["Leatherworker's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Add a design to a leather item (DC 10)"],
+        "craft": ["Sling", "Whip", "Hide Armor", "Leather Armor", "Studded Leather Armor", "Backpack", "Crossbow Bolt Case", "Map Case", "Scroll Case", "Parchment", "Pouch", "Quiver", "Waterskin"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 5
         }
     },
     {
@@ -630,6 +1109,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 5,
+        "cost": {
+            "gold": 25
+        },
         "description": "-and you call this thing the 'Light Crossbow' despite the fact that it lacks the 'Light' property?",
         "damage": {
             "calculation": [
@@ -656,6 +1138,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 2
+        },
         "description": "A fine tool both in and out of combat. Famously sold by Tessler Kefflin.",
         "damage": {
             "calculation": [
@@ -682,6 +1167,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 50
+        },
         "description": "Like a bow: but longer.",
         "damage": {
             "calculation": [
@@ -704,6 +1192,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 15
+        },
         "description": "Like a sword: but longer.",
         "damage": {
             "calculation": [
@@ -725,6 +1216,30 @@
         }
     },
     {
+        "name": "Lute",
+        "tags": ["Lute", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 35
+        }
+    },
+    {
+        "name": "Lyre",
+        "tags": ["Lyre", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 30
+        }
+    },
+    {
         "name": "Mace",
         "type": "Weapon",
         "weaponType": "Simple",
@@ -735,6 +1250,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 4,
+        "cost": {
+            "gold": 5
+        },
         "description": "A heavy club, typically having a metal head and spikes. Favored weapon of many iconic Clerics.",
         "damage": {
             "calculation": [
@@ -744,6 +1262,41 @@
                     "diceType": "Bludgeoning"
                 }
             ]
+        }
+    },
+    {
+        "name": "Manacles",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Utilize"],
+            "range": "Self",
+            "duration": "Indefinitely",
+            "challengeType": "none",
+            "type": ["debuff"],
+            "debuff": {
+                "description": "While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles are attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Dexterity (Sleight of Hand) check as an action. Bursting them requires a successful DC 25 Strength (Athletics) check as an action."
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 5
+        },
+        "description": "As a Utilize action, you can use Manacles to bind an unwilling Small or Medium creature within 5 feet of yourself that has the Grappled, Incapacitated, or Restrained condition if you succeed on a DC 13 Dexterity (Sleight of Hand) check. While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles are attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Dexterity (Sleight of Hand) check as an action. Bursting them requires a successful DC 25 Strength (Athletics) check as an action."
+    },
+    {
+        "name": "Mason's Tools",
+        "tags": ["Mason's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "strength",
+        "utilize": ["Chisel a symbol or hole in stone (DC 10)"],
+        "craft": ["Block and Tackle"],
+        "rarity": "None",
+        "weight": 8,
+        "cost": {
+            "gold": 10
         }
     },
     {
@@ -757,6 +1310,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 10,
+        "cost": {
+            "gold": 10
+        },
         "description": "Like a hammer: but greater.",
         "damage": {
             "calculation": [
@@ -812,6 +1368,9 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 5
+        },
         "description": "The imbiber ceases to taste for 30 minutes during and after drinking, after which point they will universally report the distant aftertaste of having licked a piece of coal. Those who consume it have advantage against poison for 30 minutes, but become poisoned for an hour afterwards."
     },
     {
@@ -825,6 +1384,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 4,
+        "cost": {
+            "gold": 15
+        },
         "description": "Not a great star to see pointed at you in the morning.",
         "damage": {
             "calculation": [
@@ -834,6 +1396,80 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Navigator's Tools",
+        "tags": ["Navigator's Tools"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Plot a course (DC 10)", "Determine position by stargazing (DC 15)"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 25
+        }
+    },
+    {
+        "name": "Oil",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Attack"],
+            "range": 20,
+            "duration": "1 minute",
+            "challengeType": "savingThrow",
+            "savingThrowType": "dexterity",
+            "savingThrowCalculation": [
+                {
+                    "type": "static",
+                    "value": 8
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "dexterityModifier"
+                },
+                {
+                    "type": "aspect",
+                    "value": "proficiencyBonus"
+                }
+            ],
+            "type": ["debuff"],
+            "debuff": {
+                "description": "Target takes 5 extra Fire damage when taking Fire damage while covered in burning oil or 5 Fire damage is dealt to any creature that enters or ends its turn in a space with lit Oil."
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "silver": 1
+        },
+        "description": "You can douse a creature, object, or space with Oil or use it as fuel, as detailed below.\n\n<b>Dousing a Creature or an Object.</b> When you take the Attack action, you can replace one of your attacks with throwing an Oil flask. Target one creature or object within 20 feet of yourself. The target must succeed on a Dexterity saving throw (DC 8 plus your Dexterity modifier and Proficiency Bonus) or be covered in oil. If the target takes Fire damage before the oil dries (after 1 minute), the target takes an extra 5 Fire damage from burning oil.\n\n<b>Dousing a Space.</b> You can take the Utilize action to pour an Oil flask on level ground to cover a 5-footsquare area within 5 feet of yourself. If lit, the oil burns until the end of the turn 2 rounds from when the oil was lit (or 12 seconds) and deals 5 Fire damage to any creature that enters the area or ends its turn there. A creature can take this damage only once per turn.\n\n<b>Fuel.</b> Oil serves as fuel for Lamps and Lanterns. Once lit, a flask of Oil burns for 6 hours in a Lamp or Lantern. That duration doesn't need to be consecutive; you can extinguish the burning Oil (as a Utilize action) and rekindle it again until it has burned for a total of 6 hours."
+    },
+    {
+        "name": "Painter's Supplies",
+        "tags": ["Painter's Supplies", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Paint a recognizable image of something (DC 10)"],
+        "craft": ["Druidic Focus", "Holy Symbol"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 10
+        }
+    },
+    {
+        "name": "Pan Flute",
+        "tags": ["Pan Flute", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 12
         }
     },
     {
@@ -851,6 +1487,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 1,
+        "cost": {
+            "gold": 50
+        },
         "description": "A small single-shot pistol designed to be concealed in the palm of the hand.",
         "damage": {
             "calculation": [
@@ -885,6 +1524,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 5,
+        "cost": {
+            "gold": 275
+        },
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
         "damage": {
             "calculation": [
@@ -907,6 +1549,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 18,
+        "cost": {
+            "gold": 5
+        },
         "description": "Long pushy stick. Why it so heavy tho?",
         "damage": {
             "calculation": [
@@ -933,6 +1578,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 250
+        },
         "description": "A pistol with a four-round capacity cylinder. When viewed from front or rear the cylinder seems to resemble a four-leaf clover.",
         "damage": {
             "calculation": [
@@ -942,6 +1590,31 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Playing Cards",
+        "tags": ["Playing Cards", "Gaming Set"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Discern whether someone is cheating (DC 10)", "Win the game (DC 20)"],
+        "rarity": "None",
+        "weight": 0,
+        "cost": {
+            "silver": 5
+        }
+    },
+    {
+        "name": "Poisoner's Kit",
+        "tags": ["Poisoner's Kit"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Detect a poisoned object (DC 10)"],
+        "craft": ["Basic Poison"],
+        "rarity": "None",
+        "weight": 2,
+        "cost": {
+            "gold": 50
         }
     },
     {
@@ -976,6 +1649,9 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 200
+        },
         "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 4d4+4 Hit Points. The potion's red liquid glimmers when agitated."
     },
     {
@@ -1010,6 +1686,9 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 50
+        },
         "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 2d4+2 Hit Points. The potion's red liquid glimmers when agitated."
     },
     {
@@ -1044,6 +1723,9 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 2000
+        },
         "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 8d4+8 Hit Points. The potion's red liquid glimmers when agitated."
     },
     {
@@ -1078,7 +1760,23 @@
             }
         },
         "weight": 0.5,
+        "cost": {
+            "gold": 20000
+        },
         "description": "This potion is a magic item. As a Bonus Action, you can drink it or administer it to another creature within 5 feet of yourself. The creature that drinks the magical red fluid in this vial regains 10d4+20 Hit Points. The potion's red liquid glimmers when agitated."
+    },
+    {
+        "name": "Potter's Tools",
+        "tags": ["Potter's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "intelligence",
+        "utilize": ["Discern what a ceramic object held in the past 24 hours (DC 15)"],
+        "craft": ["Druidic Focus", "Holy Symbol"],
+        "rarity": "None",
+        "weight": 3,
+        "cost": {
+            "gold": 10
+        }
     },
     {
         "name": "Quarterstaff",
@@ -1091,6 +1789,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 4,
+        "cost": {
+            "silver": 2
+        },
         "description": "A staff that is larger than a quarter.",
         "damage": {
             "calculation": [
@@ -1122,6 +1823,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 25
+        },
         "description": "A great way for weak bitches that don't use magic to still do something in combat.",
         "damage": {
             "calculation": [
@@ -1140,6 +1844,9 @@
         "stackable": true,
         "consumable": true,
         "weight": 2,
+        "cost": {
+            "silver": 5
+        },
         "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
     },
     {
@@ -1157,6 +1864,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 300
+        },
         "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
         "damage": {
             "calculation": [
@@ -1181,6 +1891,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 45,
+        "cost": {
+            "gold": 50
+        },
         "description": "AC: 14 + Dex modifier (max 2). This armor consists of a coat and leggings (and perhaps a separate skirt) of leather covered with overlapping pieces of metal, much like the scales of a fish. The suit includes gauntlets.\n\n<b>Stealth.</b> The wearer has disadvantage on Dexterity (Stealth) checks.",
         "aspects": {
             "skillProficiencyStealthAddendum": {
@@ -1229,6 +1942,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 25
+        },
         "description": "Like a sword: but curvier.",
         "damage": {
             "calculation": [
@@ -1251,6 +1967,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 10
+        },
         "description": "Like a sword: but shorter.",
         "damage": {
             "calculation": [
@@ -1263,12 +1982,27 @@
         }
     },
     {
+        "name": "Shawm",
+        "tags": ["Shawm", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 1,
+        "cost": {
+            "gold": 2
+        }
+    },
+    {
         "name": "Shield",
         "type": "Armor",
         "armorType": "Shield",
         "rarity": "None",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 10
+        },
         "description": "AC: 2. A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
         "aspects": {
             "armorClassBonus": {
@@ -1288,6 +2022,9 @@
         "rarity": "Uncommon",
         "equippable": true,
         "weight": 6,
+        "cost": {
+            "gold": 1
+        },
         "description": "A shield that magically evades projectiles, leaving you wide open as it moves out of the way of any incoming projectiles. Giving you -1 AC.",
         "aspects": {
             "armorClassBonus": {
@@ -1315,6 +2052,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 25
+        },
         "description": "Isn't this a little short for a bow?",
         "damage": {
             "calculation": [
@@ -1337,6 +2077,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 1
+        },
         "description": "Used for harvesting crops and heads.",
         "damage": {
             "calculation": [
@@ -1363,6 +2106,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 0,
+        "cost": {
+            "silver": 1
+        },
         "description": "Time to slay some Goliaths.",
         "damage": {
             "calculation": [
@@ -1372,6 +2118,19 @@
                     "diceType": "Bludgeoning"
                 }
             ]
+        }
+    },
+    {
+        "name": "Smith's Tools",
+        "tags": ["Smith's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "strength",
+        "utilize": ["Pry open a door or container (DC 20)"],
+        "craft": ["Any Melee weapon (except Club, Greatclub, Quarterstaff and Whip)", "Medium armor (except Hide)", "Heavy Armor", "Ball Bearings", "Bucket", "Caltrops", "Chain", "Crowbar", "Firearm Bullets", "Grappling Hook", "Iron Pot", "Iron Spikes", "Sling Bullets"],
+        "rarity": "None",
+        "weight": 8,
+        "cost": {
+            "gold": 20
         }
     },
     {
@@ -1389,6 +2148,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 1
+        },
         "description": "A spear designed primarily to jab people with.",
         "damage": {
             "calculation": [
@@ -1416,6 +2178,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 13,
+        "cost": {
+            "gold": 45
+        },
         "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
         "aspects": {
             "armorClass": {
@@ -1443,6 +2208,9 @@
         "rarity": "Rare",
         "equippable": true,
         "weight": 1,
+        "cost": {
+            "gold": 3
+        },
         "description": "This magical item grants the user advantage on Performance checks. Magically a single light shines down from above onto the user like a spotlight upon making any performance check while wearing this. You automatically fail any stealth checks while this is active.",
         "aspects": {
             "skillProficiencyPerformanceAddendum": {
@@ -1464,6 +2232,43 @@
         }
     },
     {
+        "name": "Thieves' Tools",
+        "tags": ["Thieves' Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Pick a lock (DC 10)", "Disarm a trap (DC 15)"],
+        "rarity": "None",
+        "weight": 1,
+        "cost": {
+            "gold": 25
+        }
+    },
+    {
+        "name": "Three-Dragon Ante Set",
+        "tags": ["Three-Dragon Ante Set", "Gaming Set"],
+        "type": "Tools",
+        "ability": "wisdom",
+        "utilize": ["Discern whether someone is cheating (DC 10)", "Win the game (DC 20)"],
+        "rarity": "None",
+        "weight": 0,
+        "cost": {
+            "gold": 1
+        }
+    },
+    {
+        "name": "Tinkerer's Tools",
+        "tags": ["Tinkerer's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Assemble a Tiny item composed of scrap, which falls apart in 1 minute (DC 20)"],
+        "craft": ["Derringer", "Musket", "Palm Pistol", "Pepperbox", "Pistol", "Bell", "Bullseye Lantern", "Flask", "Hooded Lantern", "Hunting Trap", "Lock", "Manacles", "Mirror", "Shovel", "Signal Whistle", "Tinderbox"],
+        "rarity": "None",
+        "weight": 8,
+        "cost": {
+            "gold": 20
+        }
+    },
+    {
         "name": "Trident",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -1478,6 +2283,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 4,
+        "cost": {
+            "gold": 5
+        },
         "description": "Who the fuck do you think you are weilding this thing?! King Neptune?!",
         "damage": {
             "calculation": [
@@ -1505,7 +2313,22 @@
         "equippable": true,
         "holdable": true,
         "weight": 5,
+        "cost": {
+            "silver": 1
+        },
         "description": "When the user opens the lid, any nearby crabs will look in its direction for a small amount of time."
+    },
+    {
+        "name": "Viol",
+        "tags": ["Viol", "Musical Instrument"],
+        "type": "Tools",
+        "ability": "charisma",
+        "utilize": ["Play a known tune (DC 10)", "Improvise a song (DC 15)"],
+        "rarity": "None",
+        "weight": 1,
+        "cost": {
+            "gold": 30
+        }
     },
     {
         "name": "Warhammer",
@@ -1518,6 +2341,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 5,
+        "cost": {
+            "gold": 15
+        },
         "description": "Like an hammer: but for war.",
         "damage": {
             "calculation": [
@@ -1549,6 +2375,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 2,
+        "cost": {
+            "gold": 5
+        },
         "description": "Like an pick: but for war.",
         "damage": {
             "calculation": [
@@ -1570,6 +2399,19 @@
         }
     },
     {
+        "name": "Weaver's Tools",
+        "tags": ["Weaver's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Mend a tear in clothing (DC 10)", "Sew a Tiny design (DC 10)"],
+        "craft": ["Padded Armor", "Basket", "Bedroll", "Blanket", "Fine Clothes", "Net", "Robe", "Rope", "Sack", "String", "Tent", "Traveler's Clothes"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 1
+        }
+    },
+    {
         "name": "Whip",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -1580,6 +2422,9 @@
         "rarity": "None",
         "equippable": true,
         "weight": 3,
+        "cost": {
+            "gold": 2
+        },
         "description": "Can also be used outside the bedroom.",
         "damage": {
             "calculation": [
@@ -1589,6 +2434,19 @@
                     "diceType": "Slashing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Woodcarver's Tools",
+        "tags": ["Woodcarver's Tools", "Artisan's Tools"],
+        "type": "Tools",
+        "ability": "dexterity",
+        "utilize": ["Carve a pattern in wood (DC 10)"],
+        "craft": ["Club", "Greatclub", "Quarterstaff", "Ranged weapons (except Pistol, Musket, and Sling)", "Arcane Focus", "Arrows", "Bolts", "Druidic Focus", "Ink Pen", "Needles"],
+        "rarity": "None",
+        "weight": 5,
+        "cost": {
+            "gold": 1
         }
     }
 ]
