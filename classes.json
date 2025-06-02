@@ -1425,7 +1425,221 @@
                 ]
             }
         ],
+        "resources": [
+            { "name": "sorceryPoints", "displayName": "Sorcery Points" },
+            { "name": "metamagicOptionsKnown", "displayName": "Metamagic Options Known" },
+            { "name": "fontOfMagicMaxSlotLevel", "displayName": "Font of Magic Max Slot Level" },
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "sorceryPoints": 0, "metamagicOptionsKnown": 0, "fontOfMagicMaxSlotLevel": 0, "cantrips": 4, "preparedSpells": 2 },
+            { "classLevel": 2, "sorceryPoints": 2, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 1, "cantrips": 4, "preparedSpells": 4 },
+            { "classLevel": 3, "sorceryPoints": 3, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 2, "cantrips": 4, "preparedSpells": 6 },
+            { "classLevel": 4, "sorceryPoints": 4, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 2, "cantrips": 5, "preparedSpells": 7 },
+            { "classLevel": 5, "sorceryPoints": 5, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 3, "cantrips": 5, "preparedSpells": 9 },
+            { "classLevel": 6, "sorceryPoints": 6, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 3, "cantrips": 5, "preparedSpells": 10 },
+            { "classLevel": 7, "sorceryPoints": 7, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 4, "cantrips": 5, "preparedSpells": 11 },
+            { "classLevel": 8, "sorceryPoints": 8, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 4, "cantrips": 5, "preparedSpells": 12 },
+            { "classLevel": 9, "sorceryPoints": 9, "metamagicOptionsKnown": 2, "fontOfMagicMaxSlotLevel": 5, "cantrips": 5, "preparedSpells": 14 },
+            { "classLevel": 10, "sorceryPoints": 10, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 15 },
+            { "classLevel": 11, "sorceryPoints": 11, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 16 },
+            { "classLevel": 12, "sorceryPoints": 12, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 16 },
+            { "classLevel": 13, "sorceryPoints": 13, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 17 },
+            { "classLevel": 14, "sorceryPoints": 14, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 17 },
+            { "classLevel": 15, "sorceryPoints": 15, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 18 },
+            { "classLevel": 16, "sorceryPoints": 16, "metamagicOptionsKnown": 4, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 18 },
+            { "classLevel": 17, "sorceryPoints": 17, "metamagicOptionsKnown": 6, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 19 },
+            { "classLevel": 18, "sorceryPoints": 18, "metamagicOptionsKnown": 6, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 20 },
+            { "classLevel": 19, "sorceryPoints": 19, "metamagicOptionsKnown": 6, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 21 },
+            { "classLevel": 20, "sorceryPoints": 20, "metamagicOptionsKnown": 6, "fontOfMagicMaxSlotLevel": 5, "cantrips": 6, "preparedSpells": 22 }
+        ],
         "features": [
+            {
+                "classLevel": 1,
+                "name": "Sorcerer Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "cantripsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "cantrips"
+                            }
+                        ],
+                        "validSpellLists": ["Bard"]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "validSpellLists": ["Sorcerer"]
+                    }
+                }
+            },
+            {
+                "classLevel": 1,
+                "name": "Font of Magic",
+                "actions": [
+                    {
+                        "name": "Create Spell Slot",
+                        "actionTime": ["Bonus Action"],
+                        "range": "Touch",
+                        "duration": "Instantaneous",
+                        "description": "As a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.",
+                        "challengeType": "none",
+                        "type": ["restoreSpellSlot"],
+                        "restoreSpellSlot": {
+                            "slotLevel": {
+                                "calculation": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.slotLevelToRestore"
+                                    }
+                                ]
+                            }
+                        },
+                        "userInput": [
+                            {
+                                "name": "slotLevelToRestore",
+                                "displayName": "",
+                                "type": "numberField",
+                                "min": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ],
+                                "max": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "resource.fontOfMagicMaxSlotLevel"
+                                    }
+                                ]
+                            }
+                        ],
+                        "cost": {
+                            "resourceType": "sorceryPoints",
+                            "calculation": [
+                                {
+                                    "type": "if-then",
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.fontOfMagicMaxSlotLevel",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.slotLevelToRestore"
+                                        },
+                                        {
+                                            "type": "static",
+                                            "value": 2
+                                        }
+                                    ],
+                                    "else": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.slotLevelToRestore"
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "Create Sorcery Points",
+                        "actionTime": ["Bonus Action"],
+                        "range": "Touch",
+                        "duration": "Instantaneous",
+                        "description": "As a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.",
+                        "challengeType": "none",
+                        "type": ["restoreResource"],
+                        "restoreResource": {
+                            "resourceName": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "propertyPath": "sorceryPoints"
+                                    }
+                                ]
+                            },
+                            "amountRestored": {
+                                "calculation": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.consumedSpellSlotLevel"
+                                    }
+                                ]
+                            }
+                        },
+                        "userInput": [
+                            {
+                                "name": "consumedSpellSlotLevel",
+                                "type": "consumeSpellSlot",
+                                "minLevel": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ],
+                        "cost": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 2,
+                "name": "Sorcerer Metamagic",
+                "metamagic": {
+                    "sorceryPoints": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "sorceryPoints"
+                            }
+                        ]
+                    },
+                    "optionsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "metamagicOptionsKnown"
+                            }
+                        ]
+                    }
+                }
+            },
             {
                 "classLevel": 4,
                 "name": "Feat",

@@ -384,7 +384,41 @@
                 ]
             }
         ]
-    },   
+    },
+    {
+        "name": "Metamagic Adept",
+        "type": "Origin",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        ],
+        "metamagic": {
+            "sorceryPoints": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "optionsKnown": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        }
+    },
     {
         "name": "Tough",
         "type": "Origin",

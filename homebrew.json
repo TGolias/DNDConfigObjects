@@ -131,6 +131,7 @@
                         },
                         "userInput": [
                             {
+                                "name": "consumedSpellSlotLevel",
                                 "type": "consumeSpellSlot",
                                 "minLevel": [
                                     {

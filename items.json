@@ -1525,7 +1525,7 @@
         "equippable": true,
         "weight": 5,
         "cost": {
-            "gold": 275
+            "gold": 300
         },
         "description": "A late renaissance style pistol, the pepperbox deals the same damage as a standard flintlock but offers a revolving barrel for multiple shots before reload.",
         "damage": {
