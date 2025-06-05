@@ -1474,7 +1474,7 @@
                                 "propertyPath": "cantrips"
                             }
                         ],
-                        "validSpellLists": ["Bard"]
+                        "validSpellLists": ["Sorcerer"]
                     },
                     "spellsKnown": {
                         "calculation": [
@@ -1536,7 +1536,7 @@
                                     "if": [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "userInput.fontOfMagicMaxSlotLevel",
+                                            "propertyPath": "userInput.slotLevelToRestore",
                                             "greaterThanOrEqualTo": [
                                                 {
                                                     "type": "static",
@@ -1606,15 +1606,7 @@
                                     }
                                 ]
                             }
-                        ],
-                        "cost": {
-                            "calculation": [
-                                {
-                                    "type": "static",
-                                    "value": 1
-                                }
-                            ]
-                        }
+                        ]
                     }
                 ]
             },
