@@ -1561,7 +1561,7 @@
                                             "propertyPath": "userInput.slotLevelToRestore"
                                         },
                                         {
-                                            "type": "parameter",
+                                            "type": "static",
                                             "value": 1
                                         }
                                     ]
