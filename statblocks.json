@@ -203,33 +203,34 @@
                             "damage": {
                                 "calculation": [
                                     {
-                                        "type": "if-then",
-                                        "if": [
+                                        "type": "multiple-if",
+                                        "cases": [
                                             {
-                                                "type": "aspect",
-                                                "value": "creatureType",
-                                                "equals": [
+                                                "if": [
                                                     {
-                                                        "type": "static",
-                                                        "value": "Celestial"
+                                                        "type": "aspect",
+                                                        "value": "creatureType",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Celestial"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "dieRoll",
+                                                        "value": 8,
+                                                        "diceType": "Radiant"
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "castAtLevel"
                                                     }
                                                 ]
-                                            }
-                                        ],
-                                        "then": [
-                                            {
-                                                "type": "dieRoll",
-                                                "value": 8,
-                                                "diceType": "Radiant"
                                             },
                                             {
-                                                "type": "aspect",
-                                                "value": "castAtLevel"
-                                            }
-                                        ],
-                                        "else": [
-                                            {
-                                                "type": "if-then",
                                                 "if": [
                                                     {
                                                         "type": "aspect",
@@ -252,8 +253,10 @@
                                                         "type": "aspect",
                                                         "value": "castAtLevel"
                                                     }
-                                                ],
-                                                "else": [
+                                                ]
+                                            },
+                                            {
+                                                "then": [
                                                     {
                                                         "type": "dieRoll",
                                                         "value": 8,
@@ -267,6 +270,7 @@
                                             }
                                         ]
                                     }
+                                    
                                 ]
                             }
                         }

@@ -585,28 +585,29 @@
                 ],
                 "calculation": [
                     {
-                        "type": "if-then",
-                        "if": [
+                        "type": "multiple-if",
+                        "cases": [
                             {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
+                                "if": [
                                     {
-                                        "type": "static",
-                                        "value": 1
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 8
                                     }
                                 ]
-                            }
-                        ],
-                        "then": [
+                            },
                             {
-                                "type": "dieRoll",
-                                "value": 8
-                            }
-                        ],
-                        "else": [
-                            {
-                                "type": "if-then",
                                 "if": [
                                     {
                                         "type": "aspect",
@@ -624,38 +625,37 @@
                                         "type": "dieRoll",
                                         "value": 10
                                     }
-                                ],
-                                "else": [
+                                ]
+                            },
+                            {
+                                "if": [
                                     {
-                                        "type": "if-then",
-                                        "if": [
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
                                             {
-                                                "type": "aspect",
-                                                "value": "tier",
-                                                "equals": [
-                                                    {
-                                                        "type": "static",
-                                                        "value": 3
-                                                    }
-                                                ]
+                                                "type": "static",
+                                                "value": 3
                                             }
-                                        ],
-                                        "then": [
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 12
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 6,
+                                        "multiplier": [
                                             {
-                                                "type": "dieRoll",
-                                                "value": 12
-                                            }
-                                        ],
-                                        "else": [
-                                            {
-                                                "type": "dieRoll",
-                                                "value": 6,
-                                                "multiplier": [
-                                                    {
-                                                        "type": "static",
-                                                        "value": 2
-                                                    }
-                                                ]
+                                                "type": "static",
+                                                "value": 2
                                             }
                                         ]
                                     }
@@ -771,28 +771,29 @@
             "normal": {
                 "calculation": [
                     {
-                        "type": "if-then",
-                        "if": [
+                        "type": "multiple-if",
+                        "cases": [
                             {
-                                "type": "aspect",
-                                "value": "tier",
-                                "equals": [
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": 4
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
                                     {
                                         "type": "static",
-                                        "value": 4
+                                        "value": 120
                                     }
                                 ]
-                            }
-                        ],
-                        "then": [
+                            },
                             {
-                                "type": "static",
-                                "value": 120
-                            }
-                        ],
-                        "else": [
-                            {
-                                "type": "if-then",
                                 "if": [
                                     {
                                         "type": "aspect",
@@ -810,34 +811,33 @@
                                         "type": "static",
                                         "value": 60
                                     }
-                                ],
-                                "else": [
+                                ]
+                            },
+                            {
+                                "if": [
                                     {
-                                        "type": "if-then",
-                                        "if": [
-                                            {
-                                                "type": "aspect",
-                                                "value": "tier",
-                                                "equals": [
-                                                    {
-                                                        "type": "static",
-                                                        "value": 2
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "then": [
+                                        "type": "aspect",
+                                        "value": "tier",
+                                        "equals": [
                                             {
                                                 "type": "static",
-                                                "value": 30
-                                            }
-                                        ],
-                                        "else": [
-                                            {
-                                                "type": "static",
-                                                "value": 15
+                                                "value": 2
                                             }
                                         ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 15
                                     }
                                 ]
                             }
