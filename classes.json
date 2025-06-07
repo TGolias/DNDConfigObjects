@@ -1511,14 +1511,8 @@
                         "userInput": [
                             {
                                 "name": "slotLevelToRestore",
-                                "displayName": "",
+                                "displayName": "Slot Level to Restore",
                                 "type": "numberField",
-                                "startingValue": [
-                                    {
-                                        "type": "static",
-                                        "value": 1
-                                    }
-                                ],
                                 "min": [
                                     {
                                         "type": "static",
@@ -1639,36 +1633,63 @@
                             "resourceType": "sorceryPoints",
                             "calculation": [
                                 {
-                                    "if": [
+                                    "type": "multiple-if",
+                                    "cases": [
                                         {
-                                            "type": "parameter",
-                                            "propertyPath": "userInput.slotLevelToRestore",
-                                            "greaterThanOrEqualTo": [
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.slotLevelToRestore",
+                                                    "greaterThanOrEqualTo": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 3
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.slotLevelToRestore"
+                                                },
                                                 {
                                                     "type": "static",
-                                                    "value": 3
+                                                    "value": 2
                                                 }
                                             ]
-                                        }
-                                    ],
-                                    "then": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "userInput.slotLevelToRestore"
                                         },
                                         {
-                                            "type": "static",
-                                            "value": 2
-                                        }
-                                    ],
-                                    "else": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "userInput.slotLevelToRestore"
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.slotLevelToRestore",
+                                                    "greaterThanOrEqualTo": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 1
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.slotLevelToRestore"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
                                         },
                                         {
-                                            "type": "static",
-                                            "value": 1
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 0
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
