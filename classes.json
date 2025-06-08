@@ -2318,7 +2318,7 @@
                                     [
                                         {
                                             "type": "aspect",
-                                            "value": "classLevelSorcerer",
+                                            "value": "classLevelWarlock",
                                             "dividedBy": [
                                                 {
                                                     "type": "static",
