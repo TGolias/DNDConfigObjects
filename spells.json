@@ -483,7 +483,7 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": "Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, the target has Disadvantage on "
+                    "value": "Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, the target has Disadvantage on <b>"
                 },
                 {
                     "type": "parameter",
@@ -491,7 +491,7 @@
                 },
                 {
                     "type": "static",
-                    "value": " ability checks."
+                    "value": "</b> ability checks."
                 }
             ]
         },
