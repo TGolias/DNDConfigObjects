@@ -46,7 +46,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "strength",
+                "value": "strength",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -122,7 +122,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "charisma",
+                "value": "charisma",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -442,7 +442,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "wisdom",
+                "value": "wisdom",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -542,7 +542,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "wisdom",
+                "value": "wisdom",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -650,7 +650,7 @@
                     [
                         {
                             "type": "aspect",
-                            "propertyPath": "strength",
+                            "value": "strength",
                             "greaterThanOrEqualTo": [
                                 {
                                     "type": "static",
@@ -662,7 +662,7 @@
                     [
                         {
                             "type": "aspect",
-                            "propertyPath": "dexterity",
+                            "value": "dexterity",
                             "greaterThanOrEqualTo": [
                                 {
                                     "type": "static",
@@ -779,7 +779,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "dexterity",
+                "value": "dexterity",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -789,7 +789,7 @@
             },
             {
                 "type": "aspect",
-                "propertyPath": "wisdom",
+                "value": "wisdom",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -884,7 +884,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "strength",
+                "value": "strength",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -894,7 +894,7 @@
             },
             {
                 "type": "aspect",
-                "propertyPath": "charisma",
+                "value": "charisma",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -1453,7 +1453,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "dexterity",
+                "value": "dexterity",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -1463,7 +1463,7 @@
             },
             {
                 "type": "aspect",
-                "propertyPath": "wisdom",
+                "value": "wisdom",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -1622,7 +1622,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "dexterity",
+                "value": "dexterity",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -1721,7 +1721,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "charisma",
+                "value": "charisma",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -2151,7 +2151,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "charisma",
+                "value": "charisma",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -2247,7 +2247,7 @@
         "multiClassConditions": [
             {
                 "type": "aspect",
-                "propertyPath": "intelligence",
+                "value": "intelligence",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
