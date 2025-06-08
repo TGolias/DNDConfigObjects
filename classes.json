@@ -290,6 +290,32 @@
                                 "propertyPath": "preparedSpells"
                             }
                         ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelBard",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 9
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
                         "validSpellLists": ["Bard"]
                     }
                 }
@@ -1070,6 +1096,32 @@
                                 "propertyPath": "preparedSpells"
                             }
                         ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelPaladin",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 4
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
                         "validSpellLists": ["Paladin"]
                     }
                 }
@@ -1788,6 +1840,32 @@
                                 "propertyPath": "preparedSpells"
                             }
                         ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelSorcerer",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 9
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
                         "validSpellLists": ["Sorcerer"]
                     }
                 }
@@ -2231,6 +2309,32 @@
                             {
                                 "type": "parameter",
                                 "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelSorcerer",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
+                                ]
                             }
                         ],
                         "validSpellLists": ["Warlock"]

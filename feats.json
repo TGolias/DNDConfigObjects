@@ -450,7 +450,14 @@
                         "value": 1
                     }
                 ],
-                "validSpellLists": ["Cleric"]
+                "levelLimit": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ],
+                "validSpellLists": ["Cleric"],
+                "freeUses": 1
             }
         }
     },
@@ -519,7 +526,14 @@
                         "value": 1
                     }
                 ],
-                "validSpellLists": ["Druid"]
+                "levelLimit": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ],
+                "validSpellLists": ["Druid"],
+                "freeUses": 1
             }
         }
     },
@@ -588,7 +602,14 @@
                         "value": 1
                     }
                 ],
-                "validSpellLists": ["Wizard"]
+                "levelLimit": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ],
+                "validSpellLists": ["Wizard"],
+                "freeUses": 1
             }
         }
     },
