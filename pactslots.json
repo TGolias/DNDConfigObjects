@@ -1,0 +1,22 @@
+[
+    { "pactCasterLevel": 1, "pactSlots": 1, "slotLevel": 1 },
+    { "pactCasterLevel": 2, "pactSlots": 2, "slotLevel": 1 },
+    { "pactCasterLevel": 3, "pactSlots": 2, "slotLevel": 2 },
+    { "pactCasterLevel": 4, "pactSlots": 2, "slotLevel": 2 },
+    { "pactCasterLevel": 5, "pactSlots": 2, "slotLevel": 3 },
+    { "pactCasterLevel": 6, "pactSlots": 2, "slotLevel": 3 },
+    { "pactCasterLevel": 7, "pactSlots": 2, "slotLevel": 4 },
+    { "pactCasterLevel": 8, "pactSlots": 2, "slotLevel": 4 },
+    { "pactCasterLevel": 9, "pactSlots": 2, "slotLevel": 5 },
+    { "pactCasterLevel": 10, "pactSlots": 2, "slotLevel": 5 },
+    { "pactCasterLevel": 11, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 12, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 13, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 14, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 15, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 16, "pactSlots": 3, "slotLevel": 5 },
+    { "pactCasterLevel": 17, "pactSlots": 4, "slotLevel": 5 },
+    { "pactCasterLevel": 18, "pactSlots": 4, "slotLevel": 5 },
+    { "pactCasterLevel": 19, "pactSlots": 4, "slotLevel": 5 },
+    { "pactCasterLevel": 20, "pactSlots": 4, "slotLevel": 5 }
+]
