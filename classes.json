@@ -1805,6 +1805,7 @@
                         "challengeType": "none",
                         "type": ["restoreSpellSlot"],
                         "restoreSpellSlot": {
+                            "slotType": "spellSlots",
                             "slotLevel": {
                                 "calculation": [
                                     {
@@ -2162,7 +2163,122 @@
         ],
         "spellSlotLevelProgression": 0,
         "pactSlotLevelProgression": 1,
+        "resources": [
+            { "name": "eldritchInvocations", "displayName": "Eldritch Invocations" },
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "eldritchInvocations": 1, "cantrips": 2, "preparedSpells": 2 },
+            { "classLevel": 2, "eldritchInvocations": 3, "cantrips": 2, "preparedSpells": 3 },
+            { "classLevel": 3, "eldritchInvocations": 3, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 4, "eldritchInvocations": 3, "cantrips": 3, "preparedSpells": 5 },
+            { "classLevel": 5, "eldritchInvocations": 5, "cantrips": 3, "preparedSpells": 6 },
+            { "classLevel": 6, "eldritchInvocations": 5, "cantrips": 3, "preparedSpells": 7 },
+            { "classLevel": 7, "eldritchInvocations": 6, "cantrips": 3, "preparedSpells": 8 },
+            { "classLevel": 8, "eldritchInvocations": 6, "cantrips": 3, "preparedSpells": 9 },
+            { "classLevel": 9, "eldritchInvocations": 7, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 10, "eldritchInvocations": 7, "cantrips": 4, "preparedSpells": 10 },
+            { "classLevel": 11, "eldritchInvocations": 7, "cantrips": 4, "preparedSpells": 11 },
+            { "classLevel": 12, "eldritchInvocations": 8, "cantrips": 4, "preparedSpells": 11 },
+            { "classLevel": 13, "eldritchInvocations": 8, "cantrips": 4, "preparedSpells": 12 },
+            { "classLevel": 14, "eldritchInvocations": 8, "cantrips": 4, "preparedSpells": 12 },
+            { "classLevel": 15, "eldritchInvocations": 9, "cantrips": 4, "preparedSpells": 13 },
+            { "classLevel": 16, "eldritchInvocations": 9, "cantrips": 4, "preparedSpells": 13 },
+            { "classLevel": 17, "eldritchInvocations": 9, "cantrips": 4, "preparedSpells": 14 },
+            { "classLevel": 18, "eldritchInvocations": 10, "cantrips": 4, "preparedSpells": 14 },
+            { "classLevel": 19, "eldritchInvocations": 10, "cantrips": 4, "preparedSpells": 15 },
+            { "classLevel": 20, "eldritchInvocations": 10, "cantrips": 4, "preparedSpells": 15 }
+        ],
         "features": [
+            {
+                "classLevel": 1,
+                "name": "Warlock Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "cantripsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "cantrips"
+                            }
+                        ],
+                        "validSpellLists": ["Warlock"]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "validSpellLists": ["Warlock"]
+                    }
+                }
+            },
+            {
+                "classLevel": 1,
+                "name": "Magical Cunning",
+                "actions": [
+                    {
+                        "name": "Regain Pact Slots",
+                        "actionTime": ["1 minute"],
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can't do so again until you finish a Long Rest.",
+                        "challengeType": "none",
+                        "type": ["restoreSpellSlot"],
+                        "restoreSpellSlot": {
+                            "slotType": "pactSlots",
+                            "amountRestored": {
+                                "calculation": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "charismaModifier",
+                                        "dividedBy": [
+                                            {
+                                                "type": "static",
+                                                "value": 2
+                                            }
+                                        ],
+                                        "roundUp": true
+                                    }
+                                ]
+                            }
+                        },
+                        "cost": {
+                            "uses": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 3,
+                "name": "Warlock Subclass",
+                "subclass": {
+                    "class": "Warlock"
+                }
+            },
             {
                 "classLevel": 4,
                 "name": "Feat",
