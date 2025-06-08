@@ -941,6 +941,41 @@
         }
     },
     {
+        "name": "Hunting Rifle",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 80,
+            "long": 240
+        },
+        "properties": ["Reload 5", "Misfire 3", "Two-Handed"],
+        "tags": ["Hunting Rifle", "Firearm", "Martial", "Ranged"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 8,
+        "cost": {
+            "gold": 500
+        },
+        "description": "Accels at hunting even the most dangerous game.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Hunting Trap",
         "type": "Adventuring Gear",
         "rarity": "Common",
@@ -1590,6 +1625,76 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Plate Armor",
+        "type": "Armor",
+        "armorType": "Heavy",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 65,
+        "cost": {
+            "gold": 1500
+        },
+        "description": "Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body.",
+        "aspects": {
+            "speedBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "strength",
+                        "lessThan": [
+                            {
+                                "type": "static",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": -10
+                    }
+                ]
+            },
+            "speedAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "strength",
+                        "lessThan": [
+                            {
+                                "type": "static",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Plate Armor.</b> Speed is reduced by 10 because Strength score is below 15."
+                    }
+                ]
+            },
+            "skillProficiencyStealthAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Plate Armor.</b> The wearer has disadvantage on Dexterity (Stealth) checks."
+                    }
+                ]
+            },
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 18
+                    }
+                ]
+            }
         }
     },
     {
