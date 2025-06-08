@@ -355,6 +355,126 @@
         }
     },
     {
+        "name": "Hex",
+        "level": 1,
+        "school": "Enchantment",
+        "spellLists": ["Warlock"],
+        "castingTime": ["Bonus Action"],
+        "range": 90,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["the petrified eye of a newt"],
+        "duration": {
+            "calculation": [
+                {
+                    "type": "multiple-if",
+                    "cases": [
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 24 hours"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 3
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 8 hours"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 4 hours"
+                                }
+                            ]
+                        },
+                        {
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 1 hour"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "concentration": true,
+        "description": "You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, choose one ability when you cast the spell. The target has Disadvantage on ability checks made with the chosen ability.\n\nIf the target drops to 0 Hit Points before this spell ends, you can use a Bonus Action on a later turn to curse a new creature.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 2 (up to 4 hours), 3-4 (up to 8 hours), or 5+ (up to 24 hours).",
+        "challengeType": "none",
+        "type": ["debuff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, the target has Disadvantage on "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.abilityChosen"
+                },
+                {
+                    "type": "static",
+                    "value": " ability checks."
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "abilityChosen",
+                "displayName": "Ability to Hex",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Inflict Wounds",
         "level": 1,
         "school": "Necromancy",
@@ -505,6 +625,20 @@
         "debuff": {
             "description": "If the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and have the Prone condition."
         }
+    },
+    {
+        "name": "Unseen Servant",
+        "level": 1,
+        "school": "Conjuration",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Action", "Ritual"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a bit of string", "a bit of wood"],
+        "duration": "1 hour",
+        "description": "This spell creates an Invisible, mindless, shapeless, Medium force that performs simple tasks at your command until the spell ends. The servant springs into existence in an unoccupied space on the ground within range. It has AC 10, 1 Hit Point, and a Strength of 2, and it can't attack. If it drops to 0 Hit Points, the spell ends.\n\nOnce on each of your turns as a Bonus Action, you can mentally command the servant to move up to 15 feet and interact with an object. The servant can perform simple tasks that a human could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring drinks. Once you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command.\n\nIf you command the servant to perform a task that would move it more than 60 feet away from you, the spell ends.",
+        "challengeType": "none",
+        "type": []
     },
     {
         "name": "Wrathful Smite",
@@ -1144,5 +1278,44 @@
         "debuff": {
             "description": "Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition."
         }
+    },
+    {
+        "name": "Suggestion",
+        "level": 2,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Wizard", "Warlock"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V", "M"],
+        "materialComponents": ["a drop of honey"],
+        "duration": "8 hours",
+        "concentration": true,
+        "description": "You suggest a course of activity, described in no more than 25 words, to one creature you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to the target or its allies.\n\nThe target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. The Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for the target upon completing it.",
+        "challengeType": "none",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The Charmed target pursues the following suggestion to the best of its ability:\n\n"
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.suggestionText"
+                },
+                {
+                    "type": "static",
+                    "value": "\n\nThe suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for the target upon completing it."
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "suggestionText",
+                "displayName": "What are you suggesting?",
+                "type": "textField"
+            }
+        ]
     }
 ]

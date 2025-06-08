@@ -2193,7 +2193,21 @@
         "features": [
             {
                 "classLevel": 1,
-                "name": "Warlock Spellcasting",
+                "name": "Eldrich Invocations",
+                "eldrichInvocations": {
+                    "invocationsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "eldritchInvocations"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 1,
+                "name": "Warlock Spellcasting Pact Magic",
                 "spellcasting": {
                     "ability": {
                         "calculation": [
