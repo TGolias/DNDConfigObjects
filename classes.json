@@ -2,42 +2,60 @@
     {
         "name": "Barbarian",
         "hitDie": 12,
-        "savingThrowProficiencies": ["strength", "constitution"],
-        "weaponProficiencies": ["Simple", "Martial"],
-        "armorTraining": ["Light", "Medium", "Shields"],
-        "spellSlotLevelProgression": 0,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["strength", "constitution"],
+            "weaponProficiencies": ["Simple", "Martial"],
+            "armorTraining": ["Light", "Medium", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Animal Handling"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Survival"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "weaponProficiencies": ["Martial"],
+            "armorTraining": ["Shields"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "strength",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Animal Handling"
-                    },
-                    {
-                        "name": "Athletics"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Nature"
-                    },
-                    {
-                        "name": "Perception"
-                    },
-                    {
-                        "name": "Survival"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 0,
         "features": [
             {
                 "classLevel": 4,
@@ -79,22 +97,41 @@
     {
         "name": "Bard",
         "hitDie": 8,
-        "savingThrowProficiencies": ["dexterity", "charisma"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": ["Light"],
-        "spellSlotLevelProgression": 1,
-        "choices": [
-            {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 3,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
+        "mainClass": {
+            "savingThrowProficiencies": ["dexterity", "charisma"],
+            "weaponProficiencies": ["Simple"],
+            "armorTraining": ["Light"],
+            "toolProficiencies": ["Musical Instrument"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 3,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    }
                 }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light"],
+            "toolProficiencies": ["Musical Instrument"]
+        },
+        "multiClassConditions": [
+            {
+                "type": "aspect",
+                "propertyPath": "charisma",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 13
+                    }
+                ]
             }
         ],
+        "spellSlotLevelProgression": 1,
         "resources": [
             { "name": "bardicInspiration", "displayName": "Bardic Inspiration", "uses": { "calculation": [ { "type": "aspect", "value": "charismaModifier" } ] } },
             { "name": "cantrips", "displayName": "Cantrips" },
@@ -365,39 +402,56 @@
     {
         "name": "Cleric",
         "hitDie": 8,
-        "savingThrowProficiencies": ["wisdom", "charisma"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": ["Light", "Medium", "Shields"],
-        "spellSlotLevelProgression": 1,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["wisdom", "charisma"],
+            "weaponProficiencies": ["Simple"],
+            "armorTraining": ["Light", "Medium", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Medicine"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Religion"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light", "Medium", "Shields"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "wisdom",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "History"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Medicine"
-                    },
-                    {
-                        "name": "Persuasion"
-                    },
-                    {
-                        "name": "Religion"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 1,
         "features": [
             {
                 "classLevel": 4,
@@ -439,48 +493,65 @@
     {
         "name": "Druid",
         "hitDie": 8,
-        "savingThrowProficiencies": ["intelligence", "wisdom"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": ["Light", "Shields"],
-        "spellSlotLevelProgression": 1,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["intelligence", "wisdom"],
+            "weaponProficiencies": ["Simple"],
+            "armorTraining": ["Light", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Animal Handling"
+                        },
+                        {
+                            "name": "Arcana"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Medicine"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Religion"
+                        },
+                        {
+                            "name": "Survival"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light", "Shields"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "wisdom",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Animal Handling"
-                    },
-                    {
-                        "name": "Arcana"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Medicine"
-                    },
-                    {
-                        "name": "Nature"
-                    },
-                    {
-                        "name": "Perception"
-                    },
-                    {
-                        "name": "Religion"
-                    },
-                    {
-                        "name": "Survival"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 1,
         "features": [
             {
                 "classLevel": 4,
@@ -522,51 +593,88 @@
     {
         "name": "Fighter",
         "hitDie": 10,
-        "savingThrowProficiencies": ["strength", "constitution"],
-        "weaponProficiencies": ["Simple", "Martial"],
-        "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
-        "spellSlotLevelProgression": 0,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["strength", "constitution"],
+            "weaponProficiencies": ["Simple", "Martial"],
+            "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Acrobatics"
+                        },
+                        {
+                            "name": "Animal Handling"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Survival"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "weaponProficiencies": ["Martial"],
+            "armorTraining": ["Light", "Medium", "Shields"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
-                    {
-                        "name": "Acrobatics"
-                    },
-                    {
-                        "name": "Animal Handling"
-                    },
-                    {
-                        "name": "Athletics"
-                    },
-                    {
-                        "name": "History"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Perception"
-                    },
-                    {
-                        "name": "Persuasion"
-                    },
-                    {
-                        "name": "Survival"
-                    }
+                "type": "or",
+                "values": [
+                    [
+                        {
+                            "type": "aspect",
+                            "propertyPath": "strength",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 13
+                                }
+                            ]
+                        }
+                    ],
+                    [
+                        {
+                            "type": "aspect",
+                            "propertyPath": "dexterity",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 13
+                                }
+                            ]
+                        }
+                    ]
                 ]
             }
         ],
+        "spellSlotLevelProgression": 0,
         "features": [
             {
                 "classLevel": 1,
@@ -629,42 +737,68 @@
     {
         "name": "Monk",
         "hitDie": 8,
-        "savingThrowProficiencies": ["strength", "dexterity"],
-        "weaponProficiencies": ["Light"],
-        "armorTraining": [],
-        "spellSlotLevelProgression": 0,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["strength", "dexterity"],
+            "weaponProficiencies": ["Light"],
+            "armorTraining": [],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Acrobatics"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Religion"
+                        },
+                        {
+                            "name": "Stealth"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "dexterity",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Acrobatics"
-                    },
+                        "type": "static",
+                        "value": 13
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "propertyPath": "wisdom",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Athletics"
-                    },
-                    {
-                        "name": "History"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Religion"
-                    },
-                    {
-                        "name": "Stealth"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 0,
         "features": [
             {
                 "classLevel": 4,
@@ -706,42 +840,70 @@
     {
         "name": "Paladin",
         "hitDie": 10,
-        "savingThrowProficiencies": ["wisdom", "charisma"],
-        "weaponProficiencies": ["Simple", "Martial"],
-        "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
-        "spellSlotLevelProgression": 2,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["wisdom", "charisma"],
+            "weaponProficiencies": ["Simple", "Martial"],
+            "armorTraining": ["Light", "Medium", "Heavy", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Medicine"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Religion"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "weaponProficiencies": ["Martial"],
+            "armorTraining": ["Light", "Medium", "Shields"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "strength",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Athletics"
-                    },
+                        "type": "static",
+                        "value": 13
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "propertyPath": "charisma",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Medicine"
-                    },
-                    {
-                        "name": "Persuasion"
-                    },
-                    {
-                        "name": "Religion"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 2,
         "resources": [
             { "name": "layOnHands", "displayName": "Lay on Hands" },
             { "name": "channelDivinity", "displayName": "Channel Divinity", "shortRestRecharge": 1 },
@@ -1203,48 +1365,114 @@
     {
         "name": "Ranger",
         "hitDie": 10,
-        "savingThrowProficiencies": ["strength", "dexterity"],
-        "weaponProficiencies": ["Simple", "Martial"],
-        "armorTraining": ["Light", "Medium", "Shields"],
-        "spellSlotLevelProgression": 2,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["strength", "dexterity"],
+            "weaponProficiencies": ["Simple", "Martial"],
+            "armorTraining": ["Light", "Medium", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 3,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Animal Handling"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Stealth"
+                        },
+                        {
+                            "name": "Survival"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "weaponProficiencies": ["Martial"],
+            "armorTraining": ["Light", "Medium", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 1,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Animal Handling"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Stealth"
+                        },
+                        {
+                            "name": "Survival"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 3,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "dexterity",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Animal Handling"
-                    },
+                        "type": "static",
+                        "value": 13
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "propertyPath": "wisdom",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Athletics"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Investigation"
-                    },
-                    {
-                        "name": "Nature"
-                    },
-                    {
-                        "name": "Perception"
-                    },
-                    {
-                        "name": "Stealth"
-                    },
-                    {
-                        "name": "Survival"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 2,
         "features": [
             {
                 "classLevel": 2,
@@ -1293,54 +1521,117 @@
     {
         "name": "Rogue",
         "hitDie": 8,
-        "savingThrowProficiencies": ["dexterity", "intelligence"],
-        "weaponProficiencies": ["Light", "Finesse"],
-        "armorTraining": ["Light"],
-        "spellSlotLevelProgression": 0,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["dexterity", "intelligence"],
+            "weaponProficiencies": ["Light", "Finesse"],
+            "armorTraining": ["Light"],
+            "toolProficiencies": ["Thieves' Tools"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 4,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Acrobatics"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Deception"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Sleight of Hand"
+                        },
+                        {
+                            "name": "Stealth"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light"],
+            "toolProficiencies": ["Thieves' Tools"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 1,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Acrobatics"
+                        },
+                        {
+                            "name": "Athletics"
+                        },
+                        {
+                            "name": "Deception"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Sleight of Hand"
+                        },
+                        {
+                            "name": "Stealth"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 4,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "dexterity",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Acrobatics"
-                    },
-                    {
-                        "name": "Athletics"
-                    },
-                    {
-                        "name": "Deception"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Investigation"
-                    },
-                    {
-                        "name": "Perception"
-                    },
-                    {
-                        "name": "Persuasion"
-                    },
-                    {
-                        "name": "Sleight of Hand"
-                    },
-                    {
-                        "name": "Stealth"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 0,
         "features": [
             {
                 "classLevel": 4,
@@ -1389,42 +1680,57 @@
     {
         "name": "Sorcerer",
         "hitDie": 6,
-        "savingThrowProficiencies": ["constitution", "charisma"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": [],
-        "spellSlotLevelProgression": 1,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["constitution", "charisma"],
+            "weaponProficiencies": ["Simple"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Arcana"
+                        },
+                        {
+                            "name": "Deception"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Persuasion"
+                        },
+                        {
+                            "name": "Religion"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "charisma",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Arcana"
-                    },
-                    {
-                        "name": "Deception"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Persuasion"
-                    },
-                    {
-                        "name": "Religion"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 1,
         "resources": [
             { "name": "sorceryPoints", "displayName": "Sorcery Points" },
             { "name": "metamagicOptionsKnown", "displayName": "Metamagic Options Known" },
@@ -1799,46 +2105,63 @@
     {
         "name": "Warlock",
         "hitDie": 8,
-        "savingThrowProficiencies": ["wisdom", "charisma"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": ["Light"],
-        "spellSlotLevelProgression": 0,
-        "pactSlotLevelProgression": 1,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["wisdom", "charisma"],
+            "weaponProficiencies": ["Simple"],
+            "armorTraining": ["Light"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Arcana"
+                        },
+                        {
+                            "name": "Deception"
+                        },
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Intimidation"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Religion"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light"]
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "charisma",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Arcana"
-                    },
-                    {
-                        "name": "Deception"
-                    },
-                    {
-                        "name": "History"
-                    },
-                    {
-                        "name": "Intimidation"
-                    },
-                    {
-                        "name": "Investigation"
-                    },
-                    {
-                        "name": "Nature"
-                    },
-                    {
-                        "name": "Religion"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 0,
+        "pactSlotLevelProgression": 1,
         "features": [
             {
                 "classLevel": 4,
@@ -1880,45 +2203,60 @@
     {
         "name": "Wizard",
         "hitDie": 6,
-        "savingThrowProficiencies": ["intelligence", "wisdom"],
-        "weaponProficiencies": ["Simple"],
-        "armorTraining": [],
-        "spellSlotLevelProgression": 1,
-        "choices": [
+        "mainClass": {
+            "savingThrowProficiencies": ["intelligence", "wisdom"],
+            "weaponProficiencies": ["Simple"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Arcana"
+                        },
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Insight"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Medicine"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Religion"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+        },
+        "multiClassConditions": [
             {
-                "property": "classSkills",
-                "description": "Skill Proficiencies:",
-                "optionsSource": "skillProficiencies",
-                "multipleSelections": 2,
-                "optionDisplayProperty": "name",
-                "choiceToAttributesMapping": {
-                    "skillProficiencies": "name"
-                },
-                "options": [
+                "type": "aspect",
+                "propertyPath": "intelligence",
+                "greaterThanOrEqualTo": [
                     {
-                        "name": "Arcana"
-                    },
-                    {
-                        "name": "History"
-                    },
-                    {
-                        "name": "Insight"
-                    },
-                    {
-                        "name": "Investigation"
-                    },
-                    {
-                        "name": "Medicine"
-                    },
-                    {
-                        "name": "Nature"
-                    },
-                    {
-                        "name": "Religion"
+                        "type": "static",
+                        "value": 13
                     }
                 ]
             }
         ],
+        "spellSlotLevelProgression": 1,
         "features": [
             {
                 "classLevel": 4,
