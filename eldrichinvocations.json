@@ -1,0 +1,88 @@
+[
+    {
+        "name": "Agonizing Blast",
+        "type": "General",
+        "repeatable": true,
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "spellDamageBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips"
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "aspect",
+                        "value": "charismaModifier"
+                    }
+                ]
+            }
+        },
+        "choices": [
+            {
+                "property": "agonizingBlastCantrip",
+                "description": "Cantrip to enhance:",
+                "optionsSource": "knownSpells",
+                "optionsSourceFilter": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.level",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": 0
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.spellLists",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Warlock"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.type",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "damage"
+                            }
+                        ]
+                    }
+                ],
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "agonizingBlastCantrips": "name"
+                }
+            }
+        ]
+    }
+]
