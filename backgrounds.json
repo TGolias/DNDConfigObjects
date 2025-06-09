@@ -4,7 +4,7 @@
         "abilityScores": ["intelligence", "wisdom", "charisma"],
         "skillProficiencies": ["Insight", "Religion"],
         "toolProficiencies": ["Calligrapher's Supplies"],
-        "feat": "Magic Initiate (Cleric)"
+        "feat": "Magic Initiate - Cleric"
     },
     {
         "name": "Artisan",
@@ -208,7 +208,7 @@
         "abilityScores": ["dexterity", "constitution", "wisdom"],
         "skillProficiencies": ["Stealth", "Survival"],
         "toolProficiencies": ["Cartographer's Tools"],
-        "feat": "Magic Initiate (Druid)"
+        "feat": "Magic Initiate - Druid"
     },
     {
         "name": "Hermit",
@@ -243,7 +243,7 @@
         "abilityScores": ["constitution", "intelligence", "wisdom"],
         "skillProficiencies": ["Arcana", "History"],
         "toolProficiencies": ["Calligrapher's Supplies"],
-        "feat": "Magic Initiate (Wizard)"
+        "feat": "Magic Initiate - Wizard"
     },
     {
         "name": "Sailor",
