@@ -1884,6 +1884,7 @@
                         "type": ["restoreSpellSlot"],
                         "restoreSpellSlot": {
                             "slotType": "spellSlots",
+                            "allowOverMax": true,
                             "slotLevel": {
                                 "calculation": [
                                     {
@@ -2342,7 +2343,7 @@
                 }
             },
             {
-                "classLevel": 1,
+                "classLevel": 2,
                 "name": "Magical Cunning",
                 "actions": [
                     {
@@ -2358,8 +2359,8 @@
                             "amountRestored": {
                                 "calculation": [
                                     {
-                                        "type": "aspect",
-                                        "value": "charismaModifier",
+                                        "type": "parameter",
+                                        "value": "maxUses",
                                         "dividedBy": [
                                             {
                                                 "type": "static",
