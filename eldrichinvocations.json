@@ -18,13 +18,17 @@
             "spellDamageBonus": {
                 "conditions": [
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips"
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
                     },
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips",
-                        "includes": [
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
+                        "equals": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "spell.name"
@@ -42,13 +46,17 @@
             "spellAttackAddendum": {
                 "conditions": [
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips"
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
                     },
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips",
-                        "includes": [
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
+                        "equals": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "spell.name"
@@ -62,8 +70,8 @@
                         "value": "<b>Agonizing Blast.</b> You can add your Charisma modifier to the damage rolls for "
                     },
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips"
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip"
                     }
                 ]
             },
@@ -76,6 +84,14 @@
                     {
                         "type": "parameter",
                         "propertyPath": "additionalEffects.length"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
                     },
                     {
                         "type": "parameter",
@@ -97,9 +113,9 @@
                                 "propertyPath": "additionalEffect.object"
                             },
                             {
-                                "type": "aspect",
-                                "value": "agonizingBlastCantrips",
-                                "includes": [
+                                "type": "parameter",
+                                "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
+                                "equals": [
                                     {
                                         "type": "parameter",
                                         "propertyPath": "additionalEffect.object.name"
@@ -128,6 +144,14 @@
                     },
                     {
                         "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
+                    },
+                    {
+                        "type": "parameter",
                         "propertyPath": "additionalEffects",
                         "itemParameterName": "additionalEffect",
                         "some": [
@@ -146,9 +170,9 @@
                                 "propertyPath": "additionalEffect.object"
                             },
                             {
-                                "type": "aspect",
-                                "value": "agonizingBlastCantrips",
-                                "includes": [
+                                "type": "parameter",
+                                "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
+                                "equals": [
                                     {
                                         "type": "parameter",
                                         "propertyPath": "additionalEffect.object.name"
@@ -164,8 +188,8 @@
                         "value": "<b>Agonizing Blast.</b> You can add your Charisma modifier to the damage rolls for "
                     },
                     {
-                        "type": "aspect",
-                        "value": "agonizingBlastCantrips"
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip"
                     }
                 ]
             }
