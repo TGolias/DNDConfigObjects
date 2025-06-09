@@ -230,8 +230,8 @@
                                     "value": 6
                                 },
                                 {
-                                    "type": "parameter",
-                                    "propertyPath": "charismaModifier"
+                                    "type": "aspect",
+                                    "value": "charismaModifier"
                                 }
                             ]
                         },
