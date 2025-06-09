@@ -253,6 +253,7 @@
     },
     {
         "name": "Lessons of the First Ones",
+        "repeatable": true,
         "prerequisites": [
             {
                 "type": "aspect",
