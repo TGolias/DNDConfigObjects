@@ -775,5 +775,205 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Hexblade Patron",
+        "class": "Warlock",
+        "features": [
+            {
+                "classLevel": 3,
+                "name": "Hexblade Warlock Spells Lvl3",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 4
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Arcane Vigor"
+                            },
+                            {
+                                "spellName": "Magic Weapon"
+                            },
+                            {
+                                "spellName": "Shield"
+                            },
+                            {
+                                "spellName": "Wrathful Smite"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Hexblade Warlock Spells Lvl5",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Conjure Barrage"
+                            },
+                            {
+                                "spellName": "Dispel Magic"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 7,
+                "name": "Hexblade Warlock Spells Lvl7",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Freedom of Movement"
+                            },
+                            {
+                                "spellName": "Staggering Smite"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 9,
+                "name": "Hexblade Warlock Spells Lvl9",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Animate Objects"
+                            },
+                            {
+                                "spellName": "Steel Wind Strike"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Hexblade Manifest",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Hex",
+                                "freeUses": {
+                                    "calculation": [
+                                        {
+                                            "type": "highestOf",
+                                            "values": [
+                                                [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ],
+                                                [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "charismaModifier"
+                                                    }
+                                                ]
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                "spellCastingDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.name",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Hex"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Hexblade's Maneuvers.</b> Once per turn, when you hit a target cursed by your Hex with an attack roll, you can cause one of these additional effects:\n\n<b>Draining Slash.</b> The target makes a Constitution saving throw against your spell save DC. On a failed save, the target can't make Opportunity Attacks and its Speed is halved until the start of your next turn.\n<b>Harrowing Blade.</b> The target makes a Wisdom saving throw against your spell save DC. On a failed save, the next time the target makes an attack roll against a creature other than you before the start of your next turn, the target takes Necrotic damage equal to your Charisma modifier.\n<b>Stymying Mark.</b> The target has Disadvantage on the next saving throw it makes before the start of your next turn."
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]
