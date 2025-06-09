@@ -24,7 +24,7 @@
                     {
                         "type": "aspect",
                         "value": "agonizingBlastCantrips",
-                        "equals": [
+                        "includes": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "spell.name"
@@ -48,7 +48,7 @@
                     {
                         "type": "aspect",
                         "value": "agonizingBlastCantrips",
-                        "equals": [
+                        "includes": [
                             {
                                 "type": "parameter",
                                 "propertyPath": "spell.name"
@@ -99,7 +99,7 @@
                             {
                                 "type": "aspect",
                                 "value": "agonizingBlastCantrips",
-                                "equals": [
+                                "includes": [
                                     {
                                         "type": "parameter",
                                         "propertyPath": "additionalEffect.object.name"
@@ -148,7 +148,7 @@
                             {
                                 "type": "aspect",
                                 "value": "agonizingBlastCantrips",
-                                "equals": [
+                                "includes": [
                                     {
                                         "type": "parameter",
                                         "propertyPath": "additionalEffect.object.name"
