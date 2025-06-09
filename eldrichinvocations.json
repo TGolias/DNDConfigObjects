@@ -44,18 +44,8 @@
             {
                 "property": "agonizingBlastCantrip",
                 "description": "Cantrip to enhance:",
-                "optionsSource": "knownSpells",
+                "optionsSource": "cantrips",
                 "optionsSourceFilter": [
-                    {
-                        "type": "parameter",
-                        "propertyPath": "option.level",
-                        "equals": [
-                            {
-                                "type": "static",
-                                "value": 0
-                            }
-                        ]
-                    },
                     {
                         "type": "parameter",
                         "propertyPath": "option.spellLists",
@@ -63,6 +53,16 @@
                             {
                                 "type": "static",
                                 "value": "Warlock"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "knownSpellNames",
+                        "includes": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "option.name"
                             }
                         ]
                     },
