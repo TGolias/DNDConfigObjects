@@ -2360,7 +2360,7 @@
                                 "calculation": [
                                     {
                                         "type": "parameter",
-                                        "value": "maxUses",
+                                        "propertyPath": "maxUses",
                                         "dividedBy": [
                                             {
                                                 "type": "static",

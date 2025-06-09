@@ -30,7 +30,7 @@
                 },
                 {
                     "type": "parameter",
-                    "value": "weapon.damage.damageType"
+                    "propertyPath": "weapon.damage.damageType"
                 },
                 {
                     "type": "static",
