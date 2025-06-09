@@ -1918,7 +1918,7 @@
                                                                 {
                                                                     "type": "parameter",
                                                                     "propertyPath": "resource.classLevel",
-                                                                    "lessThanOrEqualTo": [
+                                                                    "lessThan": [
                                                                         {
                                                                             "type": "static",
                                                                             "value": 3
@@ -1938,7 +1938,7 @@
                                                                 {
                                                                     "type": "parameter",
                                                                     "propertyPath": "resource.classLevel",
-                                                                    "lessThanOrEqualTo": [
+                                                                    "lessThan": [
                                                                         {
                                                                             "type": "static",
                                                                             "value": 5
@@ -1958,7 +1958,7 @@
                                                                 {
                                                                     "type": "parameter",
                                                                     "propertyPath": "resource.classLevel",
-                                                                    "lessThanOrEqualTo": [
+                                                                    "lessThan": [
                                                                         {
                                                                             "type": "static",
                                                                             "value": 7
@@ -1978,7 +1978,7 @@
                                                                 {
                                                                     "type": "parameter",
                                                                     "propertyPath": "resource.classLevel",
-                                                                    "lessThanOrEqualTo": [
+                                                                    "lessThan": [
                                                                         {
                                                                             "type": "static",
                                                                             "value": 9
