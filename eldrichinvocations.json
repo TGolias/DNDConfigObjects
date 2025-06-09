@@ -4,8 +4,8 @@
         "repeatable": true,
         "prerequisites": [
             {
-                "type": "config",
-                "propertyPath": "level",
+                "type": "aspect",
+                "value": "classLevelWarlock",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
@@ -36,6 +36,136 @@
                     {
                         "type": "aspect",
                         "value": "charismaModifier"
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips"
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Agonizing Blast.</b> You can add your Charisma modifier to the damage rolls for "
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips"
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects.length"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects",
+                        "itemParameterName": "additionalEffect",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "spell"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.object"
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "agonizingBlastCantrips",
+                                "equals": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "additionalEffect.object.name"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "aspect",
+                        "value": "charismaModifier"
+                    }
+                ]
+            },
+            "weaponAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects.length"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects",
+                        "itemParameterName": "additionalEffect",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "spell"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.object"
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "agonizingBlastCantrips",
+                                "equals": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "additionalEffect.object.name"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Agonizing Blast.</b> You can add your Charisma modifier to the damage rolls for "
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "agonizingBlastCantrips"
                     }
                 ]
             }
@@ -99,6 +229,18 @@
     },
     {
         "name": "Lessons of the First Ones",
+        "prerequisites": [
+            {
+                "type": "aspect",
+                "value": "classLevelWarlock",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        ],
         "aspects": {
             "features": [
                 {
