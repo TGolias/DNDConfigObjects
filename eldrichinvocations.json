@@ -99,13 +99,15 @@
     },
     {
         "name": "Lessons of the First Ones",
-        "features": [
-            {
-                "name": "Lessons of the First Ones Feat",
-                "feat": {
-                    "restrictedTypes": ["Origin"]
+        "aspects": {
+            "features": [
+                {
+                    "name": "Lessons of the First Ones Feat",
+                    "feat": {
+                        "restrictedTypes": ["Origin"]
+                    }
                 }
-            }
-        ]
+            ]
+        }
     }
 ]

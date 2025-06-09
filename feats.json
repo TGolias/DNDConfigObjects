@@ -459,46 +459,48 @@
                 ]
             }
         ],
-        "features": [
-            {
-                "name": "Magic Initiate Cleric Spellcasting",
-                "spellcasting": {
-                    "ability": {
-                        "calculation": [
-                            {
-                                "type": "aspect",
-                                "value": "magicInitiateClericSpellcastingAbility"
-                            }
-                        ]
-                    },
-                    "cantripsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            }
-                        ],
-                        "validSpellLists": ["Cleric"]
-                    },
-                    "spellsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "levelLimit": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "validSpellLists": ["Cleric"],
-                        "freeUses": 1
+        "aspects": {
+            "features": [
+                {
+                    "name": "Magic Initiate Cleric Spellcasting",
+                    "spellcasting": {
+                        "ability": {
+                            "calculation": [
+                                {
+                                    "type": "aspect",
+                                    "value": "magicInitiateClericSpellcastingAbility"
+                                }
+                            ]
+                        },
+                        "cantripsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "validSpellLists": ["Cleric"]
+                        },
+                        "spellsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "levelLimit": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "validSpellLists": ["Cleric"],
+                            "freeUses": 1
+                        }
                     }
                 }
-            }
-        ]
+            ]
+        }
     },
     {
         "name": "Magic Initiate - Druid",
@@ -540,46 +542,48 @@
                 ]
             }
         ],
-        "features": [
-            {
-                "name": "Magic Initiate Druid Spellcasting",
-                "spellcasting": {
-                    "ability": {
-                        "calculation": [
-                            {
-                                "type": "aspect",
-                                "value": "magicInitiateDruidSpellcastingAbility"
-                            }
-                        ]
-                    },
-                    "cantripsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            }
-                        ],
-                        "validSpellLists": ["Druid"]
-                    },
-                    "spellsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "levelLimit": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "validSpellLists": ["Druid"],
-                        "freeUses": 1
+        "aspects": {
+            "features": [
+                {
+                    "name": "Magic Initiate Druid Spellcasting",
+                    "spellcasting": {
+                        "ability": {
+                            "calculation": [
+                                {
+                                    "type": "aspect",
+                                    "value": "magicInitiateDruidSpellcastingAbility"
+                                }
+                            ]
+                        },
+                        "cantripsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "validSpellLists": ["Druid"]
+                        },
+                        "spellsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "levelLimit": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "validSpellLists": ["Druid"],
+                            "freeUses": 1
+                        }
                     }
                 }
-            }
-        ]
+            ]
+        }
     },
     {
         "name": "Magic Initiate - Wizard",
@@ -621,46 +625,48 @@
                 ]
             }
         ],
-        "features": [
-            {
-                "name": "Magic Initiate Wizard Spellcasting",
-                "spellcasting": {
-                    "ability": {
-                        "calculation": [
-                            {
-                                "type": "aspect",
-                                "value": "magicInitiateWizardSpellcastingAbility"
-                            }
-                        ]
-                    },
-                    "cantripsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 2
-                            }
-                        ],
-                        "validSpellLists": ["Wizard"]
-                    },
-                    "spellsKnown": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "levelLimit": [
-                            {
-                                "type": "static",
-                                "value": 1
-                            }
-                        ],
-                        "validSpellLists": ["Wizard"],
-                        "freeUses": 1
+        "aspects": {
+            "features": [
+                {
+                    "name": "Magic Initiate Wizard Spellcasting",
+                    "spellcasting": {
+                        "ability": {
+                            "calculation": [
+                                {
+                                    "type": "aspect",
+                                    "value": "magicInitiateWizardSpellcastingAbility"
+                                }
+                            ]
+                        },
+                        "cantripsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "validSpellLists": ["Wizard"]
+                        },
+                        "spellsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "levelLimit": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ],
+                            "validSpellLists": ["Wizard"],
+                            "freeUses": 1
+                        }
                     }
                 }
-            }
-        ]
+            ]
+        }
     },
     {
         "name": "Metamagic Adept",
