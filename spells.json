@@ -107,6 +107,146 @@
         }
     },
     {
+        "name": "Command",
+        "level": 1,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Cleric", "Paladin"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V"],
+        "materialComponents": ["a pinch of powered iron"],
+        "duration": "1 turn",
+        "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n<b>Approach.</b> The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.\n<b>Drop.</b> The target drops whatever it is holding and then ends its turn.\n<b>Flee.</b> The target spends its turn moving away from you by the fastest available means.\n<b>Grovel.</b> The target has the Prone condition and then ends its turn.\n<b>Halt.</b> On its turn, the target doesn't move and takes no action or Bonus Action.\n\n<b>Using a Higher-Level Spell Slot.</b> You can affect one additional creature for each spell slot level above 1.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["buff", "debuff"],
+        "userInput": [
+            {
+                "name": "commandWord",
+                "displayName": "Command Word:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Approach", "Drop", "Flee", "Grovel", "Halt"]
+                    }
+                ]
+            }
+        ],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.commandWord"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "On their next turn, each target that failed the saving throw "
+                        },
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.commandWord",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Approach"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.commandWord",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Drop"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "drops whatever it is holding and then ends its turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.commandWord",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Flee"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "spends its turn moving away from you by the fastest available means."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.commandWord",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Grovel"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "has the Prone condition and then ends its turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "doesn't move and takes no action or Bonus Action."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Compelled Duel",
         "level": 1,
         "school": "Enchantment",

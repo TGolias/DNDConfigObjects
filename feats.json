@@ -1,5 +1,39 @@
 [
     {
+        "name": "Alert",
+        "type": "Origin",
+        "prerequisites": [
+            {
+                "type": "aspect",
+                "value": "featureNames",
+                "includes": [
+                    {
+                        "type": "static",
+                        "value": "Fighting Style"
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "initiativeBonus": {
+                "calculation": [
+                    {
+                        "type": "aspect",
+                        "value": "proficiencyBonus"
+                    }
+                ]
+            },
+            "initiativeAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Initiative Swap.</b> Immediately after you roll Initiative, you can swap your Initiative with the Initiative of one willing ally in the same combat. You can't make this swap if you or the ally has the Incapacitated condition."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Ability Score Increase",
         "type": "General",
         "repeatable": true,

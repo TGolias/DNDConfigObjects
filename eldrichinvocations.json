@@ -1,7 +1,6 @@
 [
     {
         "name": "Agonizing Blast",
-        "type": "General",
         "repeatable": true,
         "prerequisites": [
             {
@@ -84,5 +83,24 @@
                 }
             }
         ]
+    },
+    {
+        "name": "Eldrich Mind",
+        "aspects": {
+            "constitutionSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Eldrich Mind.</b> You have Advantage on Constitution saving throws that you make to maintain Concentration."
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Lessons of the First Ones",
+        "feat": {
+            "restrictedTypes": ["Origin"]
+        }
     }
 ]
