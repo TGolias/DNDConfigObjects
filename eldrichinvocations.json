@@ -276,5 +276,186 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Repelling Blast",
+        "repeatable": true,
+        "prerequisites": [
+            {
+                "type": "aspect",
+                "value": "classLevelWarlock",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.repellingBlastCantrip",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.name"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Repelling Blast.</b> When you hit a Larger or smaller creature with "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.repellingBlastCantrip"
+                    },
+                    {
+                        "type": "static",
+                        "value": ", you can push the creature up to 10 feet straight away from you."
+                    }
+                ]
+            },
+            "weaponAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects.length"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects",
+                        "itemParameterName": "additionalEffect",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "spell"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.object"
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigForObject.choices.repellingBlastCantrip",
+                                "equals": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "additionalEffect.object.name"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Repelling Blast.</b> When you hit a Larger or smaller creature with "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.choices.repellingBlastCantrip"
+                    },
+                    {
+                        "type": "static",
+                        "value": ", you can push the creature up to 10 feet straight away from you."
+                    }
+                ]
+            }
+        },
+        "choices": [
+            {
+                "property": "repellingBlastCantrip",
+                "description": "Cantrip to enhance:",
+                "optionsSource": "cantrips",
+                "optionsSourceFilter": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.spellLists",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Warlock"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "knownSpellNames",
+                        "includes": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "option.name"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "or",
+                        "values": [
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "option.challengeType",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "attackRoll"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "option.type",
+                                    "includes": [
+                                        {
+                                            "type": "static",
+                                            "value": "weaponAttack"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                ],
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "repellingBlastCantrips": "name"
+                }
+            }
+        ]
     }
 ]
