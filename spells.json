@@ -115,7 +115,7 @@
         "range": 60,
         "components": ["V"],
         "materialComponents": ["a pinch of powered iron"],
-        "duration": "1 turn",
+        "duration": "1 round",
         "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n<b>Approach.</b> The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.\n\n<b>Drop.</b> The target drops whatever it is holding and then ends its turn.\n\n<b>Flee.</b> The target spends its turn moving away from you by the fastest available means.\n\n<b>Grovel.</b> The target has the Prone condition and then ends its turn.\n\n<b>Halt.</b> On its turn, the target doesn't move and takes no action or Bonus Action.\n\n<b>Using a Higher-Level Spell Slot.</b> You can affect one additional creature for each spell slot level above 1.",
         "challengeType": "savingThrow",
         "savingThrowType": "wisdom",
@@ -745,6 +745,61 @@
         }
     },
     {
+        "name": "Shield",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Reaction"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "duration": "1 round",
+        "concentration": true,
+        "description": "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <b>Magic Missile.</b>",
+        "challengeType": "none",
+        "type": ["buff"],
+        "buff": {
+            "description": "Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <b>Magic Missile.</b>"
+        },
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 5
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Shield of Faith",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Cleric", "Paladin"],
+        "castingTime": ["Bonus Action"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a prayer scroll"],
+        "duration": "Up to 10 minutes",
+        "concentration": true,
+        "description": "A shimmering field surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
+        "challengeType": "none",
+        "type": ["buff"],
+        "buff": {
+            "description": "The target has +2 bonus to AC for the duration."
+        },
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Silvery Barbs",
         "level": 1,
         "school": "Enchantment",
@@ -860,7 +915,7 @@
         "duration": "8 hours",
         "description": "Choose up to three creatures within range. Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.\n\n<b>Using a Higher-Level Spell Slot.</b> Each target's Hit Points increase by 5 for each spell slot level above 2.",
         "challengeType": "none",
-        "type": ["buff"],
+        "type": ["buff", "healing"],
         "buff": {
             "calculation": [
                 {
@@ -878,7 +933,26 @@
                     ]
                 }
             ],
-            "description": "points added to each target's Hit Point maximum and current Hit Points."
+            "description": "points added to each target's Hit Point maximum."
+        },
+        "healing": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
+                            "type": "static",
+                            "value": -1
+                        }
+                    ]
+                }
+            ],
+            "description": "points added to each target's current Hit Points."
         },
         "aspects": {
             "maxHpBonus": {
@@ -900,6 +974,50 @@
                 ]
             }
         }
+    },
+    {
+        "name": "Arcane Vigor",
+        "level": 2,
+        "school": "Abjuration",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Bonus Action"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "You tap into your life force to heal yourself. Roll one or two of your unexpended Hit Point Dice, and regain a number of Hit Points equal to the roll's total plus your spellcasting ability modifier. Those dice are then expended.\n\n<b>Using a Higher-Level Spell Slot.</b> The number of unexpended Hit Dice you can roll increases by one for each spell slot level above 2.",
+        "challengeType": "none",
+        "type": ["healing"],
+        "healing": {
+            "calculation": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.consumedHitDice"
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "spellcastingAbilityModifier"
+                }
+            ],
+            "description": "points added to each target's Hit Point maximum and current Hit Points."
+        },
+        "userInput": [
+            {
+                "name": "consumedHitDice",
+                "type": "consumeHitDice",
+                "min": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ],
+                "max": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "slotLevel"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Crown of Madness",
@@ -1246,6 +1364,204 @@
                     {
                         "type": "static",
                         "value": ["Blinded", "Deafened", "Paralyzed", "Poisoned"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Magic Weapon",
+        "level": 2,
+        "school": "Transmutation",
+        "spellLists": ["Paladin", "Ranger", "Sorcerer", "Wizard"],
+        "castingTime": ["Bonus Action"],
+        "range": "Touch",
+        "components": ["V", "S"],
+        "duration": "1 hour",
+        "description": "You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls. The spell ends early if you cast it again.\n\n<b>Using a Higher-Level Spell Slot.</b> The bonus increases to +2 with a level 3-5 spell slot. The bonus increases to +3 with a level 6+ spell slot.",
+        "challengeType": "none",
+        "type": [],
+        "aspects": {
+            "weaponAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.name",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "value": "userInput.weaponToEnchant"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "multiple-if",
+                        "cases": [
+                            {
+                                "if": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "slotLevel",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 6
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "slotLevel",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 3
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.name",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "value": "userInput.weaponToEnchant"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "multiple-if",
+                        "cases": [
+                            {
+                                "if": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "slotLevel",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 6
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "slotLevel",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 3
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "weaponToEnchant",
+                "displayName": "Weapon to Enchant:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "collection",
+                        "value": "heldItems",
+                        "filter": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weapon"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.magical",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "map": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.name"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": ["Other Weapon"]
                     }
                 ]
             }
