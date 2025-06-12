@@ -1014,7 +1014,7 @@
                 "max": [
                     {
                         "type": "parameter",
-                        "propertyPath": "slotLevel"
+                        "propertyPath": "castAtLevel"
                     }
                 ]
             }
