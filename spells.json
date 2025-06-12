@@ -1544,10 +1544,10 @@
                             {
                                 "type": "parameter",
                                 "propertyPath": "value.magical",
-                                "equals": [
+                                "notEquals": [
                                     {
                                         "type": "static",
-                                        "value": false
+                                        "value": true
                                     }
                                 ]
                             }
