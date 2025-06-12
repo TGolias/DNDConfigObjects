@@ -351,7 +351,7 @@
             "description": "Radiant damage dealt on a hit with weapons."
         },
         "aspects": {
-            "weaponDamageBonus": {
+            "weaponDamageAdditional": {
                 "calculation": [
                     {
                         "type": "dieRoll",
