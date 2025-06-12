@@ -1528,7 +1528,7 @@
                 "type": "selectList",
                 "values": [
                     {
-                        "type": "collection",
+                        "type": "aspect",
                         "value": "heldItems",
                         "filter": [
                             {
