@@ -1390,7 +1390,7 @@
                         "equals": [
                             {
                                 "type": "parameter",
-                                "value": "userInput.weaponToEnchant"
+                                "propertyPath": "userInput.weaponToEnchant"
                             }
                         ]
                     }
@@ -1459,7 +1459,7 @@
                         "equals": [
                             {
                                 "type": "parameter",
-                                "value": "userInput.weaponToEnchant"
+                                "propertyPath": "userInput.weaponToEnchant"
                             }
                         ]
                     }
