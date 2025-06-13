@@ -1784,7 +1784,7 @@
         ],
         "spellSlotLevelProgression": 1,
         "resources": [
-            { "name": "sorceryPoints", "displayName": "Sorcery Points" },
+            { "name": "sorceryPoints", "displayName": "Sorcerer Sorcery Points" },
             { "name": "metamagicOptionsKnown", "displayName": "Metamagic Options Known" },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
