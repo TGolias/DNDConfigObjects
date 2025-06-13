@@ -2127,11 +2127,11 @@
                 "classLevel": 2,
                 "name": "Sorcerer Metamagic",
                 "metamagic": {
-                    "sorceryPoints": {
+                    "sorceryPointResource": {
                         "calculation": [
                             {
-                                "type": "parameter",
-                                "propertyPath": "sorceryPoints"
+                                "type": "static",
+                                "value": "sorceryPoints"
                             }
                         ]
                     },
