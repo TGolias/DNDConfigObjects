@@ -683,16 +683,19 @@
                 ]
             }
         ],
+        "resources": [
+            { "name": "sorceryPoints", "subName": "MetamagicAdept", "displayName": "Sorcery Points", "subDisplayName": "Metamagic Adept", "combineGlobalResources": true, "uses": { "calculation": [ { "type": "static", "value": 2 } ] } }
+        ],
         "aspects": {
             "features": [
                 {
                     "name": "Metamagic Adept",
                     "metamagic": {
-                        "sorceryPoints": {
+                        "sorceryPointResource": {
                             "calculation": [
                                 {
                                     "type": "static",
-                                    "value": 2
+                                    "value": "sorceryPointsMetamagicAdept"
                                 }
                             ]
                         },

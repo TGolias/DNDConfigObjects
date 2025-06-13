@@ -1784,7 +1784,7 @@
         ],
         "spellSlotLevelProgression": 1,
         "resources": [
-            { "name": "sorceryPoints", "displayName": "Sorcerer Sorcery Points" },
+            { "name": "sorceryPoints", "subName": "Sorcerer", "displayName": "Sorcery Points", "subDisplayName": "Sorcerer", "combineGlobalResources": true },
             { "name": "metamagicOptionsKnown", "displayName": "Metamagic Options Known" },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" }
@@ -2016,7 +2016,7 @@
                             }
                         ],
                         "cost": {
-                            "resourceType": "sorceryPoints",
+                            "resourceType": "sorceryPointsSorcerer",
                             "calculation": [
                                 {
                                     "type": "multiple-if",
@@ -2132,7 +2132,7 @@
                         "calculation": [
                             {
                                 "type": "static",
-                                "value": "sorceryPoints"
+                                "value": "sorceryPointsSorcerer"
                             }
                         ]
                     },
