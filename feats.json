@@ -683,42 +683,49 @@
                 ]
             }
         ],
-        "metamagic": {
-            "sorceryPoints": {
-                "calculation": [
-                    {
-                        "type": "static",
-                        "value": 2
-                    }
-                ]
-            },
-            "optionsKnown": {
-                "calculation": [
-                    {
-                        "type": "static",
-                        "value": 2
-                    }
-                ]
-            }
-        }
-    },
-    {
-        "name": "Tough",
-        "type": "Origin",
-        "prerequisites": [
-            {
-                "type": "config",
-                "propertyPath": "level",
-                "greaterThanOrEqualTo": [
-                    {
-                        "type": "static",
-                        "value": 1
-                    }
-                ]
-            }
-        ],
         "aspects": {
-            "hpPerLVL": 2
+            "features": [
+                {
+                    "name": "Metamagic Adept",
+                    "metamagic": {
+                        "sorceryPoints": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        "optionsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Tough",
+                    "type": "Origin",
+                    "prerequisites": [
+                        {
+                            "type": "config",
+                            "propertyPath": "level",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "aspects": {
+                        "hpPerLVL": 2
+                    }
+                }
+            ]
         }
     }
 ]
