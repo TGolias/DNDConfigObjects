@@ -446,7 +446,7 @@
                             "name": "Get Advantage",
                             "actionTime": ["Free"],
                             "range": "Self",
-                            "duration": "Instantaneous",
+                            "duration": "1 turn",
                             "description": "When you roll a d20 for a D20 Test, you can spend 1 Luck Point to give yourself Advantage on the roll.",
                             "challengeType": "none",
                             "type": ["buff"],
