@@ -434,10 +434,10 @@
                 ]
             }
         ],
-        "resources": [
-            { "name": "luckyPoints", "displayName": "Lucky Points", "uses": { "calculation": [ { "type": "aspect", "value": "proficiencyBonus" } ] } }
-        ],
         "aspects": {
+            "resources": [
+                { "name": "luckyPoints", "displayName": "Lucky Points", "uses": { "calculation": [ { "type": "aspect", "value": "proficiencyBonus" } ] } }
+            ],
             "features": [
                 {
                     "name": "Lucky Points",
@@ -779,10 +779,10 @@
                 ]
             }
         ],
-        "resources": [
-            { "name": "sorceryPoints", "subName": "MetamagicAdept", "displayName": "Sorcery Points", "subDisplayName": "Metamagic Adept", "combineGlobalResources": true, "uses": { "calculation": [ { "type": "static", "value": 2 } ] } }
-        ],
         "aspects": {
+            "resources": [
+                { "name": "sorceryPoints", "subName": "MetamagicAdept", "displayName": "Sorcery Points", "subDisplayName": "Metamagic Adept", "combineGlobalResources": true, "uses": { "calculation": [ { "type": "static", "value": 2 } ] } }
+            ],
             "features": [
                 {
                     "name": "Metamagic Adept",
