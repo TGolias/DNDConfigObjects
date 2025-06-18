@@ -292,8 +292,16 @@
                         ]
                     }
                 ]
-            },
+            }
+        },
+        "aspects": {
             "constitutionSavingThrowAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.concentration"
+                    }
+                ],
                 "calculation": [
                     {
                         "type": "static",
