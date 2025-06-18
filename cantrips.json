@@ -1048,7 +1048,7 @@
                     "calculation": [
                         {
                             "type": "parameter",
-                            "propertyPath": "playerConfigForObject.object.feature.spellcasting.ability",
+                            "propertyPath": "playerConfigForObject.feature.spellcasting.ability",
                             "resultNeedsCalculated": true
                         }
                     ]
@@ -1057,7 +1057,7 @@
                     "calculation": [
                         {
                             "type": "parameter",
-                            "propertyPath": "playerConfigForObject.object.feature.spellcasting.ability",
+                            "propertyPath": "playerConfigForObject.feature.spellcasting.ability",
                             "resultNeedsCalculated": true
                         }
                     ]
