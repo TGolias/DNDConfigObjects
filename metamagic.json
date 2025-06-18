@@ -16,7 +16,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "savingThrowDcAddendum": {
                 "calculation": [
                     {
@@ -84,7 +84,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "rangeMultiplier": {
                 "conditions": [
                     {
@@ -175,7 +175,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "damageAddendum": {
                 "calculation": [
                     {
@@ -243,7 +243,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "durationMultiplier": {
                 "conditions": [
                     {
@@ -320,7 +320,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "savingThrowDcAddendum": {
                 "calculation": [
                     {
@@ -348,7 +348,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "spellCastingConditionAddendum": {
                 "calculation": [
                     {
@@ -376,7 +376,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "spellAttackAddendum": {
                 "calculation": [
                     {
@@ -404,7 +404,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "spellAttackAddendum": {
                 "calculation": [
                     {
@@ -420,7 +420,7 @@
         "cost": 1,
         "metamagicPerSpellCost": 0,
         "description": "When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.",
-        "aspects": {
+        "additionalEffects": {
             "durationAddendum": {
                 "calculation": [
                     {
@@ -436,7 +436,7 @@
         "cost": 1,
         "metamagicPerSpellCost": 0,
         "description": "When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.",
-        "aspects": {
+        "additionalEffects": {
             "durationAddendum": {
                 "calculation": [
                     {
@@ -464,7 +464,7 @@
                 ]
             }
         ],
-        "aspects": {
+        "additionalEffects": {
             "damageAddendum": {
                 "calculation": [
                     {
@@ -480,7 +480,29 @@
         "cost": 1,
         "metamagicPerSpellCost": 0,
         "description": "When you cast a spell that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1.",
-        "aspects": {
+        "conditions": [
+            {
+                "type": "parameter",
+                "propertyPath": "spell.description",
+                "includes": [
+                    {
+                        "type": "static",
+                        "value": "Using a Higher-Level Spell Slot."
+                    }
+                ]
+            },
+            {
+                "type": "parameter",
+                "propertyPath": "spell.description",
+                "includes": [
+                    {
+                        "type": "static",
+                        "value": "one additional creature for each spell slot level above"
+                    }
+                ]
+            }
+        ],
+        "additionalEffects": {
             "durationAddendum": {
                 "calculation": [
                     {

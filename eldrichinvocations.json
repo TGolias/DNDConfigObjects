@@ -110,15 +110,11 @@
                             },
                             {
                                 "type": "parameter",
-                                "propertyPath": "additionalEffect.object"
-                            },
-                            {
-                                "type": "parameter",
                                 "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
                                 "equals": [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "additionalEffect.object.name"
+                                        "propertyPath": "additionalEffect.name"
                                     }
                                 ]
                             }
@@ -167,15 +163,11 @@
                             },
                             {
                                 "type": "parameter",
-                                "propertyPath": "additionalEffect.object"
-                            },
-                            {
-                                "type": "parameter",
                                 "propertyPath": "playerConfigForObject.choices.agonizingBlastCantrip",
                                 "equals": [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "additionalEffect.object.name"
+                                        "propertyPath": "additionalEffect.name"
                                     }
                                 ]
                             }
@@ -364,15 +356,11 @@
                             },
                             {
                                 "type": "parameter",
-                                "propertyPath": "additionalEffect.object"
-                            },
-                            {
-                                "type": "parameter",
                                 "propertyPath": "playerConfigForObject.choices.repellingBlastCantrip",
                                 "equals": [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "additionalEffect.object.name"
+                                        "propertyPath": "additionalEffect.name"
                                     }
                                 ]
                             }
