@@ -132,7 +132,7 @@
                         "if": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "range",
+                                "propertyPath": "spell.range",
                                 "equals": [
                                     {
                                         "type": "static",
