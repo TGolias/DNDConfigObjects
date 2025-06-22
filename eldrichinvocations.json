@@ -194,14 +194,14 @@
                 "optionsSourceFilter": [
                     {
                         "type": "parameter",
-                        "propertyPath": "option.spellLists",
+                        "propertyPath": "option.feature.name",
                         "includes": [
                             {
                                 "type": "static",
                                 "value": "Warlock"
                             }
                         ]
-                    },
+                    }, 
                     {
                         "type": "aspect",
                         "value": "knownSpellNames",
@@ -391,7 +391,7 @@
                 "optionsSourceFilter": [
                     {
                         "type": "parameter",
-                        "propertyPath": "option.spellLists",
+                        "propertyPath": "option.feature.name",
                         "includes": [
                             {
                                 "type": "static",

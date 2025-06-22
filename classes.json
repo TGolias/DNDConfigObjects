@@ -1872,6 +1872,99 @@
             },
             {
                 "classLevel": 1,
+                "name": "Innate Sorcery",
+                "actions": [
+                    {
+                        "name": "Innate Sorcery",
+                        "actionTime": ["Bonus Action"],
+                        "range": "Self",
+                        "duration": "1 minute",
+                        "description": "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n\n- The spell save DC of your Sorcerer spells increases by 1.\n- You have Advantage on the attack rolls of Sorcerer spells you cast.\n\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.",
+                        "challengeType": "none",
+                        "type": [],
+                        "aspects": {
+                            "spellAttackAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Innate Sorcery.</b> You have Advantage on the attack rolls of Sorcerer spells you cast."
+                                    }
+                                ]
+                            },
+                            "spellSaveDCBonus": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "spellSaveDCAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Innate Sorcery.</b> The spell save DC of your Sorcerer spells increases by 1."
+                                    }
+                                ]
+                            }
+                        },
+                        "cost": {
+                            "uses": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 2
+                                    }
+                                ]
+                            },
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 2,
                 "name": "Font of Magic",
                 "actions": [
                     {
