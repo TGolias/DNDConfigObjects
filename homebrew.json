@@ -149,6 +149,129 @@
         ]
     },
     {
+        "name": "Lingering Injuries",
+        "userInput": [
+            {
+                "name": "numberOfInjuries",
+                "displayName": "Number of Injuries:",
+                "type": "numberField",
+                "min": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        ],
+        "choices": [
+            {
+                "property": "spellscarFeatures",
+                "description": "Injuries:",
+                "optionsSource": "CUSTOM",
+                "multipleSelections": {
+                    "calculation": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.numberOfInjuries"
+                        }
+                    ]
+                },
+                "generateCustomOptionSummary": true,
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "features": "features"
+                },
+                "options": [
+                    {
+                        "name": "Loss of an eye",
+                        "features": [
+                            {
+                                "name": "Loss of an eye",
+                                "skillProficiencyPerceptionAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of an eye.</b> You have disadvantage on Perception checks relying on sight."
+                                        }
+                                    ]
+                                },
+                                "weaponAttackAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "or",
+                                            "values": [
+                                                [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "isThrown"
+                                                    }
+                                                ],
+                                                [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "weapon.weaponRange",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Ranged"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            ]
+                                        }
+                                    ],
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of an eye.</b> You have disadvantage on ranged attack rolls."
+                                        }
+                                    ]
+                                },
+                                "spellAttackAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "spell.range",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Touch"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of an eye.</b> You have disadvantage on ranged attack rolls."
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Loss of an Arm or Hand",
+                        "features": [
+                            {
+                                "name": "Loss of an Arm or Hand",
+                                "numberOfHandsBonus": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": -1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Luck Points",
         "resources": [
             { 
