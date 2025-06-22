@@ -190,8 +190,19 @@
             {
                 "property": "agonizingBlastCantrip",
                 "description": "Cantrip to enhance:",
-                "optionsSource": "cantrips",
+                "optionsFromAspect": true,
+                "optionsSource": "knownSpells",
                 "optionsSourceFilter": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.level",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": false
+                            }
+                        ]
+                    },
                     {
                         "type": "parameter",
                         "propertyPath": "option.feature.name",
@@ -202,16 +213,6 @@
                             }
                         ]
                     }, 
-                    {
-                        "type": "aspect",
-                        "value": "knownSpellNames",
-                        "includes": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "option.name"
-                            }
-                        ]
-                    },
                     {
                         "type": "parameter",
                         "propertyPath": "option.type",
@@ -387,8 +388,19 @@
             {
                 "property": "repellingBlastCantrip",
                 "description": "Cantrip to enhance:",
-                "optionsSource": "cantrips",
+                "optionsFromAspect": true,
+                "optionsSource": "knownSpells",
                 "optionsSourceFilter": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "option.level",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": false
+                            }
+                        ]
+                    },
                     {
                         "type": "parameter",
                         "propertyPath": "option.feature.name",
@@ -396,16 +408,6 @@
                             {
                                 "type": "static",
                                 "value": "Warlock"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "aspect",
-                        "value": "knownSpellNames",
-                        "includes": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "option.name"
                             }
                         ]
                     },
