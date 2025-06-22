@@ -252,15 +252,119 @@
                         ]
                     },
                     {
-                        "name": "Loss of an Arm or Hand",
+                        "name": "Loss of an arm or hand",
                         "features": [
                             {
-                                "name": "Loss of an Arm or Hand",
+                                "name": "Loss of an arm or hand",
                                 "numberOfHandsBonus": {
                                     "calculation": [
                                         {
                                             "type": "static",
                                             "value": -1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Loss of a leg or foot",
+                        "features": [
+                            {
+                                "name": "Loss of a leg or foot",
+                                "speedMultiplier": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 0.5
+                                        }
+                                    ]
+                                },
+                                "speedAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of a leg or foot.</b> Your speed is halved."
+                                        }
+                                    ]
+                                },
+                                "actionConditionAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "action"
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "action.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Dash"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of a leg or foot.</b> You will fall prone after dashing."
+                                        }
+                                    ]
+                                },
+                                "skillProficiencyAcrobaticsAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Loss of a leg or foot.</b> Disadvantage on Acrobatics checks made to balance."
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Limp",
+                        "features": [
+                            {
+                                "name": "Limp",
+                                "speedBonus": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": -5
+                                        }
+                                    ]
+                                },
+                                "speedAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Limp.</b> Your speed is reduced by 5 feet."
+                                        }
+                                    ]
+                                },
+                                "actionConditionAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "action"
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "action.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Dash"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Limp.</b> You must succeed a DC 10 Dexterity saving throw after dashing or fall prone."
                                         }
                                     ]
                                 }
