@@ -272,11 +272,11 @@
                         "features": [
                             {
                                 "name": "Loss of a leg or foot",
-                                "speedMultiplier": {
+                                "speedDivider": {
                                     "calculation": [
                                         {
                                             "type": "static",
-                                            "value": 0.5
+                                            "value": 2
                                         }
                                     ]
                                 },
