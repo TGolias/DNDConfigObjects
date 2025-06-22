@@ -777,6 +777,142 @@
         ]
     },
     {
+        "name": "Spellfire Sorcery",
+        "class": "Sorcerer",
+        "features": [
+            {
+                "classLevel": 3,
+                "name": "Spellfire Sorcerer Spells Lvl3",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 4
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Cure Wounds"
+                            },
+                            {
+                                "spellName": "Guiding Bolt"
+                            },
+                            {
+                                "spellName": "Lesser Restoration"
+                            },
+                            {
+                                "spellName": "Scorching Ray"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Spellfire Sorcerer Spells Lvl5",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Aura of Vitality"
+                            },
+                            {
+                                "spellName": "Dispel Magic"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 7,
+                "name": "Spellfire Sorcerer Spells Lvl7",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Fire Shield"
+                            },
+                            {
+                                "spellName": "Wall of Fire"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 9,
+                "name": "Spellfire Sorcerer Spells Lvl9",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Greater Restoration"
+                            },
+                            {
+                                "spellName": "Flame Strike"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Spellfire Burst"
+            }
+        ]
+    },
+    {
         "name": "Hexblade Patron",
         "class": "Warlock",
         "features": [
