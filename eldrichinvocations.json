@@ -190,29 +190,35 @@
             {
                 "property": "agonizingBlastCantrip",
                 "description": "Cantrip to enhance:",
-                "optionsFromAspect": true,
-                "optionsSource": "knownSpells",
+                "optionsSource": "cantrips",
                 "optionsSourceFilter": [
                     {
                         "type": "parameter",
-                        "propertyPath": "option.level",
-                        "equals": [
+                        "value": "knownSpells",
+                        "itemParameterName": "knownSpell",
+                        "some": [
                             {
-                                "type": "static",
-                                "value": false
+                                "type": "parameter",
+                                "value": "knownSpell.name",
+                                "includes": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "option.name"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "value": "knownSpell.feature.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Warlock"
+                                    }
+                                ]
                             }
                         ]
                     },
-                    {
-                        "type": "parameter",
-                        "propertyPath": "option.feature.name",
-                        "includes": [
-                            {
-                                "type": "static",
-                                "value": "Warlock"
-                            }
-                        ]
-                    }, 
                     {
                         "type": "parameter",
                         "propertyPath": "option.type",
@@ -388,26 +394,32 @@
             {
                 "property": "repellingBlastCantrip",
                 "description": "Cantrip to enhance:",
-                "optionsFromAspect": true,
-                "optionsSource": "knownSpells",
+                "optionsSource": "cantrips",
                 "optionsSourceFilter": [
                     {
                         "type": "parameter",
-                        "propertyPath": "option.level",
-                        "equals": [
+                        "value": "knownSpells",
+                        "itemParameterName": "knownSpell",
+                        "some": [
                             {
-                                "type": "static",
-                                "value": false
-                            }
-                        ]
-                    },
-                    {
-                        "type": "parameter",
-                        "propertyPath": "option.feature.name",
-                        "includes": [
+                                "type": "parameter",
+                                "value": "knownSpell.name",
+                                "includes": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "option.name"
+                                    }
+                                ]
+                            },
                             {
-                                "type": "static",
-                                "value": "Warlock"
+                                "type": "parameter",
+                                "value": "knownSpell.feature.name",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Warlock"
+                                    }
+                                ]
                             }
                         ]
                     },
