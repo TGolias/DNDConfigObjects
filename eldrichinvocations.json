@@ -193,13 +193,13 @@
                 "optionsSource": "cantrips",
                 "optionsSourceFilter": [
                     {
-                        "type": "parameter",
+                        "type": "aspect",
                         "value": "knownSpells",
                         "itemParameterName": "knownSpell",
                         "some": [
                             {
                                 "type": "parameter",
-                                "value": "knownSpell.name",
+                                "propertyPath": "knownSpell.name",
                                 "includes": [
                                     {
                                         "type": "parameter",
@@ -209,7 +209,7 @@
                             },
                             {
                                 "type": "parameter",
-                                "value": "knownSpell.feature.name",
+                                "propertyPath": "knownSpell.feature.name",
                                 "includes": [
                                     {
                                         "type": "static",
@@ -397,13 +397,13 @@
                 "optionsSource": "cantrips",
                 "optionsSourceFilter": [
                     {
-                        "type": "parameter",
+                        "type": "aspect",
                         "value": "knownSpells",
                         "itemParameterName": "knownSpell",
                         "some": [
                             {
                                 "type": "parameter",
-                                "value": "knownSpell.name",
+                                "propertyPath": "knownSpell.name",
                                 "includes": [
                                     {
                                         "type": "parameter",
@@ -413,7 +413,7 @@
                             },
                             {
                                 "type": "parameter",
-                                "value": "knownSpell.feature.name",
+                                "propertyPath": "knownSpell.feature.name",
                                 "includes": [
                                     {
                                         "type": "static",
