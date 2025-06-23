@@ -503,7 +503,7 @@
                 "values": [
                     {
                         "type": "collection",
-                        "value": "skillproficiencies",
+                        "value": "skillProficiencies",
                         "map": [
                             {
                                 "type": "parameter",
