@@ -908,7 +908,200 @@
             },
             {
                 "classLevel": 3,
-                "name": "Spellfire Burst"
+                "name": "Spellfire Burst",
+                "featureActionDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "featureAction.cost"
+                        },
+                        {
+                            "type": "or",
+                            "values": [
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "featureAction.cost.resourceType",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "sorceryPoints"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "featureAction.cost.resourceType",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "sorceryPointsSorcerer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Spellfire Burst.</b> When you spend at least 1 Sorcery Point as part of the Magic action or a Bonus Action on your turn, you can unleash one of the following magical effects of your choice. You can do so only once per turn:\n\n<b>Bolstering Flames.</b> You or one creature you can see within 30 feet of yourself gains Temporary Hit Points equal to 1d4 plus "
+                        },
+                        {
+                            "type": "math",
+                            "values": [
+                                {
+                                    "type": "aspect",
+                                    "value": "charismaModifier"
+                                },
+                                {
+                                    "type": "if-then",
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "classLevelSorcerer",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 14
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "classLevelSorcerer"
+                                        }
+                                    ],
+                                    "else": [
+                                        {
+                                            "type": "static",
+                                            "value": 0
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "static",
+                            "value": ".\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself must succeed on a DC "
+                        },
+                        {
+                            "type": "aspect",
+                            "value": "spellSaveDCSorcerer"
+                        },
+                        {
+                            "type": "static",
+                            "value": " Dexterity saving throw or take "
+                        },
+                        {
+                            "type": "if-then",
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "classLevelSorcerer",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 14
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "1d6"
+                                }
+                            ],
+                            "else": [
+                                {
+                                    "type": "static",
+                                    "value": "3d6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "static",
+                            "value": " Fire or Radiant damage (your choice)."
+                        }
+                    ]
+                },
+                "spellCastingDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "isSpell"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.name",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Hex"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Spellfire Burst.</b> When you spend at least 1 Sorcery Point as part of the Magic action or a Bonus Action on your turn, you can unleash one of the following magical effects of your choice. You can do so only once per turn.\n\n<b>Bolstering Flames.</b> You or one creature you can see within 30 feet of yourself gains Temporary Hit Points equal to 1d4 plus your Charisma modifier.\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself must succeed on a Dexterity saving throw against your spell save DC or take 1d6 Fire or Radiant damage (your choice)."
+                        }
+                    ]
+                }
+            },
+            {
+                "classLevel": 6,
+                "name": "Absorb Spells",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "charisma"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
+                        "predeterminedSelections": [
+                            {
+                                "spellName": "Counterspell"
+                            }
+                        ]
+                    }
+                },
+                "spellCastingDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.name",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Counterspell"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Absorb Spells.</b> Whenever a target fails the saving throw against a Counterspell you cast, you regain 1d4 Sorcery Points."
+                        }
+                    ]
+                }
             }
         ]
     },
