@@ -17,7 +17,7 @@
             }
         ],
         "additionalEffects": {
-            "savingThrowDcAddendum": {
+            "damageAddendum": {
                 "calculation": [
                     {
                         "type": "static",
@@ -329,7 +329,7 @@
             }
         ],
         "additionalEffects": {
-            "savingThrowDcAddendum": {
+            "spellSaveDCAddendum": {
                 "calculation": [
                     {
                         "type": "static",
