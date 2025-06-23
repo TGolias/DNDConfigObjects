@@ -1035,10 +1035,6 @@
                     "conditions": [
                         {
                             "type": "parameter",
-                            "propertyPath": "isSpell"
-                        },
-                        {
-                            "type": "parameter",
                             "propertyPath": "additionalEffects"
                         },
                         {
