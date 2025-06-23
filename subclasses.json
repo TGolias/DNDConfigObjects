@@ -1012,16 +1012,16 @@
                                     ]
                                 }
                             ],
-                            "then": [
+                             "then": [
                                 {
                                     "type": "static",
-                                    "value": "1d6"
+                                    "value": "3d6"
                                 }
                             ],
                             "else": [
                                 {
                                     "type": "static",
-                                    "value": "3d6"
+                                    "value": "1d6"
                                 }
                             ]
                         },
@@ -1129,13 +1129,13 @@
                             "then": [
                                 {
                                     "type": "static",
-                                    "value": "1d6"
+                                    "value": "3d6"
                                 }
                             ],
                             "else": [
                                 {
                                     "type": "static",
-                                    "value": "3d6"
+                                    "value": "1d6"
                                 }
                             ]
                         },
