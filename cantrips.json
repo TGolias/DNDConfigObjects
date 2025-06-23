@@ -47,6 +47,16 @@
                 }
             ],
             "description": "subtracted from attack rolls made against you before the spell ends."
+        },
+        "aspects": {
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Blade Ward.</b> Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts 1d4 from the attack roll."
+                    }
+                ]
+            }
         }
     },
     {
@@ -60,7 +70,7 @@
         "description": "Channeling the chill of the grave, make a melee spell attack against a target within reach. On a hit, the target takes 1d10 Necrotic damage, and it can't regain Hit Points until the end of your next turn.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d10 when you reach levels 5 (2d10), 11 (3d10), and 17 (4d10).",
         "challengeType": "attackRoll",
         "attackRollType": "spellAttack",
-        "type": ["damage"],
+        "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
                 {
@@ -75,7 +85,30 @@
                     "diceType": "Necrotic"
                 }
             ]
-        }
+        },
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target can't regain Hit Points until the end of your next turn."
+                },
+                {
+                    "type": "static",
+                    "value": "\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Dancing Lights",
@@ -101,7 +134,108 @@
         "duration": "Instantaneous",
         "description": "<b>Weather Sensor.</b> You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.\n\n<b>Bloom.</b> You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.\n\n<b>Sensory Effect.</b> You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube.\n\n<b>Fire Play.</b> You light or snuff out a candle, a torch, or a campfire.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "userInput": [
+            {
+                "name": "druidcraftEffect",
+                "displayName": "Effect:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Weather Sensor", "Bloom", "Sensory Effect", "Fire Play"]
+                    }
+                ]
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.druidcraftEffect"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.druidcraftEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Weather Sensor"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.druidcraftEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Bloom"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You instantly make a flower blossom, a seed pod open, or a leaf bud bloom."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.druidcraftEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Sensory Effect"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You light or snuff out a candle, a torch, or a campfire."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     },
     {
         "name": "Eldritch Blast",
@@ -143,7 +277,128 @@
         "duration": "Instantaneous",
         "description": "You exert control over the elements, creating one of the following effects within range:\n\n<b>Beckon Air.</b> You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. Doors and shutters being held open by someone or something aren't affected.\n\n<b>Beckon Earth.</b> You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, or you cause a single word to appear in your handwriting in a patch of dirt or sand.\n\n<b>Beckon Fire.</b> You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. You choose the color and scent, and the embers can light candles, torches, or lamps in that area. The smoke's scent lingers for 1 minute.\n\n<b>Beckon Water.</b> You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. Alternatively, you create 1 cup of clean water either in an open container or on a surface, and the water evaporates in 1 minute.\n\n<b>Sculpt Element.</b> You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature or an object) for 1 hour.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "userInput": [
+            {
+                "name": "elementalismEffect",
+                "displayName": "Effect:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Beckon Air", "Beckon Earth", "Beckon Fire", "Beckon Water", "Sculpt Element"]
+                    }
+                ]
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.elementalismEffect"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.elementalismEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Beckon Air"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. Doors and shutters being held open by someone or something aren't affected."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.elementalismEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Beckon Earth"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, or you cause a single word to appear in your handwriting in a patch of dirt or sand."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.elementalismEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Beckon Fire"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. You choose the color and scent, and the embers can light candles, torches, or lamps in that area. The smoke's scent lingers for 1 minute."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.elementalismEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Beckon Water"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. Alternatively, you create 1 cup of clean water either in an open container or on a surface, and the water evaporates in 1 minute."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature or an object) for 1 hour."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     },
     {
         "name": "Fire Bolt",
@@ -188,8 +443,25 @@
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
-            "conditions": ["Charmed"]
-        }
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Guidance",
@@ -206,12 +478,47 @@
         "buff": {
             "calculation": [
                 {
-                    "type": "dieRoll",
-                    "value": 4
+                    "type": "static",
+                    "value": "1d4 added to any ability check using the "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.chosenSkill"
+                },
+                {
+                    "type": "static",
+                    "value": " skill.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "added to any ability check using the chosen skill."
-        }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "chosenSkill",
+                "displayName": "Chosen Skill:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "collection",
+                        "value": "skillproficiencies",
+                        "map": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.name"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Light",
@@ -224,7 +531,26 @@
         "duration": "1 hour",
         "description": "You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The light can be colored as you like.\n\nCovering the object with something opaque blocks the light. The spell ends if you cast it again.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Light put on "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "What are you putting light on?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Mage Hand",
@@ -294,12 +620,22 @@
         "debuff": {
             "calculation": [
                 {
-                    "type": "dieRoll",
-                    "value": 4
+                    "type": "static",
+                    "value": "1d4 subtracted from the next saving throw the target makes before the end of your next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "subtracted from the next saving throw the target makes before the end of your next turn."
-        }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Minor Illusion",
@@ -312,8 +648,30 @@
         "duration": "1 minute",
         "description": "You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again.\n\nIf a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.\n\n<b>Sound.</b> If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.\n\n<b>Image.</b> If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.",
         "challengeType": "savingThrow",
-        "savingThrowType": "intelligence",
-        "type": []
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Illusion Created - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.illusionText"
+                },
+                {
+                    "type": "static",
+                    "value": "\n\nIf a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature."
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Describe your illusion:",
+                "type": "illusionText"
+            }
+        ]
     },
     {
         "name": "Poison Spray",
@@ -353,7 +711,148 @@
         "duration": "1 hour",
         "description": "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time.\n\n<b>Sensory Effect.</b> You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.\n\n<b>Fire Play.</b> You instantaneously light or snuff out a candle, a torch, or a small campfire.\n\n<b>Clean or Soil.</b> You instantaneously clean or soil an object no larger than 1 cubic foot.\n\n<b>Minor Sensation.</b> You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.\n\n<b>Magic Mark.</b> You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.\n\n<b>Minor Creation.</b> You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "userInput": [
+            {
+                "name": "prestidigitationEffect",
+                "displayName": "Effect:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Sensory Effect", "Fire Play", "Clean or Soil", "Minor Sensation", "Magic Mark", "Minor Creation"]
+                    }
+                ]
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.prestidigitationEffect"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.prestidigitationEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Sensory Effect"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.prestidigitationEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Fire Play"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You instantaneously light or snuff out a candle, a torch, or a small campfire."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.prestidigitationEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Clean or Soil"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You instantaneously clean or soil an object no larger than 1 cubic foot."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.prestidigitationEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Minor Sensation"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.prestidigitationEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Magic Mark"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
     },
     {
         "name": "Produce Flame",
@@ -395,8 +894,24 @@
             ]
         },
         "debuff": {
-            "description": "Their speed is reduced by 10 feet until the start of your next turn."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target's speed is reduced by 10 feet until the start of your next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Resistance",
@@ -413,12 +928,63 @@
         "buff": {
             "calculation": [
                 {
-                    "type": "dieRoll",
-                    "value": 4
+                    "type": "static",
+                    "value": "When the target takes "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.damageType"
+                },
+                {
+                    "type": "static",
+                    "value": " damage, reduce the total damage taken by 1d4.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "subtracted from damage taken with chosen damage type (once per turn)."
-        }
+            ]
+        },
+        "aspects": {
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "When the target takes "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.damageType"
+                    },
+                    {
+                        "type": "static",
+                        "value": " damage, reduce the total damage taken by 1d4.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "damageType",
+                "displayName": "Damage Type to resist:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Acid", "Bludgeoning", "Cold", "Fire", "Lightning", "Necrotic", "Piercing", "Poison", "Radiant", "Slashing", "Thunder"]
+                    }
+                ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Sacred Flame",
@@ -458,7 +1024,26 @@
         "duration": "Instantaneous or 1 hour",
         "description": "You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:\n\nYou instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn't have enough force to cause damage.\nYou cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.\nYou change the water's color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.\nYou freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.\n\nIf you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Water Manipulation - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.waterText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "waterText",
+                "displayName": "Describe your water manipulation:",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Shillelagh",
@@ -717,7 +1302,7 @@
         "description": "Lightning springs from you to a creature that you try to touch. Make a melee spell attack against the target. On a hit, the target takes 1d8 Lightning damage, and it can't make Opportunity Attacks until the start of its next turn.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d8 when you reach levels 5 (2d8), 11 (3d8), and 17 (4d8).",
         "challengeType": "attackRoll",
         "attackRollType": "spellAttack",
-        "type": ["damage"],
+        "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
                 {
@@ -732,7 +1317,26 @@
                     "diceType": "Lightning"
                 }
             ]
-        }
+        },
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target can't make Opportunity Attacks until the start of its next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Sorcerous Burst",
@@ -880,8 +1484,24 @@
             ]
         },
         "debuff": {
-            "description": "They emit dim light in a 10-foot radius and can't benefit from the Invisible condition until the end of your next turn."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target emits dim light in a 10-foot radius and can't benefit from the Invisible condition until the end of your next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Thaumaturgy",
@@ -893,7 +1513,148 @@
         "duration": "Up to 1 minute",
         "description": "You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time.\n\n<b>Altered Eyes.</b> You alter the appearance of your eyes for 1 minute.\n\n<b>Booming Voice.</b> Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks.\n\n<b>Fire Play.</b> You cause flames to flicker, brighten, dim, or change color for 1 minute.\n\n<b>Invisible Hand.</b> You instantaneously cause an unlocked door or window to fly open or slam shut.\n\n<b>Phantom Sound.</b> You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\n<b>Tremors.</b> You cause harmless tremors in the ground for 1 minute.",
         "challengeType": "none",
-        "type": [],
+        "type": ["buff"],
+        "userInput": [
+            {
+                "name": "thaumaturgyEffect",
+                "displayName": "Effect:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Altered Eyes", "Booming Voice", "Fire Play", "Invisible Hand", "Phantom Sound", "Tremors"]
+                    }
+                ]
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.thaumaturgyEffect"
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.thaumaturgyEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Altered Eyes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You alter the appearance of your eyes for 1 minute."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.thaumaturgyEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Booming Voice"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.thaumaturgyEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Fire Play"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You cause flames to flicker, brighten, dim, or change color for 1 minute."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.thaumaturgyEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Invisible Hand"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You instantaneously cause an unlocked door or window to fly open or slam shut."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.thaumaturgyEffect",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Phantom Sound"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "You cause harmless tremors in the ground for 1 minute."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
         "aspects": {
             "skillProficiencyIntimidationAddendum": {
                 "calculation": [
@@ -903,7 +1664,7 @@
                     }
                 ]
             }
-        } 
+        }
     },
     {
         "name": "Thorn Whip",
@@ -1132,8 +1893,24 @@
             ]
         },
         "debuff": {
-            "description": "Target has Disadvantage on the next attack roll it makes before the end of its next turn."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target has Disadvantage on the next attack roll it makes before the end of its next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Word of Radiance",

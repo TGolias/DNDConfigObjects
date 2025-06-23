@@ -1197,7 +1197,7 @@
             "long": 600
         },
         "properties": ["Heavy", "Two-Handed"],
-        "tags": ["Heavy Crossbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
+        "tags": ["Longbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
         "mastery": "Slow",
         "rarity": "None",
         "equippable": true,

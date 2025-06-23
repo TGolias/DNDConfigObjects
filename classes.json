@@ -1954,6 +1954,26 @@
                                         "value": "<b>Innate Sorcery.</b> The spell save DC of your Sorcerer spells increases by 1."
                                     }
                                 ]
+                            },
+                            "metamagicLimitBonus": {
+                                "conditions": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "classLevelSorcerer",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 7
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         },
                         "cost": {
@@ -2264,6 +2284,182 @@
                 "feat": {
                     "restrictedTypes": []
                 }
+            },
+            {
+                "classLevel": 5,
+                "name": "Sorcery Incarnate",
+                "actions": [
+                    {
+                        "name": "Sorcery Incarnate",
+                        "actionTime": ["Free"],
+                        "actionCondition": "When you finish a Short Rest.",
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a Long Rest.",
+                        "challengeType": "none",
+                        "type": ["restoreResource"],
+                        "restoreResource": {
+                            "resourceName": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "sorceryPoints"
+                                    }
+                                ]
+                            },
+                            "globalResource": true,
+                            "amountRestored": {
+                                "calculation": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "classLevelSorcerer",
+                                        "dividedBy": [
+                                            {
+                                                "type": "static",
+                                                "value": 2
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "cost": {
+                            "uses": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 7,
+                "name": "Sorcery Incarnate",
+                "actions": [
+                    {
+                        "name": "Innate Sorcery",
+                        "actionTime": ["Bonus Action"],
+                        "actionCondition": "When you have no uses of Innate Sorcery left.",
+                        "range": "Self",
+                        "duration": "1 minute",
+                        "description": "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n\n- The spell save DC of your Sorcerer spells increases by 1.\n\n- You have Advantage on the attack rolls of Sorcerer spells you cast.\n\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.",
+                        "challengeType": "none",
+                        "type": [],
+                        "aspects": {
+                            "spellAttackAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "isSpell"
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Innate Sorcery.</b> You have Advantage on the attack rolls of Sorcerer spells you cast."
+                                    }
+                                ]
+                            },
+                            "spellSaveDCBonus": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "isSpell"
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "spellSaveDCAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "isSpell"
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.feature.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Sorcerer"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Innate Sorcery.</b> The spell save DC of your Sorcerer spells increases by 1."
+                                    }
+                                ]
+                            },
+                            "metamagicLimitBonus": {
+                                "conditions": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "classLevelSorcerer",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 7
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "cost": {
+                            "resourceType": "sorceryPointsSorcerer",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 "classLevel": 8,

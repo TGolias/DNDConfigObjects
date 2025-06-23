@@ -11,7 +11,26 @@
         "duration": "8 hours",
         "description": "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is audible or mental:\n\n<b>Audible Alarm.</b> The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\n<b>Mental Alarm.</b> You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you're asleep.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Alarm - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Describe the Alarm:",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Arms of Hadar",
@@ -21,7 +40,7 @@
         "castingTime": ["Action"],
         "range": "Self",
         "components": ["V", "S"],
-        "duration": "1 turn",
+        "duration": "Instantaneous",
         "description": "Invoking Hadar, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes 2d6 Necrotic damage and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
         "challengeType": "none",
         "type": ["damage", "debuff"],
@@ -45,8 +64,24 @@
             ]
         },
         "debuff": {
-            "description": "Creatures that failed their saving throws can't take Reactions until the start of their next turns."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Targets that failed their saving throws can't take Reactions until the start of their next turns.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Bless",
@@ -65,12 +100,22 @@
         "buff": {
             "calculation": [
                 {
-                    "type": "dieRoll",
-                    "value": 4
+                    "type": "static",
+                    "value": "Targets add 1d4 to attack rolls and saving throws.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "added to saving throws before the spell ends."
+            ]
         },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ],
         "aspects": {
             "allAttackBonus": {
                 "calculation": [
@@ -115,7 +160,7 @@
         "range": 60,
         "components": ["V"],
         "materialComponents": ["a pinch of powered iron"],
-        "duration": "1 round",
+        "duration": "Instantaneous",
         "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n<b>Approach.</b> The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.\n\n<b>Drop.</b> The target drops whatever it is holding and then ends its turn.\n\n<b>Flee.</b> The target spends its turn moving away from you by the fastest available means.\n\n<b>Grovel.</b> The target has the Prone condition and then ends its turn.\n\n<b>Halt.</b> On its turn, the target doesn't move and takes no action or Bonus Action.\n\n<b>Using a Higher-Level Spell Slot.</b> You can affect one additional creature for each spell slot level above 1.",
         "challengeType": "savingThrow",
         "savingThrowType": "wisdom",
@@ -131,6 +176,11 @@
                         "value": ["Approach", "Drop", "Flee", "Grovel", "Halt"]
                     }
                 ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
             }
         ],
         "debuff": {
@@ -240,6 +290,14 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "type": "static",
+                            "value": "\n\nTargets - "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.targetText"
                         }
                     ]
                 }
@@ -261,8 +319,24 @@
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
-            "description": "The target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Create or Destroy Water",
@@ -328,6 +402,42 @@
         "description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.\n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
         "challengeType": "none",
         "type": []
+    },
+    {
+        "name": "Disguise Self",
+        "level": 1,
+        "school": "Illusion",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "duration": "1 hour",
+        "description": "You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends. You can seem 1 foot shorter or taller and can appear heavier or lighter. You must adopt a form that has the same basic arrangement of limbs as you have. Otherwise, the extent of the illusion is up to you.\n\nThe changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing.\n\nTo discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC.",
+        "challengeType": "savingThrow",
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "You are disguised as "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.disguiseText"
+                },
+                {
+                    "type": "static",
+                    "value": ". To discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC."
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "disguiseText",
+                "displayName": "What are you disguised as?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Divine Favor",
@@ -440,8 +550,24 @@
         "savingThrowType": "dexterity",
         "type": ["debuff"],
         "debuff": {
-            "description": "Attack rolls against affected creatures or objects have advantage and they can't benefit from the invisible condition."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Attack rolls against affected creatures or objects have advantage and they can't benefit from the invisible condition.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Feather Fall",
@@ -456,7 +582,77 @@
         "duration": "1 minute",
         "description": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature.",
         "challengeType": "none",
-        "type": []
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Targets take no damage from the fall.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Guiding Bolt",
+        "level": 1,
+        "school": "Evocation",
+        "spellLists": ["Cleric"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S"],
+        "duration": "1 round",
+        "description": "You hurl a bolt of light toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 4d6 Radiant damage, and the next attack roll made against it before the end of your next turn has Advantage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
+        "challengeType": "none",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
+                            "type": "static",
+                            "value": 3
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        },
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The next attack roll made against the target before the end of your next turn has Advantage.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Healing Word",
@@ -631,7 +827,11 @@
                 },
                 {
                     "type": "static",
-                    "value": "</b> ability checks."
+                    "value": "</b> ability checks.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
             ]
         },
@@ -646,6 +846,11 @@
                         "value": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
                     }
                 ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
             }
         ]
     },
@@ -694,10 +899,110 @@
         "duration": "1 hour",
         "description": "You touch a creature. The target's Speed increases by 10 feet until the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
         "challengeType": "none",
-        "type": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target's Speed increases by 10 feet until the spell ends.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
         "aspects": {
             "speedBonus": 10
-        }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Mage Armor",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a piece of cured leather"],
+        "duration": "8 hours",
+        "description": "You touch a willing creature who isn't wearing armor. Until the spell ends, the target's base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor.",
+        "challengeType": "none",
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target's AC becomes 13 plus its Dexterity modifier.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "aspects": {
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 13
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "dexterityModifier"
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Sanctuary",
+        "level": 1,
+        "school": "Abjuration",
+        "spellLists": ["Cleric"],
+        "castingTime": ["Bonus Action"],
+        "range": 30,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a shard of glass from a mirror"],
+        "duration": "1 minute",
+        "description": "You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect.\n\nThe spell ends if the warded creature makes an attack roll, casts a spell, or deals damage.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Searing Smite",
@@ -731,6 +1036,10 @@
         "debuff": {
             "calculation": [
                 {
+                    "type": "static",
+                    "value": "Target takes "
+                },
+                {
                     "type": "dieRoll",
                     "value": 6,
                     "multiplier": [
@@ -739,10 +1048,24 @@
                             "propertyPath": "slotLevel"
                         }
                     ]
+                },
+                {
+                    "type": "static",
+                    "value": " Fire damage taken then a Constitution saving throw at the start of each of its turn. If the saving throw succeeds, the spell is ended.\n\nTarget"
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "Fire damage taken then a Constitution saving throw at the start of each of its turn. If the saving throw succeeds, the spell is ended."
-        }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Shield",
@@ -786,7 +1109,16 @@
         "challengeType": "none",
         "type": ["buff"],
         "buff": {
-            "description": "The target has +2 bonus to AC for the duration."
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The target has +2 bonus to AC for the duration.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
         },
         "aspects": {
             "armorClassBonus": {
@@ -797,7 +1129,14 @@
                     }
                 ]
             }
-        }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Silvery Barbs",
@@ -805,7 +1144,7 @@
         "school": "Enchantment",
         "spellLists": ["Bard", "Sorcerer", "Wizard"],
         "castingTime": ["Reaction"],
-        "castingCondition": "When a creature you can see within 60 feel of yourself succeeds on an attack roll, an ability check or a saving throw",
+        "castingCondition": "When a creature you can see within 60 feet of yourself succeeds on an attack roll, an ability check or a saving throw",
         "range": "Self",
         "components": ["V"],
         "duration": "1 minute",
@@ -813,11 +1152,27 @@
         "challengeType": "none",
         "type": ["buff", "debuff"],
         "buff": {
-            "description": "The chosen target has Advantage on the next attack roll, ability check, or saving throw it makes within 1 minute."
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The chosen target has Advantage on the next attack roll, ability check, or saving throw it makes within 1 minute.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
         },
         "debuff": {
             "description": "The triggering creature must reroll the d20 and use the lower roll."
-        }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting to help?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Thunderous Smite",
@@ -900,8 +1255,25 @@
             ]
         },
         "debuff": {
-            "conditions": ["Frightened"]
-        }
+            "conditions": ["Frightened"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Aid",
@@ -950,9 +1322,16 @@
                             "value": -1
                         }
                     ]
+                },
+                {
+                    "type": "static",
+                    "value": " points added to each target's current Hit Points.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
                 }
-            ],
-            "description": "points added to each target's current Hit Points."
+            ]
         },
         "aspects": {
             "maxHpBonus": {
@@ -973,7 +1352,14 @@
                     }
                 ]
             }
-        }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Arcane Vigor",
@@ -1036,8 +1422,24 @@
         "type": ["debuff"],
         "debuff": {
             "conditions": ["Charmed"],
-            "description": "The target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Darkness",
@@ -1052,6 +1454,22 @@
         "concentration": true,
         "description": "For the duration, magical Darkness spreads from a point within range and fills a 15-foot-radius Sphere. Darkvision can't see through it, and nonmagical light can't illuminate it.\n\nAlternatively, you cast the spell on an object that isn't being worn or carried, causing the Darkness to fill a 15-foot Emanation originating from that object. Covering that object with something opaque, such as a bowl or helm, blocks the Darkness.\n\nIf any of this spell's area overlaps with an area of Bright Light or Dim Light created by a spell of level 2 or lower, that other spell is dispelled.",
         "challengeType": "none",
+        "type": []
+    },
+    {
+        "name": "Detect Thoughts",
+        "level": 2,
+        "school": "Divination",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a copper piece"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "You activate one of the effects below. Until the spell ends, you can activate either effect as a Magic action on your later turns.\n\n<b>Sense Thoughts.</b> You sense the presence of thoughts within 30 feet of yourself that belong to creatures that know languages or are telepathic. You don't read the thoughts, but you know that a thinking creature is present.\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.\n\n<b>Read Thoughts.</b> Target one creature you can see within 30 feet of yourself or one creature within 30 feet of yourself that you detected with the Sense Thoughts option. You learn what is most on the target's mind right now. If the target doesn't know any languages and isn't telepathic, you learn nothing.\nAs a Magic action on your next turn, you can try to probe deeper into the target's mind. If you probe deeper, the target makes a Wisdom saving throw. On a failed save, you discern the target's reasoning, emotions, and something that looms large in its mind (such as a worry, love, or hate). On a successful save, the spell ends. Either way, the target knows that you are probing into its mind, and until you shift your attention away from the target's mind, the target can take an action on its turn to make an Intelligence (Arcana) check against your spell save DC, ending the spell on a success.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
         "type": []
     },
     {
@@ -1080,6 +1498,11 @@
                         "value": ["Enlarge", "Reduce"]
                     }
                 ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
             }
         ],
         "buff": {
@@ -1101,7 +1524,11 @@
                     "then": [
                         {
                             "type": "static",
-                            "value": "The target's size increases by one category, has Advantage on Strength checks and Strength saving throws, and deals an extra 1d4 to the damage of weapon attacks and unarmed strikes."
+                            "value": "The target's size increases by one category, has Advantage on Strength checks and Strength saving throws, and deals an extra 1d4 to the damage of weapon attacks and unarmed strikes.\n\nTarget - "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.targetText"
                         }
                     ]
                 }
@@ -1126,7 +1553,11 @@
                     "then": [
                         {
                             "type": "static",
-                            "value": "The target's size decreases by one category, has Disadvantage on Strength checks and Strength saving throws, and subtracts 1d4 from the damage of weapon attacks and unarmed strikes."
+                            "value": "The target's size decreases by one category, has Disadvantage on Strength checks and Strength saving throws, and subtracts 1d4 from the damage of weapon attacks and unarmed strikes.\n\nTarget - "
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.targetText"
                         }
                     ]
                 }
@@ -1720,7 +2151,65 @@
             ]
         },
         "debuff": {
-            "description": "On a failed save, creatures have their speed reduced to 0 for 1 minute, or until it or another creature within reach of it uses an action to break away the ice."
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a failed save, creatures have their speed reduced to 0 for 1 minute, or until it or another creature within reach of it uses an action to break away the ice.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Scorching Ray",
+        "level": 2,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "You hurl three fiery rays. You can hurl them at one target within range or at several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 Fire damage.\n\n<b>Using a Higher-Level Spell Slot.</b> You create one additional ray for each spell slot level above 2.",
+        "challengeType": "attackRoll",
+        "attackRollType": "spellAttack",
+        "type": ["damage", "buff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Fire"
+                }
+            ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "slotLevel"
+                },
+                {
+                    "type": "static",
+                    "value": 1
+                }
+            ],
+            "description": "rays fired."
         }
     },
     {
@@ -1736,6 +2225,40 @@
         "description": "For the duration, you see creatures and objects that have the Invisible condition as if they were visible, and you can see into the Ethereal Plane. Creatures and objects there appear ghostly.",
         "challengeType": "none",
         "type": []
+    },
+    {
+        "name": "Shatter",
+        "level": 2,
+        "school": "Evocation",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a chip of mica"],
+        "duration": "Instantaneous",
+        "description": "A loud noise erupts from a point of your choice within range. Each creature in a 10-foot-radius Sphere centered there makes a Constitution saving throw, taking 3d8 Thunder damage on a failed save or half as much damage on a successful one. A Construct has Disadvantage on the save.\n\nA nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 2.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 1
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Thunder"
+                }
+            ]
+        }
     },
     {
         "name": "Shining Smite",
@@ -1768,8 +2291,24 @@
             ]
         },
         "debuff": {
-            "description": "Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition."
-        }
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Suggestion",
@@ -1806,6 +2345,187 @@
             {
                 "name": "suggestionText",
                 "displayName": "What are you suggesting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Aura of Vitality",
+        "level": 3,
+        "school": "Abjuration",
+        "spellLists": ["Cleric", "Druid", "Paladin"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura and at the start of each of your turns while it persists, you can restore 2d6 Hit Points to one creature in it.",
+        "challengeType": "none",
+        "type": ["healing"],
+        "healing": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Counterspell",
+        "level": 3,
+        "school": "Abjuration",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Reaction"],
+        "castingCondition": "Must be made when you see a creature within 60 feet of yourself casting a spell with Verbal, Somatic, or Material components",
+        "range": 60,
+        "components": ["S"],
+        "duration": "Instantaneous",
+        "description": "You attempt to interrupt a creature in the process of casting a spell. The creature must make a Constitution saving throw. On a failed save, the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn't expended.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["debuff"],
+        "debuff": {
+            "description": "The spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted."
+        }
+    },
+    {
+        "name": "Dispel Magic",
+        "level": 3,
+        "school": "Abjuration",
+        "spellLists": ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "Choose one creature, object, or magical effect within range. Any ongoing spell of level 3 or lower on the target ends. For each ongoing spell of level 4 or higher on the target, make an ability check using your spellcasting ability (DC 10 plus that spell's level). On a successful check, the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You automatically end a spell on the target if the spell's level is equal to or less than the level of the spell slot you use.",
+        "challengeType": "none",
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Spellcasting Ability - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "spellcastingAbility"
+                },
+                {
+                    "type": "static",
+                    "value": "\n\nSpellcasting Ability Modifier - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "spellcastingAbilityModifier"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Fireball",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 150,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a ball of bat guano", "sulfur"],
+        "duration": "Instantaneous",
+        "description": "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one.\nFlammable objects in the area that aren't being worn or carried start burning.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 5
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Fire"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Slow",
+        "level": 3,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a drop of molasses"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "You alter time around up to six creatures of your choice in a 40-foot Cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.\n\nAn affected target's Speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't take Reactions. On its turns, it can take either an action or a Bonus Action, not both, and it can make only one attack if it takes the Attack action. If it casts a spell with a Somatic component, there is a 25 percent chance the spell fails as a result of the target making the spell's gestures too slowly.\n\nAn affected target repeats the save at the end of each of its turns, ending the spell on itself on a success.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["buff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target's Speed is halved, -2 penalty to AC and Dexterity saving throws, can't take Reactions, it can only take either an action or a Bonus Action, and it can make only one attack if it takes the Attack action.\n\nIf it casts a spell with a Somatic component, there is a 25 percent chance the spell fails.\n\nAn affected target repeats the save at the end of each of its turns, ending the spell on itself on a success.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Tongues",
+        "level": 3,
+        "school": "Divination",
+        "spellLists": ["Bard", "Cleric", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "M"],
+        "materialComponents": ["a miniature ziggurat"],
+        "duration": "1 hour",
+        "description": "This spell grants the creature you touch the ability to understand any spoken or signed language that it hears or sees. Moreover, when the target communicates by speaking or signing, any creature that knows at least one language can understand it if that creature can hear the speech or see the signing.",
+        "challengeType": "none",
+        "type": ["buff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target can understand any spoken or signed language that it hears or sees and any creature that knows at least one language can understand the target.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
                 "type": "textField"
             }
         ]
