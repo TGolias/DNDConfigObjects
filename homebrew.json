@@ -541,6 +541,113 @@
                 },
                 "options": [
                     {
+                        "name": "Mask of Midnight",
+                        "features": [
+                            {
+                                "name": "Mask of Midnight",
+                                "actions": [
+                                    {
+                                        "name": "Mask of Midnight",
+                                        "actionTime": ["Action"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "Expend one charge as a magic action. You project a powerful illusion into a 15 ft cone in front of you. Each creature within the area must make an Intelligence saving throw or take 1d10 psychic damage.",
+                                        "challengeType": "savingThrow",
+                                        "savingThrowType": "intelligence",
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 10,
+                                                    "diceType": "Psychic"
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Spell Bolster",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Mask of Midnight"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Mask of Midnight"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Spell Bolster",
+                                "actions": [
+                                    {
+                                        "name": "Spell Bolster",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "As part of casting a spell that has a saving throw.",
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "Expend a charge as part of casting a spell that has a saving throw. Increase your spell save DC by 1 until the end of your turn.",
+                                        "challengeType": "none",
+                                        "type": ["buff"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Your spell save DC is increased by 1 until the end of your turn."
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "spellSaveDCBonus": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Spellfire Bolts",
                         "features": [
                             {
@@ -552,7 +659,8 @@
                                         "range": 60,
                                         "duration": "Instantaneous",
                                         "description": "As a magic action, you can expend charges to make a melee or a ranged (maximum range 60ft) spell attack to a creature or an object.\n\nYour class's main ability score is your spellcasting ability and you add your proficiency bonus. On a successful hit, the target suffers 1d6 fire or radiant damage per charge released.",
-                                        "challengeType": "none",
+                                        "challengeType": "attackRoll",
+                                        "attackRollType": "spellAttack",
                                         "type": ["damage"],
                                         "damage": {
                                             "calculation": [
@@ -734,6 +842,169 @@
                                                 {
                                                     "type": "static",
                                                     "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Burning Restoration",
+                        "features": [
+                            {
+                                "name": "Burning Restoration",
+                                "actions": [
+                                    {
+                                        "name": "Burning Restoration",
+                                        "actionTime": ["Action"],
+                                        "range": "Touch",
+                                        "duration": "Instantaneous",
+                                        "description": "As an action, one creature you touch can spend 1 of its hit dice to heal itself per charge you expend. If at full health, any number over your max HP turns into temporary hit points but at half the value rolled (ex: 2 HP extra becomes 1).",
+                                        "challengeType": "none",
+                                        "type": ["healing"],
+                                        "healing": {
+                                            "calculation": [
+                                                {
+                                                    "type": "if-then",
+                                                    "if": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.consumedHitDice"
+                                                        }
+                                                    ],
+                                                    "then": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.consumedHitDice"
+                                                        }
+                                                    ],
+                                                    "else": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Can spend "
+                                                        },
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.spellfireChargesToSpend"
+                                                        },
+                                                        {
+                                                            "type": "static",
+                                                            "value": " hit dice."
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "userInput": [
+                                            {
+                                                "name": "spellfireChargesToSpend",
+                                                "displayName": "Spellfire Charges to Spend",
+                                                "type": "numberField",
+                                                "min": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ],
+                                                "max": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "resource.remainingUses"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "name": "consumedHitDice",
+                                                "displayName": "Your Hit Dice:",
+                                                "type": "consumeHitDice",
+                                                "min": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ],
+                                                "max": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.spellfireChargesToSpend"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.spellfireChargesToSpend"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Spell Eater",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Burning Restoration"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Burning Restoration"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Spell Eater",
+                                "actions": [
+                                    {
+                                        "name": "Spell Eater",
+                                        "actionTime": ["Reaction"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "When you are the only target of an enemy ability that requires a saving throw, you can give yourself advantage on the save by expending a charge as a reaction. If you succeed on the save, you regain hp equal to the level of the spell used or half the attacker's CR (minimum 1) if the ability wasn't a spell.",
+                                        "challengeType": "none",
+                                        "type": ["buff", "healing"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "You have advantage on the saving throw against the enemy ability."
+                                                }
+                                            ]
+                                        },
+                                        "healing": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "If you succeed on the save, you regain hp equal to the level of the spell used or half the attacker's CR (minimum 1) if the ability wasn't a spell."
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
                                                 }
                                             ]
                                         }
