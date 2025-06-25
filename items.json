@@ -17,8 +17,8 @@
                     "value": 8
                 },
                 {
-                    "type": "parameter",
-                    "propertyPath": "dexterityModifier"
+                    "type": "aspect",
+                    "value": "dexterityModifier"
                 },
                 {
                     "type": "aspect",
@@ -66,8 +66,8 @@
                     "value": 8
                 },
                 {
-                    "type": "parameter",
-                    "propertyPath": "dexterityModifier"
+                    "type": "aspect",
+                    "value": "dexterityModifier"
                 },
                 {
                     "type": "aspect",
@@ -546,6 +546,361 @@
         }
     },
     {
+        "name": "Dead Eye Upgrade 1",
+        "tags": ["Dead Eye Upgrade 1", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Eye",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 300
+        },
+        "description": "Mechanical eye that grants advantage to perception checks that rely on sight.",
+        "aspects": {
+            "skillProficiencyPerceptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Dead Eye Upgrade 1.</b> You have advantage on Perception checks that rely on sight."
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Dead Eye Upgrade 2",
+        "tags": ["Dead Eye Upgrade 2", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Eye",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 1800
+        },
+        "description": "Gain a +2 to ranged weapon attack rolls and damage. As a bonus action, you can see invisible creatures for 10 minutes once per long rest.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "See Invisible Creatures",
+                    "actions": [
+                        {
+                            "name": "See Invisible Creatures",
+                            "actionTime": ["Action"],
+                            "range": "Self",
+                            "duration": "1 hour",
+                            "description": "For the duration, you see creatures that have the Invisible condition as if they were visible,",
+                            "challengeType": "none",
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "weaponAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.weaponRange",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Ranged"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.weaponRange",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Ranged"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "skillProficiencyPerceptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Dead Eye Upgrade 2.</b> You have advantage on Perception checks that rely on sight."
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Dead Eye Upgrade 3",
+        "tags": ["Dead Eye Upgrade 3", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Eye",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 4000
+        },
+        "description": "Gain +3 to ranged ranged weapon attack rolls and damage. Add your strength OR dexterity modifier one extra time to the damage made with ranged attacks.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "See Invisible Creatures",
+                    "actions": [
+                        {
+                            "name": "See Invisible Creatures",
+                            "actionTime": ["Action"],
+                            "range": "Self",
+                            "duration": "1 hour",
+                            "description": "For the duration, you see creatures that have the Invisible condition as if they were visible,",
+                            "challengeType": "none",
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "weaponAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.weaponRange",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Ranged"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 3
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.weaponRange",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Ranged"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 3
+                    },
+                    {
+                        "type": "highestOf",
+                        "values": [
+                            [
+                                {
+                                    "type": "aspect",
+                                    "value": "strengthModifier"
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "aspect",
+                                    "value": "dexterityModifier"
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "skillProficiencyPerceptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "notSome": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Eye Patch"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Dead Eye Upgrade 3.</b> You have advantage on Perception checks that rely on sight."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Derringer",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -633,6 +988,100 @@
         "weight": 10,
         "cost": {
             "gold": 25
+        }
+    },
+    {
+        "name": "Eye Patch",
+        "type": "Wondrous item",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 5
+        },
+        "description": "Does not help your vision. Quite the opposite. Unless you're actually missing an eye though... In that case, this eye patch might come across a bit intimidating!",
+        "aspects": {
+            "weaponAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "or",
+                        "values": [
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "isThrown"
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "weapon.weaponRange",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Ranged"
+                                        }
+                                    ]
+                                }
+                            ]
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Eye Patch.</b> You have disadvantage on ranged attack rolls."
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.range",
+                        "notEquals": [
+                            {
+                                "type": "static",
+                                "value": "Touch"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Eye Patch.</b> You have disadvantage on ranged attack rolls."
+                    }
+                ]
+            },
+            "skillProficiencyPerceptionAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Eye Patch.</b> You have disadvantage on Perception checks that rely on sight."
+                    }
+                ]
+            },
+            "skillProficiencyIntimidationAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "featureNames",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Loss of an eye"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Eye Patch.</b> You are wearing an eye patch and are actually missing an eye: Scary! You have advantage on Intimidation checks."
+                    }
+                ]
+            }
         }
     },
     {
@@ -927,6 +1376,205 @@
         "cost": {
             "gold": 5
         }
+    },
+    {
+        "name": "Hidden Gun Upgrade 1",
+        "tags": ["Hidden Gun Upgrade 1", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Arm",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 750
+        },
+        "description": "A pistol concealed in the forearm, can be used as part of the attack action. If concealed, the first attack is at advantage, taking the enemy by surprise. Can be done only once per encounter with this hidden weapon. Reload properties still apply.",
+        "childItems": [
+            {
+                "name": "Hidden Pistol",
+                "type": "Weapon",
+                "weaponType": "Martial",
+                "weaponRange": "Ranged",
+                "range": {
+                    "normal": 30,
+                    "long": 90
+                },
+                "properties": ["Reload 4", "Misfire 1"],
+                "tags": ["Pistol", "Firearm", "Martial", "Ranged"],
+                "mastery": "Vex",
+                "rarity": "None",
+                "equippable": true,
+                "description": "A pistol concealed in the forearm. If concealed, the first attack is at advantage, taking the enemy by surprise.",
+                "damage": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 10,
+                            "diceType": "Piercing"
+                        }
+                    ]
+                },
+                "aspects": {
+                    "weaponAttackAddendum": {
+                        "conditions": [
+                             {
+                                "type": "parameter",
+                                "propertyPath": "weapon.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Hidden Pistol"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Hidden Gun Upgrade 1.</b> If concealed, the first attack is at advantage, taking the enemy by surprise. Can be done only once per encounter with this hidden weapon."
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "name": "Hidden Gun Upgrade 2",
+        "tags": ["Hidden Gun Upgrade 2", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Arm",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 1200
+        },
+        "description": "-Now, a Revolver!",
+        "childItems": [
+            {
+                "name": "Hidden Revolver",
+                "type": "Weapon",
+                "weaponType": "Martial",
+                "weaponRange": "Ranged",
+                "range": {
+                    "normal": 40,
+                    "long": 120
+                },
+                "properties": ["Reload 6", "Misfire 2"],
+                "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
+                "mastery": "Sap",
+                "rarity": "None",
+                "equippable": true,
+                "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
+                "damage": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "diceType": "Piercing"
+                        }
+                    ]
+                },
+                "aspects": {
+                    "weaponAttackAddendum": {
+                        "conditions": [
+                             {
+                                "type": "parameter",
+                                "propertyPath": "weapon.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Hidden Revolver"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Hidden Gun Upgrade 2.</b> If concealed, the first attack is at advantage, taking the enemy by surprise. Can be done only once per encounter with this hidden weapon."
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "name": "Hidden Gun Upgrade 3",
+        "tags": ["Hidden Gun Upgrade 3", "WeaveWear", "Prosthetic"],
+        "type": "Prosthetic",
+        "prostheticType": "Arm",
+        "rarity": "Very rare",
+        "equippable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 3000
+        },
+        "description": "-Now, a Semi-Automatic Pistol that shoots from two mechanical fingers as the barrel! It no longer counts as holding a weapon as the gun is built into the arm, leaving this hand free.",
+        "childItems": [
+            {
+                "name": "Hidden Semi-Automatic Pistol",
+                "type": "Weapon",
+                "weaponType": "Martial",
+                "weaponRange": "Ranged",
+                "range": {
+                    "normal": 40,
+                    "long": 120
+                },
+                "properties": ["Reload 6", "Misfire 2"],
+                "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
+                "mastery": "Sap",
+                "rarity": "None",
+                "equippable": true,
+                "notHoldable": true,
+                "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
+                "damage": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "diceType": "Piercing"
+                        }
+                    ]
+                },
+                "aspects": {
+                    "weaponAttackAddendum": {
+                        "conditions": [
+                             {
+                                "type": "parameter",
+                                "propertyPath": "weapon.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Hidden Semi-Automatic Pistol"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Hidden Gun Upgrade 3.</b> If concealed, the first attack is at advantage, taking the enemy by surprise. Can be done only once per encounter with this hidden weapon."
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
     },
     {
         "name": "Horn",
@@ -1463,8 +2111,8 @@
                     "value": 8
                 },
                 {
-                    "type": "parameter",
-                    "propertyPath": "dexterityModifier"
+                    "type": "aspect",
+                    "value": "dexterityModifier"
                 },
                 {
                     "type": "aspect",

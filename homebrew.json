@@ -188,15 +188,71 @@
                             {
                                 "name": "Loss of an eye",
                                 "skillProficiencyPerceptionAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Eye"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
-                                            "value": "<b>Loss of an eye.</b> You have disadvantage on Perception checks relying on sight."
+                                            "value": "<b>Loss of an eye.</b> You have disadvantage on Perception checks that rely on sight."
                                         }
                                     ]
                                 },
                                 "weaponAttackAddendum": {
                                     "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Eye"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         {
                                             "type": "or",
                                             "values": [
@@ -231,6 +287,33 @@
                                 "spellAttackAddendum": {
                                     "conditions": [
                                         {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Eye"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "type": "parameter",
                                             "propertyPath": "spell.range",
                                             "notEquals": [
@@ -257,6 +340,35 @@
                             {
                                 "name": "Loss of an arm or hand",
                                 "numberOfHandsBonus": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Arm"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -273,6 +385,35 @@
                             {
                                 "name": "Loss of a leg or foot",
                                 "speedDivider": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -281,6 +422,35 @@
                                     ]
                                 },
                                 "speedAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -290,6 +460,33 @@
                                 },
                                 "actionConditionAddendum": {
                                     "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         {
                                             "type": "parameter",
                                             "propertyPath": "action"
@@ -313,6 +510,35 @@
                                     ]
                                 },
                                 "skillProficiencyAcrobaticsAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -329,6 +555,35 @@
                             {
                                 "name": "Limp",
                                 "speedBonus": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -337,6 +592,35 @@
                                     ]
                                 },
                                 "speedAddendum": {
+                                    "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     "calculation": [
                                         {
                                             "type": "static",
@@ -346,6 +630,33 @@
                                 },
                                 "actionConditionAddendum": {
                                     "conditions": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "equippedItems",
+                                            "itemParameterName": "item",
+                                            "notSome": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Prosthetic"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "item.prostheticType",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "Leg"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         {
                                             "type": "parameter",
                                             "propertyPath": "action"
