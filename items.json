@@ -298,6 +298,393 @@
         }
     },
     {
+        "name": "Bloodwell Vial +1",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "attunementRequirements": {
+            "description": "Must be a Sorcerer",
+            "calculation": [
+                {
+                    "type": "config",
+                    "propertyPath": "classes",
+                    "itemParameterName": "class",
+                    "some": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.name",
+                            "equals": [
+                                {
+                                    "static": "parameter",
+                                    "value": "Sorcerer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "weight": 0,
+        "description": "To attune to this vial, you must place a few drops of your blood into it. The vial can't be opened while your attunement to it lasts. If your attunement to the vial ends, the contained blood turns to ash. You can use the vial as a spellcasting focus for your spells while wearing or holding it, and you gain a bonus to spell attack rolls and to the saving throw DCs of your sorcerer spells. The bonus is determined by the vial's rarity.\n\nIn addition, when you roll any Hit Dice to recover hit points while you are carrying the vial, you can regain 5 sorcery points. This property of the vial can't be used again until the next dawn.",
+        "aspects": {
+            "spellSaveDCBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "spellSaveDCAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +1.</b> The spell save DC of your Sorcerer spells increases by 1."
+                    }
+                ]
+            },
+            "spellAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +1.</b> The spell attack bonus of your Sorcerer spells increases by 1."
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Bloodwell Vial +2",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "attunementRequirements": {
+            "description": "Must be a Sorcerer",
+            "calculation": [
+                {
+                    "type": "config",
+                    "propertyPath": "classes",
+                    "itemParameterName": "class",
+                    "some": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.name",
+                            "equals": [
+                                {
+                                    "static": "parameter",
+                                    "value": "Sorcerer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "weight": 0,
+        "description": "To attune to this vial, you must place a few drops of your blood into it. The vial can't be opened while your attunement to it lasts. If your attunement to the vial ends, the contained blood turns to ash. You can use the vial as a spellcasting focus for your spells while wearing or holding it, and you gain a bonus to spell attack rolls and to the saving throw DCs of your sorcerer spells. The bonus is determined by the vial's rarity.\n\nIn addition, when you roll any Hit Dice to recover hit points while you are carrying the vial, you can regain 5 sorcery points. This property of the vial can't be used again until the next dawn.",
+        "aspects": {
+            "spellSaveDCBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "spellSaveDCAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +2.</b> The spell save DC of your Sorcerer spells increases by 2."
+                    }
+                ]
+            },
+            "spellAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +2.</b> The spell attack bonus of your Sorcerer spells increases by 2."
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Bloodwell Vial +3",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "attunementRequirements": {
+            "description": "Must be a Sorcerer",
+            "calculation": [
+                {
+                    "type": "config",
+                    "propertyPath": "classes",
+                    "itemParameterName": "class",
+                    "some": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.name",
+                            "equals": [
+                                {
+                                    "static": "parameter",
+                                    "value": "Sorcerer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "weight": 0,
+        "description": "To attune to this vial, you must place a few drops of your blood into it. The vial can't be opened while your attunement to it lasts. If your attunement to the vial ends, the contained blood turns to ash. You can use the vial as a spellcasting focus for your spells while wearing or holding it, and you gain a bonus to spell attack rolls and to the saving throw DCs of your sorcerer spells. The bonus is determined by the vial's rarity.\n\nIn addition, when you roll any Hit Dice to recover hit points while you are carrying the vial, you can regain 5 sorcery points. This property of the vial can't be used again until the next dawn.",
+        "aspects": {
+            "spellSaveDCBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 3
+                    }
+                ]
+            },
+            "spellSaveDCAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +3.</b> The spell save DC of your Sorcerer spells increases by 3."
+                    }
+                ]
+            },
+            "spellAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "isSpell"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "spell.feature.name",
+                        "includes": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerer"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Bloodwell Vial +3.</b> The spell attack bonus of your Sorcerer spells increases by 3."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Blowgun",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -512,6 +899,39 @@
                     "type": "dieRoll",
                     "value": 4,
                     "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Dagger of Friendship",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "range": {
+            "normal": 20,
+            "long": 60
+        },
+        "properties": ["Finesse", "Light", "Thrown"],
+        "tags": ["Dagger", "Simple", "Melee", "Finesse", "Light", "Thrown"],
+        "mastery": "Slow",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "gold": 2
+        },
+        "description": "Deals Piercing damage to the target equal to 1 + your dexterity modifier, ignoring any Piercing resistence or immunity, then heals the target for 1 + your dexterity modifier",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 1,
+                    "diceType": "Piercing"
+                },
+                {
+                    "type": "aspect",
+                    "value": "dexterityModifier"
                 }
             ]
         }
@@ -1170,6 +1590,18 @@
         "cost": {
             "gold": 30
         }
+    },
+    {
+        "name": "Gnomish Automatic Beard-Trimming Machine",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "cost": {
+            "silver": 1
+        },
+        "description": "Last time it escaped, it killed ten men. When activated, it attacks everyone within 500ft it can see, bringing out the spirits of those it killed to fight for it while it itself goes haywire. Fight 10 gnome shadows and 1 machine."
     },
     {
         "name": "Greataxe",
@@ -2532,6 +2964,277 @@
         }
     },
     {
+        "name": "Prismatic Mantle of Spellfire",
+        "type": "Wondrous item",
+        "rarity": "Legendary",
+        "equippable": true,
+        "attunement": true,
+        "attunementRequirements": {
+            "description": "Must be a Sorcerer of Spellfire",
+            "calculation": [
+                {
+                    "type": "config",
+                    "propertyPath": "classes",
+                    "itemParameterName": "class",
+                    "some": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.features"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.features.SorcererSubclass3"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.features.SorcererSubclass3.name",
+                            "equals": [
+                                {
+                                    "static": "parameter",
+                                    "value": "Spellfire Sorcery"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "weight": 5,
+        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.",
+        "variables": [
+            {
+                "name": "color",
+                "displayName": "Color",
+                "initialValue": "Grey"
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Prismatic Unleashing",
+                    "actions": [
+                        {
+                            "name": "Change Mantle Color",
+                            "actionTime": ["Free"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day.",
+                            "challengeType": "none",
+                            "type": ["setVariable"],
+                            "setVariable": {
+                                "variableName": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "color"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "calculation": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "userInput.mantleColor"
+                                        }
+                                    ]
+                                }
+                            },
+                            "userInput": [
+                                {
+                                    "name": "mantleColor",
+                                    "displayName": "Color:",
+                                    "type": "selectList",
+                                    "values": [
+                                        {
+                                            "type": "static",
+                                            "value": ["Grey", "Black", "White", "Red"]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "armorClassBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Black"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "spellSaveDCBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "White"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "spellSaveDCAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "White"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Prismatic Mantle of Spellfire - White.</b> Your spell save DC increases by 1."
+                    }
+                ]
+            },
+            "spellAttackBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "White"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "spellAttackAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "White"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Prismatic Mantle of Spellfire - White.</b> Your spell attack bonus increases by 1."
+                    }
+                ]
+            },
+            "resistances": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Red"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": ["Fire"]
+                    }
+                ]
+            },
+            "spellCastingDescriptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Red"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.."
+                    }
+                ]
+            },
+            "damageAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Red"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> All your spell damage ignores resistance to fire and radiant damage."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Quarterstaff",
         "type": "Weapon",
         "weaponType": "Simple",
@@ -3055,6 +3758,60 @@
                     "type": "dieRoll",
                     "value": 10,
                     "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Tumbler Mouse",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "gold": 50
+        },
+        "description": "A small, clockwork mouse that scurries around a room before finding a person and performing a clumsy somersault.\n\nCan cast Find Familiar to summon a clockwork rodent once per long rest.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Tumbler Mouse",
+                    "actions": [
+                        {
+                            "name": "Find Familiar - Clockwork Mouse",
+                            "actionTime": ["1 hour", "Ritual"],
+                            "range": 10,
+                            "components": ["V", "S", "M"],
+                            "duration": "Instantaneous",
+                            "description": "You gain the service of a familiar, a spirit that takes an animal form of a Clockwork Mouse. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but it obeys your commands.\n\n<b>Telepathic Connection.</b> While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\nFinally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a Reaction to deliver the touch when you cast the spell.\n\n<b>Combat.</b> The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal.\n\n<b>Disappearance of the Familiar.</b> When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\n<b>One Familiar Only.</b> You can't have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
+                            "challengeType": "none",
+                            "type": ["creatures"],
+                            "creatures": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "Clockwork Mouse"
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         }
