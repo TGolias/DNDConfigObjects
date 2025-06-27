@@ -1,5 +1,90 @@
 [
     {
+        "name": "Clockwork Mouse",
+        "size": "Tiny",
+        "creatureType": "Construct",
+        "alignment": "Unaligned",
+        "hp": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                },
+                {
+                    "type": "static",
+                    "value": -1
+                }
+            ]
+        },
+        "cr": 0,
+        "abilityScores": {
+            "strength": 2,
+            "dexterity": 11,
+            "constitution": 9,
+            "intelligence": 2,
+            "wisdom": 10,
+            "charisma": 4
+        },
+        "aspects": {
+            "speed": 20,
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Clockwork Mouse.</b> Your Climb speed is equal to your walking speed."
+                    }
+                ]
+            },
+            "skillProficiencies": ["Perception"],
+            "darkvision": 30,
+            "features": [
+                {
+                    "name": "Agile",
+                    "speedAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Agile.</b> The Clockwork Mouse doesn't provoke Opportunity Attack when it moves out of an enemy's reach."
+                            }
+                        ]
+                    },
+                    "healthMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Agile.</b> The Clockwork Mouse doesn't provoke Opportunity Attack when it moves out of an enemy's reach."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Actions",
+                    "actions": [
+                        {
+                            "name": "Bite",
+                            "actionTime": ["Action"],
+                            "range": 5,
+                            "duration": "Instantaneous",
+                            "description": "Melee Attack Roll: +2, reach 5ft. Hit: 1 Piercing damage.",
+                            "challengeType": "attackRoll",
+                            "attackRollType": "unarmedAttack",
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1,
+                                        "diceType": "Piercing"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Otherworldly Steed",
         "size": "Large",
         "creatureType": {
@@ -428,6 +513,91 @@
         }
     },
     {
+        "name": "Rat",
+        "size": "Tiny",
+        "creatureType": "Beast",
+        "alignment": "Unaligned",
+        "hp": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                },
+                {
+                    "type": "static",
+                    "value": -1
+                }
+            ]
+        },
+        "cr": 0,
+        "abilityScores": {
+            "strength": 2,
+            "dexterity": 11,
+            "constitution": 9,
+            "intelligence": 2,
+            "wisdom": 10,
+            "charisma": 4
+        },
+        "aspects": {
+            "speed": 20,
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Rat.</b> Your Climb speed is equal to your walking speed."
+                    }
+                ]
+            },
+            "skillProficiencies": ["Perception"],
+            "darkvision": 30,
+            "features": [
+                {
+                    "name": "Agile",
+                    "speedAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Agile.</b> The Rat doesn't provoke Opportunity Attack when it moves out of an enemy's reach."
+                            }
+                        ]
+                    },
+                    "healthMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Agile.</b> The Rat doesn't provoke Opportunity Attack when it moves out of an enemy's reach."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Actions",
+                    "actions": [
+                        {
+                            "name": "Bite",
+                            "actionTime": ["Action"],
+                            "range": 5,
+                            "duration": "Instantaneous",
+                            "description": "Melee Attack Roll: +2, reach 5ft. Hit: 1 Piercing damage.",
+                            "challengeType": "attackRoll",
+                            "attackRollType": "unarmedAttack",
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1,
+                                        "diceType": "Piercing"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Zombie",
         "size": "Medium",
         "creatureType": "Undead",
@@ -461,7 +631,7 @@
         },
         "aspects": {
             "speed": 20,
-            "savingThrowProficiencies": ["wisdom"],
+            "skillProficiencies": ["Perception"],
             "languages": ["Understands Common plus one other language but can't speak"],
             "damagetypeImmunities": ["Poison"],
             "conditionImmunities": ["Exhaustion", "Poisoned"],
