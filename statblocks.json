@@ -35,6 +35,14 @@
                     }
                 ]
             },
+            "proficiencyBonusOverride": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
             "alternateUnarmedAttackModifier": {
                 "calculation": [
                     {
@@ -553,6 +561,14 @@
                     {
                         "type": "static",
                         "value": "<b>Rat.</b> Your Climb speed is equal to your walking speed."
+                    }
+                ]
+            },
+            "proficiencyBonusOverride": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
                     }
                 ]
             },
