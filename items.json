@@ -316,7 +316,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "parameter",
+                                    "static": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -445,7 +445,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "parameter",
+                                    "static": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -574,7 +574,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "parameter",
+                                    "static": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -921,7 +921,7 @@
         "cost": {
             "gold": 2
         },
-        "description": "Deals Piercing damage to the target equal to 1 + your dexterity modifier, ignoring any Piercing resistence or immunity, then heals the target for 1 + your dexterity modifier",
+        "description": "Deals Piercing damage to the target equal to 1 + your dexterity modifier, ignoring any Piercing resistence or immunity, but then immediately heals the target the same amount.",
         "damage": {
             "calculation": [
                 {
@@ -2990,7 +2990,7 @@
                             "propertyPath": "class.features.SorcererSubclass3.name",
                             "equals": [
                                 {
-                                    "static": "parameter",
+                                    "static": "static",
                                     "value": "Spellfire Sorcery"
                                 }
                             ]
