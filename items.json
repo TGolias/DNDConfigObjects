@@ -316,7 +316,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "static",
+                                    "type": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -445,7 +445,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "static",
+                                    "type": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -574,7 +574,7 @@
                             "propertyPath": "class.name",
                             "equals": [
                                 {
-                                    "static": "static",
+                                    "type": "static",
                                     "value": "Sorcerer"
                                 }
                             ]
@@ -2990,7 +2990,7 @@
                             "propertyPath": "class.features.SorcererSubclass3.name",
                             "equals": [
                                 {
-                                    "static": "static",
+                                    "type": "static",
                                     "value": "Spellfire Sorcery"
                                 }
                             ]
