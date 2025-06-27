@@ -35,6 +35,14 @@
                     }
                 ]
             },
+            "alternateUnarmedAttackModifier": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "dexterity"
+                    }
+                ]
+            },
             "skillProficiencies": ["Perception"],
             "darkvision": 30,
             "features": [
@@ -545,6 +553,14 @@
                     {
                         "type": "static",
                         "value": "<b>Rat.</b> Your Climb speed is equal to your walking speed."
+                    }
+                ]
+            },
+            "alternateUnarmedAttackModifier": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "dexterity"
                     }
                 ]
             },

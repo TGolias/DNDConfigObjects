@@ -3779,7 +3779,7 @@
                     "actions": [
                         {
                             "name": "Find Familiar - Clockwork Mouse",
-                            "actionTime": ["1 hour", "Ritual"],
+                            "actionTime": ["1 hour"],
                             "range": 10,
                             "components": ["V", "S", "M"],
                             "duration": "Instantaneous",
