@@ -974,7 +974,7 @@
         "equippable": true,
         "weight": 0,
         "cost": {
-            "gold": 300
+            "gold": 250
         },
         "description": "Mechanical eye that grants advantage to perception checks that rely on sight.",
         "aspects": {
@@ -1016,7 +1016,7 @@
         "equippable": true,
         "weight": 0,
         "cost": {
-            "gold": 1800
+            "gold": 1500
         },
         "description": "Gain a +2 to ranged weapon attack rolls and damage. As a bonus action, you can see invisible creatures for 10 minutes once per long rest.",
         "aspects": {
@@ -1818,7 +1818,7 @@
         "equippable": true,
         "weight": 0,
         "cost": {
-            "gold": 750
+            "gold": 500
         },
         "description": "A pistol concealed in the forearm, can be used as part of the attack action. If concealed, the first attack is at advantage, taking the enemy by surprise. Can be done only once per encounter with this hidden weapon. Reload properties still apply.",
         "childItems": [
@@ -1880,7 +1880,7 @@
         "equippable": true,
         "weight": 0,
         "cost": {
-            "gold": 1200
+            "gold": 1000
         },
         "description": "-Now, a Revolver!",
         "childItems": [
