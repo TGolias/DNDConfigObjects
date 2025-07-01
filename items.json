@@ -3020,7 +3020,7 @@
                             "duration": "Instantaneous",
                             "description": "Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day.",
                             "challengeType": "none",
-                            "type": ["setVariable"],
+                            "type": ["setVariable", "buff"],
                             "setVariable": {
                                 "variableName": {
                                     "calculation": [
@@ -3038,6 +3038,91 @@
                                         }
                                     ]
                                 }
+                            },
+                            "buff": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.mantleColor"
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.mantleColor",
+                                        "notEquals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Grey"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "multiple-if",
+                                        "cases": [
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Black"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Black</b>\nPassive: You gain a +1 bonus to AC."
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "White"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1."
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Red"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage."
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             "userInput": [
                                 {
@@ -3192,7 +3277,7 @@
                     }
                 ]
             },
-            "spellCastingDescriptionAddendum": {
+            "featureActionDescriptionAddendum": {
                 "conditions": [
                     {
                         "type": "parameter",
@@ -3203,24 +3288,63 @@
                                 "value": "Red"
                             }
                         ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "featureAction.name",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Innate Sorcery"
+                            }
+                        ]
                     }
                 ],
                 "calculation": [
                     {
                         "type": "static",
-                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.."
+                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage."
                     }
                 ]
             },
             "damageAddendum": {
                 "conditions": [
                     {
-                        "type": "parameter",
-                        "propertyPath": "playerConfigForObject.color",
-                        "equals": [
+                        "type": "config",
+                        "propertyPath": "currentStatus"
+                    },
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus.activeEffects"
+                    },
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus.activeEffects.length"
+                    },
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus.activeEffects",
+                        "itemParameterName": "activeEffect",
+                        "some": [
                             {
-                                "type": "static",
-                                "value": "Red"
+                                "type": "parameter",
+                                "propertyPath": "activeEffect.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "featureaction"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "activeEffect.name",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Innate Sorcery"
+                                    }
+                                ]
                             }
                         ]
                     }
