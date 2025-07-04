@@ -2413,6 +2413,19 @@
         }
     },
     {
+        "name": "Blink",
+        "level": 3,
+        "school": "Transmutation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "duration": "1 minute",
+        "description": "Roll 1d6 at the end of each of your turns for the duration. On a roll of 4-6, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell ends instantly if you are already on that plane). While on the Ethereal Plane, you can perceive the plane you left, which is cast in shades of gray, but you can't see anything there more than 60 feet away. You can affect and be affected only by other creatures on the Ethereal Plane, and creatures on the other plane can't perceive you unless they have a special ability that lets them perceive things on the Ethereal Plane.\n\nYou return to the other plane at the start of your next turn and when the spell ends if you are on the Ethereal Plane. You return to an unoccupied space of your choice that you can see within 10 feet of the space you left. If no unoccupied space is available within that range, you appear in the nearest unoccupied space.",
+        "challengeType": "none",
+        "type": []
+    },
+    {
         "name": "Counterspell",
         "level": 3,
         "school": "Abjuration",
@@ -2561,6 +2574,197 @@
             {
                 "name": "targetText",
                 "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Dimension Door",
+        "level": 4,
+        "school": "Conjuration",
+        "spellLists": ["Druid", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 500,
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "You teleport to a location within range. You arrive at exactly the spot desired. It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as '200 feet straight downward' or '300 feet upward to the northwest at a 45-degree angle.'\n\nYou can also teleport one willing creature. The creature must be within 5 feet of you when you teleport, and it teleports to a space within 5 feet of your destination space.\n\nIf you, the other creature, or both would arrive in a space occupied by a creature or completely filled by one or more objects, you and any creature traveling with you each take 4d6 Force damage, and the teleportation fails.",
+        "challengeType": "none",
+        "type": []
+    },
+    {
+        "name": "Fire Shield",
+        "level": 4,
+        "school": "Evocation",
+        "spellLists": ["Druid", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a bit of phosphorus or a firefly"],
+        "duration": "10 minutes",
+        "description": "Wispy flames wreathe your body for the duration, shedding Bright Light in a 10-foot radius and Dim Light for an additional 10 feet.\n\nThe flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you Resistance to Cold damage, and the chill shield grants you Resistance to Fire damage.\n\nIn addition, whenever a creature within 5 feet of you hits you with a melee attack roll, the shield erupts with flame. The attacker takes 2d8 Fire damage from a warm shield or 2d8 Cold damage from a chill shield.",
+        "challengeType": "none",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.shieldType",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Warm"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "diceType": "Fire"
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            "diceType": "Cold"
+                        }
+                    ]
+                }
+            ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "if-then",
+                    "if": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "userInput.shieldType",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Warm"
+                                }
+                            ]
+                        }
+                    ],
+                    "then": [
+                        {
+                            "type": "static",
+                            "value": "The warm shield grants you Resistance to Cold damage."
+                        }
+                    ],
+                    "else": [
+                        {
+                            "type": "static",
+                            "value": "The chill shield grants you Resistance to Fire damage."
+                        }
+                    ]
+                }
+            ]
+        },
+        "aspects": {
+            "resistances": {
+                "calculation": [
+                    {
+                        "type": "if-then",
+                        "if": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "userInput.shieldType",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Warm"
+                                    }
+                                ]
+                            }
+                        ],
+                        "then": [
+                            {
+                                "type": "static",
+                                "value": ["Cold"]
+                            }
+                        ],
+                        "else": [
+                            {
+                                "type": "static",
+                                "value": ["Fire"]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "shieldType",
+                "displayName": "Shield Type:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Warm", "Chill"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Wall of Fire",
+        "level": 4,
+        "school": "Evocation",
+        "spellLists": ["Druid", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a piece of charcoal"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\nWhen the wall appears, each creature in its area makes a Dexterity saving throw, taking 5d8 Fire damage on a failed save or half as much damage on a successful one.\n\nOne side of the wall, selected by you when you cast this spell, deals 5d8 Fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 4.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
+                            "type": "static",
+                            "value": 1
+                        }
+                    ],
+                    "diceType": "Fire"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "wallDimensions",
+                "displayName": "Wall Dimensions:",
                 "type": "textField"
             }
         ]

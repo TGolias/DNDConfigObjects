@@ -144,6 +144,105 @@
                             "value": "<b>Magic Bullets.</b> This spell can also be cast immediately after hitting a target with a Ranged weapon as long as a weapon containing at least one magic bullet is in the wielder's hand at the time of the ranged weapon attack's hit."
                         }
                     ]
+                },
+                "featureActionDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "or",
+                            "values": [
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "featureAction.name",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Aura of Hate"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Francina Family Patron.</b> This feature can also be applied to Ranged weapons."
+                        }
+                    ]
+                },
+                "weaponDamageBonus": {
+                    "conditions": [
+                        {
+                            "type": "config",
+                            "propertyPath": "currentStatus"
+                        },
+                        {
+                            "type": "config",
+                            "propertyPath": "currentStatus.activeEffects"
+                        },
+                        {
+                            "type": "config",
+                            "propertyPath": "currentStatus.activeEffects.length"
+                        },
+                        {
+                            "type": "config",
+                            "propertyPath": "currentStatus.activeEffects",
+                            "itemParameterName": "activeEffect",
+                            "some": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "activeEffect.type",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "featureaction"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "activeEffect.name",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Aura of Hate"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.weaponRange",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Ranged"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "highestOf",
+                            "values": [
+                                [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "aspect",
+                                        "value": "charismaModifier"
+                                    }
+                                ]
+                            ]
+                        }
+                    ]
                 }
             }
         ]

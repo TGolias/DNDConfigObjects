@@ -760,7 +760,16 @@
                                             ]
                                         },
                                         "debuff": {
-                                            "description": "Target's Speed is reduced by 10 feet until the start of your next turn."
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Target's Speed is reduced by 10 feet until the start of your next turn.\n\nTarget - "
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.targetText"
+                                                }
+                                            ]
                                         },
                                         "cost": {
                                             "uses": {
@@ -777,7 +786,14 @@
                                                     "value": 1
                                                 }
                                             ]
-                                        }
+                                        },
+                                        "userInput": [
+                                            {
+                                                "name": "targetText",
+                                                "displayName": "Target:",
+                                                "type": "textField"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -800,6 +816,16 @@
                                         "challengeType": "none",
                                         "type": ["debuff"],
                                         "debuff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Target - "
+                                                },
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.targetText"
+                                                }
+                                            ],
                                             "conditions": ["Prone"]
                                         },
                                         "cost": {
@@ -817,7 +843,14 @@
                                                     "value": 1
                                                 }
                                             ]
-                                        }
+                                        },
+                                        "userInput": [
+                                            {
+                                                "name": "targetText",
+                                                "displayName": "Target:",
+                                                "type": "textField"
+                                            }
+                                        ]
                                     }
                                 ]
                             }

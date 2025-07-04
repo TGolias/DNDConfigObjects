@@ -246,9 +246,12 @@
                                             ]
                                         }
                                     ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": "rolled for Bardic Inspiration die.\n\nTarget - "
                                 }
-                            ],
-                            "description": "rolled for Bardic Inspiration die."
+                            ]
                         },
                         "cost": {
                             "resourceType": "bardicInspiration",
@@ -258,7 +261,14 @@
                                     "value": 1
                                 }
                             ]
-                        }
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Recipient:",
+                                "type": "textField"
+                            }
+                        ]
                     }
                 ]
             },
@@ -2348,6 +2358,26 @@
                 "actions": [
                     {
                         "name": "Innate Sorcery",
+                        "conditions": [
+                            {
+                                "type": "config",
+                                "propertyPath": "currentStatus"
+                            },
+                            {
+                                "type": "config",
+                                "propertyPath": "currentStatus.remainingResources"
+                            },
+                            {
+                                "type": "config",
+                                "propertyPath": "currentStatus.remainingResources.Innate Sorcery",
+                                "exactEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": 0
+                                    }
+                                ]
+                            }
+                        ],
                         "actionTime": ["Bonus Action"],
                         "actionCondition": "When you have no uses of Innate Sorcery left.",
                         "range": "Self",

@@ -85,8 +85,25 @@
                 ]
             },
             "debuff": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Target - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ],
                 "conditions": ["Charmed"]
-            }
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Target:",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 1,
         "cost": {
@@ -739,14 +756,30 @@
             "challengeType": "none",
             "type": ["buff", "debuff"],
             "buff": {
-                "description": "Fire resistance for 1 hour."
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Fire resistance for 1 hour.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
             },
             "debuff": {
                 "description": "Everything tastes and smells burnt for the next 24 hours making you unable to discern anything that relies on taste or scent."
             },
             "aspects": {
                 "resistances": ["Fire"]
-            }
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Target:",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 0.5,
         "cost": {
@@ -932,6 +965,129 @@
                 {
                     "type": "aspect",
                     "value": "dexterityModifier"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Dance Slippers of Tumbling Grace",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "cost": {
+            "gold": 250
+        },
+        "description": "When worn by someone proficient in performance or acrobatics, grants advantage on Performance and Acrobatics checks involving movement.\n\nOnce per long rest, you can cast Misty Step as a reaction when you're targeted by a ranged attack.",
+        "aspects": {
+            "skillProficiencyPerformanceAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "skillProficiencies",
+                        "itemParameterName": "skillProficiency",
+                        "some": [
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "skillProficiency",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Performance"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "skillProficiency",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Acrobatics"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Dance Slippers of Tumbling Grace.</b> Grants Advantage on Performance checks involving movement."
+                    }
+                ]
+            },
+            "skillProficiencyAcrobaticsAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "skillProficiencies",
+                        "itemParameterName": "skillProficiency",
+                        "some": [
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "skillProficiency",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Performance"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "skillProficiency",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Acrobatics"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Dance Slippers of Tumbling Grace.</b> Grants Advantage on Acrobatics checks involving movement."
+                    }
+                ]
+            },
+            "features": [
+                {
+                    "name": "Dance Slippers of Tumbling Grace Misty Step",
+                    "actions": [
+                        {
+                            "name": "Misty Step - Reaction",
+                            "actionTime": ["Reaction"],
+                            "range": "Self",
+                            "components": ["V"],
+                            "duration": "Instantaneous",
+                            "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
+                            "challengeType": "none",
+                            "type": []
+                        }
+                    ]
                 }
             ]
         }
@@ -1505,6 +1661,17 @@
         }
     },
     {
+        "name": "Fine Clothes",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 6,
+        "cost": {
+            "gold": 15
+        },
+        "description": "Fine Clothes are made of expensive fabrics and adorned with expertly crafted details. Some events and locations admit only people wearing these clothes."
+    },
+    {
         "name": "Flail",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -1552,6 +1719,187 @@
         "cost": {
             "gold": 15
         }
+    },
+    {
+        "name": "Fragment of the Saint's Vision",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Utilize"],
+            "range": "Self",
+            "duration": "1 hour",
+            "challengeType": "none",
+            "type": ["buff"],
+            "buff": {
+                "description": "When crushed, the user experiences a brief vision (chosen by the DM) and can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour. However, for the next minute, their vision flickers between the present and a strange, mechanical wasteland."
+            },
+            "aspects": {
+                "skillProficiencyAnimalHandlingBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyAnimalHandlingAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyInsightBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyInsightAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyMedicineBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyMedicineAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyPerceptionBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyPerceptionAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencySurvivalBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencySurvivalAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyArcanaBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyArcanaAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyHistoryBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyHistoryAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyInvestigationBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyInvestigationAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyNatureBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyNatureAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                },
+                "skillProficiencyReligionBonus": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4
+                        }
+                    ]
+                },
+                "skillProficiencyReligionAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Fragment of the Saint's Vision.</b> User can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour."
+                        }
+                    ]
+                }
+            }
+        },
+        "weight": 0,
+        "description": "A small crystal shard infused with Spellplague energy. When crushed, the user experiences a brief vision (chosen by the DM) and can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour. However, for the next minute, their vision flickers between the present and a strange, mechanical wasteland."
     },
     {
         "name": "Glaive",
@@ -2106,7 +2454,16 @@
             "challengeType": "none",
             "type": ["buff", "debuff"],
             "buff": {
-                "description": "Resistance to Bludgeoning, Piercing and Slashing damage."
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Resistance to Bludgeoning, Piercing and Slashing damage.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
             },
             "debuff": {
                 "description": "All reduced damage taken all at once when effect ends."
@@ -2121,7 +2478,14 @@
                         }
                     ]
                 }
-            }
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Target:",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 0.5,
         "cost": {
@@ -2387,13 +2751,29 @@
         "consumable": true,
         "consumeEffect": {
             "actionTime": ["Utilize"],
-            "range": "Self",
+            "range": "Touch",
             "duration": "Indefinitely",
             "challengeType": "none",
             "type": ["debuff"],
             "debuff": {
-                "description": "While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles are attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Dexterity (Sleight of Hand) check as an action. Bursting them requires a successful DC 25 Strength (Athletics) check as an action."
-            }
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles are attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Dexterity (Sleight of Hand) check as an action. Bursting them requires a successful DC 25 Strength (Athletics) check as an action.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Who is bound?",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 1,
         "cost": {
@@ -2446,6 +2826,53 @@
         }
     },
     {
+        "name": "Military Saddle",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 30,
+        "cost": {
+            "gold": 20
+        },
+        "description": "A military saddle braces the rider, helping you keep your seat on an active mount in battle. It gives you Advantage on any ability check you make to remain mounted.",
+        "aspects": {
+            "parentAspects": {
+                "skillProficiencyAcrobaticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Military Saddle.</b> Advantage on any ability check you make to remain mounted."
+                        }
+                    ]
+                },
+                "skillProficiencyAnimalHandlingAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Military Saddle.</b> Advantage on any ability check you make to remain mounted."
+                        }
+                    ]
+                },
+                "skillProficiencyAthleticsAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Military Saddle.</b> Advantage on any ability check you make to remain mounted."
+                        }
+                    ]
+                },
+                "skillProficiencyPerformanceAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Military Saddle.</b> Advantage on any ability check you make to remain mounted."
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
         "name": "Milk of Potash",
         "type": "Potion",
         "rarity": "Uncommon",
@@ -2458,7 +2885,16 @@
             "challengeType": "none",
             "type": ["buff", "debuff"],
             "buff": {
-                "description": "Advantage against poison."
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Advantage against poison.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
             },
             "debuff": {
                 "description": "Become poisoned for an hour after the effect of the potion wears off."
@@ -2480,7 +2916,14 @@
                         }
                     ]
                 }
-            }
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Target:",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 0.5,
         "cost": {
@@ -2553,8 +2996,24 @@
             ],
             "type": ["debuff"],
             "debuff": {
-                "description": "Target takes 5 extra Fire damage when taking Fire damage while covered in burning oil or 5 Fire damage is dealt to any creature that enters or ends its turn in a space with lit Oil."
-            }
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Target takes 5 extra Fire damage when taking Fire damage while covered in burning oil or 5 Fire damage is dealt to any creature that enters or ends its turn in a space with lit Oil.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Target:",
+                    "type": "textField"
+                }
+            ]
         },
         "weight": 1,
         "cost": {
@@ -2652,6 +3111,27 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Phasing Philter",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "components": ["V", "S"],
+            "duration": "1 minute",
+            "description": "Roll 1d6 at the end of each of your turns for the duration. On a roll of 4-6, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell ends instantly if you are already on that plane). While on the Ethereal Plane, you can perceive the plane you left, which is cast in shades of gray, but you can't see anything there more than 60 feet away. You can affect and be affected only by other creatures on the Ethereal Plane, and creatures on the other plane can't perceive you unless they have a special ability that lets them perceive things on the Ethereal Plane.\n\nYou return to the other plane at the start of your next turn and when the spell ends if you are on the Ethereal Plane. You return to an unoccupied space of your choice that you can see within 10 feet of the space you left. If no unoccupied space is available within that range, you appear in the nearest unoccupied space.",
+            "challengeType": "none",
+            "type": []
+        },
+        "weight": 0.5,
+        "cost": {
+            "gold": 5
+        },
+        "description": "The drinker becomes partially ethereal, phasing in and out of the material plane. This could lead to unpredictable interactions with the physical world."
     },
     {
         "name": "Pike",
@@ -3000,7 +3480,7 @@
             ]
         },
         "weight": 5,
-        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.",
+        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.\n\n<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw or be under the effect of the spell Faerie Fire.",
         "variables": [
             {
                 "name": "color",
@@ -3119,6 +3599,34 @@
                                                         "value": "<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage."
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Orange"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a DC "
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "spellSaveDCSorcerer"
+                                                    },
+                                                    {
+                                                        "type": "static",
+                                                        "value": " Dexterity saving throw or be under the effect of the spell Faerie Fire."
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -3132,7 +3640,7 @@
                                     "values": [
                                         {
                                             "type": "static",
-                                            "value": ["Grey", "Black", "White", "Red"]
+                                            "value": ["Grey", "Black", "White", "Red", "Orange"]
                                         }
                                     ]
                                 }
@@ -3153,6 +3661,52 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "Spellfire Dash",
+                            "conditions": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.color",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Orange"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "actionTime": ["Reaction"],
+                            "castingCondition": "Must be made in response to being hit by an attack.",
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw (DC = your Spell Save DC) or be under the effect of the spell Faerie Fire.",
+                            "challengeType": "savingThrow",
+                            "savingThrowType": "dexterity",
+                            "type": ["buff", "debuff"],
+                            "buff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "You can teleport up to 30 feet away and release a pulse of energy."
+                                    }
+                                ]
+                            },
+                            "debuff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "Creatures who failed their Dexterity saving throw are under the effect of the spell Faerie Fire.\n\nObjects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can't benefit from the Invisible condition.\n\nAttack rolls against an affected creature or object have Advantage if the attacker can see it.\n\nTargets - "
+                                    }
+                                ]
+                            },
+                            "userInput": [
+                                {
+                                    "name": "targetText",
+                                    "displayName": "Who failed their saving throws?",
+                                    "type": "textField"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -3355,6 +3909,46 @@
                         "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> All your spell damage ignores resistance to fire and radiant damage."
                     }
                 ]
+            },
+            "speedBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Orange"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 10
+                    }
+                ]
+            },
+            "speedAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Orange"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Prismatic Mantle of Spellfire - Orange.</b> You gain a +10 ft. bonus to your movement speed."
+                    }
+                ]
             }
         }
     },
@@ -3460,6 +4054,127 @@
                         }
                     ],
                     "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Rook the Robot",
+        "type": "Wondrous item",
+        "rarity": "None",
+        "weight": 600,
+        "description": "A metal plated robot roughly 3 feet tall and almost 600lbs. Runs on oil with a detachable head. Is an encyclopedia about demonology. Found wandering near the Rusted Saint in the Badlands."
+    },
+    {
+        "name": "Rope",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Utilize"],
+            "range": "Touch",
+            "duration": "Indefinitely",
+            "challengeType": "none",
+            "type": ["debuff"],
+            "debuff": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "If a creature's legs are bound, the creature has the Restrained condition until it escapes. Escaping the Rope requires the creature to make a successful DC 15 Dexterity (Acrobatics) check as an action. The Rope can also be burst with a successful DC 20 Strength (Athletics) check.\n\nTarget - "
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "userInput.targetText"
+                    }
+                ]
+            },
+            "userInput": [
+                {
+                    "name": "targetText",
+                    "displayName": "Bound Target:",
+                    "type": "textField"
+                }
+            ]
+        },
+        "weight": 5,
+        "cost": {
+            "gold": 1
+        },
+        "description": "As a Utilize action, you can tie a knot with Rope if you succeed on a DC 10 Dexterity (Sleight of Hand) check. The Rope can be burst with a successful DC 20 Strength (Athletics) check.\n\nYou can bind an unwilling creature with the Rope only if the creature has the Grappled, Incapacitated, or Restrained condition. If the creature's legs are bound, the creature has the Restrained condition until it escapes. Escaping the Rope requires the creature to make a successful DC 15 Dexterity (Acrobatics) check as an action."
+    },
+    {
+        "name": "Rust-Saint's Token",
+        "type": "Wondrous item",
+        "rarity": "Common",
+        "equippable": true,
+        "weight": 0,
+        "description": "A small, rusted cog engraved with strange symbols. Once per long rest, you can roll a d4 and add the result to any Intelligence (History) or (Investigation) check related to constructs or ruins.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Rust-Saint's Token",
+                    "actions": [
+                        {
+                            "name": "Rust-Saint's Token",
+                            "actionTime": ["Free"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "Once per long rest, you can roll a d4 and add the result to any Intelligence (History) or (Investigation) check related to constructs or ruins.",
+                            "challengeType": "none",
+                            "type": [],
+                            "aspects": {
+                                "skillProficiencyHistoryBonus": {
+                                    "calculation": [
+                                        {
+                                            "type": "dieRoll",
+                                            "value": 4
+                                        }
+                                    ]
+                                },
+                                "skillProficiencyHistoryAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Rust-Saint's Token.</b> You can roll a d4 and add the result to any Intelligence (History) or (Investigation) check related to constructs or ruins."
+                                        }
+                                    ]
+                                },
+                                "skillProficiencyInvestigationBonus": {
+                                    "calculation": [
+                                        {
+                                            "type": "dieRoll",
+                                            "value": 4
+                                        }
+                                    ]
+                                },
+                                "skillProficiencyInvestigationAddendum": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Rust-Saint's Token.</b> You can roll a d4 and add the result to any Intelligence (History) or (Investigation) check related to constructs or ruins."
+                                        }
+                                    ]
+                                }
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         }
@@ -3778,6 +4493,33 @@
         }
     },
     {
+        "name": "Tarnished Halo",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "A thin metal circlet that emits a faint, blue glow. Grants advantage on saving throws against disease and poison but disadvantage on Charisma (Persuasion) checks due to its eerie aura.",
+        "aspects": {
+            "allSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Tarnished Halo.</b> Advantage on saving throws against disease and poison."
+                    }
+                ]
+            },
+            "skillProficiencyHistoryAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Tarnished Halo.</b> Disadvantage on Persuasion checks."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "The Gun of Hole-iness",
         "type": "Template",
         "templateOf": "Pepperbox"
@@ -3836,6 +4578,25 @@
         }
     },
     {
+        "name": "Tinderbox",
+        "type": "Adventuring Gear",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action", "1 minute"],
+            "range": "Self",
+            "duration": "Instantaneous",
+            "challengeType": "none",
+            "type": []
+        },
+        "weight": 1,
+        "cost": {
+            "silver": 5
+        },
+        "description": "A Tinderbox is a small container holding flint, fire, steel, and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a Candle, Lamp, Lantern, or Torch -or anything else with exposed fuel- takes a Bonus Action. Lighting any other fire takes 1 minute."
+    },
+    {
         "name": "Tinkerer's Tools",
         "tags": ["Tinkerer's Tools", "Artisan's Tools"],
         "type": "Tools",
@@ -3847,6 +4608,41 @@
         "cost": {
             "gold": 20
         }
+    },
+    {
+        "name": "Torch",
+        "type": "Weapon",
+        "weaponType": "Simple",
+        "weaponRange": "Melee",
+        "properties": [],
+        "tags": ["Torch", "Simple", "Melee"],
+        "rarity": "Common",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "copper": 1
+        },
+        "description": "A Torch burns for 1 hour, casting Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. When you take the Attack action, you can attack with the Torch, using it as a Simple Melee weapon. On a hit, the target takes 1 Fire damage.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 1,
+                    "diceType": "Fire"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Traveler's Clothes",
+        "type": "Adventuring Gear",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 4,
+        "cost": {
+            "gold": 2
+        },
+        "description": "Traveler's Clothes are resilient garments designed for travel in various environments."
     },
     {
         "name": "Trident",
@@ -4069,6 +4865,46 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Whispering Brew",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "1 minute",
+            "description": "The drinker begins to hear whispers only they can hear, which may be real or imagined, sowing paranoia and doubt among the party.",
+            "challengeType": "none",
+            "type": []
+        },
+        "weight": 0.5,
+        "cost": {
+            "gold": 5
+        },
+        "description": "The drinker begins to hear whispers only they can hear, which may be real or imagined, sowing paranoia and doubt among the party."
+    },
+    {
+        "name": "Wraithwine",
+        "type": "Potion",
+        "rarity": "Uncommon",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "1 minute",
+            "description": "The drinker becomes ghostly and translucent, able to interact with the ethereal plane but also attracting the attention of restless spirits.",
+            "challengeType": "none",
+            "type": []
+        },
+        "weight": 0.5,
+        "cost": {
+            "gold": 5
+        },
+        "description": "The drinker becomes ghostly and translucent, able to interact with the ethereal plane but also attracting the attention of restless spirits."
     },
     {
         "name": "Woodcarver's Tools",

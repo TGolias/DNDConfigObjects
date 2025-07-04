@@ -402,6 +402,16 @@
                             "savingThrowType": "wisdom",
                             "type": ["debuff"],
                             "debuff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "Target - "
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.targetText"
+                                    }
+                                ],
                                 "conditions": ["Frightened"]
                             },
                             "cost": {
@@ -419,7 +429,14 @@
                                         "value": 1
                                     }
                                 ]
-                            }
+                            },
+                            "userInput": [
+                                {
+                                    "name": "targetText",
+                                    "displayName": "Target:",
+                                    "type": "textField"
+                                }
+                            ]
                         }
                     ]
                 },

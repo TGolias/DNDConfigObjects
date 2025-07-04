@@ -203,7 +203,16 @@
                         "savingThrowType": "wisdom",
                         "type": ["debuff"],
                         "debuff": {
-                            "description": "Each creature that failed the saving throw can't willingly move more than 30 feet away from you. This effect ends on the creature if you are incapacitated or die or if the creature is more than 30 feet away from you."
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "Each creature that failed the saving throw can't willingly move more than 30 feet away from you. This effect ends on the creature if you are incapacitated or die or if the creature is more than 30 feet away from you.\n\nTargets - "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.targetText"
+                                }
+                            ]
                         },
                         "cost": {
                             "resourceType": "channelDivinity",
@@ -213,7 +222,14 @@
                                     "value": 1
                                 }
                             ]
-                        }
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Who failed their saves?",
+                                "type": "textField"
+                            }
+                        ]
                     },
                     {
                         "name": "Turn the Tide",
@@ -436,7 +452,11 @@
                                 },
                                 {
                                     "type": "static",
-                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws.\n\nTargets - "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.targetText"
                                 }
                             ]
                         },
@@ -474,7 +494,14 @@
                                     "value": 1
                                 }
                             ]
-                        }
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Targets:",
+                                "type": "textField"
+                            }
+                        ]
                     },
                     {
                         "name": "Abjure the Extraplanar",
@@ -506,7 +533,11 @@
                                 },
                                 {
                                     "type": "static",
-                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws."
+                                    "value": " creature(s) you can see within 30 feet of you have advantage on Intelligence, Wisdom, and Charisma saving throws.\n\nTargets - "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.targetText"
                                 }
                             ]
                         },
@@ -518,6 +549,70 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Who failed their saves?",
+                                "type": "textField"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "classLevel": 7,
+                "name": "Aura of the Sentinel",
+                "actions": [
+                    {
+                        "name": "Aura of the Sentinel",
+                        "actionTime": ["Free"],
+                        "range": 10,
+                        "duration": "Indefinitely",
+                        "description": "When you and any creatures of your choice within 10 feet of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus.",
+                        "challengeType": "none",
+                        "type": ["buff"],
+                        "buff": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "You and any creatures of your choice within 10 feet gain a bonus to initiative equal to "
+                                },
+                                {
+                                    "type": "aspect",
+                                    "value": "proficiencyBonus"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": "."
+                                }
+                            ]
+                        },
+                        "aspects": {
+                            "initiativeBonus": {
+                                "calculation": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "proficiencyBonus"
+                                    }
+                                ]
+                            },
+                            "initiativeAddendum": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Aura of the Sentinel.</b> You all gain a bonus to initiative equal to "
+                                    },
+                                    {
+                                        "type": "aspect",
+                                        "value": "proficiencyBonus"
+                                    },
+                                    {
+                                        "type": "static",
+                                        "value": "."
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]
@@ -760,6 +855,16 @@
                         "savingThrowType": "wisdom",
                         "type": ["debuff"],
                         "debuff": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "Targets - "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.targetText"
+                                }
+                            ],
                             "conditions": ["Frightened"]
                         },
                         "cost": {
@@ -770,6 +875,92 @@
                                     "value": 1
                                 }
                             ]
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Who failed their saves?",
+                                "type": "textField"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "classLevel": 7,
+                "name": "Aura of Hate",
+                "actions": [
+                    {
+                        "name": "Aura of Hate",
+                        "actionTime": ["Free"],
+                        "range": 10,
+                        "duration": "Indefinitely",
+                        "description": "You, as well any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to your Charisma modifier (minimum of +1). A creature can benefit from this feature from only one paladin at a time.",
+                        "challengeType": "none",
+                        "type": ["buff"],
+                        "buff": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "You, as well as any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to "
+                                },
+                                {
+                                    "type": "highestOf",
+                                    "values": [
+                                        [
+                                            {
+                                                "type": "static",
+                                                "value": 1
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "type": "aspect",
+                                                "value": "charismaModifier"
+                                            }
+                                        ]
+                                    ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": "."
+                                }
+                            ]
+                        },
+                        "aspects": {
+                            "weaponDamageBonus": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "weapon.weaponRange",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Melee"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "highestOf",
+                                        "values": [
+                                            [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "aspect",
+                                                    "value": "charismaModifier"
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ]
+                            }
                         }
                     }
                 ]
