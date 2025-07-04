@@ -2355,29 +2355,29 @@
             {
                 "classLevel": 7,
                 "name": "Sorcery Incarnate",
+                "conditions": [
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus"
+                    },
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus.remainingResources"
+                    },
+                    {
+                        "type": "config",
+                        "propertyPath": "currentStatus.remainingResources.Innate Sorcery",
+                        "exactEquals": [
+                            {
+                                "type": "static",
+                                "value": 0
+                            }
+                        ]
+                    }
+                ],
                 "actions": [
                     {
                         "name": "Innate Sorcery",
-                        "conditions": [
-                            {
-                                "type": "config",
-                                "propertyPath": "currentStatus"
-                            },
-                            {
-                                "type": "config",
-                                "propertyPath": "currentStatus.remainingResources"
-                            },
-                            {
-                                "type": "config",
-                                "propertyPath": "currentStatus.remainingResources.Innate Sorcery",
-                                "exactEquals": [
-                                    {
-                                        "type": "static",
-                                        "value": 0
-                                    }
-                                ]
-                            }
-                        ],
                         "actionTime": ["Bonus Action"],
                         "actionCondition": "When you have no uses of Innate Sorcery left.",
                         "range": "Self",
