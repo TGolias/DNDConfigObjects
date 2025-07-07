@@ -1040,6 +1040,42 @@
         ]
     },
     {
+        "name": "Sleep",
+        "level": 1,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of sand or rose petals"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the Incapacitated condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the Unconscious condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell's effect.\n\nCreatures that don't sleep, such as elves, or that have Immunity to the Exhaustion condition automatically succeed on saves against this spell.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Incapacitated", "Unconscious"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Each creature that failed the first Wisdom saving throw is Incapacitated until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the Unconscious condition for the duration.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Searing Smite",
         "level": 1,
         "school": "Evocation",
@@ -1442,6 +1478,40 @@
         ]
     },
     {
+        "name": "Calm Emotions",
+        "level": 2,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Cleric"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "Each Humanoid in a 20-foot-radius Sphere centered on a point you choose within range must succeed on a Charisma saving throw or be affected by one of the following effects (choose for each creature):\n\n- The creature has Immunity to the Charmed and Frightened conditions until the spell ends. If the creature was already Charmed or Frightened, those conditions are suppressed for the duration.\n\n- The creature becomes Indifferent about creatures of your choice that it's Hostile toward. This indifference ends if the target takes damage or witnesses its allies taking damage. When the spell ends, the creature's attitude returns to normal.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "charisma",
+        "type": ["debuff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The creature has Immunity to the Charmed and Frightened conditions until the spell ends or becomes Indifferent about creatures of your choice that it's Hostile toward (your choice for each target).\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Crown of Madness",
         "level": 2,
         "school": "Enchantment",
@@ -1799,6 +1869,42 @@
                         "value": ["Celestial", "Fey", "Fiend"]
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "Hold Person",
+        "level": 2,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a straight piece of iron"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "Choose a Humanoid that you can see within range. The target must succeed on a Wisdom saving throw or have the Paralyzed condition for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional Humanoid for each spell slot level above 2.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "charisma",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Paralyzed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The targets have the Paralyzed condition. At the end of each of their turns, the targets repeat the save, ending the spell on themself on a success.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
             }
         ]
     },
@@ -2307,8 +2413,7 @@
         "duration": "1 minute",
         "concentration": true,
         "description": "The target hit by the strike takes an extra 2d6 Radiant damage from the attack. Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 2.",
-        "challengeType": "savingThrow",
-        "savingThrowType": "strength",
+        "challengeType": "none",
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -2509,6 +2614,42 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Hypnotic Pattern",
+        "level": 3,
+        "school": "Illusion",
+        "spellLists": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["S", "M"],
+        "materialComponents": ["a pinch of confetti"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You create a twisting pattern of colors in a 30-foot Cube within range. The pattern appears for a moment and vanishes. Each creature in the area who can see the pattern must succeed on a Wisdom saving throw or have the Charmed condition for the duration. While Charmed, the creature has the Incapacitated condition and a Speed of 0.\n\nThe spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed", "Incapacitated"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Each creature that failed the Wisdom saving throw is Charmed, Incapacitated and has a Speed of 0.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Slow",
