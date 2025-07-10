@@ -929,6 +929,124 @@
                         ]
                     }
                 ]
+            },
+            {
+                "name": "Weave Collapse",
+                "actions": [
+                    {
+                        "name": "Shifting Weave",
+                        "actionTime": ["Action"],
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "Detonate yourself in an arcane explosion.\n\nDeal 10d10 fire, 10d10 radiant, 10d10 bludgeoning, 10d10 force, and 10d10 psychic damage to every creature of your choice within 1 mile. Any terrain and buildings in the area are affected, and all magic in the area changes. Flip a coin to see if the area becomes a dead zone (tails) or a wild magic zone (heads).",
+                        "challengeType": "none",
+                        "type": []
+                    }
+                ]
+            },
+            {
+                "name": "Leyline Syncopation",
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.tags",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "WeaveWear"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "name": "Shifting Weave",
+                        "actionTime": ["Free"],
+                        "range": "Self",
+                        "duration": "1 turn",
+                        "description": "As part of a weapon attack (ranged or melee) or a single target spell/ability that has a range of touch (like Lay on Hands or Vampiric Touch), you can expend two charges to activate your Weave Wear to tap directly into the weave and force your chosen ability to travel along leylines beyond its normal reach.\n\nWhere your attack, spell, or special action wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away.\n\nExample: This can make ammunition curve around a bend, cast cure wounds on a faraway target, or cast light on an object. This cannot be used to grapple, administer a potion, move objects/creatures, or other similar actions. This also cannot go across planes.",
+                        "challengeType": "none",
+                        "type": [],
+                        "cost": {
+                            "resourceType": "spellfireCharges",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "aspects": {
+                    "itemDescriptionAddendum": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.type",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weapon"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Leyline Syncopation.</b> Where your attack wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                            }
+                        ]
+                    },
+                    "featureActionDescriptionAddendum": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "featureAction.range",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Touch"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Leyline Syncopation.</b> Where your special action wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                            }
+                        ]
+                    },
+                    "spellCastingDescriptionAddendum": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.range",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Touch"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Leyline Syncopation.</b> Where your spell wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                            }
+                        ]
+                    }
+                }
             }
         ],
         "choices": [
@@ -1420,6 +1538,108 @@
                                         }
                                     }
                                 ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Charged Arcflare",
+                        "conditions": [
+                            {
+                                "type": "aspect",
+                                "value": "equippedItems",
+                                "itemParameterName": "item",
+                                "some": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "item.tags",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "WeaveWear"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Charged Arcflare",
+                                "conditions": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "equippedItems",
+                                        "itemParameterName": "item",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "item.tags",
+                                                "includes": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "WeaveWear"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "actions": [
+                                    {
+                                        "name": "Charged Arcflare",
+                                        "actionTime": ["Free"],
+                                        "range": "Self",
+                                        "duration": "1 round",
+                                        "description": "Each time you make a spell attack or hit with a weapon attack while wearing WeaveWear, you can expend 1 charge to add +1d6 force damage to the total damage dealt. This bonus stacks (max 4 stacks, ex: 1d6 becomes 2d6, etc).\n\nAt 4 stacks, roll a d6 after each use: 1-2: You take 2d6 force damage and lose all stacks. 3-6: You lose your action next turn.\n\nOn subsequent turns, you either must burn another charge to add to the stack OR you must burn a charge to maintain your current stack. If no charges are used by the end of each of your turns towards this ability, the stacks drop to 0.\n\nYou may purge all stacks as a bonus action to deal force damage equal to stacks x 1d6 to one creature within 30 ft.",
+                                        "challengeType": "none",
+                                        "type": [],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "aspects": {
+                                    "weaponDamageAdditional": {
+                                        "calculation": [
+                                            {
+                                                "type": "dieRoll",
+                                                "value": 6,
+                                                "diceType": "Force"
+                                            }
+                                        ]
+                                    },
+                                    "weaponAttackAddendum": {
+                                        "calculation": [
+                                            {
+                                                "type": "static",
+                                                "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
+                                            }
+                                        ]
+                                    },
+                                    "spellDamageBonus": {
+                                        "calculation": [
+                                            {
+                                                "type": "dieRoll",
+                                                "value": 6,
+                                                "diceType": "Force"
+                                            }
+                                        ]
+                                    },
+                                    "spellAttackAddendum": {
+                                        "calculation": [
+                                            {
+                                                "type": "static",
+                                                "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         ]
                     }
