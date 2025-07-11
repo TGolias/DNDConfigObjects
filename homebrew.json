@@ -1029,7 +1029,7 @@
                                     {
                                         "type": "parameter",
                                         "propertyPath": "spell.range",
-                                        "includes": [
+                                        "equals": [
                                             {
                                                 "type": "static",
                                                 "value": "Touch"
