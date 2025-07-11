@@ -982,71 +982,71 @@
                                     "value": 2
                                 }
                             ]
+                        },
+                        "aspects": {
+                            "itemDescriptionAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "item.type",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Weapon"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Leyline Syncopation.</b> Where your attack wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                                    }
+                                ]
+                            },
+                            "featureActionDescriptionAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "featureAction.range",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Touch"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Leyline Syncopation.</b> Where your special action wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                                    }
+                                ]
+                            },
+                            "spellCastingDescriptionAddendum": {
+                                "conditions": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "spell.range",
+                                        "includes": [
+                                            {
+                                                "type": "static",
+                                                "value": "Touch"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Leyline Syncopation.</b> Where your spell wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
+                                    }
+                                ]
+                            }
                         }
                     }
-                ],
-                "aspects": {
-                    "itemDescriptionAddendum": {
-                        "conditions": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "item.type",
-                                "includes": [
-                                    {
-                                        "type": "static",
-                                        "value": "Weapon"
-                                    }
-                                ]
-                            }
-                        ],
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Leyline Syncopation.</b> Where your attack wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
-                            }
-                        ]
-                    },
-                    "featureActionDescriptionAddendum": {
-                        "conditions": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "featureAction.range",
-                                "includes": [
-                                    {
-                                        "type": "static",
-                                        "value": "Touch"
-                                    }
-                                ]
-                            }
-                        ],
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Leyline Syncopation.</b> Where your special action wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
-                            }
-                        ]
-                    },
-                    "spellCastingDescriptionAddendum": {
-                        "conditions": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "spell.range",
-                                "includes": [
-                                    {
-                                        "type": "static",
-                                        "value": "Touch"
-                                    }
-                                ]
-                            }
-                        ],
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Leyline Syncopation.</b> Where your spell wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away."
-                            }
-                        ]
-                    }
-                }
+                ]
             }
         ],
         "choices": [
@@ -1601,45 +1601,45 @@
                                                     "value": 1
                                                 }
                                             ]
+                                        },
+                                        "aspects": {
+                                            "weaponDamageAdditional": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "dieRoll",
+                                                        "value": 6,
+                                                        "diceType": "Force"
+                                                    }
+                                                ]
+                                            },
+                                            "weaponAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
+                                                    }
+                                                ]
+                                            },
+                                            "spellDamageBonus": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "dieRoll",
+                                                        "value": 6,
+                                                        "diceType": "Force"
+                                                    }
+                                                ]
+                                            },
+                                            "spellAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
+                                                    }
+                                                ]
+                                            }
                                         }
                                     }
-                                ],
-                                "aspects": {
-                                    "weaponDamageAdditional": {
-                                        "calculation": [
-                                            {
-                                                "type": "dieRoll",
-                                                "value": 6,
-                                                "diceType": "Force"
-                                            }
-                                        ]
-                                    },
-                                    "weaponAttackAddendum": {
-                                        "calculation": [
-                                            {
-                                                "type": "static",
-                                                "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
-                                            }
-                                        ]
-                                    },
-                                    "spellDamageBonus": {
-                                        "calculation": [
-                                            {
-                                                "type": "dieRoll",
-                                                "value": 6,
-                                                "diceType": "Force"
-                                            }
-                                        ]
-                                    },
-                                    "spellAttackAddendum": {
-                                        "calculation": [
-                                            {
-                                                "type": "static",
-                                                "value": "<b>Charged Arcflare Stack.</b> Add 1d6 Force damage to the total damage dealt."
-                                            }
-                                        ]
-                                    }
-                                }
+                                ]
                             }
                         ]
                     }
