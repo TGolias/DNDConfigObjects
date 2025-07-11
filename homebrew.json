@@ -934,7 +934,7 @@
                 "name": "Weave Collapse",
                 "actions": [
                     {
-                        "name": "Shifting Weave",
+                        "name": "Weave Collapse",
                         "actionTime": ["Action"],
                         "range": "Self",
                         "duration": "Instantaneous",
@@ -967,7 +967,7 @@
                 ],
                 "actions": [
                     {
-                        "name": "Shifting Weave",
+                        "name": "Leyline Syncopation",
                         "actionTime": ["Free"],
                         "range": "Self",
                         "duration": "1 turn",
@@ -1598,7 +1598,7 @@
                                             "calculation": [
                                                 {
                                                     "type": "static",
-                                                    "value": 2
+                                                    "value": 1
                                                 }
                                             ]
                                         }
