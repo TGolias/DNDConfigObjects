@@ -1578,6 +1578,59 @@
         "type": []
     },
     {
+        "name": "Enhance Ability",
+        "level": 2,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Cleric", "Druid", "Ranger", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["fur or a feather"],
+        "duration": "1 hour",
+        "concentration": true,
+        "description": "You touch a creature and choose Strength, Dexterity, Intelligence, Wisdom, or Charisma. For the duration, the target has Advantage on ability checks using the chosen ability.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 2. You can choose a different ability for each target.",
+        "challengeType": "none",
+        "type": ["debuff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Until the spell ends, the targets has Advantage on <b>."
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.abilityChosen"
+                },
+                {
+                    "type": "static",
+                    "value": "</b> ability checks.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "abilityChosen",
+                "displayName": "Ability to Enhance",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+                    }
+                ]
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Enlarge / Reduce",
         "level": 2,
         "school": "Transmutation",
@@ -2488,6 +2541,39 @@
                 "type": "textField"
             }
         ]
+    },
+    {
+        "name": "Vortex Warp",
+        "level": 2,
+        "school": "Conjuration",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": {
+            "normal": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 30,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "slotLevel"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "You magically twist space around another creature you can see within range. The target must succeed on a Constitution saving throw (the target can choose to fail), or the target is teleported to an unoccupied space of your choice that you can see within range. The chosen space must be on a surface or in a liquid that can support the target without the target having to squeeze.\n\n<b>At Higher Levels.</b> When you cast this spell using a spell slot of 3rd level or higher, the range of the spell increases by 30 feet for each slot level above 2nd.",
+        "challengeType": "savingThrow",
+        "savingThrowType": "constitution",
+        "type": []
     },
     {
         "name": "Aura of Vitality",
