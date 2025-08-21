@@ -1619,7 +1619,7 @@
                 "values": [
                     {
                         "type": "static",
-                        "value": ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+                        "value": ["Strength", "Dexterity", "Intelligence", "Wisdom", "Charisma"]
                     }
                 ]
             },
@@ -1628,7 +1628,369 @@
                 "displayName": "Who are you targeting?",
                 "type": "textField"
             }
-        ]
+        ],
+        "aspects": {
+            "skillProficiencyAthleticsAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Strength"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Strength.</b> For the duration, the target has Advantage on Strength ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyAcrobaticsAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Dexterity"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Dexterity.</b> For the duration, the target has Advantage on Dexterity ability checks."
+                    }
+                ]
+            },
+            "skillProficiencySleightofHandAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Dexterity"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Dexterity.</b> For the duration, the target has Advantage on Dexterity ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyStealthAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Dexterity"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Dexterity.</b> For the duration, the target has Advantage on Dexterity ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyArcanaAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Intelligence"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Intelligence.</b> For the duration, the target has Advantage on Intelligence ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyHistoryAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Intelligence"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Intelligence.</b> For the duration, the target has Advantage on Intelligence ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyInvestigationAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Intelligence"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Intelligence.</b> For the duration, the target has Advantage on Intelligence ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyNatureAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Intelligence"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Intelligence.</b> For the duration, the target has Advantage on Intelligence ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyReligionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Intelligence"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Intelligence.</b> For the duration, the target has Advantage on Intelligence ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyAnimalHandlingAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Wisdom"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Wisdom.</b> For the duration, the target has Advantage on Wisdom ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyInsightAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Wisdom"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Wisdom.</b> For the duration, the target has Advantage on Wisdom ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyMedicineAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Wisdom"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Wisdom.</b> For the duration, the target has Advantage on Wisdom ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyPerceptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Wisdom"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Wisdom.</b> For the duration, the target has Advantage on Wisdom ability checks."
+                    }
+                ]
+            },
+            "skillProficiencySurvivalAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Wisdom"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Wisdom.</b> For the duration, the target has Advantage on Wisdom ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyDeceptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Charisma"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Charisma.</b> For the duration, the target has Advantage on Charisma ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyIntimidationAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Charisma"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Charisma.</b> For the duration, the target has Advantage on Charisma ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyPerformanceAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Charisma"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Charisma.</b> For the duration, the target has Advantage on Charisma ability checks."
+                    }
+                ]
+            },
+            "skillProficiencyPersuasionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.userInput.abilityChosen",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Charisma"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Enhance Ability - Charisma.</b> For the duration, the target has Advantage on Charisma ability checks."
+                    }
+                ]
+            }
+        }
     },
     {
         "name": "Enlarge / Reduce",
