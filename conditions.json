@@ -39,6 +39,109 @@
         "highlightColor": "Bad"
     },
     {
+        "name": "Cover (Half)",
+        "description": "+2 bonus to AC and Dexterity saving throws.",
+        "highlightColor": "Good",
+        "armorClassBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 2
+                }
+            ]
+        },
+        "dexteritySavingThrowBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 2
+                }
+            ]
+        },
+        "dexteritySavingThrowAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Cover (Half)</b> +2 to Dexterity saving throws."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Cover (Three-Quarters)",
+        "description": "+5 bonus to AC and Dexterity saving throws.",
+        "highlightColor": "Good",
+        "armorClassBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5
+                }
+            ]
+        },
+        "dexteritySavingThrowBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5
+                }
+            ]
+        },
+        "dexteritySavingThrowAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Cover (Three-Quarters)</b> +5 to Dexterity saving throws."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Cover (Total)",
+        "description": "Can't be targeted directly.",
+        "highlightColor": "Good",
+        "armorClassBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5
+                }
+            ]
+        },
+        "dexteritySavingThrowBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 5
+                }
+            ]
+        },
+        "dexteritySavingThrowAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Cover (Three-Quarters)</b> +5 to Dexterity saving throws."
+                }
+            ]
+        },
+        "allSavingThrowAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Cover (Total)</b> Can't be targeted directly."
+                }
+            ]
+        },
+        "healthMenuAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Cover (Total)</b> Can't be targeted directly."
+                }
+            ]
+        }
+    },
+    {
         "name": "Deafened",
         "description": "While you have the Deafened condition, you experience the following effect.\n\n<b>Can't Hear.</b> You can't hear and automatically fail any ability check that requires hearing.",
         "highlightColor": "Bad",
