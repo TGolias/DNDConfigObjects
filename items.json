@@ -137,6 +137,68 @@
         }
     },
     {
+        "name": "Anchoring Hand-Chain",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "gold": 200
+        },
+        "description": "Allies within 10ft cannot be forcibly moved unless they allow it.\n\nOnce per long rest, while having this item equipped, when a creature within 30ft of you would drop to 0 HP, you both can instead choose to drop to 1 HP, allowing them to remain conscious.",
+        "aspects": {
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Anchoring Hand-Chain.</b> Once per long rest, while having this item equipped, when a creature within 30ft of you would drop to 0 HP, you both can instead choose to drop to 1 HP, allowing them to remain conscious."
+                    }
+                ]
+            },
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Anchoring Hand-Chain.</b> Allies within 10ft cannot be forcibly moved unless they allow it."
+                    }
+                ]
+            },
+            "features": [
+                {
+                    "name": "Anchoring Hand-Chain",
+                    "actions": [
+                        {
+                            "name": "Anchoring Hand-Chain",
+                            "actionTime": ["Free"],
+                            "actionCondition": "When a creature within 30ft of you would drop to 0 HP.",
+                            "range": 30,
+                            "duration": "Instantaneous",
+                            "description": "Once per long rest, while having this item equipped, when a creature within 30ft of you would drop to 0 HP, you both can instead choose to drop to 1 HP, allowing them to remain conscious.",
+                            "challengeType": "none",
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Backpack",
         "type": "Adventuring Gear",
         "rarity": "None",
@@ -167,6 +229,70 @@
         "weight": 6,
         "cost": {
             "gold": 30
+        }
+    },
+    {
+        "name": "Band of Twisted Fate",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "weight": 0,
+        "cost": {
+            "gold": 150
+        },
+        "description": "Once per long rest, when you fail a saving throw, you may choose to instead succeed.\n\nIf you choose to succeed, you take 1d6 psychic damage.\n\nIf this damage would knock you to 0 HP, you are immediately stabilized. This does not stabilize you against damage taken outside from the damage inflicted by the ring.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Band of Twisted Fate",
+                    "actions": [
+                        {
+                            "name": "Band of Twisted Fate",
+                            "actionTime": ["Free"],
+                            "actionCondition": "When you fail a saving throw.",
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "Once per long rest, when you fail a saving throw, you may choose to instead succeed.\n\nIf you choose to succeed, you take 1d6 psychic damage.\n\nIf this damage would knock you to 0 HP, you are immediately stabilized. This does not stabilize you against damage taken outside from the damage inflicted by the ring.",
+                            "challengeType": "none",
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 6,
+                                        "diceType": "Psychic"
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "allSavingThrowAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Band of Twisted Fate.</b> Once per long rest, when you fail a saving throw, you may choose to instead succeed."
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
     {
@@ -2780,6 +2906,74 @@
             "gold": 5
         },
         "description": "As a Utilize action, you can use Manacles to bind an unwilling Small or Medium creature within 5 feet of yourself that has the Grappled, Incapacitated, or Restrained condition if you succeed on a DC 13 Dexterity (Sleight of Hand) check. While bound, a creature has Disadvantage on attack rolls, and the creature is Restrained if the Manacles are attached to a chain or hook that is fixed in place. Escaping the Manacles requires a successful DC 20 Dexterity (Sleight of Hand) check as an action. Bursting them requires a successful DC 25 Strength (Athletics) check as an action."
+    },
+    {
+        "name": "Mariner's Armor",
+        "type": "Template",
+        "templateOf": "Studded Leather Armor",
+        "cost": {
+            "gold": 150
+        },
+        "description": "While wearing this armor, you have a Swim Speed equal to your Speed. In addition, if you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points.\n\nOnce this ability is used, the armor can't heal anymore again until the next dawn.\n\nThe armor is decorated with fish and shell motifs.",
+        "aspects": {
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Mariner's Armor.</b> While wearing this armor, you have a Swim Speed equal to your Speed."
+                    }
+                ]
+            },
+            "features": [
+                {
+                    "name": "Mariner's Armor",
+                    "actions": [
+                        {
+                            "name": "Mariner's Armor",
+                            "actionTime": ["Free"],
+                            "actionCondition": "When you start your turn underwater with 0 Hit Points.",
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "If you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points.\n\nOnce this ability is used, the armor can't heal anymore again until the next dawn.",
+                            "challengeType": "none",
+                            "type": ["healing"],
+                            "healing": {
+                                "calculation": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 4
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "healthMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Mariner's Armor.</b> If you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points."
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
     },
     {
         "name": "Mason's Tools",
