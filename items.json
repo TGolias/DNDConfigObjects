@@ -243,6 +243,14 @@
         },
         "description": "Once per long rest, when you fail a saving throw, you may choose to instead succeed.\n\nIf you choose to succeed, you take 1d6 psychic damage.\n\nIf this damage would knock you to 0 HP, you are immediately stabilized. This does not stabilize you against damage taken outside from the damage inflicted by the ring.",
         "aspects": {
+            "allSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Band of Twisted Fate.</b> Once per long rest, when you fail a saving throw, you may choose to instead succeed."
+                    }
+                ]
+            },
             "features": [
                 {
                     "name": "Band of Twisted Fate",
@@ -282,15 +290,7 @@
                                 ]
                             }
                         }
-                    ],
-                    "allSavingThrowAddendum": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Band of Twisted Fate.</b> Once per long rest, when you fail a saving throw, you may choose to instead succeed."
-                            }
-                        ]
-                    }
+                    ]
                 }
             ]
         }
@@ -1211,7 +1211,23 @@
                             "duration": "Instantaneous",
                             "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
                             "challengeType": "none",
-                            "type": []
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -2924,6 +2940,14 @@
                     }
                 ]
             },
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Mariner's Armor.</b> If you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points."
+                    }
+                ]
+            },
             "features": [
                 {
                     "name": "Mariner's Armor",
@@ -2962,15 +2986,7 @@
                                 ]
                             }
                         }
-                    ],
-                    "healthMenuAddendum": {
-                        "calculation": [
-                            {
-                                "type": "static",
-                                "value": "<b>Mariner's Armor.</b> If you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points."
-                            }
-                        ]
-                    }
+                    ]
                 }
             ]
         }
@@ -3276,6 +3292,33 @@
         "attunement": true,
         "weight": 0,
         "description": "When attuned, the parchment will magically write down everything you say. Your works will appear on the parchment, as you say them. There is a catch, however. It will write down EVERYTHING you say (even coughs and sighs), and as there is only one piece of parchment - when it reaches the bottom of the page - it starts anew at the top, overwriting whatever was there. You need to stay very quiet if you want your words kept for posterity. The parchment says attuned to you as long as you live, and it will record your words, no matter how far away it is from you, and no matter what plane or planet may separate you."
+    },
+    {
+        "name": "Pearl of Pressure",
+        "type": "Wondrous item",
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Object Interaction"],
+            "range": "Self",
+            "duration": "1 minute",
+            "challengeType": "none",
+            "type": ["debuff"],
+            "debuff": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Movement is halved in a 10ft radius, centered on where the Pearl was crushed."
+                    }
+                ]
+            }
+        },
+        "weight": 1,
+        "cost": {
+            "gold": 50
+        },
+        "description": "Crush this pearl using a standard object interaction to create a 10ft radius, centered where it was crushed, that halves movement for 1 minute (1 use)."
     },
     {
         "name": "Pepperbox",
