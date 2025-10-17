@@ -1406,7 +1406,7 @@
                 "name": "Abjure Foes",
                 "actions": [
                     {
-                        "name": "Divine Sense",
+                        "name": "Abjure Foes",
                         "actionTime": ["Magic Action"],
                         "range": 60,
                         "duration": "1 minute",
@@ -1423,6 +1423,10 @@
                                 {
                                     "type": "parameter",
                                     "propertyPath": "userInput.targetText"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": "\n\n"
                                 }
                             ]
                         },
