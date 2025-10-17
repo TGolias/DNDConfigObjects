@@ -430,7 +430,7 @@
                                 {
                                     "type": "parameter",
                                     "propertyPath": "option.challengeType",
-                                    "equals": [
+                                    "includes": [
                                         {
                                             "type": "static",
                                             "value": "attackRoll"

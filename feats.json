@@ -448,7 +448,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "When you roll a d20 for a D20 Test, you can spend 1 Luck Point to give yourself Advantage on the roll.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["buff"],
                             "buff": {
                                 "description": "You have Advantage on your D20 Test."
@@ -495,7 +495,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "When a creature rolls a d20 for an attack roll against you, you can spend 1 Luck Point to impose Disadvantage on that roll.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["debuff"],
                             "debuff": {
                                 "description": "Creature has Disdvantage on attack roll against you."

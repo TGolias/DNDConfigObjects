@@ -812,7 +812,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "You can expend luck points and add them to any d20 roll you are making. The only limit to how many luck points you can expect, is how many luck points you have.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "userInput": [
                             {
@@ -897,7 +897,7 @@
                         "range": "Touch",
                         "duration": "Instantaneous",
                         "description": "Once per day, you can restore the lowest level spell slot to another spellscar weilder who also utilizes spell slots, granted you have spell slots available to expend. This consumes your chosen spell slot.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "cost": {
                             "uses": {
@@ -939,7 +939,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "Detonate yourself in an arcane explosion.\n\nDeal 10d10 fire, 10d10 radiant, 10d10 bludgeoning, 10d10 force, and 10d10 psychic damage to every creature of your choice within 1 mile. Any terrain and buildings in the area are affected, and all magic in the area changes. Flip a coin to see if the area becomes a dead zone (tails) or a wild magic zone (heads).",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": []
                     }
                 ]
@@ -972,7 +972,7 @@
                         "range": "Self",
                         "duration": "1 turn",
                         "description": "As part of a weapon attack (ranged or melee) or a single target spell/ability that has a range of touch (like Lay on Hands or Vampiric Touch), you can expend two charges to activate your Weave Wear to tap directly into the weave and force your chosen ability to travel along leylines beyond its normal reach.\n\nWhere your attack, spell, or special action wouldn't normally be able to reach, such as not having line of sight, needing to curve around a bend, or a target has cover, you can extend that reach up to 30ft away.\n\nExample: This can make ammunition curve around a bend, cast cure wounds on a faraway target, or cast light on an object. This cannot be used to grapple, administer a potion, move objects/creatures, or other similar actions. This also cannot go across planes.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "cost": {
                             "resourceType": "spellfireCharges",
@@ -1080,7 +1080,7 @@
                                         "range": "Self",
                                         "duration": "Instantaneous",
                                         "description": "Expend one charge as a magic action. You project a powerful illusion into a 15 ft cone in front of you. Each creature within the area must make an Intelligence saving throw or take 1d10 psychic damage.",
-                                        "challengeType": "savingThrow",
+                                        "challengeType": ["savingThrow"],
                                         "savingThrowType": "intelligence",
                                         "type": ["damage"],
                                         "damage": {
@@ -1141,7 +1141,7 @@
                                         "range": "Self",
                                         "duration": "Instantaneous",
                                         "description": "Expend a charge as part of casting a spell that has a saving throw. Increase your spell save DC by 1 until the end of your turn.",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": ["buff"],
                                         "buff": {
                                             "calculation": [
@@ -1176,6 +1176,56 @@
                         ]
                     },
                     {
+                        "name": "Weaveghost Echoes",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Weaveghost Echoes",
+                                "actions": [
+                                    {
+                                        "name": "Weaveghost Echoes",
+                                        "actionTime": ["Bonus Action"],
+                                        "range": 30,
+                                        "duration": "Instantaneous",
+                                        "description": "Expend 2 charges as a bonus action. You conjure 4 ghosts made of raw magic in unoccupied spaces that you can see within 30 feet of you. The ghosts are immune to all damage and disappear after 1 minute. When you move, you can move each of them up to 15 feet. They block movement for enemies but not allies. They provide cover to allies, but not enemies.",
+                                        "challengeType": [],
+                                        "type": [],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Spellfire Bolts",
                         "features": [
                             {
@@ -1187,7 +1237,7 @@
                                         "range": 60,
                                         "duration": "Instantaneous",
                                         "description": "As a magic action, you can expend charges to make a melee or a ranged (maximum range 60ft) spell attack to a creature or an object.\n\nYour class's main ability score is your spellcasting ability and you add your proficiency bonus. On a successful hit, the target suffers 1d6 fire or radiant damage per charge released.",
-                                        "challengeType": "attackRoll",
+                                        "challengeType": ["attackRoll"],
                                         "attackRollType": "spellAttack",
                                         "type": ["damage"],
                                         "damage": {
@@ -1272,7 +1322,7 @@
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
                                         "description": "Expend a charge as part of your attack action. Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement.",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": [],
                                         "aspects": {
                                             "weaponAttackAddendum": {
@@ -1352,7 +1402,7 @@
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
                                         "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": [],
                                         "aspects": {
                                             "weaponAttackAddendum": {
@@ -1390,7 +1440,7 @@
                                         "range": "Touch",
                                         "duration": "Instantaneous",
                                         "description": "As an action, one creature you touch can spend 1 of its hit dice to heal itself per charge you expend. If at full health, any number over your max HP turns into temporary hit points but at half the value rolled (ex: 2 HP extra becomes 1).",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": ["healing"],
                                         "healing": {
                                             "calculation": [
@@ -1509,7 +1559,7 @@
                                         "range": "Self",
                                         "duration": "Instantaneous",
                                         "description": "When you are the only target of an enemy ability that requires a saving throw, you can give yourself advantage on the save by expending a charge as a reaction. If you succeed on the save, you regain hp equal to the level of the spell used or half the attacker's CR (minimum 1) if the ability wasn't a spell.",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": ["buff", "healing"],
                                         "buff": {
                                             "calculation": [
@@ -1591,7 +1641,7 @@
                                         "range": "Self",
                                         "duration": "1 round",
                                         "description": "Each time you make a spell attack or hit with a weapon attack while wearing WeaveWear, you can expend 1 charge to add +1d6 force damage to the total damage dealt. This bonus stacks (max 4 stacks, ex: 1d6 becomes 2d6, etc).\n\nAt 4 stacks, roll a d6 after each use: 1-2: You take 2d6 force damage and lose all stacks. 3-6: You lose your action next turn.\n\nOn subsequent turns, you either must burn another charge to add to the stack OR you must burn a charge to maintain your current stack. If no charges are used by the end of each of your turns towards this ability, the stacks drop to 0.\n\nYou may purge all stacks as a bonus action to deal force damage equal to stacks x 1d6 to one creature within 30 ft.",
-                                        "challengeType": "none",
+                                        "challengeType": [],
                                         "type": [],
                                         "cost": {
                                             "resourceType": "spellfireCharges",

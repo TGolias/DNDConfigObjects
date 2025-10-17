@@ -9,7 +9,7 @@
             "actionTime": ["Attack"],
             "range": 20,
             "duration": "Instantaneous",
-            "challengeType": "savingThrow",
+            "challengeType": ["savingThrow"],
             "savingThrowType": "dexterity",
             "savingThrowCalculation": [
                 {
@@ -58,7 +58,7 @@
             "actionTime": ["Attack"],
             "range": 20,
             "duration": "Indefinitely",
-            "challengeType": "savingThrow",
+            "challengeType": ["savingThrow"],
             "savingThrowType": "dexterity",
             "savingThrowCalculation": [
                 {
@@ -174,7 +174,7 @@
                             "range": 30,
                             "duration": "Instantaneous",
                             "description": "Once per long rest, while having this item equipped, when a creature within 30ft of you would drop to 0 HP, you both can instead choose to drop to 1 HP, allowing them to remain conscious.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "cost": {
                                 "uses": {
@@ -262,7 +262,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "Once per long rest, when you fail a saving throw, you may choose to instead succeed.\n\nIf you choose to succeed, you take 1d6 psychic damage.\n\nIf this damage would knock you to 0 HP, you are immediately stabilized. This does not stabilize you against damage taken outside from the damage inflicted by the ring.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["damage"],
                             "damage": {
                                 "calculation": [
@@ -305,7 +305,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Self",
             "duration": "1 minute",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["damage"],
             "damage": {
                 "calculation": [
@@ -879,7 +879,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "1 hour",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["buff", "debuff"],
             "buff": {
                 "calculation": [
@@ -1210,7 +1210,7 @@
                             "components": ["V"],
                             "duration": "Instantaneous",
                             "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "cost": {
                                 "uses": {
@@ -1328,7 +1328,7 @@
                             "range": "Self",
                             "duration": "1 hour",
                             "description": "For the duration, you see creatures that have the Invisible condition as if they were visible,",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "cost": {
                                 "uses": {
@@ -1476,7 +1476,7 @@
                             "range": "Self",
                             "duration": "1 hour",
                             "description": "For the duration, you see creatures that have the Invisible condition as if they were visible,",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "cost": {
                                 "uses": {
@@ -1872,7 +1872,7 @@
             "actionTime": ["Utilize"],
             "range": "Self",
             "duration": "1 hour",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["buff"],
             "buff": {
                 "description": "When crushed, the user experiences a brief vision (chosen by the DM) and can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour. However, for the next minute, their vision flickers between the present and a strange, mechanical wasteland."
@@ -2555,7 +2555,7 @@
             "actionTime": ["Utilize"],
             "range": "Self",
             "duration": "Indefinitely",
-            "challengeType": "savingThrow",
+            "challengeType": ["savingThrow"],
             "savingThrowType": "dexterity",
             "savingThrowCalculation": [
                 {
@@ -2593,7 +2593,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "1 minute",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["buff", "debuff"],
             "buff": {
                 "calculation": [
@@ -2895,7 +2895,7 @@
             "actionTime": ["Utilize"],
             "range": "Touch",
             "duration": "Indefinitely",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["debuff"],
             "debuff": {
                 "calculation": [
@@ -2959,7 +2959,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "If you start your turn underwater with 0 Hit Points, you immediately regain 1d4 Hit Points.\n\nOnce this ability is used, the armor can't heal anymore again until the next dawn.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["healing"],
                             "healing": {
                                 "calculation": [
@@ -3092,7 +3092,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "30 minutes",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["buff", "debuff"],
             "buff": {
                 "calculation": [
@@ -3188,7 +3188,7 @@
             "actionTime": ["Attack"],
             "range": 20,
             "duration": "1 minute",
-            "challengeType": "savingThrow",
+            "challengeType": ["savingThrow"],
             "savingThrowType": "dexterity",
             "savingThrowCalculation": [
                 {
@@ -3303,7 +3303,7 @@
             "actionTime": ["Object Interaction"],
             "range": "Self",
             "duration": "1 minute",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["debuff"],
             "debuff": {
                 "calculation": [
@@ -3359,7 +3359,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "1 minute",
-            "challengeType": "none",
+            "challengeType": [],
             "type": []
         },
         "weight": 0.5,
@@ -3527,7 +3527,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "Instantaneous",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["healing"],
             "healing": {
                 "calculation": [
@@ -3564,7 +3564,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "Instantaneous",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["healing"],
             "healing": {
                 "calculation": [
@@ -3601,7 +3601,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "Instantaneous",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["healing"],
             "healing": {
                 "calculation": [
@@ -3638,7 +3638,7 @@
             "actionTime": ["Bonus Action"],
             "range": "Touch",
             "duration": "Instantaneous",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["healing"],
             "healing": {
                 "calculation": [
@@ -3734,7 +3734,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["setVariable", "buff"],
                             "setVariable": {
                                 "variableName": {
@@ -3862,6 +3862,55 @@
                                                         "value": " Dexterity saving throw or be under the effect of the spell Faerie Fire."
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Yellow"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Orange</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature "
+                                                    }, 
+                                                    {
+                                                        "type": "highestOf",
+                                                        "values": [
+                                                            [
+                                                                {
+                                                                    "type": "static",
+                                                                    "value": 1
+                                                                }
+                                                            ],
+                                                            [
+                                                                {
+                                                                    "type": "aspect",
+                                                                    "value": "charismaModifier"
+                                                                }
+                                                            ]
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "static",
+                                                        "value": " times. You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + "
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "charismaModifier"
+                                                    },
+                                                    {
+                                                        "type": "static",
+                                                        "value": "."
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -3875,7 +3924,7 @@
                                     "values": [
                                         {
                                             "type": "static",
-                                            "value": ["Grey", "Black", "White", "Red", "Orange"]
+                                            "value": ["Grey", "Black", "White", "Red", "Orange", "Yellow"]
                                         }
                                     ]
                                 }
@@ -3921,7 +3970,7 @@
                             "range": "Self",
                             "duration": "Instantaneous",
                             "description": "As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw (DC = your Spell Save DC) or be under the effect of the spell Faerie Fire.",
-                            "challengeType": "savingThrow",
+                            "challengeType": ["savingThrow"],
                             "savingThrowType": "dexterity",
                             "type": ["buff", "debuff"],
                             "buff": {
@@ -3951,6 +4000,57 @@
                                     "type": "textField"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Radiant Surge",
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Yellow"
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "name": "Radiant Surge",
+                            "actionTime": ["Reaction"],
+                            "castingCondition": "When a creature that you can see within 30 feet of yourself makes an attack roll.",
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + your Charisma modifier.",
+                            "challengeType": [],
+                            "type": ["buff", "debuff"],
+                            "buff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "You can give the target of the triggering attack temporary hit points equal to 2d6 + "
+                                    },
+                                    {
+                                        "type": "aspect",
+                                        "value": "charismaModifier"
+                                    },
+                                    {
+                                        "type": "static",
+                                        "value": "."
+                                    }
+                                ]
+                            },
+                            "debuff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "The attacker has disadvantage on the attack roll. An attacker that can't be blinded is immune to this feature."
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -4193,6 +4293,46 @@
                         "value": "<b>Prismatic Mantle of Spellfire - Orange.</b> You gain a +10 ft. bonus to your movement speed."
                     }
                 ]
+            },
+            "conditionImmunities": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Yellow"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": ["Blinded"]
+                    }
+                ]
+            },
+            "darkvision": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Yellow"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 120
+                    }
+                ]
             }
         }
     },
@@ -4319,7 +4459,7 @@
             "actionTime": ["Utilize"],
             "range": "Touch",
             "duration": "Indefinitely",
-            "challengeType": "none",
+            "challengeType": [],
             "type": ["debuff"],
             "debuff": {
                 "calculation": [
@@ -4365,7 +4505,7 @@
                             "range": "Self",
                             "duration": "1 turn",
                             "description": "Once per long rest, you can roll a d4 and add the result to any Intelligence (History) or (Investigation) check related to constructs or ruins.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "aspects": {
                                 "skillProficiencyHistoryBonus": {
@@ -4831,7 +4971,7 @@
             "actionTime": ["Bonus Action", "1 minute"],
             "range": "Self",
             "duration": "Instantaneous",
-            "challengeType": "none",
+            "challengeType": [],
             "type": []
         },
         "weight": 1,
@@ -4948,7 +5088,7 @@
                             "components": ["V", "S", "M"],
                             "duration": "Instantaneous",
                             "description": "You gain the service of a familiar, a spirit that takes an animal form of a Clockwork Mouse. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but it obeys your commands.\n\n<b>Telepathic Connection.</b> While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\nFinally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a Reaction to deliver the touch when you cast the spell.\n\n<b>Combat.</b> The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal.\n\n<b>Disappearance of the Familiar.</b> When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\n<b>One Familiar Only.</b> You can't have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["creatures"],
                             "creatures": {
                                 "calculation": [
@@ -5121,7 +5261,7 @@
             "range": "Touch",
             "duration": "1 minute",
             "description": "The drinker begins to hear whispers only they can hear, which may be real or imagined, sowing paranoia and doubt among the party.",
-            "challengeType": "none",
+            "challengeType": [],
             "type": []
         },
         "weight": 0.5,
@@ -5141,7 +5281,7 @@
             "range": "Touch",
             "duration": "1 minute",
             "description": "The drinker becomes ghostly and translucent, able to interact with the ethereal plane but also attracting the attention of restless spirits.",
-            "challengeType": "none",
+            "challengeType": [],
             "type": []
         },
         "weight": 0.5,

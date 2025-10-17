@@ -170,7 +170,7 @@
                         "range": 60,
                         "duration": "1 hour",
                         "description": "As a Bonus Action, you can inspire another creature within 60 feet of yourself who can see or hear you. That creature gains one of your Bardic Inspiration dice. A creature can have only one Bardic Inspiration die at a time.\n\nOnce within the next hour when the creature fails a D20 Test, the creature can roll the Bardic Inspiration die and add the number rolled to the d20, potentially turning the failure into a success. A Bardic Inspiration die is expended when it's rolled.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
@@ -978,7 +978,7 @@
                         "range": "Touch",
                         "duration": "Instantaneous",
                         "description": "As a Bonus Action, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of Hit Points to that creature, up to the maximum amount remaining in the pool.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["healing"],
                         "healing": {
                             "calculation": [
@@ -1023,7 +1023,7 @@
                         "range": "Touch",
                         "duration": "Instantaneous",
                         "description": "As a Bonus Action, you can touch a creature (which could be yourself) to remove the Poisoned condition from the creature at the cost of expending 5 Hit Points from the pool of healing power; those points don't also restore Hit Points to the creature.\n\n<b>Paladin Level 14.</b> When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: Blinded, Charmed, Deafened, Frightened, Paralyzed or Stunned. You must expend 5 Hit Points from the pool of healing power for each of these conditions you remove; those points don't also restore Hit Points to the creature.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["restore"],
                         "restore": {
                             "calculation": [
@@ -1209,7 +1209,7 @@
                         "range": 60,
                         "duration": "10 minutes",
                         "description": "As a Bonus Action, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the Incapacitated condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the Hallow spell.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "cost": {
                             "resourceType": "channelDivinity",
@@ -1295,7 +1295,7 @@
                         "range": 10,
                         "duration": "Indefinitely",
                         "description": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition. You and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "aspects": {
                             "allSavingThrowBonus": {
@@ -1400,6 +1400,50 @@
                 "feat": {
                     "restrictedTypes": []
                 }
+            },
+            {
+                "classLevel": 9,
+                "name": "Abjure Foes",
+                "actions": [
+                    {
+                        "name": "Divine Sense",
+                        "actionTime": ["Magic Action"],
+                        "range": 60,
+                        "duration": "1 minute",
+                        "description": "As a Magic action, you can expend one use of this class's Channel Divinity to overwhelm foes with awe. As you present your Holy Symbol or weapon, you can target a number of creatures equal to your Charisma modifier (minimum of one creature) that you can see within 60 feet of yourself. Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute or until it takes any damage. While Frightened in this way, a target can do only one of the following on its turns: move, take an action, or take a Bonus Action.",
+                        "challengeType": [],
+                        "type": ["debuff"],
+                        "debuff": {
+                            "conditions": ["Frightened"],
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "While Frightened in this way, a target can do only one of the following on its turns: move, take an action, or take a Bonus Action.\n\nTargets - "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.targetText"
+                                }
+                            ]
+                        },
+                        "userInput": [
+                            {
+                                "name": "targetText",
+                                "displayName": "Who failed their saves?",
+                                "type": "textField"
+                            }
+                        ],
+                        "cost": {
+                            "resourceType": "channelDivinity",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 "classLevel": 12,
@@ -1890,7 +1934,7 @@
                         "range": "Self",
                         "duration": "1 minute",
                         "description": "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n\n- The spell save DC of your Sorcerer spells increases by 1.\n\n- You have Advantage on the attack rolls of Sorcerer spells you cast.\n\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "aspects": {
                             "spellAttackAddendum": {
@@ -2015,7 +2059,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "As a Bonus Action, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher than level 5.\n\nAny spell slot you create with this feature vanishes when you finish a Long Rest.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["restoreSpellSlot"],
                         "restoreSpellSlot": {
                             "slotType": "spellSlots",
@@ -2223,7 +2267,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "You can expend a spell slot to gain a number of Sorcery Points equal to the slot's level (no action required).",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["restoreResource"],
                         "restoreResource": {
                             "resourceName": {
@@ -2306,7 +2350,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a Long Rest.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["restoreResource"],
                         "restoreResource": {
                             "resourceName": {
@@ -2383,7 +2427,7 @@
                         "range": "Self",
                         "duration": "1 minute",
                         "description": "An event in your past left an indelible mark on you, infusing you with simmering magic. As a Bonus Action, you can unleash that magic for 1 minute, during which you gain the following benefits:\n\n- The spell save DC of your Sorcerer spells increases by 1.\n\n- You have Advantage on the attack rolls of Sorcerer spells you cast.\n\nYou can use this feature twice, and you regain all expended uses of it when you finish a Long Rest.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": [],
                         "aspects": {
                             "spellAttackAddendum": {
@@ -2691,7 +2735,7 @@
                         "range": "Self",
                         "duration": "Instantaneous",
                         "description": "You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can't do so again until you finish a Long Rest.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["restoreSpellSlot"],
                         "restoreSpellSlot": {
                             "slotType": "pactSlots",

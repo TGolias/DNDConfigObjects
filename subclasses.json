@@ -199,7 +199,7 @@
                         "range": 30,
                         "duration": "Indefinitely",
                         "description": "As a Bonus Action, you issue a challenge that compels other creatures to do battle with you. Each creature of your choice that you can see within 30 feet of you must make a Wisdom saving throw. On a failed save, a creature can't willingly move more than 30 feet away from you. This effect ends on the creature if you are incapacitated or die or if the creature is more than 30 feet away from you.",
-                        "challengeType": "savingThrow",
+                        "challengeType": ["savingThrow"],
                         "savingThrowType": "wisdom",
                         "type": ["debuff"],
                         "debuff": {
@@ -237,7 +237,7 @@
                         "range": 30,
                         "duration": "Instantaneous",
                         "description": "As a Bonus Action, you can bolster injured creatures with your Channel Divinity. Each creature of your choice that can hear you within 30 feet of you regains hit points equal to 1d6 + your Charisma modifier (minimum of 1) if it has no more than half of its hit points.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["healing"],
                         "healing": {
                             "calculation": [
@@ -429,7 +429,7 @@
                         "range": "Self",
                         "duration": "10 minutes",
                         "description": "You can use your Channel Divinity to augment your presence with divine power. As a bonus action, you grant yourself a +5 bonus to Charisma (Persuasion) checks for the next 10 minutes.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
@@ -480,7 +480,7 @@
                         "range": 30,
                         "duration": "Instantaneous",
                         "description": "You can use your Channel Divinity to rebuke those who use violence. Immediately after an attacker within 30 feet of you deals damage with an attack against a creature other than you, you can use your reaction to force the attacker to make a Wisdom saving throw. On a failed save, the attacker takes radiant damage equal to the damage it just dealt. On a successful save, it takes half as much damage.",
-                        "challengeType": "savingThrow",
+                        "challengeType": ["savingThrow"],
                         "savingThrowType": "wisdom",
                         "type": [],
                         "cost": {
@@ -512,7 +512,7 @@
                         "range": 10,
                         "duration": "Instantaneous",
                         "description": "When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": []
                     }
                 ]
@@ -683,7 +683,7 @@
                         "range": 30,
                         "duration": "1 minute",
                         "description": "You can use your Channel Divinity to invest your presence with the warding power of your faith. As an action, you can choose a number of creatures you can see within 30 feet of you, up to a number equal to your Charisma modifier (minimum of one creature). For 1 minute, you and the chosen creatures have advantage on Intelligence, Wisdom, and Charisma saving throws.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
@@ -763,7 +763,7 @@
                         "range": 30,
                         "duration": "1 minute",
                         "description": "You can use your Channel Divinity to castigate unworldly beings. As an action, you present your holy symbol and each aberration, celestial, elemental, fey, or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage.\n\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action.",
-                        "challengeType": "savingThrow",
+                        "challengeType": ["savingThrow"],
                         "savingThrowType": "wisdom",
                         "type": ["debuff"],
                         "debuff": {
@@ -824,7 +824,7 @@
                         "range": 10,
                         "duration": "Indefinitely",
                         "description": "When you and any creatures of your choice within 10 feet of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
@@ -1037,7 +1037,7 @@
                         "range": 30,
                         "duration": "24 hours",
                         "description": "As an action, you target one undead creature you can see within 30 feet of you. The target must make a Wisdom saving throw. On a failed save, the target must obey your commands for the next 24 hours, or until you use this Channel Divinity option again. An undead whose challenge rating is equal to or greater than your paladin level is immune to this effect.",
-                        "challengeType": "savingThrow",
+                        "challengeType": ["savingThrow"],
                         "savingThrowType": "wisdom",
                         "type": ["creatures"],
                         "creatures": {
@@ -1105,7 +1105,7 @@
                         "range": 30,
                         "duration": "1 minute",
                         "description": "As an action, you channel the darkest emotions and focus them into a burst of magical menace. Each creature of your choice within 30 feet of you must make a Wisdom saving throw if it can see you. On a failed save, the target is frightened of you for 1 minute. If a creature frightened by this effect ends its turn more than 30 feet away from you, it can attempt another Wisdom saving throw to end the effect on it.",
-                        "challengeType": "savingThrow",
+                        "challengeType": ["savingThrow"],
                         "savingThrowType": "wisdom",
                         "type": ["debuff"],
                         "debuff": {
@@ -1150,7 +1150,7 @@
                         "range": 10,
                         "duration": "Indefinitely",
                         "description": "You, as well any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to your Charisma modifier (minimum of +1). A creature can benefit from this feature from only one paladin at a time.",
-                        "challengeType": "none",
+                        "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [

@@ -82,7 +82,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "Melee Attack Roll: +2, reach 5ft. Hit: 1 Piercing damage.",
-                            "challengeType": "attackRoll",
+                            "challengeType": ["attackRoll"],
                             "attackRollType": "unarmedAttack",
                             "type": ["damage"],
                             "damage": {
@@ -298,7 +298,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "<b>Melee Attack Roll:</b> Bonus equals your spell attack modifier, reach 5ft.\n\n<b>Hit:</b> 1d8 plus the spell's level of Radiant (Celestial), Psychic (Fey) or Necrotic (Fiend) damage.",
-                            "challengeType": "attackRoll",
+                            "challengeType": ["attackRoll"],
                             "attackRollType": "spellAttack",
                             "type": ["damage"],
                             "damage": {
@@ -398,7 +398,7 @@
                             "range": 60,
                             "duration": "1 round",
                             "description": "<b>Wisdom Saving Throw:</b> DC equals your spell save DC, one creature within 60 feet the steed can see.\n\n<b>Failure:</b> The target has the Frightened condition until the end of your next turn.",
-                            "challengeType": "savingThrow",
+                            "challengeType": ["savingThrow"],
                             "savingThrowType": "wisdom",
                             "type": ["debuff"],
                             "debuff": {
@@ -461,7 +461,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "The steed teleports, along with its rider, to an unoccupied space of your choice up to 60 feet away from itself.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": [],
                             "cost": {
                                 "uses": {
@@ -503,7 +503,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "One creature within 5 feet of the steed regains a number of Hit Points equal to 2d8 plus the spell's level.",
-                            "challengeType": "none",
+                            "challengeType": [],
                             "type": ["healing"],
                             "healing": {
                                 "calculation": [
@@ -628,7 +628,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "Melee Attack Roll: +2, reach 5ft. Hit: 1 Piercing damage.",
-                            "challengeType": "attackRoll",
+                            "challengeType": ["attackRoll"],
                             "attackRollType": "unarmedAttack",
                             "type": ["damage"],
                             "damage": {
@@ -706,7 +706,7 @@
                             "range": 5,
                             "duration": "Instantaneous",
                             "description": "Melee Attack Roll: +3, reach 5ft. Hit: 5 (1d8 + 1) Bludgeoning damage.",
-                            "challengeType": "attackRoll",
+                            "challengeType": ["attackRoll"],
                             "attackRollType": "unarmedAttack",
                             "type": ["damage"],
                             "damage": {

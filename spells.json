@@ -10,7 +10,7 @@
         "materialComponents": ["a bell and silver wire"],
         "duration": "8 hours",
         "description": "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is audible or mental:\n\n<b>Audible Alarm.</b> The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\n<b>Mental Alarm.</b> You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you're asleep.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -42,7 +42,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "Invoking Hadar, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes 2d6 Necrotic damage and can't take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -95,7 +95,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds 1d4 to the attack roll or save.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -162,7 +162,7 @@
         "materialComponents": ["a pinch of powered iron"],
         "duration": "Instantaneous",
         "description": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose the command from these options:\n\n<b>Approach.</b> The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you.\n\n<b>Drop.</b> The target drops whatever it is holding and then ends its turn.\n\n<b>Flee.</b> The target spends its turn moving away from you by the fastest available means.\n\n<b>Grovel.</b> The target has the Prone condition and then ends its turn.\n\n<b>Halt.</b> On its turn, the target doesn't move and takes no action or Bonus Action.\n\n<b>Using a Higher-Level Spell Slot.</b> You can affect one additional creature for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "userInput": [
@@ -315,7 +315,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "You try to compel a creature into a duel. One creature that you can see within range makes a Wisdom saving throw. On a failed save, the target has Disadvantage on attack rolls against creatures other than you, and it can't willingly move to a space that is more than 30 feet away from you.\n\nThe spell ends if you make an attack roll against a creature other than the target, if you cast a spell on an enemy other than the target, if an ally of yours damages the target, or if you end your turn more than 30 feet away from the target.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
@@ -349,7 +349,7 @@
         "materialComponents": ["a mix of water and sand"],
         "duration": "Instantaneous",
         "description": "You do one of the following:\n\n<b>Create Water.</b> You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot Cube within range, extinguishing exposed flames there.\n\n<b>Destroy Water.</b> You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot Cube within range.\n\n<b>Using a Higher-Level Spell Slot.</b> You create or destroy 10 additional gallons of water, or the size of the Cube increases by 5 feet, for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -362,7 +362,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 2d8 for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["healing"],
         "healing": {
             "calculation": [
@@ -400,7 +400,7 @@
         "duration": "10 minutes",
         "concentration": true,
         "description": "For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.\n\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -413,7 +413,7 @@
         "components": ["V", "S"],
         "duration": "1 hour",
         "description": "You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends. You can seem 1 foot shorter or taller and can appear heavier or lighter. You must adopt a form that has the same basic arrangement of limbs as you have. Otherwise, the extent of the illusion is up to you.\n\nThe changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing.\n\nTo discern that you are disguised, a creature must take the Study action to inspect your appearance and succeed on an Intelligence (Investigation) check against your spell save DC.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -449,7 +449,7 @@
         "components": ["V", "S"],
         "duration": "1 minute",
         "description": "Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant damage on a hit.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -491,7 +491,7 @@
         "components": ["V"],
         "duration": "Instantaneous",
         "description": "The target takes an extra 2d8 Radiant damage from the attack. The damage increases by 1d8 if the target is a Fiend or an Undead.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["damage"],
         "damage": {
             "calculation": [
@@ -530,7 +530,7 @@
                             "diceType": "Radiant"
                         }
                     ],
-                    "description": "if the target is undead."
+                    "description": "Damage to Undead:"
                 }
             ]
         }
@@ -546,7 +546,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed Dim Light in a 10-foot radius and can't benefit from the Invisible condition.\n\nAttack rolls against an affected creature or object have Advantage if the attacker can see it.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "dexterity",
         "type": ["debuff"],
         "debuff": {
@@ -581,7 +581,7 @@
         "materialComponents": ["a small feather or piece of down"],
         "duration": "1 minute",
         "description": "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -614,7 +614,7 @@
         "materialComponents": ["burning incense worth 10+ GP, which the spell consumes"],
         "duration": "Instantaneous",
         "description": "You gain the service of a familiar, a spirit that takes an animal form you choose: <b>Bat</b>, <b>Cat</b>, <b>Frog</b>, <b>Hawk</b>, <b>Lizard</b>, <b>Octopus</b>, <b>Owl</b>, <b>Rat</b>, <b>Raven</b>, <b>Spider</b>, <b>Weasel</b>, or another Beast that has a Challenge Rating of 0. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but it obeys your commands.\n\n<b>Telepathic Connection.</b> While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\nFinally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a Reaction to deliver the touch when you cast the spell.\n\n<b>Combat.</b> The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal.\n\n<b>Disappearance of the Familiar.</b> When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\n<b>One Familiar Only.</b> You can't have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["creatures"],
         "creatures": {
             "calculation": [
@@ -648,7 +648,7 @@
         "components": ["V", "S"],
         "duration": "1 round",
         "description": "You hurl a bolt of light toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 4d6 Radiant damage, and the next attack roll made against it before the end of your next turn has Advantage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -699,7 +699,7 @@
         "components": ["V"],
         "duration": "Instantaneous",
         "description": "A creature of your choice that you can see within range regains Hit Points equal to 2d4 plus your spellcasting ability modifier.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 2d4 for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["healing"],
         "healing": {
             "calculation": [
@@ -737,7 +737,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "The creature that damaged you is momentarily surrounded by green flames. It makes a Dexterity saving throw, taking 2d10 Fire damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "dexterity",
         "type": ["damage"],
         "damage": {
@@ -848,7 +848,7 @@
         },
         "concentration": true,
         "description": "You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, choose one ability when you cast the spell. The target has Disadvantage on ability checks made with the chosen ability.\n\nIf the target drops to 0 Hit Points before this spell ends, you can use a Bonus Action on a later turn to curse a new creature.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 2 (up to 4 hours), 3-4 (up to 8 hours), or 5+ (up to 24 hours).",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["debuff"],
         "debuff": {
             "calculation": [
@@ -899,7 +899,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "A creature you touch makes a Constitution saving throw, taking 2d10 Necrotic damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["damage"],
         "damage": {
@@ -933,7 +933,7 @@
         "materialComponents": ["a pinch of dirt"],
         "duration": "1 hour",
         "description": "You touch a creature. The target's Speed increases by 10 feet until the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -969,7 +969,7 @@
         "materialComponents": ["a piece of cured leather"],
         "duration": "8 hours",
         "description": "You touch a willing creature who isn't wearing armor. Until the spell ends, the target's base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -1016,7 +1016,7 @@
         "materialComponents": ["a shard of glass from a mirror"],
         "duration": "1 minute",
         "description": "You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a Wisdom saving throw or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect.\n\nThe spell ends if the warded creature makes an attack roll, casts a spell, or deals damage.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["buff"],
         "buff": {
@@ -1051,7 +1051,7 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "description": "Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the Incapacitated condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the Unconscious condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell's effect.\n\nCreatures that don't sleep, such as elves, or that have Immunity to the Exhaustion condition automatically succeed on saves against this spell.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
@@ -1086,7 +1086,7 @@
         "components": ["V"],
         "duration": "1 minute",
         "description": "As you hit the target, it takes an extra 1d6 Fire damage from the attack. At the start of each of its turns until the spell ends, the target takes 1d6 Fire damage and then makes a Constitution saving throw. On a failed save, the spell continues. On a successful save, the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> All the damage increases by 1d6 for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["damage", "debuff"],
         "damage": {
@@ -1149,7 +1149,7 @@
         "duration": "1 round",
         "concentration": true,
         "description": "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <b>Magic Missile.</b>",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "description": "Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <b>Magic Missile.</b>"
@@ -1177,7 +1177,7 @@
         "duration": "Up to 10 minutes",
         "concentration": true,
         "description": "A shimmering field surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -1220,7 +1220,7 @@
         "components": ["V"],
         "duration": "1 minute",
         "description": "You magically distract the triggering creature and turn its momentary uncertainty into encouragement for another creature. The triggering creature must reroll the d20 and use the lower roll.\n\nYou can then choose a different creature you can see within range (you can choose yourself). The chosen creature has advantage on the next attack roll, ability check, or saving throw it makes within 1 minute. A creature can be empowered by only one use of this spell at a time.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff", "debuff"],
         "buff": {
             "calculation": [
@@ -1256,7 +1256,7 @@
         "components": ["V"],
         "duration": "Instantaneous",
         "description": "Your strike rings with thunder that is audible within 300 feet of you, and the target takes an extra 2d6 Thunder damage from the attack. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and have the Prone condition.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "strength",
         "type": ["damage", "debuff"],
         "damage": {
@@ -1293,7 +1293,7 @@
         "materialComponents": ["a bit of string", "a bit of wood"],
         "duration": "1 hour",
         "description": "This spell creates an Invisible, mindless, shapeless, Medium force that performs simple tasks at your command until the spell ends. The servant springs into existence in an unoccupied space on the ground within range. It has AC 10, 1 Hit Point, and a Strength of 2, and it can't attack. If it drops to 0 Hit Points, the spell ends.\n\nOnce on each of your turns as a Bonus Action, you can mentally command the servant to move up to 15 feet and interact with an object. The servant can perform simple tasks that a human could do, such as fetching things, cleaning, mending, folding clothes, lighting fires, serving food, and pouring drinks. Once you give the command, the servant performs the task to the best of its ability until it completes the task, then waits for your next command.\n\nIf you command the servant to perform a task that would move it more than 60 feet away from you, the spell ends.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -1307,7 +1307,7 @@
         "components": ["V"],
         "duration": "1 minute",
         "description": "The target takes an extra 1d6 Necrotic damage from the attack, and it must succeed on a Wisdom saving throw or have the Frightened condition until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "strength",
         "type": ["damage", "debuff"],
         "damage": {
@@ -1357,7 +1357,7 @@
         "materialComponents": ["(a strip of white cloth"],
         "duration": "8 hours",
         "description": "Choose up to three creatures within range. Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.\n\n<b>Using a Higher-Level Spell Slot.</b> Each target's Hit Points increase by 5 for each spell slot level above 2.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff", "healing"],
         "buff": {
             "calculation": [
@@ -1442,7 +1442,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "You tap into your life force to heal yourself. Roll one or two of your unexpended Hit Point Dice, and regain a number of Hit Points equal to the roll's total plus your spellcasting ability modifier. Those dice are then expended.\n\n<b>Using a Higher-Level Spell Slot.</b> The number of unexpended Hit Dice you can roll increases by one for each spell slot level above 2.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["healing"],
         "healing": {
             "calculation": [
@@ -1488,7 +1488,7 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "description": "Each Humanoid in a 20-foot-radius Sphere centered on a point you choose within range must succeed on a Charisma saving throw or be affected by one of the following effects (choose for each creature):\n\n- The creature has Immunity to the Charmed and Frightened conditions until the spell ends. If the creature was already Charmed or Frightened, those conditions are suppressed for the duration.\n\n- The creature becomes Indifferent about creatures of your choice that it's Hostile toward. This indifference ends if the target takes damage or witnesses its allies taking damage. When the spell ends, the creature's attitude returns to normal.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "charisma",
         "type": ["debuff"],
         "debuff": {
@@ -1522,7 +1522,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "One creature that you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The creature succeeds automatically if it isn't Humanoid.\n\nA spectral crown appears on the Charmed target's head, and it must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the save at the end of each of its turns, ending the spell on itself on a success.\n\nOn your later turns, you must take the Magic action to maintain control of the target, or the spell ends.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
@@ -1558,7 +1558,7 @@
         "duration": "Up to 10 minutes",
         "concentration": true,
         "description": "For the duration, magical Darkness spreads from a point within range and fills a 15-foot-radius Sphere. Darkvision can't see through it, and nonmagical light can't illuminate it.\n\nAlternatively, you cast the spell on an object that isn't being worn or carried, causing the Darkness to fill a 15-foot Emanation originating from that object. Covering that object with something opaque, such as a bowl or helm, blocks the Darkness.\n\nIf any of this spell's area overlaps with an area of Bright Light or Dim Light created by a spell of level 2 or lower, that other spell is dispelled.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -1573,7 +1573,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "You activate one of the effects below. Until the spell ends, you can activate either effect as a Magic action on your later turns.\n\n<b>Sense Thoughts.</b> You sense the presence of thoughts within 30 feet of yourself that belong to creatures that know languages or are telepathic. You don't read the thoughts, but you know that a thinking creature is present.\nThe spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.\n\n<b>Read Thoughts.</b> Target one creature you can see within 30 feet of yourself or one creature within 30 feet of yourself that you detected with the Sense Thoughts option. You learn what is most on the target's mind right now. If the target doesn't know any languages and isn't telepathic, you learn nothing.\nAs a Magic action on your next turn, you can try to probe deeper into the target's mind. If you probe deeper, the target makes a Wisdom saving throw. On a failed save, you discern the target's reasoning, emotions, and something that looms large in its mind (such as a worry, love, or hate). On a successful save, the spell ends. Either way, the target knows that you are probing into its mind, and until you shift your attention away from the target's mind, the target can take an action on its turn to make an Intelligence (Arcana) check against your spell save DC, ending the spell on a success.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": []
     },
@@ -1589,7 +1589,7 @@
         "duration": "1 hour",
         "concentration": true,
         "description": "You touch a creature and choose Strength, Dexterity, Intelligence, Wisdom, or Charisma. For the duration, the target has Advantage on ability checks using the chosen ability.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 2. You can choose a different ability for each target.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -2004,7 +2004,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "For the duration, the spell enlarges or reduces a creature or an object you can see within range (see the chosen effect below). A targeted object must be neither worn nor carried. If the target is an unwilling creature, it can make a Constitution saving throw. On a successful save, the spell has no effect.\n\nEverything that a targeted creature is wearing and carrying changes size with it. Any item it drops returns to normal size at once. A thrown weapon or piece of ammunition returns to normal size immediately after it hits or misses a target.\n\n<b>Enlarge.</b> The target's size increases by one category—from Medium to Large, for example. The target also has Advantage on Strength checks and Strength saving throws. The target's attacks with its enlarged weapons or Unarmed Strikes deal an extra 1d4 damage on a hit.\n\n<b>Reduce.</b> The target's size decreases by one category—from Medium to Small, for example. The target also has Disadvantage on Strength checks and Strength saving throws. The target's attacks with its reduced weapons or Unarmed Strikes deal 1d4 less damage on a hit (this can't reduce the damage below 1).",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["buff", "debuff"],
         "userInput": [
@@ -2263,7 +2263,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "You summon an otherworldly being that appears as a loyal steed in an unoccupied space of your choice within range. This creature uses the <b>Otherworldly Steed</b> stat block. If you already have a steed from this spell, the steed is replaced by the new one.\n\nThe steed resembles a Large, rideable animal of your choice, such as a horse, a camel, a dire wolf, or an elk. Whenever you cast the spell, choose the steed's creature type-Celestial, Fey, or Fiend-which determines certain traits in the stat block.\n\n<b>Combat.</b> The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a controlled mount while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you.\n\n<b>Disappearance of the Steed.</b> The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.\n\n<b>Using a Higher-Level Spell Slot.</b> Use the spell slot's level for the spell's level in the stat block.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["creatures"],
         "creatures": {
             "calculation": [
@@ -2299,7 +2299,7 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "description": "Choose a Humanoid that you can see within range. The target must succeed on a Wisdom saving throw or have the Paralyzed condition for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional Humanoid for each spell slot level above 2.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "charisma",
         "type": ["debuff"],
         "debuff": {
@@ -2333,7 +2333,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "You touch a creature and end one condition on it: Blinded, Deafened, Paralyzed, or Poisoned.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["restore"],
         "restore": {
             "calculation": [
@@ -2367,7 +2367,7 @@
         "components": ["V", "S"],
         "duration": "1 hour",
         "description": "You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls. The spell ends early if you cast it again.\n\n<b>Using a Higher-Level Spell Slot.</b> The bonus increases to +2 with a level 3-5 spell slot. The bonus increases to +3 with a level 6+ spell slot.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": [],
         "aspects": {
             "weaponAttackBonus": {
@@ -2565,7 +2565,7 @@
         "components": ["V", "S"],
         "duration": "1 minute",
         "description": "Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real.\n\nEach time a creature hits you with an attack roll during the spell's duration, roll a d6 for each of your remaining duplicates. If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you, and the duplicate is destroyed. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed.\n\nA creature is unaffected by this spell if it has the <b>Blinded</b> condition, <b>Blindsight</b>, or <b>Truesight</b>.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": [],
         "resources": [
             {
@@ -2603,7 +2603,7 @@
         "components": ["V"],
         "duration": "Instantaneous",
         "description": "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space you can see.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -2618,7 +2618,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high Cylinder centered on a point within range. Until the spell ends, Dim Light fills the Cylinder, and you can take a Magic action on later turns to move the Cylinder up to 60 feet. When the Cylinder appears, each creature in it makes a Constitution saving throw. On a failed save, a creature takes 2d10 Radiant damage, and if the creature is shape-shifted (as a result of the Polymorph spell, for example), it reverts to its true form and can't shape-shift until it leaves the Cylinder. On a successful save, a creature takes half as much damage only. A creature also makes this save when the spell's area moves into its space and when it enters the spell's area or ends its turn there. A creature makes this save only once per turn.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 2.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["damage", "debuff"],
         "damage": {
@@ -2652,7 +2652,7 @@
         "duration": "Up to 1 hour",
         "concentration": true,
         "description": "You radiate a concealing aura in a 30-foot Emanation for the duration. While in the aura, you and each creature you choose have a +10 bonus to Dexterity (Stealth) checks and leave no tracks.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": [],
         "aspects": {
             "skillProficiencyStealthBonus": {
@@ -2684,7 +2684,7 @@
         "materialComponents": ["a pinch of talc"],
         "duration": "1 hour",
         "description": "A burst of cold energy emanates from you in a 30-foot cone. Each creature in that area must make a Constitution saving throw. On a failed save, a creature takes 3d8 cold damage and is hindered by ice formations for 1 minute, or until it or another creature within reach of it uses an action to break away the ice. A creature hindered by ice has its speed reduced to 0. On a successful save, a creature takes half as much damage and isn't hindered by ice.\n\n<b>At Higher Levels.</b> When you cast this spell using a spell slot of 3rd level or higher, increase the cold damage by 1d8 for each slot level above 2nd.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["damage", "debuff"],
         "damage": {
@@ -2736,7 +2736,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "You hurl three fiery rays. You can hurl them at one target within range or at several. Make a ranged spell attack for each ray. On a hit, the target takes 2d6 Fire damage.\n\n<b>Using a Higher-Level Spell Slot.</b> You create one additional ray for each spell slot level above 2.",
-        "challengeType": "attackRoll",
+        "challengeType": ["attackRoll"],
         "attackRollType": "spellAttack",
         "type": ["damage", "buff"],
         "damage": {
@@ -2779,7 +2779,7 @@
         "materialComponents": ["a pinch of talc"],
         "duration": "1 hour",
         "description": "For the duration, you see creatures and objects that have the Invisible condition as if they were visible, and you can see into the Ethereal Plane. Creatures and objects there appear ghostly.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -2793,7 +2793,7 @@
         "materialComponents": ["a chip of mica"],
         "duration": "Instantaneous",
         "description": "A loud noise erupts from a point of your choice within range. Each creature in a 10-foot-radius Sphere centered there makes a Constitution saving throw, taking 3d8 Thunder damage on a failed save or half as much damage on a successful one. A Construct has Disadvantage on the save.\n\nA nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 2.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["damage"],
         "damage": {
@@ -2828,7 +2828,7 @@
         "duration": "1 minute",
         "concentration": true,
         "description": "The target hit by the strike takes an extra 2d6 Radiant damage from the attack. Until the spell ends, the target sheds Bright Light in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the Invisible condition.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 2.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["damage", "debuff"],
         "damage": {
             "calculation": [
@@ -2877,7 +2877,7 @@
         "duration": "8 hours",
         "concentration": true,
         "description": "You suggest a course of activity, described in no more than 25 words, to one creature you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to the target or its allies.\n\nThe target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. The Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for the target upon completing it.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["debuff"],
         "debuff": {
             "conditions": ["Charmed"],
@@ -2933,7 +2933,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "You magically twist space around another creature you can see within range. The target must succeed on a Constitution saving throw (the target can choose to fail), or the target is teleported to an unoccupied space of your choice that you can see within range. The chosen space must be on a surface or in a liquid that can support the target without the target having to squeeze.\n\n<b>At Higher Levels.</b> When you cast this spell using a spell slot of 3rd level or higher, the range of the spell increases by 30 feet for each slot level above 2nd.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": []
     },
@@ -2948,7 +2948,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura and at the start of each of your turns while it persists, you can restore 2d6 Hit Points to one creature in it.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["healing"],
         "healing": {
             "calculation": [
@@ -2975,7 +2975,7 @@
         "components": ["V", "S"],
         "duration": "1 minute",
         "description": "Roll 1d6 at the end of each of your turns for the duration. On a roll of 4-6, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell ends instantly if you are already on that plane). While on the Ethereal Plane, you can perceive the plane you left, which is cast in shades of gray, but you can't see anything there more than 60 feet away. You can affect and be affected only by other creatures on the Ethereal Plane, and creatures on the other plane can't perceive you unless they have a special ability that lets them perceive things on the Ethereal Plane.\n\nYou return to the other plane at the start of your next turn and when the spell ends if you are on the Ethereal Plane. You return to an unoccupied space of your choice that you can see within 10 feet of the space you left. If no unoccupied space is available within that range, you appear in the nearest unoccupied space.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -2989,7 +2989,7 @@
         "components": ["S"],
         "duration": "Instantaneous",
         "description": "You attempt to interrupt a creature in the process of casting a spell. The creature must make a Constitution saving throw. On a failed save, the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn't expended.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "constitution",
         "type": ["debuff"],
         "debuff": {
@@ -3006,7 +3006,7 @@
         "components": ["V", "S"],
         "duration": "Instantaneous",
         "description": "Choose one creature, object, or magical effect within range. Any ongoing spell of level 3 or lower on the target ends. For each ongoing spell of level 4 or higher on the target, make an ability check using your spellcasting ability (DC 10 plus that spell's level). On a successful check, the spell ends.\n\n<b>Using a Higher-Level Spell Slot.</b> You automatically end a spell on the target if the spell's level is equal to or less than the level of the spell slot you use.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -3040,7 +3040,7 @@
         "materialComponents": ["a ball of bat guano", "sulfur"],
         "duration": "Instantaneous",
         "description": "A bright streak flashes from you to a point you choose within range and then blossoms with a low roar into a fiery explosion. Each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw, taking 8d6 Fire damage on a failed save or half as much damage on a successful one.\nFlammable objects in the area that aren't being worn or carried start burning.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "dexterity",
         "type": ["damage"],
         "damage": {
@@ -3075,7 +3075,7 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "description": "You create a twisting pattern of colors in a 30-foot Cube within range. The pattern appears for a moment and vanishes. Each creature in the area who can see the pattern must succeed on a Wisdom saving throw or have the Charmed condition for the duration. While Charmed, the creature has the Incapacitated condition and a Speed of 0.\n\nThe spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
@@ -3100,6 +3100,20 @@
         ]
     },
     {
+        "name": "Revivify",
+        "level": 3,
+        "school": "Necromancy",
+        "spellLists": ["Cleric", "Druid", "Paladin", "Ranger"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a diamond worth 300+ GP, which the spell consumes"],
+        "duration": "Instantaneous",
+        "description": "You touch a creature that has died within the last minute. That creature revives with 1 Hit Point. This spell can't revive a creature that has died of old age, nor does it restore any missing body parts.",
+        "challengeType": [],
+        "type": []
+    },
+    {
         "name": "Slow",
         "level": 3,
         "school": "Transmutation",
@@ -3111,7 +3125,7 @@
         "duration": "Up to 1 minute",
         "concentration": true,
         "description": "You alter time around up to six creatures of your choice in a 40-foot Cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.\n\nAn affected target's Speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't take Reactions. On its turns, it can take either an action or a Bonus Action, not both, and it can make only one attack if it takes the Attack action. If it casts a spell with a Somatic component, there is a 25 percent chance the spell fails as a result of the target making the spell's gestures too slowly.\n\nAn affected target repeats the save at the end of each of its turns, ending the spell on itself on a success.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
@@ -3145,7 +3159,7 @@
         "materialComponents": ["a miniature ziggurat"],
         "duration": "1 hour",
         "description": "This spell grants the creature you touch the ability to understand any spoken or signed language that it hears or sees. Moreover, when the target communicates by speaking or signing, any creature that knows at least one language can understand it if that creature can hear the speech or see the signing.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["buff"],
         "buff": {
             "calculation": [
@@ -3177,7 +3191,7 @@
         "components": ["V"],
         "duration": "Instantaneous",
         "description": "You teleport to a location within range. You arrive at exactly the spot desired. It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as '200 feet straight downward' or '300 feet upward to the northwest at a 45-degree angle.'\n\nYou can also teleport one willing creature. The creature must be within 5 feet of you when you teleport, and it teleports to a space within 5 feet of your destination space.\n\nIf you, the other creature, or both would arrive in a space occupied by a creature or completely filled by one or more objects, you and any creature traveling with you each take 4d6 Force damage, and the teleportation fails.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": []
     },
     {
@@ -3191,7 +3205,7 @@
         "materialComponents": ["a bit of phosphorus or a firefly"],
         "duration": "10 minutes",
         "description": "Wispy flames wreathe your body for the duration, shedding Bright Light in a 10-foot radius and Dim Light for an additional 10 feet.\n\nThe flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you Resistance to Cold damage, and the chill shield grants you Resistance to Fire damage.\n\nIn addition, whenever a creature within 5 feet of you hits you with a melee attack roll, the shield erupts with flame. The attacker takes 2d8 Fire damage from a warm shield or 2d8 Cold damage from a chill shield.",
-        "challengeType": "none",
+        "challengeType": [],
         "type": ["damage", "buff"],
         "damage": {
             "calculation": [
@@ -3328,7 +3342,7 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "description": "You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\nWhen the wall appears, each creature in its area makes a Dexterity saving throw, taking 5d8 Fire damage on a failed save or half as much damage on a successful one.\n\nOne side of the wall, selected by you when you cast this spell, deals 5d8 Fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 4.",
-        "challengeType": "savingThrow",
+        "challengeType": ["savingThrow"],
         "savingThrowType": "dexterity",
         "type": ["damage", "buff"],
         "buff": {
@@ -3369,5 +3383,125 @@
                 "type": "textField"
             }
         ]
+    },
+    {
+        "name": "Bigby's Hand",
+        "level": 5,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["an eggshell", "a glove"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You create a Large hand of shimmering magical energy in an unoccupied space that you can see within range. The hand lasts for the duration, and it moves at your command, mimicking the movements of your own hand.\n\nThe hand is an object that has AC 20 and Hit Points equal to your Hit Point maximum. If it drops to 0 Hit Points, the spell ends. The hand doesn't occupy its space.\n\nWhen you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60 feet and then cause one of the following effects:\n\n<b>Clenched Fist.</b> The hand strikes a target within 5 feet of it. Make a melee spell attack. On a hit, the target takes 5d8 Force damage.\n\n<b>Forceful Hand.</b> The hand attempts to push a Huge or smaller creature within 5 feet of it. The target must succeed on a Strength saving throw, or the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target, remaining within 5 feet of it.\n\nGrasping Hand. The hand attempts to grapple a Huge or smaller creature within 5 feet of it. The target must succeed on a Dexterity saving throw, or the target has the Grappled condition, with an escape DC equal to your spell save DC. While the hand grapples the target, you can take a Bonus Action to cause the hand to crush it, dealing Bludgeoning damage to the target equal to 4d6 plus your spellcasting ability modifier.\n\nInterposing Hand. The hand grants you Half Cover against attacks and other effects that originate from its space or that pass through it. In addition, its space counts as Difficult Terrain for your enemies.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage of the Clenched Fist increases by 2d8 and the damage of the Grasping Hand increases by 2d6 for each spell slot level above 5.",
+        "challengeType": ["attackRoll", "savingThrow"],
+        "attackRollType": "spellAttack",
+        "savingThrowType": ["strength", "dexterity"],
+        "type": ["damage"],
+        "resources": [
+            {
+                "name": "hp",
+                "displayName": "Hit Points",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "aspect",
+                            "value": "maxHp"
+                        }
+                    ]
+                }
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "AC 20"
+                }
+            ]
+        },
+        "damage": {
+            "alternateDamage": [
+                {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "multiplier": [
+                                        {
+                                            "type": "static",
+                                            "value": 2
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": -5
+                                }
+                            ],
+                            "diceType": "Force"
+                        }
+                    ],
+                    "description": "Clenched Fist Damage:"
+                },
+                {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 6,
+                            "multiplier": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "multiplier": [
+                                        {
+                                            "type": "static",
+                                            "value": 2
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "static",
+                                    "value": -6
+                                }
+                            ],
+                            "diceType": "Force"
+                        }
+                    ],
+                    "description": "Grasping Hand Damage:"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Telekinesis",
+        "level": 5,
+        "school": "Transmutation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Up to 10 minutes",
+        "concentration": true,
+        "description": "You gain the ability to move or manipulate creatures or objects by thought. When you cast the spell and as a Magic action on your later turns before the spell ends, you can exert your will on one creature or object that you can see within range, causing the appropriate effect below. You can affect the same target round after round or choose a new one at any time. If you switch targets, the prior target is no longer affected by the spell.\n\n<b>Creature.</b> You can try to move a Huge or smaller creature. The target must succeed on a Strength saving throw, or you move it up to 30 feet in any direction within the spell's range. Until the end of your next turn, the creature has the Restrained condition, and if you lift it into the air, it is suspended there. It falls at the end of your next turn unless you use this option on it again and it fails the save.\n\n<b>Object.</b> You can try to move a Huge or smaller object. If the object isn't being worn or carried, you automatically move it up to 30 feet in any direction within the spell's range.\nIf the object is worn or carried by a creature, that creature must succeed on a Strength saving throw, or you pull the object away and move it up to 30 feet in any direction within the spell's range.\nYou can exert fine control on objects with your telekinetic grip, such as manipulating a simple tool, opening a door or a container, stowing or retrieving an item from an open container, or pouring the contents from a vial.",
+        "challengeType": ["attackRoll", "savingThrow"],
+        "attackRollType": "spellAttack",
+        "savingThrowType": ["strength", "dexterity"],
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Restrained"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Until the end of your next turn, the creature has the Restrained condition, and if you lift it into the air, it is suspended there. It falls at the end of your next turn unless you use this option on it again and it fails the save."
+                }
+            ]
+        }
     }
 ]

@@ -8,7 +8,7 @@
             {
                 "type": "parameter",
                 "propertyPath": "spell.challengeType",
-                "equals": [
+                "includes": [
                     {
                         "type": "static",
                         "value": "savingThrow"
@@ -320,7 +320,7 @@
             {
                 "type": "parameter",
                 "propertyPath": "spell.challengeType",
-                "equals": [
+                "includes": [
                     {
                         "type": "static",
                         "value": "savingThrow"
@@ -376,7 +376,7 @@
             {
                 "type": "parameter",
                 "propertyPath": "spell.challengeType",
-                "equals": [
+                "includes": [
                     {
                         "type": "static",
                         "value": "attackRoll"
