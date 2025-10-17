@@ -4050,6 +4050,22 @@
                                         "value": "The attacker has disadvantage on the attack roll. An attacker that can't be blinded is immune to this feature."
                                     }
                                 ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "charismaModifier"
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         }
                     ]

@@ -1207,7 +1207,7 @@
                                         "name": "Weaveghost Echoes",
                                         "actionTime": ["Bonus Action"],
                                         "range": 30,
-                                        "duration": "Instantaneous",
+                                        "duration": "1 minute",
                                         "description": "Expend 2 charges as a bonus action. You conjure 4 ghosts made of raw magic in unoccupied spaces that you can see within 30 feet of you. The ghosts are immune to all damage and disappear after 1 minute. When you move, you can move each of them up to 15 feet. They block movement for enemies but not allies. They provide cover to allies, but not enemies.",
                                         "challengeType": [],
                                         "type": [],
