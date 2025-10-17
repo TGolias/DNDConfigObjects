@@ -3399,7 +3399,7 @@
         "challengeType": ["attackRoll", "savingThrow"],
         "attackRollType": "spellAttack",
         "savingThrowType": ["strength", "dexterity"],
-        "type": ["damage"],
+        "type": ["buff", "damage"],
         "resources": [
             {
                 "name": "hp",
@@ -3500,7 +3500,7 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": "Until the end of your next turn, the creature has the Restrained condition, and if you lift it into the air, it is suspended there. It falls at the end of your next turn unless you use this option on it again and it fails the save."
+                    "value": "Until the end of your next turn, the creature has the Restrained condition, and if you lift it into the air, it is suspended there. It falls at the end of your next turn unless you use this option on it again and it fails the save.\n\n"
                 }
             ]
         }
