@@ -3481,6 +3481,61 @@
         }
     },
     {
+        "name": "Flame Strike",
+        "level": 5,
+        "school": "Evocation",
+        "spellLists": ["Cleric"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of sulfur"],
+        "duration": "Instantaneous",
+        "description": "A vertical column of brilliant fire roars down from above. Each creature in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range makes a Dexterity saving throw, taking 5d6 Fire damage and 5d6 Radiant damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The Fire damage and the Radiant damage increase by 1d6 for each spell slot level above 5.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Fire"
+                },
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Greater Restoration",
+        "level": 5,
+        "school": "Abjuration",
+        "spellLists": ["Bard", "Cleric", "Druid", "Paladin", "Ranger"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["diamond dust worth 100+ GP, which the spell consumes"],
+        "duration": "Instantaneous",
+        "description": "You touch a creature and magically remove one of the following effects from it:\n - 1 Exhaustion level\n - The Charmed or Petrified condition\n - A curse, including the target's Attunement to a cursed magic item\n - Any reduction to one of the target's ability scores\n - Any reduction to the target's Hit Point maximum",
+        "challengeType": [],
+        "type": []
+    },
+    {
         "name": "Telekinesis",
         "level": 5,
         "school": "Transmutation",
