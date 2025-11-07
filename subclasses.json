@@ -1433,15 +1433,7 @@
                         },
                         {
                             "type": "static",
-                            "value": ".\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself must succeed on a DC "
-                        },
-                        {
-                            "type": "aspect",
-                            "value": "spellSaveDCSorcerer"
-                        },
-                        {
-                            "type": "static",
-                            "value": " Dexterity saving throw or take "
+                            "value": ".\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself takes "
                         },
                         {
                             "type": "if-then",
@@ -1460,13 +1452,13 @@
                              "then": [
                                 {
                                     "type": "static",
-                                    "value": "3d6"
+                                    "value": "1d8"
                                 }
                             ],
                             "else": [
                                 {
                                     "type": "static",
-                                    "value": "1d6"
+                                    "value": "1d4"
                                 }
                             ]
                         },
@@ -1547,15 +1539,7 @@
                         },
                         {
                             "type": "static",
-                            "value": ".\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself must succeed on a DC "
-                        },
-                        {
-                            "type": "aspect",
-                            "value": "spellSaveDCSorcerer"
-                        },
-                        {
-                            "type": "static",
-                            "value": " Dexterity saving throw or take "
+                            "value": ".\n\n<b>Radiant Fire.</b> One creature you can see within 30 feet of yourself takes "
                         },
                         {
                             "type": "if-then",
@@ -1571,16 +1555,16 @@
                                     ]
                                 }
                             ],
-                            "then": [
+                             "then": [
                                 {
                                     "type": "static",
-                                    "value": "3d6"
+                                    "value": "1d8"
                                 }
                             ],
                             "else": [
                                 {
                                     "type": "static",
-                                    "value": "1d6"
+                                    "value": "1d4"
                                 }
                             ]
                         },

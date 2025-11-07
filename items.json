@@ -3879,7 +3879,7 @@
                                                 "then": [
                                                     {
                                                         "type": "static",
-                                                        "value": "<b>Orange</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature "
+                                                        "value": "<b>Yellow</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature "
                                                     }, 
                                                     {
                                                         "type": "highestOf",
