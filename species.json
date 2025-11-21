@@ -1077,6 +1077,7 @@
             {
                 "level": 1,
                 "name": "Resourceful",
+                "description": "You gain Heroic Inspiration whenever you finish a Long Rest.",
                 "heroicInspirationLongRestRecharge": {
                     "calculation": [
                         {

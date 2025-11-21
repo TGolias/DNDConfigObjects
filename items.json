@@ -5002,7 +5002,7 @@
         "type": "Tools",
         "ability": "dexterity",
         "utilize": ["Assemble a Tiny item composed of scrap, which falls apart in 1 minute (DC 20)"],
-        "craft": ["Derringer", "Musket", "Palm Pistol", "Pepperbox", "Pistol", "Bell", "Bullseye Lantern", "Flask", "Hooded Lantern", "Hunting Trap", "Lock", "Manacles", "Mirror", "Shovel", "Signal Whistle", "Tinderbox"],
+        "craft": ["Derringer", "Hunting Rifle", "Revolver", "Musket", "Palm Pistol", "Pepperbox", "Pistol", "Bell", "Bullseye Lantern", "Flask", "Hooded Lantern", "Hunting Trap", "Lock", "Manacles", "Mirror", "Shovel", "Signal Whistle", "Tinderbox"],
         "rarity": "None",
         "weight": 8,
         "cost": {
