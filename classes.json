@@ -1292,9 +1292,47 @@
                     {
                         "name": "Aura of Protection",
                         "actionTime": ["Free"],
-                        "range": 10,
+                        "range": {
+                            "normal": {
+                                "calculation": [
+                                    {
+                                        "type": "multiple-if",
+                                        "cases": [
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "classLevelPaladin",
+                                                        "greaterThanOrEqualTo": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 18
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 30
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 10
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
                         "duration": "Indefinitely",
-                        "description": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition. You and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.",
+                        "description": "You radiate a protective, unseeable aura in a 10-foot Emanation that originates from you. The aura is inactive while you have the Incapacitated condition. You and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).\n\nIf another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them.\n\n<b>Paladin Level 10 - Aura of Courage.</b> You and your allies have Immunity to the Frightened condition while in your Aura of Protection. If a Frightened ally enters the aura, that condition has no effect on that ally while there.\n\n<b>Paladin Level 18 - Aura Expansion.</b> Your Aura of Protection is now a 30-foot Emanation.",
                         "challengeType": [],
                         "type": [],
                         "aspects": {
@@ -1389,6 +1427,26 @@
                                         "value": " while you do not have the Incapacitated condition."
                                     }
                                 ]
+                            },
+                            "conditionImmunities": {
+                                "conditions": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "classLevelPaladin",
+                                        "greaterThanOrEqualTo": [
+                                            {
+                                                "type": "static",
+                                                "value": 10
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": ["Frightened"]
+                                    }
+                                ]
                             }
                         }
                     }
@@ -1448,6 +1506,68 @@
                         }
                     }
                 ]
+            },
+            {
+                "classLevel": 11,
+                "name": "Radiant Strikes",
+                "weaponDamageAdditional": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.weaponRange",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Melee"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "diceType": "Radiant"
+                        }
+                    ]
+                },
+                "weaponAttackAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.weaponRange",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Melee"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra ld8 Radiant damage."
+                        }
+                    ]
+                },
+                "unarmedDamageAdditional": {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "diceType": "Radiant"
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra ld8 Radiant damage."
+                        }
+                    ]
+                }
             },
             {
                 "classLevel": 12,

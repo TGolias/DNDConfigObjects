@@ -204,6 +204,47 @@
                             "value": 2
                         }
                     ]
+                },
+                "weaponDamageAdditional": {
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "value": "featureNames",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Radiant Strikes"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.weaponRange",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Ranged"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.tags",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Firearm"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "diceType": "Radiant"
+                        }
+                    ]
                 }
             }
         ]
