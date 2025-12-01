@@ -2966,6 +2966,56 @@
         }
     },
     {
+        "name": "Blinding Smite",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Bonus Action"],
+        "castingCondition": "Must be made immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+        "range": "Self",
+        "components": ["V"],
+        "duration": "1 minute",
+        "concentration": true,
+        "description": "The target hit by the strike takes an extra 3d8 Radiant damage from the attack, and the target has the Blinded condition until the spell ends. At the end of each of its turns, the Blinded target makes a Constitution saving throw, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> The extra damage increases by 1d8 for each spell slot level above 3.",
+        "challengeType": [],
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        },
+        "debuff": {
+            "conditions": ["Blinded"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "At the end of each of its turns, the Blinded target makes a Constitution saving throw, ending the spell on itself on a success.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Blink",
         "level": 3,
         "school": "Transmutation",
