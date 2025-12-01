@@ -1547,7 +1547,7 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra ld8 Radiant damage."
+                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra 1d8 Radiant damage."
                         }
                     ]
                 },
@@ -1564,7 +1564,7 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra ld8 Radiant damage."
+                            "value": "<b>Radiant Strikes.</b> Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an Unarmed Strike, the target takes an extra 1d8 Radiant damage."
                         }
                     ]
                 }
