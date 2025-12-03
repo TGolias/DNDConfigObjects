@@ -3510,7 +3510,7 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": "AC 20"
+                    "value": "Hand AC 20"
                 }
             ]
         },
@@ -3696,13 +3696,37 @@
                 "name": "panel6HP",
                 "displayName": "Panel 6 HP",
                 "uses": 30
+            },
+            {
+                "name": "panel7HP",
+                "displayName": "Panel 7 HP",
+                "uses": 30
+            },
+            {
+                "name": "panel8HP",
+                "displayName": "Panel 8 HP",
+                "uses": 30
+            },
+            {
+                "name": "panel9HP",
+                "displayName": "Panel 9 HP",
+                "uses": 30
+            },
+            {
+                "name": "panel10HP",
+                "displayName": "Panel 10 HP",
+                "uses": 30
             }
         ],
         "buff": {
             "calculation": [
                 {
                     "type": "static",
-                    "value": "AC 15"
+                    "value": "Wall AC 15\n\nWall Dimensions - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.wallDimensions"
                 }
             ]
         },
