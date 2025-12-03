@@ -1190,7 +1190,6 @@
         "range": "Self",
         "components": ["V", "S"],
         "duration": "1 round",
-        "concentration": true,
         "description": "An imperceptible barrier of magical force protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <b>Magic Missile.</b>",
         "challengeType": [],
         "type": ["buff"],
@@ -3671,74 +3670,32 @@
             {
                 "name": "panel1HP",
                 "displayName": "Panel 1 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             },
             {
                 "name": "panel2HP",
                 "displayName": "Panel 2 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             },
             {
                 "name": "panel3HP",
                 "displayName": "Panel 3 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             },
             {
                 "name": "panel4HP",
                 "displayName": "Panel 4 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             },
             {
                 "name": "panel5HP",
                 "displayName": "Panel 5 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             },
             {
                 "name": "panel6HP",
                 "displayName": "Panel 6 HP",
-                "uses": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 30
-                        }
-                    ]
-                }
+                "uses": 30
             }
         ],
         "buff": {
