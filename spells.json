@@ -890,6 +890,49 @@
         ]
     },
     {
+        "name": "Jump",
+        "level": 1,
+        "school": "Transmutation",
+        "spellLists": ["Bard", "Druid", "Ranger", "Wizard"],
+        "castingTime": ["Bonus Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a grasshopper's hind leg"],
+        "duration": "1 minute",
+        "description": "You touch a willing creature. Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement.\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 1.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Targets can jump up to 30 feet by spending 10 feet of movement.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "aspects": {
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Jump.</b> You can jump up to 30 feet by spending 10 feet of movement."
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Inflict Wounds",
         "level": 1,
         "school": "Necromancy",
@@ -3608,5 +3651,248 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Wall of Stone",
+        "level": 5,
+        "school": "Evocation",
+        "spellLists": ["Druid", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a cube of granite"],
+        "duration": "up to 10 minutes",
+        "concentration": true,
+        "description": "A nonmagical wall of solid stone springs into existence at a point you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.\n\nIf the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (you choose which side). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its Reaction to move up to its Speed so that it is no longer enclosed by the wall.\n\nThe wall can have any shape you desire, though it can't occupy the same space as a creature or object. The wall doesn't need to be vertical or rest on a firm foundation. It must, however, merge with and be solidly supported by existing stone. Thus, you can use this spell to bridge a chasm or create a ramp.\n\nIf you create a span greater than 20 feet in length, you must halve the size of each panel to create supports. You can crudely shape the wall to create battlements and the like.\n\nThe wall is an object made of stone that can be damaged and thus breached. Each panel has AC 15 and 30 Hit Points per inch of thickness, and it has Immunity to Poison and Psychic damage. Reducing a panel to 0 Hit Points destroys it and might cause connected panels to collapse at the DM's discretion.\n\nIf you maintain your Concentration on this spell for its full duration, the wall becomes permanent and can't be dispelled. Otherwise, the wall disappears when the spell ends.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["buff", "damage"],
+        "resources": [
+            {
+                "name": "panel1HP",
+                "displayName": "Panel 1 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "panel2HP",
+                "displayName": "Panel 2 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "panel3HP",
+                "displayName": "Panel 3 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "panel4HP",
+                "displayName": "Panel 4 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "panel5HP",
+                "displayName": "Panel 5 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "panel6HP",
+                "displayName": "Panel 6 HP",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": 30
+                        }
+                    ]
+                }
+            }
+        ],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "AC 15"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "wallDimensions",
+                "displayName": "Wall Dimensions:",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Mass Suggestion",
+        "level": 6,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "M"],
+        "materialComponents": ["a snake's tongue"],
+        "duration": {
+            "calculation": [
+                {
+                    "type": "multiple-if",
+                    "cases": [
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 9
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "366 days"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 8
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "30 days"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 7
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "10 days"
+                                }
+                            ]
+                        },
+                        {
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "24 hours"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "description": "You suggest a course of activity (described in no more than 25 words) to twelve or fewer creatures you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to any of the targets or their allies. For example, you could say, 'Walk to the village down that road, and help the villagers there harvest crops until sunset.' Or you could say, 'Now is not the time for violence. Drop your weapons, and dance! Stop in an hour.'\n\nEach target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. Each Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for a target upon completing it.\n\n<b>Using a Higher-Level Spell Slot.</b> The duration is longer with a spell slot of level 7 (10 days), 8 (30 days), or 9 (366 days).",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "'"
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.suggestionText"
+                },
+                {
+                    "type": "static",
+                    "value": "'\n\nEach Charmed target pursues this suggestion to the best of its ability.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "suggestionText",
+                "displayName": "What are you suggesting?",
+                "type": "textField"
+            },
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Scatter",
+        "level": 6,
+        "school": "Conjuration",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "The air quivers around up to five creatures of your choice that you can see within range. An unwilling creature must succeed on a Wisdom saving throw to resist this spell. You teleport each affected target to an unoccupied space that you can see within 120 feet of you. That space must be on the ground or on a floor.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": []
     }
 ]
