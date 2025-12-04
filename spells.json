@@ -4142,11 +4142,15 @@
             "calculation": [
                 {
                     "type": "static",
-                    "value": "Wall Panel AC 15\n\nImmunity to Poison and Psychic damage.\n\nPanel Dimensions - "
+                    "value": "Wall Panel AC 15\n\nImmunity to Poison and Psychic damage.\n\n"
                 },
                 {
                     "type": "parameter",
                     "propertyPath": "userInput.panelDimensions"
+                },
+                {
+                    "type": "static",
+                    "value": " Panels"
                 }
             ]
         },
