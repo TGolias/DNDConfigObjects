@@ -3670,71 +3670,497 @@
             {
                 "name": "panel1HP",
                 "displayName": "Panel 1 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel2HP",
                 "displayName": "Panel 2 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel3HP",
                 "displayName": "Panel 3 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel4HP",
                 "displayName": "Panel 4 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel5HP",
                 "displayName": "Panel 5 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel6HP",
                 "displayName": "Panel 6 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel7HP",
                 "displayName": "Panel 7 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel8HP",
                 "displayName": "Panel 8 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel9HP",
                 "displayName": "Panel 9 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "panel10HP",
                 "displayName": "Panel 10 HP",
-                "uses": 30
+                "uses": {
+                    "calculation": [
+                         {
+                            "type": "static",
+                            "value": 30,
+                            "multiplier": [
+                                {
+                                    "type": "multiple-if",
+                                    "cases": [
+                                        {
+                                            "if": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.panelDimensions",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "10ft x 10ft x 6in"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "then": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 3
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
         ],
         "buff": {
             "calculation": [
                 {
                     "type": "static",
-                    "value": "Wall AC 15\n\nWall Dimensions - "
+                    "value": "Wall Panel AC 15\n\nImmunity to Poison and Psychic damage.\n\nPanel Dimensions - "
                 },
                 {
                     "type": "parameter",
-                    "propertyPath": "userInput.wallDimensions"
+                    "propertyPath": "userInput.panelDimensions"
                 }
             ]
         },
         "userInput": [
             {
-                "name": "wallDimensions",
-                "displayName": "Wall Dimensions:",
-                "type": "textField"
+                "name": "panelDimensions",
+                "displayName": "Panel Dimensions:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "static",
+                        "value": ["10ft x 10ft x 6in", "10ft x 20ft x 3in"]
+                    }
+                ]
             }
         ]
     },
