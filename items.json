@@ -358,6 +358,33 @@
         }
     },
     {
+        "name": "Beaverknot Apple Eating Championship Belt",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": false,
+        "weight": 1,
+        "description": "A belt signifying that the holder is champion of the Beaverknot Apple Eating Contest, held at Annie's Apple Archard, known locally as AA. Previously held by local legend Apple Jackson.\n\n'Fuck you, I can't eat all these apples!'",
+        "aspects": {
+            "constitutionSavingThrowBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "constitutionSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Beaverknot Apple Eating Championship Belt.</b> +1 to Constitution saving throws."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Bedroll",
         "type": "Adventuring Gear",
         "rarity": "None",
