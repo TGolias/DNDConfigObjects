@@ -211,6 +211,98 @@
         "description": "A backpack can hold one cubic foot or 30 pounds of gear. You can also strap items, such as a bedroll or a coil of rope, to the outside of a backpack."
     },
     {
+        "name": "Badger Stone",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "gold": 2500
+        },
+        "description": "Similar to a Sending Stone, but instead of coming in a pair, it connects to a network that can make calls to any other Badger Stone. All Badger stones are carved to match all others so that they are all connected to the same network. While you touch one stone, you can cast Sending from it. The target can be the bearer of any other Badger Stone. If no creature bears the other stone, you know that fact as soon as you use the stone, and you don't cast the spell.\n\nOnce Sending is cast or recieved using your stone, it can't be used again until the next dawn.\n\nNotably, this stone will not be detected as magic when using spells such as 'Detect Magic'.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Badger Stone",
+                    "actions": [
+                        {
+                            "name": "Sending - Badger Stone",
+                            "actionTime": ["1 action"],
+                            "range": "Unlimited",
+                            "components": ["V", "S", "M"],
+                            "duration": "Instantaneous",
+                            "description": "You send a short message of 25 words or fewer to a creature you have met or a creature described to you by someone who has met it. The target hears the message in its mind, recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables targets to understand the meaning of your message.\n\nYou can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive. You know if the delivery fails.\n\nUpon receiving your message, a creature can block your ability to reach it again with this spell for 8 hours. If you try to send another message during that time, you learn that you are blocked, and the spell fails.",
+                            "challengeType": [],
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Badger Stone OG",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "cost": {
+            "gold": 2000
+        },
+        "description": "Similar to a Sending Stone, but instead of coming in a pair, it connects to a network that can make calls to any other Badger Stone. All Badger stones are carved to match all others so that they are all connected to the same network. While you touch one stone, you can cast Sending from it. The target can be the bearer of any other Badger Stone. If no creature bears the other stone, you know that fact as soon as you use the stone, and you don't cast the spell.\n\nOnce Sending is cast or recieved using your stone, it can't be used again until the next dawn.\n\nThis one is apparently an 'original', whatever that means...\n\nNotably, unlike a normal Badger Stone, this stone is detected as magic when using spells such as 'Detect Magic'.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Badger Stone OG",
+                    "actions": [
+                        {
+                            "name": "Sending - Badger Stone OG",
+                            "actionTime": ["1 action"],
+                            "range": "Unlimited",
+                            "components": ["V", "S", "M"],
+                            "duration": "Instantaneous",
+                            "description": "You send a short message of 21 words or fewer to a creature you have met or a creature described to you by someone who has met it. The target hears the message in its mind, followed by the words 'Sent from my Badger' from a different scrungly voice. The target recognizes you as the sender if it knows you, and can answer in a like manner immediately. The spell enables targets to understand the meaning of your message.\n\nYou can send the message across any distance and even to other planes of existence, but if the target is on a different plane than you, there is a 5 percent chance that the message doesn't arrive. You know if the delivery fails.\n\nUpon receiving your message, a creature can block your ability to reach it again with this spell for 8 hours. If you try to send another message during that time, you learn that you are blocked, and the spell fails.",
+                            "challengeType": [],
+                            "type": [],
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Bag of Holding",
         "type": "Wondrous item",
         "rarity": "Uncommon",
