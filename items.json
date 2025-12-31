@@ -2822,6 +2822,41 @@
         }
     },
     {
+        "name": "Laser Pistol",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 40,
+            "long": 120
+        },
+        "properties": ["Reload 50", "Misfire 2"],
+        "tags": ["Laser Pistol", "Firearm", "Martial", "Ranged"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 2,
+        "cost": {
+            "gold": 7200
+        },
+        "description": "Ceremorphs have been known to carry home-built devices that function as laser pistols or rifles. These weapons are powered by an energy cell, which enables the weapon to fire numerous shots. After its last shot is expended, the device becomes inoperable. The energy cell can't be removed without destroying the weapon.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 3
+                        }
+                    ],
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Leatherworker's Tools",
         "tags": ["Leatherworker's Tools", "Artisan's Tools"],
         "type": "Tools",
@@ -4699,6 +4734,35 @@
         }
     },
     {
+        "name": "Sawed-Off Shotgun",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 15,
+            "long": 30
+        },
+        "properties": ["Reload 2", "Misfire 3"],
+        "tags": ["Sawed-Off Shotgun", "Shotgun", "Firearm", "Martial", "Ranged"],
+        "mastery": "Push",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 4,
+        "cost": {
+            "gold": 500
+        },
+        "description": "Hasta la vista, baby.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Scale Mail",
         "type": "Armor",
         "armorType": "Medium",
@@ -4875,6 +4939,41 @@
                 {
                     "type": "dieRoll",
                     "value": 6,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Shotgun",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 30,
+            "long": 90
+        },
+        "properties": ["Reload 2", "Misfire 3", "Two-Handed"],
+        "tags": ["Shotgun", "Firearm", "Martial", "Ranged"],
+        "mastery": "Push",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 7,
+        "cost": {
+            "gold": 500
+        },
+        "description": "Get off my lawn.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
                     "diceType": "Piercing"
                 }
             ]
