@@ -246,6 +246,10 @@
                         }
                     ]
                 }
+            },
+            {
+                "name": "Firearm Master",
+                "weaponmasteries": ["Firearm"]
             }
         ]
     },
