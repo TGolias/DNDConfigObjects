@@ -3088,6 +3088,48 @@
         }
     },
     {
+        "name": "Crusader's Mantle",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You radiate a magical aura in a 30-foot Emanation. While in the aura, you and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "description": "Radiant damage when you and your allies in the aura hit with a weapon or an Unarmed Strike."
+        },
+        "aspects": {
+            "weaponDamageAdditional": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "diceType": "Radiant"
+                    }
+                ]
+            },
+            "weaponAttackAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Crusader's Mantle.</b> You and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Dispel Magic",
         "level": 3,
         "school": "Abjuration",
