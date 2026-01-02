@@ -3123,7 +3123,7 @@
                 "calculation": [
                     {
                         "type": "static",
-                        "value": "<b>Crusader's Mantle.</b> You and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike."
+                        "value": "<b>Crusader's Mantle.</b> While in the aura, you and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike."
                     }
                 ]
             }
