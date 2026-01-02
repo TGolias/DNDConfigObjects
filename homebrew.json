@@ -1532,6 +1532,90 @@
                         ]
                     },
                     {
+                        "name": "Half Body",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Burning Restoration"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Burning Restoration"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Half Body",
+                                "actions": [
+                                    {
+                                        "name": "Half Body",
+                                        "actionTime": ["Bonus Action"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "Expend a charge as a bonus action. Until the start of your next turn, you deal and take half damage, and can phase through creatures.",
+                                        "challengeType": [],
+                                        "type": ["buff"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Until the start of your next turn, you deal and take half damage, and can phase through creatures."
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "healthMenuAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Half Body.</b> Until the start of your next turn, you deal and take half damage, and can phase through creatures."
+                                                    }
+                                                ]
+                                            },
+                                            "allAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Half Body.</b> Until the start of your next turn, you deal and take half damage, and can phase through creatures."
+                                                    }
+                                                ]
+                                            },
+                                            "speedAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Half Body.</b> Until the start of your next turn, you deal and take half damage, and can phase through creatures."
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Spell Eater",
                         "conditions": [
                             {
