@@ -4213,6 +4213,45 @@
         }
     },
     {
+        "name": "Heal",
+        "level": 6,
+        "school": "Abjuration",
+        "spellLists": ["Cleric", "Druid"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "Choose a creature that you can see within range. Positive energy washes through the target, restoring 70 Hit Points. This spell also ends the Blinded, Deafened, and Poisoned conditions on the target.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 10 for each spell slot level above 6.",
+        "challengeType": [],
+        "type": ["healing", "restore"],
+        "healing": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": 10
+                }
+            ]
+        },
+        "restore": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": ["Blinded", "Deafened", "Poisoned"]
+                }
+            ]
+        }
+    },
+    {
         "name": "Mass Suggestion",
         "level": 6,
         "school": "Enchantment",
