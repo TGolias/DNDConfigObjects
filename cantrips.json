@@ -667,9 +667,9 @@
         },
         "userInput": [
             {
-                "name": "targetText",
+                "name": "illusionText",
                 "displayName": "Describe your illusion:",
-                "type": "illusionText"
+                "type": "textField"
             }
         ]
     },
