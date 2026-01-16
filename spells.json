@@ -3088,6 +3088,48 @@
         }
     },
     {
+        "name": "Crusader's Mantle",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Paladin"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You radiate a magical aura in a 30-foot Emanation. While in the aura, you and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                }
+            ],
+            "description": "Radiant damage when you and your allies in the aura hit with a weapon or an Unarmed Strike."
+        },
+        "aspects": {
+            "weaponDamageAdditional": {
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 4,
+                        "diceType": "Radiant"
+                    }
+                ]
+            },
+            "weaponAttackAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Crusader's Mantle.</b> While in the aura, you and your allies each deal an extra 1d4 Radiant damage when hitting with a weapon or an Unarmed Strike."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Dispel Magic",
         "level": 3,
         "school": "Abjuration",
@@ -4181,6 +4223,75 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Chain Lightning",
+        "level": 6,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 150,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["three silver pins"],
+        "duration": "Instantaneous",
+        "description": "You launch a lightning bolt toward a target you can see within range. Three bolts then leap from that target to as many as three other targets of your choice, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\n\nEach target makes a Dexterity saving throw, taking 10d8 Lightning damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> One additional bolt leaps from the first target to another target for each spell slot level above 6.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 10
+                        }
+                    ],
+                    "diceType": "Lightning"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Heal",
+        "level": 6,
+        "school": "Abjuration",
+        "spellLists": ["Cleric", "Druid"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "Choose a creature that you can see within range. Positive energy washes through the target, restoring 70 Hit Points. This spell also ends the Blinded, Deafened, and Poisoned conditions on the target.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 10 for each spell slot level above 6.",
+        "challengeType": [],
+        "type": ["healing", "restore"],
+        "healing": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": 10
+                }
+            ]
+        },
+        "restore": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": ["Blinded", "Deafened", "Poisoned"]
+                }
+            ]
+        }
     },
     {
         "name": "Mass Suggestion",
