@@ -830,14 +830,12 @@
                     "name": "Mystic Conflux",
                     "description": "Half Feat: Increase your INT, WIS, or CHA score by 1 to a maximum of 20.\n\nYou can now be attuned to an additonal magical item. Other attunement limitations still apply. The additional item must be of the common, uncommon, or rare rarity.",
                     "additionalAttunementSlots": {
-                        "amount": {
-                            "calculation": [
-                                {
-                                    "type": "static",
-                                    "value": 1
-                                }
-                            ]
-                        },
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            }
+                        ],
                         "conditions": [
                             {
                                 "type": "or",
