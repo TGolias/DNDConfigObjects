@@ -4261,10 +4261,7 @@
                     "actions": [
                         {
                             "name": "Heal",
-                            "level": 6,
-                            "school": "Abjuration",
-                            "spellLists": ["Cleric", "Druid"],
-                            "castingTime": ["Action"],
+                            "actionTime": ["Action"],
                             "range": 60,
                             "components": ["V", "S"],
                             "duration": "Instantaneous",
