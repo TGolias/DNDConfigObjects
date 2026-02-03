@@ -4258,30 +4258,75 @@
                             ]
                         }
                     ],
-                    "spellcasting": {
-                        "ability": {
-                            "calculation": [
+                    "actions": [
+                        {
+                            "name": "Heal",
+                            "level": 6,
+                            "school": "Abjuration",
+                            "spellLists": ["Cleric", "Druid"],
+                            "castingTime": ["Action"],
+                            "range": 60,
+                            "components": ["V", "S"],
+                            "duration": "Instantaneous",
+                            "description": "Choose a creature that you can see within range. Positive energy washes through the target, restoring 70 Hit Points. This spell also ends the Blinded, Deafened, and Poisoned conditions on the target.\n\n<b>Using a Higher-Level Spell Slot.</b> The healing increases by 10 for each spell slot level above 6.",
+                            "challengeType": [],
+                            "type": ["healing", "restore"],
+                            "healing": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 10,
+                                        "multiplier": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "userInput.consumedSpellSlotLevel"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "static",
+                                        "value": 10
+                                    }
+                                ]
+                            },
+                            "restore": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": ["Blinded", "Deafened", "Poisoned"]
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "userInput": [
                                 {
-                                    "type": "static",
-                                    "value": "charisma"
-                                }
-                            ]
-                        },
-                        "spellsKnown": {
-                            "calculation": [
-                                {
-                                    "type": "static",
-                                    "value": 1
-                                }
-                            ],
-                            "predeterminedSelections": [
-                                {
-                                    "spellName": "Heal",
-                                    "freeUses": 1
+                                    "name": "consumedSpellSlotLevel",
+                                    "type": "consumeSpellSlot",
+                                    "minLevel": [
+                                        {
+                                            "type": "static",
+                                            "value": 6
+                                        }
+                                    ]
                                 }
                             ]
                         }
-                    }
+                    ]
                 }
             ],
             "armorClassBonus": {
