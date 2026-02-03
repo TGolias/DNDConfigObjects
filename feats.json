@@ -810,6 +810,184 @@
         }
     },
     {
+        "name": "Mystic Conflux",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Mystic Conflux",
+                    "description": "Half Feat: Increase your INT, WIS, or CHA score by 1 to a maximum of 20.\n\nYou can now be attuned to an additonal magical item. Other attunement limitations still apply. The additional item must be of the common, uncommon, or rare rarity.",
+                    "additionalAttunementSlots": {
+                        "amount": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        },
+                        "conditions": [
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "itemToAttuneTo.rarity",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "None"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "itemToAttuneTo.rarity",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Common"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "itemToAttuneTo.rarity",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Uncommon"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "itemToAttuneTo.rarity",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Rare"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "itemsAttunedTo",
+                                            "itemParameterName": "itemAttunedTo",
+                                            "some": [
+                                                {
+                                                    "type": "or",
+                                                    "values": [
+                                                        [
+                                                            {
+                                                                "type": "parameter",
+                                                                "propertyPath": "itemAttunedTo.rarity",
+                                                                "equals": [
+                                                                    {
+                                                                        "type": "static",
+                                                                        "value": "None"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        [
+                                                            {
+                                                                "type": "parameter",
+                                                                "propertyPath": "itemAttunedTo.rarity",
+                                                                "equals": [
+                                                                    {
+                                                                        "type": "static",
+                                                                        "value": "Common"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        [
+                                                            {
+                                                                "type": "parameter",
+                                                                "propertyPath": "itemAttunedTo.rarity",
+                                                                "equals": [
+                                                                    {
+                                                                        "type": "static",
+                                                                        "value": "Uncommon"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        [
+                                                            {
+                                                                "type": "parameter",
+                                                                "propertyPath": "itemAttunedTo.rarity",
+                                                                "equals": [
+                                                                    {
+                                                                        "type": "static",
+                                                                        "value": "Rare"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma"
+                },
+                "options": [
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Tough",
         "type": "Origin",
         "prerequisites": [
