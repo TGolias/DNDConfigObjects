@@ -3329,6 +3329,48 @@
         ]
     },
     {
+        "name": "Death Ward",
+        "level": 4,
+        "school": "Abjuration",
+        "spellLists": ["Cleric", "Paladin"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S"],
+        "duration": "8 hours",
+        "description": "You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 Hit Points before the spell ends, the target instead drops to 1 Hit Point, and the spell ends.\n\nIf the spell is still in effect when the target is subjected to an effect that would kill it instantly without dealing damage, that effect is negated against the target, and the spell ends.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "aspects": {
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Death Ward.</b> The first time you would drop to 0 Hit Points before the spell ends, you instead drop to 1 Hit Point, and the spell ends.\n\nIf the spell is still in effect when you are subjected to an effect that would kill you instantly without dealing damage, that effect is negated against you, and the spell ends."
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who is targeted?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Dimension Door",
         "level": 4,
         "school": "Conjuration",
@@ -3474,6 +3516,78 @@
                         "value": ["Warm", "Chill"]
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "Otiluke's Resilient Sphere",
+        "level": 4,
+        "school": "Evocation",
+        "spellLists": ["Wizard"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a glass sphere"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "A shimmering sphere encloses a Large or smaller creature or object within range. An unwilling creature must succeed on a Dexterity saving throw or be enclosed for the duration.\nNothing-not physical objects, energy, or other spell effects can pass through the barrier, in or out, though a creature in the sphere can breathe there. The sphere is immune to all damage, and a creature or object inside can't be damaged by attacks or effects originating from outside, nor can a creature inside the sphere damage anything outside it.\nThe sphere is weightless and just large enough to contain the creature or object inside. An enclosed creature can take an action to push against the sphere's walls and thus roll the sphere at up to half the creature's Speed. Similarly, the globe can be picked up and moved by other creatures.\nA Disintegrate spell targeting the globe destroys it without harming anything inside.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["debuff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who is targeted?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Stoneskin",
+        "level": 4,
+        "school": "Transmutation",
+        "spellLists": ["Druid", "Ranger", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["diamond dust worth 100+ GP, which the spell consumes"],
+        "duration": "Up to 1 hour",
+        "concentration": true,
+        "description": "Until the spell ends, one willing creature you touch has Resistance to Bludgeoning, Piercing, and Slashing damage.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Target has Resistance to Bludgeoning, Piercing, and Slashing damage.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "aspects": {
+            "resistances": ["Bludgeoning", "Piercing", "Slashing"]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who is targeted?",
+                "type": "textField"
             }
         ]
     },
