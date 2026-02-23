@@ -199,6 +199,19 @@
         }
     },
     {
+        "name": "Assassin's Blood",
+        "type": "Adventuring Gear",
+        "tags": ["Poison", "Ingested Poison"],
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 150
+        },
+        "description": "A creature subjected to Assassin's Blood makes a DC 10 Constitution saving throw. On a failed save, the creature takes 6d12 Poison damage and has the Poisoned condition for 24 hours. On a successful save, the creature takes half as much damage only.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing Advantage on the saving throw or dealing only half as much damage on a failed save."
+    },
+    {
         "name": "Backpack",
         "type": "Adventuring Gear",
         "rarity": "None",
@@ -390,6 +403,7 @@
     {
         "name": "Basic Poison",
         "type": "Adventuring Gear",
+        "tags": ["Poison", "Injury Poison"],
         "rarity": "Common",
         "stackable": true,
         "consumable": true,
@@ -409,7 +423,7 @@
                 ]
             }
         },
-        "weight": 1,
+        "weight": 0,
         "cost": {
             "gold": 100
         },
@@ -976,6 +990,24 @@
         }
     },
     {
+        "name": "Boots of Elvenkind",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "description": "While you wear these boots, your steps make no sound, regardless of the surface you are moving across. You also have Advantage on Dexterity (Stealth) checks.",
+        "aspects": {
+            "skillProficiencyStealthAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Boots of Elvenkind.</b> While you wear these boots, your steps make no sound, regardless of the surface you are moving across. You also have Advantage on Dexterity (Stealth) checks."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Brewer's Supplies",
         "tags": ["Brewer's Supplies", "Artisan's Tools"],
         "type": "Tools",
@@ -1096,6 +1128,40 @@
                     {
                         "type": "static",
                         "value": 16
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Cloak of Protection",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "weight": 1,
+        "description": "You gain a +1 bonus to Armor Class and saving throws while you wear this cloak.",
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "allSavingThrowBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "allSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Cloak of Protection.</b> You gain a +1 bonus to saving throws while you wear this cloak."
                     }
                 ]
             }
@@ -3040,6 +3106,19 @@
         }
     },
     {
+        "name": "Malice",
+        "type": "Adventuring Gear",
+        "tags": ["Poison", "Inhaled Poison"],
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 250
+        },
+        "description": "A creature subjected to Malice must succeed on a DC 15 Constitution saving throw or have the Poisoned condition for 1 hour. The creature also has the Blinded condition while Poisoned in this way.\n\nInhaled. Poisonous powders and gases take effect when inhaled. Blowing the powder or releasing the gas subjects creatures in a 5-foot Cube to its effect. The resulting cloud dissipates immediately afterward. Holding one's breath is ineffective against inhaled poisons, as they affect nasal membranes, tear ducts, and other parts of the body."
+    },
+    {
         "name": "Manacles",
         "type": "Adventuring Gear",
         "rarity": "Common",
@@ -3397,6 +3476,19 @@
         "cost": {
             "gold": 10
         }
+    },
+    {
+        "name": "Pale Tincture",
+        "type": "Adventuring Gear",
+        "tags": ["Poison", "Ingested Poison"],
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 250
+        },
+        "description": "A creature subjected to Pale Tincture must succeed on a DC 16 Constitution saving throw or take 3d6 Poison damage and have the Poisoned condition, The Poisoned creature repeats the save every 24 hours, taking 3d6 Poison damage on a failed save. The damage the poison deals can't be healed by any means while the creature remains Poisoned. After seven successful saves against the poison, the creature is no longer Poisoned.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing Advantage on the saving throw or dealing only half as much damage on a failed save."
     },
     {
         "name": "Pan Flute",
@@ -4721,6 +4813,40 @@
         "description": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts. Perfectly portioned for 1 day's time."
     },
     {
+        "name": "Reliquary Charm",
+        "type": "Charm",
+        "rarity": "None",
+        "stackable": false,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "description": "<b>Greater Restoration.</b> You touch a creature and magically remove one of the following effects from it:\n\n- 1 Exhaustion level\n\n- The Charmed or Petrified condition\n\n- A curse, including the target's Attunement to a cursed magic item\n\n- Any reduction to one of the target's ability scores\n\n- Any reduction to the target's Hit Point maximum",
+            "challengeType": [],
+            "type": []
+        },
+        "weight": 0,
+        "description": "<b>Reliquary Special Facility.</b> After spending a Long Rest in your Bastion, you gain a magical Charm that lasts for 7 days or until you use it. The Charm allows you to cast Greater Restoration once without expending a spell slot or using Material components. You can't gain this Charm again while you still have it."
+    },
+    {
+        "name": "Reliquary Talisman",
+        "type": "Charm",
+        "rarity": "None",
+        "stackable": false,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Free"],
+            "range": "Self",
+            "duration": "Instantaneous",
+            "description": "You can use this talisman in place of one spell's Material components, provided the components have a cost of 1,000 GP or less.",
+            "challengeType": [],
+            "type": []
+        },
+        "weight": 0,
+        "description": "<b>Reliquary Special Facility.</b> When you issue the Harvest, order to this facility, you commission its hireling to produce a specially prepared talisman for your use. The talisman usually takes the form of an amulet, arune-carved box, or a statuette, but it can be any Tiny, nonmagical object that has religious significance. The work takes 7 days and costs no money. You can use this talisman in place of one spell's Material components, provided the components have a cost of 1,000 GP or less. If the spell normally consumes its components, the talisman isn't consumed. After the talisman has been used in this way, it can't be used again until you return it to your Reliquary and use another Harvest order to prepare it."
+    },
+    {
         "name": "Revolver",
         "type": "Weapon",
         "weaponType": "Martial",
@@ -5442,6 +5568,19 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Truth Serum",
+        "type": "Adventuring Gear",
+        "tags": ["Poison", "Ingested Poison"],
+        "rarity": "Common",
+        "stackable": true,
+        "consumable": true,
+        "weight": 0,
+        "cost": {
+            "gold": 150
+        },
+        "description": "A creature subjected to Truth Serum must succeed on a DC 11 Constitution saving throw or have the Poisoned condition for 1 hour. The Poisoned creature can't knowingly communicate a lie.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing Advantage on the saving throw or dealing only half as much damage on a failed save."
     },
     {
         "name": "Tumbler Mouse",
