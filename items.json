@@ -212,6 +212,74 @@
         "description": "A creature subjected to Assassin's Blood makes a DC 10 Constitution saving throw. On a failed save, the creature takes 6d12 Poison damage and has the Poisoned condition for 24 hours. On a successful save, the creature takes half as much damage only.\n\nIngested. A creature must swallow an entire dose of ingested poison to suffer its effects. The dose can be delivered in food or a liquid. You may decide that a partial dose has a reduced effect, such as allowing Advantage on the saving throw or dealing only half as much damage on a failed save."
     },
     {
+        "name": "Astral Shard",
+        "type": "Wondrous item",
+        "rarity": "Rare",
+        "equippable": true,
+        "attunement": true,
+        "attunementRequirements": {
+            "description": "Must be a Sorcerer",
+            "calculation": [
+                {
+                    "type": "config",
+                    "propertyPath": "classes",
+                    "itemParameterName": "class",
+                    "some": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "class.name",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Sorcerer"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "weight": 1,
+        "description": "This crystal is a solidified shard of the Astral Plane, swirling with silver mist. As an action, you can attach the shard to a Tiny object (such as a weapon or a piece of jewelry) or detach it. It falls off if your attunement to it ends. You can use the shard as a spellcasting focus while you hold or wear it.\n\nWhen you use a Metamagic option on a spell while you are holding or wearing the shard, immediately after casting the spell you can teleport to an unoccupied space you can see within 30 feet of you.",
+        "aspects": {
+            "spellCastingDescriptionAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects.length"
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "additionalEffects",
+                        "itemParameterName": "additionalEffect",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "additionalEffect.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "metamagic"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Astral Shard.</b> When you use a Metamagic option on a spell while you are holding or wearing the shard, immediately after casting the spell you can teleport to an unoccupied space you can see within 30 feet of you."
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Backpack",
         "type": "Adventuring Gear",
         "rarity": "None",
@@ -516,7 +584,7 @@
     {
         "name": "Belt of Fire Giant Strength",
         "type": "Wondrous item",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "attunement": true,
         "weight": 1,
@@ -528,7 +596,7 @@
     {
         "name": "Belt of Frost Giant Strength",
         "type": "Wondrous item",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "attunement": true,
         "weight": 1,
@@ -552,7 +620,7 @@
     {
         "name": "Belt of Stone Giant Strength",
         "type": "Wondrous item",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "attunement": true,
         "weight": 1,
@@ -705,7 +773,7 @@
     {
         "name": "Bloodwell Vial +2",
         "type": "Wondrous item",
-        "rarity": "Uncommon",
+        "rarity": "Rare",
         "equippable": true,
         "attunement": true,
         "attunementRequirements": {
@@ -834,7 +902,7 @@
     {
         "name": "Bloodwell Vial +3",
         "type": "Wondrous item",
-        "rarity": "Uncommon",
+        "rarity": "Very Rare",
         "equippable": true,
         "attunement": true,
         "attunementRequirements": {
@@ -930,7 +998,7 @@
                 "calculation": [
                     {
                         "type": "static",
-                        "value": 2
+                        "value": 3
                     }
                 ]
             },
@@ -1134,10 +1202,50 @@
         }
     },
     {
+        "name": "Chain Shirt",
+        "type": "Armor",
+        "armorType": "Medium",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 20,
+        "cost": {
+            "gold": 50
+        },
+        "description": "AC: 13 + Dex modifier (max 2). Made of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers.",
+        "aspects": {
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 13
+                    },
+                    {
+                        "type": "lowestOf",
+                        "values": [
+                            [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "aspect",
+                                    "value": "dexterityModifier"
+                                }
+                            ]
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Cloak of Protection",
         "type": "Wondrous item",
         "rarity": "Uncommon",
         "equippable": true,
+        "attunement": true,
         "weight": 1,
         "description": "You gain a +1 bonus to Armor Class and saving throws while you wear this cloak.",
         "aspects": {
@@ -1453,7 +1561,7 @@
         "tags": ["Dead Eye Upgrade 1", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Eye",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -1495,7 +1603,7 @@
         "tags": ["Dead Eye Upgrade 2", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Eye",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -1643,7 +1751,7 @@
         "tags": ["Dead Eye Upgrade 3", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Eye",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -1891,6 +1999,27 @@
         "weight": 10,
         "cost": {
             "gold": 25
+        }
+    },
+    {
+        "name": "Elven Chain",
+        "type": "Template",
+        "templateOf": "Chain Shirt",
+        "rarity": "Rare",
+        "cost": {
+            "gold": 4000
+        },
+        "description": "You gain a +1 bonus to AC while you wear this Chain Shirt. You are considered proficient with this armor even if you lack proficiency with medium armor.\n\nMade of interlocking metal rings, a chain shirt is worn between layers of clothing or leather. This armor offers modest protection to the wearer's upper body and allows the sound of the rings rubbing against one another to be muffled by outer layers.",
+        "waiveArmorProficiencyCheck": true,
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
         }
     },
     {
@@ -2498,7 +2627,7 @@
         "tags": ["Hidden Gun Upgrade 1", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Arm",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -2560,7 +2689,7 @@
         "tags": ["Hidden Gun Upgrade 2", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Arm",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -2628,7 +2757,7 @@
         "tags": ["Hidden Gun Upgrade 3", "WeaveWear", "Prosthetic"],
         "type": "Prosthetic",
         "prostheticType": "Arm",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "equippable": true,
         "weight": 0,
         "cost": {
@@ -3886,7 +4015,7 @@
     {
         "name": "Potion of Supreme Healing",
         "type": "Potion",
-        "rarity": "Very rare",
+        "rarity": "Very Rare",
         "stackable": true,
         "consumable": true,
         "consumeEffect": {
@@ -5360,6 +5489,49 @@
                     "diceType": "Piercing"
                 }
             ]
+        }
+    },
+    {
+        "name": "Stone of Good Luck (Luckstone)",
+        "type": "Wondrous item",
+        "rarity": "Uncommon",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "While this polished agate is on your person, you gain a +1 bonus to ability checks and saving throws.",
+        "aspects": {
+            "skillProficiencyAllBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "skillProficiencyAllAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Stone of Good Luck (Luckstone).</b> You gain a +1 bonus to ability checks while this polished agate is on your person."
+                    }
+                ]
+            },
+            "allSavingThrowBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "allSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Stone of Good Luck (Luckstone).</b> You gain a +1 bonus to saving throws while this polished agate is on your person."
+                    }
+                ]
+            }
         }
     },
     {
