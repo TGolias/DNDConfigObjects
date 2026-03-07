@@ -1578,7 +1578,7 @@
             },
             {
                 "classLevel": 6,
-                "name": "Absorb Spells",
+                "name": "Spellfire Sorcerer Absorb Spells",
                 "description": "Whenever a target fails the saving throw against a Counterspell you cast, you regain 1d4 Sorcery Points.",
                 "spellcasting": {
                     "ability": {
