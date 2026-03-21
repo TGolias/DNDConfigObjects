@@ -265,6 +265,89 @@
                             ]
                         }
                     ]
+                },
+                "additionalSpellcastingCondition": {
+                    "calculation": [
+                        {
+                            "type": "aspect",
+                            "value": "heldItemsWithPlayerItems",
+                            "includes": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "value.dndItem.type",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Weapon"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "value.dndItem.tags",
+                                    "includes": [
+                                        {
+                                            "type": "static",
+                                            "value": "Firearm"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "value.playerItem.bullets"
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "value.playerItem.bullets.length"
+                                },
+                                {
+                                    "type": "if-then",
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "value.dndItem.tags",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Bullet-Selection"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "value.playerItem.bullets",
+                                            "includes": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "option.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "imbued"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "else": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "value.playerItem.bullets[0].type",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "imbued"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
             },
             {

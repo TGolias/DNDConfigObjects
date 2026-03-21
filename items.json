@@ -2644,7 +2644,7 @@
                     "normal": 30,
                     "long": 90
                 },
-                "properties": ["Reload 4", "Misfire 1"],
+                "properties": ["Reload 4", "Misfire 1", "Bullet-Selection"],
                 "tags": ["Pistol", "Firearm", "Martial", "Ranged"],
                 "mastery": "Vex",
                 "rarity": "None",
@@ -2706,7 +2706,7 @@
                     "normal": 40,
                     "long": 120
                 },
-                "properties": ["Reload 6", "Misfire 2"],
+                "properties": ["Reload 6", "Misfire 2", "Bullet-Selection"],
                 "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
                 "mastery": "Sap",
                 "rarity": "None",
@@ -3713,7 +3713,7 @@
             "normal": 80,
             "long": 320
         },
-        "properties": ["Reload 6", "Misfire 2"],
+        "properties": ["Reload 6", "Misfire 2", "Bullet-Selection"],
         "tags": ["Pepperbox", "Firearm", "Martial", "Ranged"],
         "mastery": "Vex",
         "rarity": "None",
@@ -3786,7 +3786,7 @@
             "normal": 30,
             "long": 90
         },
-        "properties": ["Reload 4", "Misfire 1"],
+        "properties": ["Reload 4", "Misfire 1", "Bullet-Selection"],
         "tags": ["Pistol", "Firearm", "Martial", "Ranged"],
         "mastery": "Vex",
         "rarity": "None",
@@ -4993,7 +4993,7 @@
             "normal": 40,
             "long": 120
         },
-        "properties": ["Reload 6", "Misfire 2"],
+        "properties": ["Reload 6", "Misfire 2", "Bullet-Selection"],
         "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
         "mastery": "Sap",
         "rarity": "None",
@@ -5149,7 +5149,7 @@
             "normal": 15,
             "long": 30
         },
-        "properties": ["Reload 2", "Misfire 3"],
+        "properties": ["Reload 2", "Misfire 3", "Bullet-Selection"],
         "tags": ["Sawed-Off Shotgun", "Shotgun", "Firearm", "Martial", "Ranged"],
         "mastery": "Push",
         "rarity": "None",
@@ -5360,7 +5360,7 @@
             "normal": 30,
             "long": 90
         },
-        "properties": ["Reload 2", "Misfire 3", "Two-Handed"],
+        "properties": ["Reload 2", "Misfire 3", "Two-Handed", "Bullet-Selection"],
         "tags": ["Shotgun", "Firearm", "Martial", "Ranged"],
         "mastery": "Push",
         "rarity": "None",
