@@ -271,10 +271,11 @@
                         {
                             "type": "aspect",
                             "value": "heldItemsWithPlayerItems",
-                            "includes": [
+                            "itemParameterName": "heldItem",
+                            "some": [
                                 {
                                     "type": "parameter",
-                                    "propertyPath": "value.dndItem.type",
+                                    "propertyPath": "heldItem.dndItem.type",
                                     "equals": [
                                         {
                                             "type": "static",
@@ -284,7 +285,7 @@
                                 },
                                 {
                                     "type": "parameter",
-                                    "propertyPath": "value.dndItem.tags",
+                                    "propertyPath": "heldItem.dndItem.tags",
                                     "includes": [
                                         {
                                             "type": "static",
@@ -294,18 +295,18 @@
                                 },
                                 {
                                     "type": "parameter",
-                                    "propertyPath": "value.playerItem.bullets"
+                                    "propertyPath": "heldItem.playerItem.bullets"
                                 },
                                 {
                                     "type": "parameter",
-                                    "propertyPath": "value.playerItem.bullets.length"
+                                    "propertyPath": "heldItem.playerItem.bullets.length"
                                 },
                                 {
                                     "type": "if-then",
                                     "if": [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "value.dndItem.tags",
+                                            "propertyPath": "heldItem.dndItem.tags",
                                             "includes": [
                                                 {
                                                     "type": "static",
@@ -317,11 +318,12 @@
                                     "then": [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "value.playerItem.bullets",
-                                            "includes": [
+                                            "propertyPath": "heldItem.playerItem.bullets",
+                                            "itemParameterName": "bullet",
+                                            "some": [
                                                 {
                                                     "type": "parameter",
-                                                    "propertyPath": "option.type",
+                                                    "propertyPath": "bullet.type",
                                                     "equals": [
                                                         {
                                                             "type": "static",
