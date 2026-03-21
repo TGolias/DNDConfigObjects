@@ -247,18 +247,25 @@
                         }
                     ]
                 },
-                "additionalBulletTypes": [
-                    {
-                        "name": "Focus", 
-                        "type": "focus", 
-                        "color": "#8c0728" 
-                    }, 
-                    {
-                        "name": "Imbued", 
-                        "type": "imbued", 
-                        "color": "#0b68b0" 
-                    }
-                ]
+                "additionalBulletTypes": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": [
+                                {
+                                    "name": "Focus", 
+                                    "type": "focus", 
+                                    "color": "#8c0728" 
+                                }, 
+                                {
+                                    "name": "Imbued", 
+                                    "type": "imbued", 
+                                    "color": "#0b68b0" 
+                                }
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 "name": "Firearm Master",
