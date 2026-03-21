@@ -325,7 +325,7 @@
                                                     "equals": [
                                                         {
                                                             "type": "static",
-                                                            "value": "imbued"
+                                                            "value": "focus"
                                                         }
                                                     ]
                                                 }
@@ -339,7 +339,7 @@
                                             "equals": [
                                                 {
                                                     "type": "static",
-                                                    "value": "imbued"
+                                                    "value": "focus"
                                                 }
                                             ]
                                         }
