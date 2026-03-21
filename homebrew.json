@@ -306,7 +306,7 @@
                                     "if": [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "heldItem.dndItem.tags",
+                                            "propertyPath": "heldItem.dndItem.properties",
                                             "includes": [
                                                 {
                                                     "type": "static",
@@ -337,7 +337,7 @@
                                     "else": [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "value.playerItem.bullets[0].type",
+                                            "propertyPath": "heldItem.playerItem.bullets[0].type",
                                             "equals": [
                                                 {
                                                     "type": "static",
