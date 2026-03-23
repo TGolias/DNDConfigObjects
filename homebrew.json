@@ -265,6 +265,91 @@
                             ]
                         }
                     ]
+                },
+                "additionalSpellcastingCondition": {
+                    "calculation": [
+                        {
+                            "type": "aspect",
+                            "value": "heldItemsWithPlayerItems",
+                            "itemParameterName": "heldItem",
+                            "some": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "heldItem.dndItem.type",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Weapon"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "heldItem.dndItem.tags",
+                                    "includes": [
+                                        {
+                                            "type": "static",
+                                            "value": "Firearm"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "heldItem.playerItem.bullets"
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "heldItem.playerItem.bullets.length"
+                                },
+                                {
+                                    "type": "if-then",
+                                    "if": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "heldItem.dndItem.properties",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Bullet-Selection"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "heldItem.playerItem.bullets",
+                                            "itemParameterName": "bullet",
+                                            "some": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "bullet.type",
+                                                    "equals": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": "focus"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "else": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "heldItem.playerItem.bullets[0].type",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "focus"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
             },
             {
