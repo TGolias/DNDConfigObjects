@@ -266,88 +266,76 @@
                         }
                     ]
                 },
-                "additionalSpellcastingCondition": {
-                    "calculation": [
+                "additionalSpellcastingUserInput": {
+                    "userInput": [
                         {
-                            "type": "aspect",
-                            "value": "heldItemsWithPlayerItems",
-                            "itemParameterName": "heldItem",
-                            "some": [
-                                {
-                                    "type": "parameter",
-                                    "propertyPath": "heldItem.dndItem.type",
-                                    "equals": [
-                                        {
-                                            "type": "static",
-                                            "value": "Weapon"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "parameter",
-                                    "propertyPath": "heldItem.dndItem.tags",
-                                    "includes": [
-                                        {
-                                            "type": "static",
-                                            "value": "Firearm"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "parameter",
-                                    "propertyPath": "heldItem.playerItem.bullets"
-                                },
-                                {
-                                    "type": "parameter",
-                                    "propertyPath": "heldItem.playerItem.bullets.length"
-                                },
-                                {
-                                    "type": "if-then",
-                                    "if": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "heldItem.dndItem.properties",
-                                            "includes": [
-                                                {
-                                                    "type": "static",
-                                                    "value": "Bullet-Selection"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "then": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "heldItem.playerItem.bullets",
-                                            "itemParameterName": "bullet",
-                                            "some": [
-                                                {
-                                                    "type": "parameter",
-                                                    "propertyPath": "bullet.type",
-                                                    "equals": [
-                                                        {
-                                                            "type": "static",
-                                                            "value": "focus"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "else": [
-                                        {
-                                            "type": "parameter",
-                                            "propertyPath": "heldItem.playerItem.bullets[0].type",
-                                            "equals": [
-                                                {
-                                                    "type": "static",
-                                                    "value": "focus"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
+                            "name": "gunToUse",
+                            "displayName": "Gun to cast with:",
+                            "type": "magicBullets"
+                        }
+                    ]
+                },
+                "additionalFeatureActionUserInput": {
+                    "conditions": [
+                        {
+                            "type": "or",
+                            "values": [
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "feature.typeFoundOn",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "class"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "feature.typeFoundOn",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "subclass"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "feature.typeFoundOn",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "species"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "feature.typeFoundOn",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "feat"
+                                            }
+                                        ]
+                                    }
+                                ]
                             ]
+                        }
+                    ],
+                    "userInput": [
+                        {
+                            "name": "gunToUse",
+                            "displayName": "Gun to cast with:",
+                            "type": "magicBullets"
                         }
                     ]
                 }
