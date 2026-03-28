@@ -2358,6 +2358,23 @@
         "description": "A small crystal shard infused with Spellplague energy. When crushed, the user experiences a brief vision (chosen by the DM) and can roll a d4 to add to one Intelligence or Wisdom ability check within the next hour. However, for the next minute, their vision flickers between the present and a strange, mechanical wasteland."
     },
     {
+        "name": "Fruit of Restoration",
+        "type": "Charm",
+        "rarity": "None",
+        "stackable": true,
+        "consumable": true,
+        "consumeEffect": {
+            "actionTime": ["Bonus Action"],
+            "range": "Touch",
+            "duration": "Instantaneous",
+            "description": "<b>Lesser Restoration.</b> You touch a creature and end one condition on it: Blinded, Deafened, Paralyzed, or Poisoned.",
+            "challengeType": [],
+            "type": []
+        },
+        "weight": 0,
+        "description": "<b>Greenhouse Special Facility.</b> Fruit of Restoration. One plant in your Greenhouse has three magical fruits growing on it. Any creature that eats one of these fruits gains the benefit of a Lesser Restoration spell. Fruits that aren't eaten within 24 hours of being picked lose their magic. The plant replaces all picked fruits daily at dawn, and it can't be transplanted without killing it."
+    },
+    {
         "name": "Glaive",
         "type": "Weapon",
         "weaponType": "Martial",
