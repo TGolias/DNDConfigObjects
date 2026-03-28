@@ -283,7 +283,7 @@
                                 [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "feature.typeFoundOn",
+                                        "propertyPath": "origin.type",
                                         "equals": [
                                             {
                                                 "type": "static",
@@ -295,7 +295,7 @@
                                 [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "feature.typeFoundOn",
+                                        "propertyPath": "origin.type",
                                         "equals": [
                                             {
                                                 "type": "static",
@@ -307,7 +307,7 @@
                                 [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "feature.typeFoundOn",
+                                        "propertyPath": "origin.type",
                                         "equals": [
                                             {
                                                 "type": "static",
@@ -319,7 +319,7 @@
                                 [
                                     {
                                         "type": "parameter",
-                                        "propertyPath": "feature.typeFoundOn",
+                                        "propertyPath": "origin.type",
                                         "equals": [
                                             {
                                                 "type": "static",
