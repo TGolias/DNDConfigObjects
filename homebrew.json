@@ -1822,7 +1822,7 @@
                                                     "multiplier": [
                                                         {
                                                             "type": "parameter",
-                                                            "propertyPath": "userInput.consumedHitDice.length"
+                                                            "propertyPath": "userInput.consumedHitDiceDiceUsed"
                                                         }
                                                     ]
                                                 }
