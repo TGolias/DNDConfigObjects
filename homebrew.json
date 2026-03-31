@@ -1775,6 +1775,99 @@
                         ]
                     },
                     {
+                        "name": "Spellfire Healing",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Eater"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Eater"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Spellfire Healing",
+                                "actions": [
+                                    {
+                                        "name": "Spellfire Healing",
+                                        "actionTime": ["Reaction"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "When you take fire or radiant damage, you can expend a charge as a reaction to spend up to half your hit dice to regain hp as if on a short rest.",
+                                        "challengeType": [],
+                                        "type": ["healing"],
+                                        "healing": {
+                                            "calculation": [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "userInput.consumedHitDice"
+                                                },
+                                                {
+                                                    "type": "aspect",
+                                                    "value": "charismaModifier",
+                                                    "multiplier": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.consumedHitDice.length"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        },
+                                        "userInput": [
+                                            {
+                                                "name": "consumedHitDice",
+                                                "displayName": "Hit Dice to Consume:",
+                                                "type": "consumeHitDice",
+                                                "min": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ],
+                                                "max": [
+                                                    {
+                                                        "type": "config",
+                                                        "propertyPath": "level",
+                                                        "dividedBy": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 2
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Charged Arcflare",
                         "conditions": [
                             {
