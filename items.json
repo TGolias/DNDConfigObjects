@@ -4583,24 +4583,6 @@
                     ]
                 },
                 {
-                    "name": "Aetherial Flow",
-                    "conditions": [
-                        {
-                            "type": "parameter",
-                            "propertyPath": "playerConfigForObject.color",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": "Blue"
-                                }
-                            ]
-                        }
-                    ],
-                    "resources": [
-                        { "name": "spellfireCharges", "subName": "AetherialFlow", "displayName": "Spellfire Charges", "subDisplayName": "Aetherial Flow", "combineGlobalResources": true, "uses": { "calculation": [ { "type": "static", "value": 3 } ] } }
-                    ]
-                },
-                {
                     "name": "Spellfire Transcendence",
                     "conditions": [
                         {
@@ -4616,7 +4598,7 @@
                     ],
                     "actions": [
                         {
-                            "name": "Heal",
+                            "name": "Spellfire Transcendence",
                             "actionTime": ["Free"],
                             "range": "Self",
                             "duration": "Instantaneous",
@@ -4986,13 +4968,54 @@
                 ]
             },
             "healthMenuAddendum": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Green"
+                            }
+                        ]
+                    }
+                ],
                 "calculation": [
                     {
                         "type": "static",
                         "value": "<b>Prismatic Mantle of Spellfire - Green.</b> The effects of exhaustion are reduced by one level."
                     }
                 ]
-            }
+            },
+            "resources": [
+                {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Blue"
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "spellfireCharges", 
+                    "subName": "AetherialFlow", 
+                    "displayName": "Spellfire Charges", 
+                    "subDisplayName": "Aetherial Flow", 
+                    "combineGlobalResources": true, 
+                    "uses": { 
+                        "calculation": [ 
+                            { 
+                                "type": "static", 
+                                "value": 3 
+                            } 
+                        ] 
+                    } 
+                }
+            ]
         }
     },
     {
