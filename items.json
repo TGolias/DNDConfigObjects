@@ -4609,7 +4609,7 @@
                                 "calculation": [
                                     {
                                         "type": "static",
-                                        "value": "Spellfire ability being used:\n\n"
+                                        "value": "Spellfire ability being used:\n"
                                     },
                                     {
                                         "type": "parameter",

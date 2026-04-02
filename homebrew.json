@@ -974,8 +974,11 @@
         ],
         "resources": [
             { 
-                "name": "spellfireCharges", 
+                "name": "spellfireCharges",
+                "subName": "Base",
                 "displayName": "Spellfire Charges", 
+                "subDisplayName": "Base",
+                "combineGlobalResources": true,
                 "uses": {
                     "calculation": [
                         {
