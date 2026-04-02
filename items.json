@@ -4116,7 +4116,7 @@
             ]
         },
         "weight": 5,
-        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.\n\n<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw or be under the effect of the spell Faerie Fire.\n\n<b>Yellow</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + your Charisma modifier.\n\n<b>Green</b> - Verdant Arcana\nPassive: You gain resistance to poison damage and the effects of exhaustion are reduced by one level.\nActive - Spellfire Bloom: Once per long rest, you can cast Heal (6th level, no material components).",
+        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.\n\n<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw or be under the effect of the spell Faerie Fire.\n\n<b>Yellow</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + your Charisma modifier.\n\n<b>Green</b> - Verdant Arcana\nPassive: You gain resistance to poison damage and the effects of exhaustion are reduced by one level.\nActive - Spellfire Bloom: Once per long rest, you can cast Heal (6th level, no material components).\n\n<b>Blue</b> - Aetherial Flow\nPassive: Your spellfire skill-tree charges increase by 3.\nActive - Spellfire Transcendence: Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use.",
         "variables": [
             {
                 "name": "color",
@@ -4332,6 +4332,26 @@
                                                         "value": "<b>Green</b> - Verdant Arcana\nPassive: You gain resistance to poison damage and the effects of exhaustion are reduced by one level.\nActive - Spellfire Bloom: Once per long rest, you can cast Heal (6th level, no material components)."
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Blue"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Blue</b> - Aetherial Flow\nPassive: Your spellfire skill-tree charges increase by 3.\nActive - Spellfire Transcendence: Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use."
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -4345,7 +4365,7 @@
                                     "values": [
                                         {
                                             "type": "static",
-                                            "value": ["Grey", "Black", "White", "Red", "Orange", "Yellow", "Green"]
+                                            "value": ["Grey", "Black", "White", "Red", "Orange", "Yellow", "Green", "Blue"]
                                         }
                                     ]
                                 }
@@ -4557,6 +4577,85 @@
                                             "value": 6
                                         }
                                     ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Aetherial Flow",
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Blue"
+                                }
+                            ]
+                        }
+                    ],
+                    "resources": [
+                        { "name": "spellfireCharges", "subName": "AetherialFlow", "displayName": "Spellfire Charges", "subDisplayName": "Aetherial Flow", "combineGlobalResources": true, "uses": { "calculation": [ { "type": "static", "value": 3 } ] } }
+                    ]
+                },
+                {
+                    "name": "Spellfire Transcendence",
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Blue"
+                                }
+                            ]
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "name": "Heal",
+                            "actionTime": ["Free"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use.",
+                            "challengeType": [],
+                            "type": ["buff"],
+                            "buff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire ability being used:\n\n"
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "userInput.spellfireAbility"
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            "userInput": [
+                                {
+                                    "name": "spellfireAbility",
+                                    "displayName": "Spellfire ability being used?",
+                                    "type": "textField"
                                 }
                             ]
                         }

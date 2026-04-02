@@ -1625,6 +1625,67 @@
                         ]
                     },
                     {
+                        "name": "Donning the Mudflesh",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Half Body"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Half Body"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Donning the Mudflesh",
+                                "actions": [
+                                    {
+                                        "name": "Donning the Mudflesh",
+                                        "actionTime": ["Action"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "As an action, you expend 2 charges to gain resistance to all damage until you fall below half of your maximum HP.",
+                                        "challengeType": [],
+                                        "type": ["buff"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "You gain resistance to all damage until you fall below half of your maximum HP."
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "resistances": ["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder"]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Half Body",
                         "conditions": [
                             {
