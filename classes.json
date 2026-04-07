@@ -1,5 +1,206 @@
 [
     {
+        "name": "Artificer",
+        "hitDie": 8,
+        "mainClass": {
+            "savingThrowProficiencies": ["constitution", "intelligence"],
+            "weaponProficiencies": ["Simple"],
+            "armorTraining": ["Light", "Medium", "Shields"],
+            "choices": [
+                {
+                    "property": "classSkills",
+                    "description": "Skill Proficiencies:",
+                    "optionsSource": "skillProficiencies",
+                    "multipleSelections": 2,
+                    "optionDisplayProperty": "name",
+                    "choiceToAttributesMapping": {
+                        "skillProficiencies": "name"
+                    },
+                    "options": [
+                        {
+                            "name": "Arcana"
+                        },
+                        {
+                            "name": "History"
+                        },
+                        {
+                            "name": "Investigation"
+                        },
+                        {
+                            "name": "Medicine"
+                        },
+                        {
+                            "name": "Nature"
+                        },
+                        {
+                            "name": "Perception"
+                        },
+                        {
+                            "name": "Sleight of Hand"
+                        }
+                    ]
+                }
+            ]
+        },
+        "multiClass": {
+            "armorTraining": ["Light", "Medium", "Shields"]
+        },
+        "multiClassConditions": [
+            {
+                "type": "aspect",
+                "value": "intelligence",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 13
+                    }
+                ]
+            }
+        ],
+        "spellSlotLevelProgression": 2,
+        "resources": [
+            { "name": "plansKnown", "displayName": "Plans Known" },
+            { "name": "magicItems", "displayName": "Magic Items" },
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "plansKnown": 0, "magicItems": 5, "cantrips": 2, "preparedSpells": 2 },
+            { "classLevel": 2, "plansKnown": 0, "magicItems": 10, "cantrips": 2, "preparedSpells": 3 },
+            { "classLevel": 3, "plansKnown": 2, "magicItems": 15, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 4, "plansKnown": 2, "magicItems": 20, "cantrips": 2, "preparedSpells": 5 },
+            { "classLevel": 5, "plansKnown": 2, "magicItems": 25, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 6, "plansKnown": 2, "magicItems": 30, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 7, "plansKnown": 2, "magicItems": 35, "cantrips": 2, "preparedSpells": 7 },
+            { "classLevel": 8, "plansKnown": 2, "magicItems": 40, "cantrips": 2, "preparedSpells": 7 },
+            { "classLevel": 9, "plansKnown": 2, "magicItems": 45, "cantrips": 2, "preparedSpells": 9 },
+            { "classLevel": 10, "plansKnown": 2, "magicItems": 50, "cantrips": 3, "preparedSpells": 9 },
+            { "classLevel": 11, "plansKnown": 3, "magicItems": 55, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 12, "plansKnown": 3, "magicItems": 60, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 13, "plansKnown": 3, "magicItems": 65, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 14, "plansKnown": 3, "magicItems": 70, "cantrips": 4, "preparedSpells": 11 },
+            { "classLevel": 15, "plansKnown": 3, "magicItems": 75, "cantrips": 4, "preparedSpells": 12 },
+            { "classLevel": 16, "plansKnown": 3, "magicItems": 80, "cantrips": 4, "preparedSpells": 12 },
+            { "classLevel": 17, "plansKnown": 3, "magicItems": 85, "cantrips": 4, "preparedSpells": 14 },
+            { "classLevel": 18, "plansKnown": 3, "magicItems": 90, "cantrips": 4, "preparedSpells": 14 },
+            { "classLevel": 19, "plansKnown": 3, "magicItems": 95, "cantrips": 4, "preparedSpells": 15 },
+            { "classLevel": 20, "plansKnown": 3, "magicItems": 100, "cantrips": 4, "preparedSpells": 15 }
+        ],
+        "features": [
+            {
+                "classLevel": 1,
+                "name": "Artificer Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "intelligence"
+                            }
+                        ]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelPaladin",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 4
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "validSpellLists": ["Artificer"]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Artificer Subclass",
+                "subclass": {
+                    "class": "Artificer"
+                }
+            },
+            {
+                "classLevel": 4,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Extra Attack",
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                }
+            },
+            {
+                "classLevel": 8,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 12,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 16,
+                "name": "Feat",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 19,
+                "name": "Epic Boon",
+                "feat": {
+                    "restrictedTypes": []
+                }
+            }
+        ]
+    },
+    {
         "name": "Barbarian",
         "hitDie": 12,
         "mainClass": {
