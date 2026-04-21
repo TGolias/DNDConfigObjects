@@ -3038,7 +3038,7 @@
                 "calculation": [
                     {
                         "type": "static",
-                        "value": "<b>Beacon Of Hope.</b> Advantage on Intelligence, Wisdom, and Charisma saving throws."
+                        "value": "<b>Beacon Of Hope.</b> Advantage on Wisdom saving throws."
                     }
                 ]
             },
@@ -3047,6 +3047,14 @@
                     {
                         "type": "static",
                         "value": ["max"]
+                    }
+                ]
+            },
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Beacon Of Hope.</b> You regain the maximum number of Hit Points possible from any healing."
                     }
                 ]
             }
