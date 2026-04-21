@@ -1312,7 +1312,7 @@
                         ],
                         "predeterminedSelections": [
                             {
-                                "spellName": "Fire Shield"
+                                "spellName": "Beacon Of Hope"
                             },
                             {
                                 "spellName": "Wall of Fire"
@@ -1345,7 +1345,7 @@
                                 "spellName": "Greater Restoration"
                             },
                             {
-                                "spellName": "Flame Strike"
+                                "spellName": "Mass Cure Wounds"
                             }
                         ]
                     }

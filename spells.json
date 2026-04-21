@@ -3008,6 +3008,58 @@
         }
     },
     {
+        "name": "Beacon Of Hope",
+        "level": 3,
+        "school": "Abjuration",
+        "spellLists": ["Cleric"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V", "S"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "Choose any number of creatures within range. For the duration, each target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Each target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "aspects": {
+            "wisdomSavingThrowAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Beacon Of Hope.</b> Advantage on Intelligence, Wisdom, and Charisma saving throws."
+                    }
+                ]
+            },
+            "healingTransform": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": ["max"]
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Blinding Smite",
         "level": 3,
         "school": "Evocation",
@@ -3795,6 +3847,43 @@
         "description": "You touch a creature and magically remove one of the following effects from it:\n\n- 1 Exhaustion level\n\n- The Charmed or Petrified condition\n\n- A curse, including the target's Attunement to a cursed magic item\n\n- Any reduction to one of the target's ability scores\n\n- Any reduction to the target's Hit Point maximum",
         "challengeType": [],
         "type": []
+    },
+    {
+        "name": "Mass Cure Wounds",
+        "level": 5,
+        "school": "Abjuration",
+        "spellLists": ["Bard", "Cleric", "Druid"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "A wave of healing energy washes out from a point you can see within range. Choose up to six creatures in a 30-foot-radius Sphere centered on that point. Each target regains Hit Points equal to 5d8 plus your spellcasting ability modifier.\n\nUsing a Higher-Level Spell Slot. The healing increases by 1d8 for each spell slot level above 5.",
+        "challengeType": [],
+        "type": ["healing"],
+        "healing": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 1,
+                            "multiplier": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "spellcastingAbilityModifier"
+                }
+            ]
+        }
     },
     {
         "name": "Telekinesis",
