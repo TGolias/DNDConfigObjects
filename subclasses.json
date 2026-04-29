@@ -1825,5 +1825,109 @@
                 }
             }
         ]
+    },
+    {
+        "name": "Diviner",
+        "class": "Wizard",
+        "features": [
+            {
+                "classLevel": 3,
+                "name": "Diviner Wizard Spells",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "intelligence"
+                            }
+                        ]
+                    },
+                    "spellsLearned":  {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 1
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "classLevelWizard",
+                                "dividedBy": [
+                                    {
+                                        "type": "static",
+                                        "value": 3
+                                    }
+                                ]
+                            }
+                        ],
+                        "levelLimit": {
+                            "type": "lowestOf",
+                            "values": [
+                                [
+                                    {
+                                        "type": "highestOf",
+                                        "values": [
+                                            [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "spellIndex"
+                                                },
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "static",
+                                        "value": 9
+                                    }
+                                ]
+                            ]
+                        },
+                        "validSpellLists": ["Wizard"],
+                        "validSpellSchools": ["Divination"]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "Portent",
+                "description": "Glimpses of the future begin to press on your awareness. Whenever you finish a Long Rest, roll two d20s and record the numbers rolled. You can replace any D20 Test made by you or a creature that you can see with one of these foretelling rolls. You must choose to do so before the roll, and you can replace a roll in this way only once per turn.\n\nEach foretelling roll can be used only once. When you finish a Long Rest, you lose any unused foretelling rolls."
+            },
+            {
+                "classLevel": 3,
+                "name": "Expert Divination",
+                "description": "",
+                "spellCastingDescriptionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.school",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Divination"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Expert Divination.</b> Casting Divination spells comes so easily to you that it expends only a fraction of your spellcasting efforts. When you cast a Divination spell using a level 2+ spell slot, you regain one expended spell slot. The slot you regain must be of a level lower than the slot you expended and can't be higher than level 5."
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]

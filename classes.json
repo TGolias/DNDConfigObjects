@@ -113,7 +113,7 @@
                                     [
                                         {
                                             "type": "aspect",
-                                            "value": "classLevelPaladin",
+                                            "value": "classLevelArtificer",
                                             "dividedBy": [
                                                 {
                                                     "type": "static",
@@ -3200,13 +3200,197 @@
             }
         ],
         "spellSlotLevelProgression": 1,
+        "resources": [
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "cantrips": 3, "preparedSpells": 4 },
+            { "classLevel": 2, "cantrips": 3, "preparedSpells": 5 },
+            { "classLevel": 3, "cantrips": 3, "preparedSpells": 6 },
+            { "classLevel": 4, "cantrips": 4, "preparedSpells": 7 },
+            { "classLevel": 5, "cantrips": 4, "preparedSpells": 9 },
+            { "classLevel": 6, "cantrips": 4, "preparedSpells": 10 },
+            { "classLevel": 7, "cantrips": 4, "preparedSpells": 11 },
+            { "classLevel": 8, "cantrips": 4, "preparedSpells": 12 },
+            { "classLevel": 9, "cantrips": 4, "preparedSpells": 14 },
+            { "classLevel": 10, "cantrips": 5, "preparedSpells": 15 },
+            { "classLevel": 11, "cantrips": 5, "preparedSpells": 16 },
+            { "classLevel": 12, "cantrips": 5, "preparedSpells": 16 },
+            { "classLevel": 13, "cantrips": 5, "preparedSpells": 17 },
+            { "classLevel": 14, "cantrips": 5, "preparedSpells": 18 },
+            { "classLevel": 15, "cantrips": 5, "preparedSpells": 19 },
+            { "classLevel": 16, "cantrips": 5, "preparedSpells": 21 },
+            { "classLevel": 17, "cantrips": 5, "preparedSpells": 22 },
+            { "classLevel": 18, "cantrips": 5, "preparedSpells": 23 },
+            { "classLevel": 19, "cantrips": 5, "preparedSpells": 24 },
+            { "classLevel": 20, "cantrips": 5, "preparedSpells": 25 }
+        ],
         "features": [
+            {
+                "classLevel": 1,
+                "name": "Wizard Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "intelligence"
+                            }
+                        ]
+                    },
+                    "cantripsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "cantrips"
+                            }
+                        ],
+                        "validSpellLists": ["Wizard"]
+                    },
+                    "spellsLearned":  {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": 4
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "classLevelWizard",
+                                "multiplier": [
+                                    {
+                                        "type": "static",
+                                        "value": 2
+                                    }
+                                ]
+                            }
+                        ],
+                        "levelLimit": {
+                            "type": "lowestOf",
+                            "values": [
+                                [
+                                    {
+                                        "type": "highestOf",
+                                        "values": [
+                                            [
+                                                {
+                                                    "type": "parameter",
+                                                    "propertyPath": "spellIndex",
+                                                    "dividedBy": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 4
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                ],
+                                [
+                                    {
+                                        "type": "static",
+                                        "value": 9
+                                    }
+                                ]
+                            ]
+                        },
+                        "validSpellLists": ["Wizard"]
+                    },
+                    "spellsPrepared": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "classLevel": 1,
+                "name": "Ritual Adept",
+                "description": "You can cast any spell as a Ritual if that spell has the Ritual tag and the spell is in your spellbook. You needn't have the spell prepared, but you must read from the book to cast a spell in this way."
+            },
+            {
+                "classLevel": 1,
+                "name": "Arcane Recovery",
+                "description": "You can regain some of your magical energy by studying your spellbook. When you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level equal to no more than half your Wizard level {round up), and none of the slots can be level 6 or higher. For example, if you're a level 4 Wizard, you can recover up to two levels' worth of spell slots, regaining either one level 2 spell slot or two level 1 spell slots.\n\nOnce you use this feature, you can't do so again until you finish a Long Rest."
+            },
+            {
+                "classLevel": 2,
+                "name": "Scholar",
+                "choices": [
+                    {
+                        "property": "expertise",
+                        "description": "Expertise:",
+                        "optionsSource": "skillProficiencies",
+                        "optionDisplayProperty": "name",
+                        "optionsSourceFilter": [
+                            {
+                                "type": "aspect",
+                                "value": "skillProficiencies",
+                                "includes": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "option.name"
+                                    }
+                                ]
+                            }
+                        ],
+                        "options": [
+                            {
+                                "name": "Arcana"
+                            },
+                            {
+                                "name": "History"
+                            },
+                            {
+                                "name": "Insight"
+                            },
+                            {
+                                "name": "Investigation"
+                            },
+                            {
+                                "name": "Medicine"
+                            },
+                            {
+                                "name": "Nature"
+                            },
+                            {
+                                "name": "Religion"
+                            }
+                        ],
+                        "choiceToAttributesMapping": {
+                            "expertise": "name"
+                        }
+                    }
+                ]
+            },
+            {
+                "classLevel": 3,
+                "name": "Wizard Subclass",
+                "subclass": {
+                    "class": "Wizard"
+                }
+            },
             {
                 "classLevel": 4,
                 "name": "Feat",
                 "feat": {
                     "restrictedTypes": []
                 }
+            },
+            {
+                "classLevel": 5,
+                "name": "Memorize Spell",
+                "description": "Whenever you finish a Short Rest, you can study your spellbook and replace one of the level 1+ Wizard spells you have prepared for your Spellcasting feature with another level 1+ spell from the book."
             },
             {
                 "classLevel": 8,
