@@ -3265,7 +3265,33 @@
                                 ]
                             }
                         ],
-                        "levelLimit": {
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelWizard",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 9
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "levelLimitByIndex": {
                             "type": "lowestOf",
                             "values": [
                                 [
