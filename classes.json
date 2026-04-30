@@ -3291,42 +3291,44 @@
                                 ]
                             }
                         ],
-                        "levelLimitByIndex": {
-                            "type": "lowestOf",
-                            "values": [
-                                [
-                                    {
-                                        "type": "highestOf",
-                                        "values": [
-                                            [
-                                                {
-                                                    "type": "parameter",
-                                                    "propertyPath": "spellIndex",
-                                                    "dividedBy": [
-                                                        {
-                                                            "type": "static",
-                                                            "value": 4
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            [
-                                                {
-                                                    "type": "static",
-                                                    "value": 1
-                                                }
+                        "levelLimitByIndex": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "highestOf",
+                                            "values": [
+                                                [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "spellIndex",
+                                                        "dividedBy": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 4
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 1
+                                                    }
+                                                ]
                                             ]
-                                        ]
-                                    }
-                                ],
-                                [
-                                    {
-                                        "type": "static",
-                                        "value": 9
-                                    }
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 9
+                                        }
+                                    ]
                                 ]
-                            ]
-                        },
+                            }
+                        ],
                         "validSpellLists": ["Wizard"]
                     },
                     "spellsPrepared": {
