@@ -2560,6 +2560,35 @@
         }
     },
     {
+        "name": "Hand Crossbow (Reload)",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 30,
+            "long": 120
+        },
+        "properties": ["Light", "Reload 1"],
+        "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 3,
+        "cost": {
+            "gold": 75
+        },
+        "description": "A 'Light' Crossbow (not 'Light Crossbow') that can be held in one hand.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
         "name": "Handaxe",
         "type": "Weapon",
         "weaponType": "Simple",
@@ -3158,6 +3187,35 @@
             "long": 600
         },
         "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Longbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
+        "mastery": "Slow",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 2,
+        "cost": {
+            "gold": 50
+        },
+        "description": "Like a bow: but longer.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "diceType": "Piercing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Longbow (Reload)",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 150,
+            "long": 600
+        },
+        "properties": ["Heavy", "Two-Handed", "Reload 1"],
         "tags": ["Longbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
         "mastery": "Slow",
         "rarity": "None",
