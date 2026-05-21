@@ -523,7 +523,7 @@
             },
             {
                 "type": "aspect",
-                "propertyPath": "strength",
+                "value": "strength",
                 "greaterThanOrEqualTo": [
                     {
                         "type": "static",
