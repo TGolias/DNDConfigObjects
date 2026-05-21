@@ -60,6 +60,122 @@
         }
     },
     {
+        "name": "Booming Blade",
+        "school": "Evocation",
+        "spellLists": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["S", "M"],
+        "materialComponents": ["a melee weapon worth at least 1 sp"],
+        "duration": "Instantaneous",
+        "description": "You brandish the weapon used in the spell's casting and make a melee attack with it against one creature within 5 feet of you. On a hit, the target suffers the weapon attack's normal effects and then becomes sheathed in booming energy until the start of your next turn. If the target willingly moves 5 feet or more before then, the target takes 1d8 thunder damage, and the spell ends.\n\n<b>At Higher Levels.</b> At 5th level, the melee attack deals an extra 1d8 thunder damage to the target on a hit, and the damage the target takes for moving increases to 2d8. Both damage rolls increase by 1d8 at 11th level (2d8 and 3d8) and again at 17th level (3d8 and 4d8).",
+        "challengeType": [],
+        "type": ["damage", "weaponAttack"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "aspect",
+                            "value": "tier"
+                        }
+                    ],
+                    "diceType": "Thunder"
+                }
+            ]
+        },
+        "weaponAttack": {
+            "conditions": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "weapon.weaponRange",
+                    "equals": [
+                        {
+                            "type": "static",
+                            "value": "Melee"
+                        }
+                    ]
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "weapon.cost"
+                },
+                {
+                    "type": "or",
+                    "values": [
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "weapon.cost.silver",
+                                "greaterThanOrEqualTo": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "weapon.cost.gold",
+                                "greaterThanOrEqualTo": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "additionalEffects": {
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Booming Blade.</b> At 5th level, the melee attack deals an extra 1d8 thunder damage to the target on a hit. This damage increases by 1d8 at 11th level (2d8) and again at 17th level (3d8)."
+                        }
+                    ]
+                },
+                "weaponDamageAdditional": {
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "value": "tier",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 8,
+                            "multiplier": [
+                                {
+                                    "type": "aspect",
+                                    "value": "tier"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": -1
+                                }
+                            ],
+                            "diceType": "Thunder"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
         "name": "Chill Touch",
         "school": "Necromancy",
         "spellLists": ["Sorcerer", "Warlock", "Wizard"],
@@ -248,15 +364,7 @@
         "description": "Your hurl a beam of crackling energy. Make a ranged spell attack against one creature or object in range. On a hit, the target takes 1d10 Force damage.\n\n<b>Cantrip Upgrade.</b> The spell creates two beams at level 5, three beams at level 11, and four beams at level 17. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.",
         "challengeType": ["attackRoll"],
         "attackRollType": "spellAttack",
-        "type": ["damage"],
-        "attackRolls": {
-            "calculation": [
-                {
-                    "type": "aspect",
-                    "value": "tier"
-                }
-            ]
-        },
+        "type": ["damage", "buff"],
         "damage": {
             "calculation": [
                 {
@@ -265,6 +373,15 @@
                     "diceType": "Force"
                 }
             ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "aspect",
+                    "value": "tier"
+                }
+            ],
+            "description": "blasts fired."
         }
     },
     {

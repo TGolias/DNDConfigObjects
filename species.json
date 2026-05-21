@@ -1047,7 +1047,101 @@
     {
         "name": "Halfling",
         "speed": 30,
-        "size": "Small"
+        "size": "Small",
+        "features": [
+            {
+                "level": 1,
+                "name": "Brave",
+                "description": "You have Advantage on saving throws you make to avoid or end the Frightened condition.",
+                "allSavingThrowAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Brave.</b> You have Advantage on saving throws you make to avoid or end the Frightened condition."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Halfling Nimbleness",
+                "description": "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space.",
+                "speedAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Halfling Nimbleness.</b> You can move through the space of any creature that is a size larger than you, but you can't stop in the same space."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Halfling Luck",
+                "description": "When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll.",
+                "allSavingThrowAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Halfling Luck.</b> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll."
+                        }
+                    ]
+                },
+                "allAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Halfling Luck.</b> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll."
+                        }
+                    ]
+                },
+                "skillProficiencyAllAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Halfling Luck.</b> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll."
+                        }
+                    ]
+                },
+                "initiativeAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Halfling Luck.</b> When you roll a 1 on the d20 of a D20 Test, you can reroll the die, and you must use the new roll."
+                        }
+                    ]
+                }
+            },
+            {
+                "level": 1,
+                "name": "Naturally Stealthy",
+                "description": "You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you.",
+                "actionConditionAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "action"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "action.name",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Hide"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Naturally Stealthy.</b> You can take the Hide action even when you are obscured only by a creature that is at least one size larger than you."
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "name": "Human",

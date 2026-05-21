@@ -1049,6 +1049,44 @@
         ]
     },
     {
+        "name": "Magic Missile",
+        "level": 1,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "You create three glowing darts of magical force. Each dart strikes a creature of your choice that you can see within range. A dart deals 1d4 + 1 Force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.\n\n<b>Using a Higher-Level Spell Slot.</b> The spell creates one more dart for each spell slot level above 1.",
+        "challengeType": [],
+        "type": ["damage", "buff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4
+                },
+                {
+                    "type": "static",
+                    "value": 1
+                }
+            ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "parameter",
+                    "propertyPath": "slotLevel"
+                },
+                {
+                    "type": "static",
+                    "value": 2
+                }
+            ],
+            "description": "darts fired."
+        }
+    },
+    {
         "name": "Sanctuary",
         "level": 1,
         "school": "Abjuration",
