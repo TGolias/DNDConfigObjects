@@ -36,6 +36,169 @@
         ]
     },
     {
+        "name": "Eldritch Knight",
+        "class": "Fighter",
+        "spellSlotLevelProgression": 3,
+        "resources": [
+            { "name": "cantrips", "displayName": "Cantrips" },
+            { "name": "preparedSpells", "displayName": "Prepared Spells" }
+        ],
+        "resourcesPerLevel": [
+            { "classLevel": 1, "cantrips": 0, "preparedSpells": 0 },
+            { "classLevel": 2, "cantrips": 0, "preparedSpells": 0 },
+            { "classLevel": 3, "cantrips": 2, "preparedSpells": 3 },
+            { "classLevel": 4, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 5, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 6, "cantrips": 2, "preparedSpells": 4 },
+            { "classLevel": 7, "cantrips": 2, "preparedSpells": 5 },
+            { "classLevel": 8, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 9, "cantrips": 2, "preparedSpells": 6 },
+            { "classLevel": 10, "cantrips": 3, "preparedSpells": 7 },
+            { "classLevel": 11, "cantrips": 3, "preparedSpells": 8 },
+            { "classLevel": 12, "cantrips": 3, "preparedSpells": 8 },
+            { "classLevel": 13, "cantrips": 3, "preparedSpells": 9 },
+            { "classLevel": 14, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 15, "cantrips": 3, "preparedSpells": 10 },
+            { "classLevel": 16, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 17, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 18, "cantrips": 3, "preparedSpells": 11 },
+            { "classLevel": 19, "cantrips": 3, "preparedSpells": 12 },
+            { "classLevel": 20, "cantrips": 3, "preparedSpells": 13 }
+        ],
+        "features": [
+            {
+                "classLevel": 1,
+                "name": "Eldritch Knight Fighter Spellcasting",
+                "spellcasting": {
+                    "ability": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "intelligence"
+                            }
+                        ]
+                    },
+                    "cantripsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "cantrips"
+                            }
+                        ],
+                        "validSpellLists": ["Wizard"]
+                    },
+                    "spellsKnown": {
+                        "calculation": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "preparedSpells"
+                            }
+                        ],
+                        "levelLimit": [
+                            {
+                                "type": "lowestOf",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "dividedBy": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 6
+                                                }
+                                            ],
+                                            "roundUp": true
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "static",
+                                            "value": 4
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "validSpellLists": ["Wizard"]
+                    }
+                }
+            },
+            {
+                "classLevel": 3,
+                "name": "War Bond",
+                "description": "You learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a Short Rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond. The bond fails if another Fighter is bonded to the weapon or if the weapon is a magic item to which someone else is attuned.\n\nOnce you have bonded a weapon to yourself, you can't be disarmed of that weapon unless you have the Incapacitated condition. If it is on the same plane of existence, you can summon that weapon as a Bonus Action, causing it to teleport instantly to your hand.\n\nYou can have up to two bonded weapons, but you can summon only one at a time with a Bonus Action. If you attempt to bond with a third weapon, you must break the bond with one of the other two.",
+                "actions": [
+                    {
+                        "name": "Bond Weapon",
+                        "actionTime": ["1 hour"],
+                        "range": "Self",
+                        "duration": "Indefinitely",
+                        "description": "You learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a Short Rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond. The bond fails if another Fighter is bonded to the weapon or if the weapon is a magic item to which someone else is attuned.\n\nOnce you have bonded a weapon to yourself, you can't be disarmed of that weapon unless you have the Incapacitated condition. If it is on the same plane of existence, you can summon that weapon as a Bonus Action, causing it to teleport instantly to your hand.\n\nYou can have up to two bonded weapons, but you can summon only one at a time with a Bonus Action. If you attempt to bond with a third weapon, you must break the bond with one of the other two.",
+                        "challengeType": [],
+                        "type": ["buff"],
+                        "buff": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "Your "
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "userInput.weaponToEnchant"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": " is War Bonded to you."
+                                }
+                            ]
+                        },
+                        "userInput": [
+                            {
+                                "name": "weaponToEnchant",
+                                "displayName": "Weapon to bond with:",
+                                "type": "selectList",
+                                "values": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "heldItems",
+                                        "filter": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "value.type",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Weapon"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "map": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "value.name"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Summon Weapon",
+                        "actionTime": ["Bonus Action"],
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "If one of your War Bonded weapons is on the same plane of existence a you, you can summon that weapon as a Bonus Action, causing it to teleport instantly to your hand.",
+                        "challengeType": [],
+                        "type": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Oath of the Crown",
         "class": "Paladin",
         "features": [
@@ -563,7 +726,7 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "<b>Protective Spirit</b> You regain hit points equal to 1d6 + "
+                            "value": "<b>Protective Spirit.</b> You regain hit points equal to 1d6 + "
                         },
                         {
                             "type": "aspect",
