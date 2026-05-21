@@ -509,13 +509,78 @@
                     {
                         "name": "Aura of the Sentinel",
                         "actionTime": ["Reaction"],
-                        "range": 10,
+                        "range": {
+                            "normal": {
+                                "calculation": [
+                                    {
+                                        "type": "multiple-if",
+                                        "cases": [
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "classLevelPaladin",
+                                                        "greaterThanOrEqualTo": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 18
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 30
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 10
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
                         "duration": "Instantaneous",
                         "description": "When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.",
                         "challengeType": [],
                         "type": []
                     }
                 ]
+            },
+            {
+                "classLevel": 15,
+                "name": "Protective Spirit",
+                "description": "A holy presence mends your wounds in combat. You regain hit points equal to 1d6 + half your paladin level if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated.",
+                "healthMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "You regain hit points equal to 1d6 + "
+                        },
+                        {
+                            "type": "aspect",
+                            "value": "classLevelPaladin",
+                            "dividedBy": [
+                                {
+                                    "type": "static",
+                                    "value": 2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "static",
+                            "value": " if you end your turn in combat with fewer than half of your hit points remaining and you aren't incapacitated."
+                        }
+                    ]
+                }
             }
         ]
     },
