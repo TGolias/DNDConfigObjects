@@ -563,7 +563,7 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "You regain hit points equal to 1d6 + "
+                            "value": "<b>Protective Spirit</b> You regain hit points equal to 1d6 + "
                         },
                         {
                             "type": "aspect",
