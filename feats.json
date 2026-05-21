@@ -186,75 +186,73 @@
             }
         ],
         "aspects": {
-            "conditions": [
-                {
-                    "type": "aspect",
-                    "value": "equippedItems",
-                    "itemParameterName": "item",
-                    "some": [
-                        {
-                            "type": "parameter",
-                            "propertyPath": "item.type",
-                            "equals": [
-                                {
-                                    "type": "static",
-                                    "value": "Armor"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "or",
-                            "values": [
-                                [
+            "armorClassBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "equippedItems",
+                        "itemParameterName": "item",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "item.type",
+                                "equals": [
                                     {
-                                        "type": "parameter",
-                                        "propertyPath": "item.armorType",
-                                        "equals": [
-                                            {
-                                                "type": "static",
-                                                "value": "Light"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                [
-                                    {
-                                        "type": "parameter",
-                                        "propertyPath": "item.armorType",
-                                        "equals": [
-                                            {
-                                                "type": "static",
-                                                "value": "Medium"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                [
-                                    {
-                                        "type": "parameter",
-                                        "propertyPath": "item.armorType",
-                                        "equals": [
-                                            {
-                                                "type": "static",
-                                                "value": "Heavy"
-                                            }
-                                        ]
+                                        "type": "static",
+                                        "value": "Armor"
                                     }
                                 ]
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "aspects": {
-                "armorClassBonus": {
-                    "calculation": [
-                        {
-                            "type": "static",
-                            "value": 1
-                        }
-                    ]
-                }
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "item.armorType",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Light"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "item.armorType",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Medium"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "item.armorType",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Heavy"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
             }
         }
     },
