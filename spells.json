@@ -592,12 +592,11 @@
                             "type": "static",
                             "value": 2
                         }
-                    ],
-                    "diceType": "Radiant"
+                    ]
                 },
                 {
                     "type": "static",
-                    "value": 1,
+                    "value": 5,
                     "multiplier": [
                         {
                             "type": "parameter",

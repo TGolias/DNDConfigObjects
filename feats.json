@@ -578,7 +578,7 @@
                         "calculation": [
                             {
                                 "type": "static",
-                                "value": "Immediately after you score a Critical Hit with a Melee weapon or reduce a creature to 0 Hit Points with one, you can make one attack with the same weapon as a Bonus Action."
+                                "value": "<b>Hew.</b> Immediately after you score a Critical Hit with a Melee weapon or reduce a creature to 0 Hit Points with one, you can make one attack with the same weapon as a Bonus Action."
                             }
                         ]
                     },
