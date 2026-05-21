@@ -570,6 +570,50 @@
         ]
     },
     {
+        "name": "False Life",
+        "level": 1,
+        "school": "Necromancy",
+        "spellLists": ["Artificer", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a drop of alcohol"],
+        "duration": "Instantaneous",
+        "description": "You gain 2d4 + 4 Temporary Hit Points.\n\n<b>Using a Higher-Level Spell Slot.</b> You gain 5 additional Temporary Hit Points for each spell slot level above 1.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 4,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Radiant"
+                },
+                {
+                    "type": "static",
+                    "value": 1,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": -1
+                }
+            ],
+            "description": "Temporary Hit Points."
+        }
+    },
+    {
         "name": "Feather Fall",
         "level": 1,
         "school": "Transmutation",
