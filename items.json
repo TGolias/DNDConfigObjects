@@ -2569,7 +2569,7 @@
             "long": 120
         },
         "properties": ["Light", "Reload 1"],
-        "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading"],
+        "tags": ["Hand Crossbow", "Martial", "Ranged", "Light", "Loading", "Firearm"],
         "mastery": "Vex",
         "rarity": "None",
         "equippable": true,
@@ -3216,7 +3216,7 @@
             "long": 600
         },
         "properties": ["Heavy", "Two-Handed", "Reload 1"],
-        "tags": ["Longbow", "Martial", "Ranged", "Heavy", "Two-Handed"],
+        "tags": ["Longbow", "Martial", "Ranged", "Heavy", "Two-Handed", "Firearm"],
         "mastery": "Slow",
         "rarity": "None",
         "equippable": true,
