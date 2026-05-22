@@ -979,8 +979,8 @@
                                     "type": "if-then",
                                     "if": [
                                         {
-                                            "type": "parameter",
-                                            "propertyPath": "classLevelFighter",
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
                                             "greaterThanOrEqualTo": [
                                                 {
                                                     "type": "static",
