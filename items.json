@@ -3952,6 +3952,81 @@
         }
     },
     {
+        "name": "Plate Armor +1",
+        "type": "Armor",
+        "armorType": "Heavy",
+        "rarity": "Rare",
+        "equippable": true,
+        "weight": 65,
+        "description": "Plate consists of shaped, interlocking metal plates to cover the entire body. A suit of plate includes gauntlets, heavy leather boots, a visored helmet, and thick layers of padding underneath the armor. Buckles and straps distribute the weight over the body.",
+        "aspects": {
+            "speedBonus": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "strength",
+                        "lessThan": [
+                            {
+                                "type": "static",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": -10
+                    }
+                ]
+            },
+            "speedAddendum": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "strength",
+                        "lessThan": [
+                            {
+                                "type": "static",
+                                "value": 15
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Plate Armor.</b> Speed is reduced by 10 because Strength score is below 15."
+                    }
+                ]
+            },
+            "skillProficiencyStealthAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Plate Armor.</b> The wearer has disadvantage on Dexterity (Stealth) checks."
+                    }
+                ]
+            },
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 18
+                    }
+                ]
+            },
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Playing Cards",
         "tags": ["Playing Cards", "Gaming Set"],
         "type": "Tools",
@@ -5752,6 +5827,68 @@
                     {
                         "type": "aspect",
                         "value": "dexterityModifier"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Studded Leather Armor +1",
+        "type": "Armor",
+        "armorType": "Light",
+        "rarity": "Rare",
+        "equippable": true,
+        "weight": 13,
+        "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
+        "aspects": {
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 12
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "dexterityModifier"
+                    }
+                ]
+            },
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "name": "Studded Leather Armor +2",
+        "type": "Armor",
+        "armorType": "Light",
+        "rarity": "Very Rare",
+        "equippable": true,
+        "weight": 13,
+        "description": "AC: 12 + Dex modifier. Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
+        "aspects": {
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 12
+                    },
+                    {
+                        "type": "aspect",
+                        "value": "dexterityModifier"
+                    }
+                ]
+            },
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
                     }
                 ]
             }
