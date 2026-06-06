@@ -2450,6 +2450,49 @@
         }
     },
     {
+        "name": "Greataxe +1",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Melee",
+        "properties": ["Heavy", "Two-Handed"],
+        "tags": ["Greataxe", "Martial", "Melee", "Heavy", "Two-Handed"],
+        "mastery": "Cleave",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 7,
+        "cost": {
+            "gold": 30
+        },
+        "description": "Like an axe: but greater.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 12,
+                    "diceType": "Slashing"
+                }
+            ]
+        },
+        "aspects": {
+             "weaponAttackBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "weaponDamageBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Greatclub",
         "type": "Weapon",
         "weaponType": "Simple",
