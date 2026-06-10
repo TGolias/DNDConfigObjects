@@ -169,6 +169,14 @@
                             "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
                         }
                     ]
+                },
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
                 }
             },
             {
@@ -264,6 +272,35 @@
                 "name": "Feat",
                 "feat": {
                     "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Extra Attack",
+                "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
                 }
             },
             {
@@ -916,29 +953,30 @@
         "resources": [
             { "name": "secondWind", "displayName": "Second Wind", "shortRestRecharge": 1 },
             { "name": "weaponMasteries", "displayName": "Weapon Masteries" },
-            { "name": "actionSurge", "displayName": "Action Surge", "shortRestRecharge": 2 }
+            { "name": "actionSurge", "displayName": "Action Surge", "shortRestRecharge": 2 },
+            { "name": "indomitable", "displayName": "Indomitable" }
         ],
         "resourcesPerLevel": [
-            { "classLevel": 1, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1 },
-            { "classLevel": 2, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1 },
-            { "classLevel": 3, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1 },
-            { "classLevel": 4, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 5, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 6, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 7, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 8, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 9, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1 },
-            { "classLevel": 10, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 11, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 12, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 13, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 14, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 15, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1 },
-            { "classLevel": 16, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 1 },
-            { "classLevel": 17, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2 },
-            { "classLevel": 18, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2 },
-            { "classLevel": 19, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2 },
-            { "classLevel": 20, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2 }
+            { "classLevel": 1, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 2, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 3, "secondWind": 2, "weaponMasteries": 3, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 4, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 5, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 6, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 7, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 8, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 0 },
+            { "classLevel": 9, "secondWind": 3, "weaponMasteries": 4, "actionSurge": 1, "indomitable": 1 },
+            { "classLevel": 10, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 1 },
+            { "classLevel": 11, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 1 },
+            { "classLevel": 12, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 1 },
+            { "classLevel": 13, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 2 },
+            { "classLevel": 14, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 2 },
+            { "classLevel": 15, "secondWind": 4, "weaponMasteries": 5, "actionSurge": 1, "indomitable": 2 },
+            { "classLevel": 16, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 1, "indomitable": 2 },
+            { "classLevel": 17, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2, "indomitable": 3 },
+            { "classLevel": 18, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2, "indomitable": 3 },
+            { "classLevel": 19, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2, "indomitable": 3 },
+            { "classLevel": 20, "secondWind": 4, "weaponMasteries": 6, "actionSurge": 2, "indomitable": 3 }
         ],
         "features": [
             {
@@ -1119,20 +1157,175 @@
             {
                 "classLevel": 5,
                 "name": "Extra Attack",
-                "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+                "description": "You can attack twice instead of once whenever you take the Attack action on your turn.\n\nAt Level 11 you have two extra attacks and at Level 20 you have three extra attacks.",
                 "weaponAttackAddendum": {
                     "calculation": [
                         {
-                            "type": "static",
-                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 20
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Three Extra Attacks.</b> You can attack four times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 11
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Two Extra Attacks.</b> You can attack three times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
                 "unarmedAttackAddendum": {
                     "calculation": [
                         {
-                            "type": "static",
-                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 20
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Three Extra Attacks.</b> You can attack four times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 11
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Two Extra Attacks.</b> You can attack three times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "multiple-if",
+                            "cases": [
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 20
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Three Extra Attacks.</b> You can attack four times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "if": [
+                                        {
+                                            "type": "aspect",
+                                            "value": "classLevelFighter",
+                                            "greaterThanOrEqualTo": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 11
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Two Extra Attacks.</b> You can attack three times instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "then": [
+                                        {
+                                            "type": "static",
+                                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1152,10 +1345,131 @@
                 }
             },
             {
+                "classLevel": 9,
+                "name": "Indomitable",
+                "description": "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can't use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+                "actions": [
+                    {
+                        "name": "Indomitable",
+                        "actionTime": ["Free"],
+                        "range": "Self",
+                        "duration": "Instantaneous",
+                        "description": "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can't use this feature again until you finish a Long Rest.\n\nYou can use this feature twice before a Long Rest starting at level 13 and three times before a Long Rest starting at level 17.",
+                        "challengeType": [],
+                        "type": ["buff"],
+                        "buff": {
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": "You can reroll a failed saving throw with a bonus equal to "
+                                },
+                                {
+                                    "type": "aspect",
+                                    "value": "classLevelFighter"
+                                },
+                                {
+                                    "type": "static",
+                                    "value": ". You must use the new roll."
+                                }
+                            ]
+                        },
+                        "cost": {
+                            "resourceType": "indomitable",
+                            "calculation": [
+                                {
+                                    "type": "static",
+                                    "value": 1
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "allSavingThrowAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Indomitable.</b> If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you have limited uses of this feature, as tracked in the Feature Actions section."
+                        }
+                    ]
+                }
+            },
+            {
+                "classLevel": 9,
+                "name": "Tactical Master",
+                "description": "When you attack with a weapon whose mastery property you can use, you can replace that property with the Push, Sap, or Slow property for that attack.",
+                "weaponAttackAddendum": {
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "propertyPath": "weaponmasteries",
+                            "itemParameterName": "weaponmastery",
+                            "some": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "weapon.tags",
+                                    "includes": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "weaponmastery"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Tactical Master.</b> When you attack with a weapon whose mastery property you can use, you can replace that property with the Push, Sap, or Slow property for that attack."
+                        }
+                    ]
+                },
+                "additionalWeaponMasteryProperties": {
+                    "conditions": [
+                        {
+                            "type": "aspect",
+                            "propertyPath": "weaponmasteries",
+                            "itemParameterName": "weaponmastery",
+                            "some": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "weapon.tags",
+                                    "includes": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "weaponmastery"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": ["Push", "Sap", "Slow"]
+                        }
+                    ]
+                }
+            },
+            {
                 "classLevel": 12,
                 "name": "Feat",
                 "feat": {
                     "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 13,
+                "name": "Studied Attacks",
+                "description": "You study your opponents and learn from each attack you make. If you make an attack roll against a creature and miss, you have Advantage on your next attack roll against that creature before the end of your next turn.",
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Studied Attacks.</b> If you make an attack roll against a creature and miss, you have Advantage on your next attack roll against that creature before the end of your next turn."
+                        }
+                    ]
                 }
             },
             {
@@ -1252,6 +1566,35 @@
                 "name": "Feat",
                 "feat": {
                     "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Extra Attack",
+                "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
                 }
             },
             {
@@ -1661,6 +2004,14 @@
                     ]
                 },
                 "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "basicAttacksMenuAddendum": {
                     "calculation": [
                         {
                             "type": "static",
@@ -2128,6 +2479,35 @@
                 "name": "Feat",
                 "feat": {
                     "restrictedTypes": []
+                }
+            },
+            {
+                "classLevel": 5,
+                "name": "Extra Attack",
+                "description": "You can attack twice instead of once whenever you take the Attack action on your turn.",
+                "weaponAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "unarmedAttackAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
+                },
+                "basicAttacksMenuAddendum": {
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Extra Attack.</b> You can attack twice instead of once whenever you take the Attack action on your turn."
+                        }
+                    ]
                 }
             },
             {
