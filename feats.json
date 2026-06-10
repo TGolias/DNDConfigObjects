@@ -576,7 +576,7 @@
                         "calculation": [
                             {
                                 "type": "static",
-                                "value": "<b>Hew.</b> Immediately after you score a Critical Hit with a Melee weapon or reduce a creature to 0 Hit Points with one, you can make one attack with the same weapon as a Bonus Action."
+                                "value": "<b>Great Weapon Master - Hew.</b> Immediately after you score a Critical Hit with a Melee weapon or reduce a creature to 0 Hit Points with one, you can make one attack with the same weapon as a Bonus Action."
                             }
                         ]
                     },
@@ -691,6 +691,123 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Mage Slayer",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "resources": [
+                { "name": "mageSlayerGuardedMind", "displayName": "Mage Slayer Guarded Mind", "shortRestRecharge": 1, "uses": { "calculation": [ { "type": "static", "value": 1 } ] } }
+            ],
+            "features": [
+                {
+                    "name": "Concentration Breaker",
+                    "description": "When you damage a creature that is concentrating, it has Disadvantage on the saving throw it makes to maintain Concentration.",
+                    "damageAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Mage Slayer - Concentration Breaker.</b> When you damage a creature that is concentrating, it has Disadvantage on the saving throw it makes to maintain Concentration."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Guarded Mind",
+                    "description": "If you fail an Intelligence, a Wisdom, or a Charisma saving throw, you can cause yourself to succeed instead. Once you use this benefit, you can't use it again until you finish a Short or Long Rest.",
+                    "actions": [
+                        {
+                            "name": "Guarded Mind",
+                            "actionTime": ["Free"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "If you fail an Intelligence, a Wisdom, or a Charisma saving throw, you can cause yourself to succeed instead. Once you use this benefit, you can't use it again until you finish a Short or Long Rest.",
+                            "challengeType": [],
+                            "type": ["buff"],
+                            "buff": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "You can cause yourself to succeed a failed Intelligence, Wisdom, or Charisma saving throw."
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "resourceType": "mageSlayerGuardedMind",
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "intelligenceSavingThrowAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Mage Slayer - Guarded Mind.</b> If you fail an Intelligence, a Wisdom, or a Charisma saving throw, you can cause yourself to succeed instead. Once you use this benefit, you can't use it again until you finish a Short or Long Rest, as tracked in the Feature Actions section."
+                            }
+                        ]
+                    },
+                    "wisdomSavingThrowAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Mage Slayer - Guarded Mind.</b> If you fail an Intelligence, a Wisdom, or a Charisma saving throw, you can cause yourself to succeed instead. Once you use this benefit, you can't use it again until you finish a Short or Long Rest, as tracked in the Feature Actions section."
+                            }
+                        ]
+                    },
+                    "charismaSavingThrowAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Mage Slayer - Guarded Mind.</b> If you fail an Intelligence, a Wisdom, or a Charisma saving throw, you can cause yourself to succeed instead. Once you use this benefit, you can't use it again until you finish a Short or Long Rest, as tracked in the Feature Actions section."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "strength": "strength",
+                    "dexterity": "dexterity"
+                },
+                "options": [
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Strength",
+                        "strength": 1
+                    },
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Magic Initiate - Cleric",
@@ -1364,5 +1481,119 @@
         "aspects": {
             "hpPerLVL": 2
         }
+    },
+    {
+        "name": "War Caster",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "value": "features",
+                "itemParameterName": "feature",
+                "some": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "feature.spellcasting"
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "War Caster",
+                    "description": "You have Advantage on Constitution saving throws that you make to maintain Concentration.",
+                    "constitutionSavingThrowAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>War Caster.</b> You have Advantage on Constitution saving throws that you make to maintain Concentration."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Reactive Spell",
+                    "description": "When a creature provokes an Opportunity Attack from you by leaving your reach, you can take a Reaction to cast a spell at the creature rather than making an Opportunity Attack. The spell must have a casting time of one action and must target only that creature.",
+                    "basicAttacksMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>War Caster - Reactive Spell.</b> When a creature provokes an Opportunity Attack from you by leaving your reach, you can take a Reaction to cast a spell at the creature rather than making an Opportunity Attack. The spell must have a casting time of one action and must target only that creature."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Somatic Components",
+                    "description": "You can perform the Somatic components of spells even when you have weapons or a Shield in one or both hands.",
+                    "durationAddendum": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell"
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.components"
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.components",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "S"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>War Caster - Somatic Components.</b> You can perform the Somatic components of spells even when you have weapons or a Shield in one or both hands."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma"
+                },
+                "options": [
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    }
+                ]
+            }
+        ]
     }
 ]

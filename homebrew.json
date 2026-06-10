@@ -116,6 +116,34 @@
                         }
                     ]
                 },
+                "durationAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.components"
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "spell.components",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "S"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Focus Bullets.</b> Focus bullets reduce a spell's somatic components to the mere act of pulling the trigger."
+                        }
+                    ]
+                },
                 "weaponAttackBonus": {
                     "conditions": [
                         {
