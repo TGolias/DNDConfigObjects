@@ -1401,7 +1401,7 @@
                     "conditions": [
                         {
                             "type": "aspect",
-                            "propertyPath": "weaponmasteries",
+                            "value": "weaponmasteries",
                             "itemParameterName": "weaponmastery",
                             "some": [
                                 {
@@ -1428,7 +1428,7 @@
                     "conditions": [
                         {
                             "type": "aspect",
-                            "propertyPath": "weaponmasteries",
+                            "value": "weaponmasteries",
                             "itemParameterName": "weaponmastery",
                             "some": [
                                 {
