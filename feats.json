@@ -597,6 +597,107 @@
         }
     },
     {
+        "name": "Heavy Armor Master",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "value": "armorTraining",
+                "includes": [
+                    {
+                        "type": "static",
+                        "value": "Heavy"
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Damage Reduction",
+                    "description": "When you're hit by an attack while you're wearing Heavy armor, any Bludgeoning, Piercing, and Slashing damage dealt to you by that attack is reduced by an amount equal to your Proficiency Bonus.",
+                    "healthMenuAddendum": {
+                        "conditions": [
+                            {
+                                "type": "aspect",
+                                "value": "equippedItems",
+                                "itemParameterName": "item",
+                                "some": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "item.type",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Armor"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "item.armorType",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Heavy"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Heavy Armor Master - Damage Reduction.</b> When you're hit by an attack while you're wearing Heavy armor, any Bludgeoning, Piercing, and Slashing damage dealt to you by that attack is reduced by an amount equal to "
+                            },
+                            {
+                                "type": "aspect",
+                                "value": "proficiencyBonus"
+                            },
+                            {
+                                "type": "static",
+                                "value": "."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "strength": "strength",
+                    "dexterity": "dexterity"
+                },
+                "options": [
+                    {
+                        "name": "Strength",
+                        "strength": 1
+                    },
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Lucky",
         "type": "Origin",
         "prerequisites": [
@@ -793,10 +894,6 @@
                     "dexterity": "dexterity"
                 },
                 "options": [
-                    {
-                        "name": "Intelligence",
-                        "intelligence": 1
-                    },
                     {
                         "name": "Strength",
                         "strength": 1
@@ -1274,6 +1371,109 @@
                     {
                         "name": "Charisma",
                         "charisma": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sentinel",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "type": "or",
+                "values": [
+                    [
+                        {
+                            "type": "aspect",
+                            "value": "strength",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 13
+                                }
+                            ]
+                        }
+                    ],
+                    [
+                        {
+                            "type": "aspect",
+                            "value": "dexterity",
+                            "greaterThanOrEqualTo": [
+                                {
+                                    "type": "static",
+                                    "value": 13
+                                }
+                            ]
+                        }
+                    ]
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Guardian",
+                    "description": "Immediately after a creature within 5 feet of you takes the Disengage action or hits a target other than you with an attack, you can make an Opportunity Attack against that creature.",
+                    "basicAttacksMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Sentinel - Guardian.</b> Immediately after a creature within 5 feet of you takes the Disengage action or hits a target other than you with an attack, you can make an Opportunity Attack against that creature."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Halt",
+                    "description": "When you hit a creature with an Opportunity Attack, the creature's Speed becomes 0 for the rest of the current turn.",
+                    "weaponAttackAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Sentinel - Halt.</b> When you hit a creature with an Opportunity Attack, the creature's Speed becomes 0 for the rest of the current turn."
+                            }
+                        ]
+                    },
+                    "unarmedAttackAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Sentinel - Halt.</b> When you hit a creature with an Opportunity Attack, the creature's Speed becomes 0 for the rest of the current turn."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "strength": "strength",
+                    "dexterity": "dexterity"
+                },
+                "options": [
+                    {
+                        "name": "Strength",
+                        "strength": 1
+                    },
+                    {
+                        "name": "Dexterity",
+                        "dexterity": 1
                     }
                 ]
             }
