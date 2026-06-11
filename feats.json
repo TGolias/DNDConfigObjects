@@ -1698,12 +1698,12 @@
             },
             {
                 "type": "aspect",
-                "value": "features",
-                "itemParameterName": "feature",
+                "value": "knownSpells",
+                "itemParameterName": "spell",
                 "some": [
                     {
                         "type": "parameter",
-                        "propertyPath": "feature.spellcasting"
+                        "propertyPath": "spell"
                     }
                 ]
             }
