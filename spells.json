@@ -1198,7 +1198,7 @@
         "userInput": [
             {
                 "name": "targetText",
-                "displayName": "Who are you targeting?",
+                "displayName": "Who was hit?",
                 "type": "textField"
             }
         ]
