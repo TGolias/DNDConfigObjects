@@ -1621,6 +1621,34 @@
         ]
     },
     {
+        "name": "Sword Burst",
+        "school": "Conjuration",
+        "spellLists": ["Artificer", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "You create a momentary circle of spectral blades that sweep around you. All other creatures within 5 feet of you must succeed on a Dexterity saving throw or take 1d6 force damage.\n\n<b>Cantrip Upgrade.</b> The damage increases by 1d6 when you reach levels 5 (2d6), 11 (3d6), and 17 (4d6).",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "aspect",
+                            "value": "tier"
+                        }
+                    ],
+                    "diceType": "Force"
+                }
+            ]
+        }
+    },
+    {
         "name": "Thaumaturgy",
         "school": "Transmutation",
         "spellLists": ["Cleric"],
