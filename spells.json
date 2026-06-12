@@ -339,6 +339,28 @@
         ]
     },
     {
+        "name": "Comprehend Languages",
+        "level": 1,
+        "school": "Divination",
+        "spellLists": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action", "Ritual"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a pinch of soot", "a pinch of salt"],
+        "duration": "1 hour",
+        "description": "For the duration, you understand the literal meaning of any language that you hear or see signed. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text. This spell doesn't decode symbols or secret messages.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "You understand the literal meaning of any language that you hear or see signed. You also understand any written language that you see, but you must be touching the surface on which the words are written."
+                }
+            ]
+        }
+    },
+    {
         "name": "Create or Destroy Water",
         "level": 1,
         "school": "Transmutation",
@@ -1128,6 +1150,58 @@
             ],
             "description": "darts fired."
         }
+    },
+    {
+        "name": "Ray of Sickness",
+        "level": 1,
+        "school": "Necromancy",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Instantaneous",
+        "description": "You shoot a greenish ray at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes 2d8 Poison damage and has the Poisoned condition until the end of your next turn.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d8 for each spell slot level above 1.",
+        "challengeType": [],
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
+                            "type": "static",
+                            "value": 1
+                        }
+                    ],
+                    "diceType": "Poison"
+                }
+            ]
+        },
+        "debuff": {
+            "conditions": ["Poisoned"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a hit, the target also has the Poisoned condition until the end of your next turn.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Sanctuary",
@@ -3211,6 +3285,66 @@
         "type": []
     },
     {
+        "name": "Cacophonic Shield",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S"],
+        "concentration": true,
+        "duration": "Up to 10 minutes",
+        "description": "Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.\n\nIn addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
+        "challengeType": [],
+        "type": ["damage", "debuff", "buff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Thunder"
+                }
+            ]
+        },
+        "debuff": {
+            "conditions": ["Deafened"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Targets that fail their saving throws have the Deafened condition until the start of your next turn."
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "You have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage."
+                }
+            ]
+        },
+        "aspects": {
+            "resistances": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": ["Thunder"]
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Counterspell",
         "level": 3,
         "school": "Abjuration",
@@ -3372,6 +3506,90 @@
                 "type": "textField"
             }
         ]
+    },
+    {
+        "name": "Laeral's Silver Lance",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Cleric", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a silver pin worth 250+ GP"],
+        "duration": "Instantaneous",
+        "description": "Silver energy bursts out from you in a 120-foot-long, 5-foot-wide Line. Each creature of your choice in the Line makes a Strength saving throw. On a failed save, a creature takes 3d10 Force damage and has the Prone condition. On a successful save, a creature takes half as much damage only.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d10 for each spell slot level above 3.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "strength",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 10,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Force"
+                }
+            ]
+        },
+        "debuff": {
+            "conditions": ["Prone"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Each creature that failed the Strength saving throw has the Prone condition.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Lightning Bolt",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a bit of fur", "a crystal rod"],
+        "duration": "Instantaneous",
+        "description": "A stroke of lightning forming a 100-foot-long, 5-foot-wide Line blasts out from you in a direction you choose. Each creature in the Line makes a Dexterity saving throw, taking 8d6 Lightning damage on a failed save or half as much damage on a successful one.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 5
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        }
+                    ],
+                    "diceType": "Lightning"
+                }
+            ]
+        }
     },
     {
         "name": "Revivify",
