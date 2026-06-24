@@ -1419,6 +1419,76 @@
                         ]
                     },
                     {
+                        "name": "Impossible Flurry",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Impossible Flurry",
+                                "actions": [
+                                    {
+                                        "name": "Impossible Flurry",
+                                        "actionTime": ["Magic Action"],
+                                        "range": "Self",
+                                        "duration": "Until Next Weapon Attack",
+                                        "description": "Expend a charge as a magic action. You move too fast for the eye to follow. Make a melee spell attack against each enemy within 15 ft of you, dealing 2d10+mod fire or necrotic damage on hit (your choice). You are untargettable during this time. At the end of this action, you appear in any unoccupied space within the area.",
+                                        "challengeType": ["attackRoll"],
+                                        "attackRollType": "spellAttack",
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 10,
+                                                    "diceType": ["Fire", "Necrotic"],
+                                                    "multiplier": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 2
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "aspect",
+                                                    "value": "intelligenceModifier"
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Gravity Strike",
                         "conditions": [
                             {
@@ -1449,6 +1519,7 @@
                                     {
                                         "name": "Gravity Strike",
                                         "actionTime": ["Free"],
+                                        "actionCondition": "As part of your attack action.",
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
                                         "description": "Expend a charge as part of your attack action. Your next weapon attack deals double damage and the target must succeed against being grappled if standing on ground. On a failure, its movement speed is 0, as its feet sink into the ground from gravity magically increasing on its body. The target can free itself on its turn using half its movement.",
@@ -1479,6 +1550,160 @@
                         ]
                     },
                     {
+                        "name": "Iron Tooth of Bloodlust",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Iron Tooth of Bloodlust",
+                                "actions": [
+                                    {
+                                        "name": "Iron Tooth of Bloodlust",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "As part of a weapon attack.",
+                                        "range": "Self",
+                                        "duration": "Until Next Weapon Attack",
+                                        "description": "Expend 2 charges as part of a weapon attack that hits its target to deal a bonus 1d12 necrotic damage. Your next weapon attack made against this same target until the end of your next turn has advantage.",
+                                        "challengeType": [],
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 12,
+                                                    "diceType": "Necrotic"
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "weaponAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Iron Tooth of Bloodlust.</b> Your next weapon attack made against the target, '"
+                                                    },
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.targetText"
+                                                    },
+                                                    {
+                                                        "type": "static",
+                                                        "value": "', until the end of your next turn has advantage."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        },
+                                        "userInput": [
+                                            {
+                                                "name": "targetText",
+                                                "displayName": "Who was targeted?",
+                                                "type": "textField"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Echoes of Valor",
                         "conditions": [
                             {
@@ -1493,11 +1718,131 @@
                             },
                             {
                                 "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Echoes of Valor",
+                                "actions": [
+                                    {
+                                        "name": "Echoes of Valor",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "As part of your attack action.",
+                                        "range": "Self",
+                                        "duration": "Until Next Weapon Attack",
+                                        "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",
+                                        "challengeType": [],
+                                        "type": [],
+                                        "aspects": {
+                                            "weaponAttackAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Echoes of Valor.</b> Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Spellmother's Embrace",
+                        "conditions": [
+                            {
+                                "type": "parameter",
                                 "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
                                 "includes": [
                                     {
                                         "type": "static",
-                                        "value": "Gravity Strike"
+                                        "value": "Spellfire Bolts"
                                     }
                                 ]
                             },
@@ -1512,34 +1857,384 @@
                                 ]
                             },
                             {
-                                "type": "parameter",
-                                "propertyPath": "currentChoiceValue",
-                                "notEquals": [
-                                    {
-                                        "type": "static",
-                                        "value": "Gravity Strike"
-                                    }
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 ]
                             }
                         ],
                         "features": [
                             {
-                                "name": "Echoes of Valor",
+                                "name": "Spellmother's Embrace",
                                 "actions": [
                                     {
-                                        "name": "Echoes of Valor",
+                                        "name": "Spellmother's Embrace",
                                         "actionTime": ["Free"],
+                                        "actionCondition": "As part of a grapple.",
                                         "range": "Self",
                                         "duration": "Until Next Weapon Attack",
-                                        "description": "Expend 2 charges as part of your attack action. Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action.",
+                                        "description": "Expend a charge as part of a grapple, giving the target disadvantage. If you succeed, the target takes 2d6 acid damage at the start of its turn until it's no longer grappled by you. You can expend another charge as a reaction or action when the grapple is contested to impose disadvantage again.",
                                         "challengeType": [],
-                                        "type": [],
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 6,
+                                                    "diceType": "Acid",
+                                                    "multiplier": [
+                                                        {
+                                                            "type": "static",
+                                                            "value": 2
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
                                         "aspects": {
-                                            "weaponAttackAddendum": {
+                                            "unarmedAttackDescriptionAddendum": {
+                                                "conditions": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "unarmedStrike.name",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Unarmed Strike: Grapple"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
                                                 "calculation": [
                                                     {
                                                         "type": "static",
-                                                        "value": "<b>Echoes of Valor.</b> Your next weapon attack deals triple damage on a hit. And you may attempt one extra attack as a your bonus action."
+                                                        "value": "<b>Spellmother's Embrace.</b> Expend a charge as part of a grapple, giving the target disadvantage. If you succeed, the target takes 2d6 acid damage at the start of its turn until it's no longer grappled by you. You can expend another charge as a reaction or action when the grapple is contested to impose disadvantage again."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Blurring Blade",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Spellmother's Embrace"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Spellmother's Embrace"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Spellmother's Embrace"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Spellmother's Embrace"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Blurring Blade",
+                                "actions": [
+                                    {
+                                        "name": "Blurring Blade",
+                                        "actionTime": ["Free"],
+                                        "range": "Self",
+                                        "duration": "1 minute",
+                                        "description": "You wield your weapon faster than a flame, striking any who approach. Expend 2 charges as a bonus action. For the next minute, each creature that starts its turn within 5 ft of you takes 1d8 fire damage and 1d8 necrotic damage.",
+                                        "challengeType": [],
+                                        "type": ["damage"],
+                                        "damage": {
+                                            "calculation": [
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 8,
+                                                    "diceType": "Fire"
+                                                },
+                                                {
+                                                    "type": "dieRoll",
+                                                    "value": 8,
+                                                    "diceType": "Necrotic"
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "speedAddendum": {
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Blurring Blade.</b> For the next minute, each creature that starts its turn within 5 ft of you takes 1d8 fire damage and 1d8 necrotic damage."
                                                     }
                                                 ]
                                             }
