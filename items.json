@@ -5364,9 +5364,11 @@
                         }
                     ],
                     "name": "spellfireCharges", 
-                    "subName": "AetherialFlow", 
                     "displayName": "Spellfire Charges", 
-                    "subDisplayName": "Aetherial Flow", 
+                    "subResource": { 
+                        "name": "AetherialFlow", 
+                        "displayName": "Aetherial Flow" 
+                    },
                     "combineGlobalResources": true, 
                     "uses": { 
                         "calculation": [ 
@@ -5390,19 +5392,25 @@
                             ]
                         }
                     ],
-                    "name": "sorceryPointsSorcerer", 
-                    "subName": "ArcaneRebirth", 
-                    "displayName": "Sorcery Points Sorcerer", 
-                    "subDisplayName": "Arcane Rebirth", 
-                    "combineGlobalResources": true, 
-                    "uses": { 
-                        "calculation": [ 
-                            { 
-                                "type": "static", 
+                    "name": "sorceryPoints",
+                    "displayName": "Sorcery Points",
+                    "subResource": {
+                        "name": "Sorcerer",
+                        "displayName": "Sorcerer",
+                        "subResource": {
+                            "name": "ArcaneRebirth",
+                            "displayName": "Arcane Rebirth"
+                        }
+                    },
+                    "combineGlobalResources": true,
+                    "uses": {
+                        "calculation": [
+                            {
+                                "type": "static",
                                 "value": 5
-                            } 
-                        ] 
-                    } 
+                            }
+                        ]
+                    }
                 },
                 {
                     "conditions": [
@@ -5418,9 +5426,11 @@
                         }
                     ],
                     "name": "sorcerousRestoration", 
-                    "subName": "PrismaticRebirth", 
                     "displayName": "Sorcerous Restoration Uses", 
-                    "subDisplayName": "Prismatic Rebirth", 
+                    "subResource": {
+                        "name": "PrismaticRebirth",
+                        "displayName": "Prismatic Rebirth"
+                    },
                     "combineGlobalResources": true, 
                     "uses": { 
                         "calculation": [

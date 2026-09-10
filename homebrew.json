@@ -1003,9 +1003,11 @@
         "resources": [
             { 
                 "name": "spellfireCharges",
-                "subName": "Base",
                 "displayName": "Spellfire Charges", 
-                "subDisplayName": "Base",
+                "subResource": { 
+                    "name": "Base", 
+                    "displayName": "Base" 
+                },
                 "combineGlobalResources": true,
                 "uses": {
                     "calculation": [
