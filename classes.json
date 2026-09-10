@@ -2758,7 +2758,7 @@
             { "name": "metamagicOptionsKnown", "displayName": "Metamagic Options Known" },
             { "name": "cantrips", "displayName": "Cantrips" },
             { "name": "preparedSpells", "displayName": "Prepared Spells" },
-            { "name": "sorcerousRestorationUses", "subName": "Sorcerer", "displayName": "Sorcerous Restoration Uses", "subDisplayName": "Sorcerer", "shortRestRecharge": 1, "uses": { "calculation": [ { "type": "static", "value": 1 } ] }, "combineGlobalResources": true }
+            { "name": "sorcerousRestoration", "subName": "Sorcerer", "displayName": "Sorcerous Restoration", "subDisplayName": "Sorcerer", "uses": { "calculation": [ { "type": "static", "value": 1 } ] }, "combineGlobalResources": true }
         ],
         "resourcesPerLevel": [
             { "classLevel": 1, "sorceryPoints": 0, "metamagicOptionsKnown": 0, "cantrips": 4, "preparedSpells": 2 },
@@ -3295,7 +3295,7 @@
                             }
                         },
                         "cost": {
-                            "resourceType": "sorcerousRestorationUses",
+                            "resourceType": "sorcerousRestoration",
                             "calculation": [
                                 {
                                     "type": "static",

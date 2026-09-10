@@ -5417,7 +5417,7 @@
                             ]
                         }
                     ],
-                    "name": "sorcerousRestorationUses", 
+                    "name": "sorcerousRestoration", 
                     "subName": "PrismaticRebirth", 
                     "displayName": "Sorcerous Restoration Uses", 
                     "subDisplayName": "Prismatic Rebirth", 
@@ -5425,8 +5425,8 @@
                     "uses": { 
                         "calculation": [
                             { 
-                                "type": "static", 
-                                "value": 3 
+                                "type": "static",
+                                "value": 1
                             } 
                         ] 
                     } 
