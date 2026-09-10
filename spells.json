@@ -603,8 +603,8 @@
         "duration": "Instantaneous",
         "description": "You gain 2d4 + 4 Temporary Hit Points.\n\n<b>Using a Higher-Level Spell Slot.</b> You gain 5 additional Temporary Hit Points for each spell slot level above 1.",
         "challengeType": [],
-        "type": ["buff"],
-        "buff": {
+        "type": ["tempHp"],
+        "tempHp": {
             "calculation": [
                 {
                     "type": "dieRoll",
@@ -630,8 +630,7 @@
                     "type": "static",
                     "value": -1
                 }
-            ],
-            "description": "Temporary Hit Points."
+            ]
         }
     },
     {

@@ -4292,7 +4292,7 @@
             ]
         },
         "weight": 5,
-        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.\n\n<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw or be under the effect of the spell Faerie Fire.\n\n<b>Yellow</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + your Charisma modifier.\n\n<b>Green</b> - Verdant Arcana\nPassive: You gain resistance to poison damage and the effects of exhaustion are reduced by one level.\nActive - Spellfire Bloom: Once per long rest, you can cast Heal (6th level, no material components).\n\n<b>Blue</b> - Aetherial Flow\nPassive: Your spellfire skill-tree charges increase by 3.\nActive - Spellfire Transcendence: Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use.",
+        "description": "This shimmering mantle is woven from raw strands of the Weave itself, pulsating with shifting hues of the rainbow. As the wearer's power grows, the colors awaken, granting additional magical abilities.\n\n<b>Prismatic Unleashing.</b> As the sorcerer grows in power, they unlock the individual colors of the mantle. Each color grants a passive ability, but you can only use abilities of that color that you have activated. You can change the cloak's color once per day. Grey does not have any powers and is cosmetic.\n\nAbilities:\n\n<b>Black</b>\nPassive: You gain a +1 bonus to AC.\n\n<b>White</b>\nPassive: Your spell save DC and spell attack bonus each increase by +1.\n\n<b>Red</b> - Embers of the First Flame\nPassive: You gain resistance to fire damage.\nActive - Inferno Pulse: As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage.\n\n<b>Orange</b> - Emberflame's Rush\nPassive: You gain a +10 ft. bonus to your movement speed.\nActive - Spellfire Dash: As a reaction when hit by an attack, you can teleport up to 30 feet away and release a pulse of energy. Creatures within 20 feet of your previous location must make a Dexterity saving throw or be under the effect of the spell Faerie Fire.\n\n<b>Yellow</b> - Solar Ascendance\nPassive: You are immune to being blinded and can see through magical darkness up to 120 feet.\nActive - Radiant Surge: When a creature that you can see within 30 feet of yourself makes an attack roll, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain all expended uses when you finish a long rest. You can also give the target of the triggering attack temporary hit points equal to 2d6 + your Charisma modifier.\n\n<b>Green</b> - Verdant Arcana\nPassive: You gain resistance to poison damage and the effects of exhaustion are reduced by one level.\nActive - Spellfire Bloom: Once per long rest, you can cast Heal (6th level, no material components).\n\n<b>Blue</b> - Aetherial Flow\nPassive: Your spellfire skill-tree charges increase by 3.\nActive - Spellfire Transcendence: Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use.\n\n<b>Purple</b> - Arcane Rebirth\nPassive: Your Sorcery Points increase by 5.\nActive - Prismatic Rebirth: You regain an extra use of sorcerous restoration and gain temporary HP equal to half your sorcerer level rounded down when using sorcerous restoration.",
         "variables": [
             {
                 "name": "color",
@@ -4528,6 +4528,40 @@
                                                         "value": "<b>Blue</b> - Aetherial Flow\nPassive: Your spellfire skill-tree charges increase by 3.\nActive - Spellfire Transcendence: Once per long rest, you can use a spellfire ability from the tree that an ally has unlocked even if you have not. This does not consume charges from either party to use."
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.mantleColor",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Purple"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Purple</b> - Arcane Rebirth\nPassive: Your Sorcery Points increase by 5.\nActive - Prismatic Rebirth: You regain an extra use of sorcerous restoration and gain temporary HP equal to "
+                                                    },
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "classLevelSorcerer",
+                                                        "dividedBy": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 2
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "static",
+                                                        "value": " when using sorcerous restoration."
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -4541,7 +4575,7 @@
                                     "values": [
                                         {
                                             "type": "static",
-                                            "value": ["Grey", "Black", "White", "Red", "Orange", "Yellow", "Green", "Blue"]
+                                            "value": ["Grey", "Black", "White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple"]
                                         }
                                     ]
                                 }
@@ -4900,6 +4934,32 @@
                     }
                 ]
             },
+            "tempHpBonus": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "White"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "aspect",
+                        "value": "classLevelSorcerer",
+                        "dividedBy": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ]
+                    }
+                ]
+            },
             "spellAttackAddendum": {
                 "conditions": [
                     {
@@ -4925,26 +4985,30 @@
                     {
                         "type": "or",
                         "values": [
-                            {
-                                "type": "parameter",
-                                "propertyPath": "playerConfigForObject.color",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "Red"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "parameter",
-                                "propertyPath": "playerConfigForObject.color",
-                                "equals": [
-                                    {
-                                        "type": "static",
-                                        "value": "Green"
-                                    }
-                                ]
-                            }
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.color",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Red"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.color",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Green"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
                     }
                 ],
@@ -4987,30 +5051,112 @@
             "featureActionDescriptionAddendum": {
                 "conditions": [
                     {
-                        "type": "parameter",
-                        "propertyPath": "playerConfigForObject.color",
-                        "equals": [
-                            {
-                                "type": "static",
-                                "value": "Red"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "parameter",
-                        "propertyPath": "featureAction.name",
-                        "equals": [
-                            {
-                                "type": "static",
-                                "value": "Innate Sorcery"
-                            }
+                        "type": "or",
+                        "values": [
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.color",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Red"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "featureAction.name",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Innate Sorcery"
+                                        }
+                                    ]
+                                }
+                            ],
+                            [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "playerConfigForObject.color",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Purple"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "featureAction.name",
+                                    "equals": [
+                                        {
+                                            "type": "static",
+                                            "value": "Sorcerous Restoration"
+                                        }
+                                    ]
+                                }
+                            ]
                         ]
                     }
                 ],
                 "calculation": [
                     {
-                        "type": "static",
-                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage."
+                        "type": "multiple-if",
+                        "cases": [
+                            {
+                                "if": [
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "playerConfigForObject.color",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Red"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "parameter",
+                                        "propertyPath": "featureAction.name",
+                                        "equals": [
+                                            {
+                                                "type": "static",
+                                                "value": "Innate Sorcery"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Prismatic Mantle of Spellfire - Inferno Pulse.</b> As part of your innate sorcery, you can ignite yourself in Spellfire. For the next minute, you shed bright light in a 30-foot radius and all your spell damage ignores resistance to fire and radiant damage."
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": "<b>Prismatic Mantle of Spellfire - Prismatic Rebirth.</b> You regain an extra use of sorcerous restoration and gain temporary HP equal to "
+                                    },
+                                    {
+                                        "type": "aspect",
+                                        "value": "classLevelSorcerer",
+                                        "dividedBy": [
+                                            {
+                                                "type": "static",
+                                                "value": 2
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "static",
+                                        "value": " when using sorcerous restoration."
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
@@ -5184,6 +5330,60 @@
                     "combineGlobalResources": true, 
                     "uses": { 
                         "calculation": [ 
+                            { 
+                                "type": "static", 
+                                "value": 3 
+                            } 
+                        ] 
+                    } 
+                },
+                {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Purple"
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "sorceryPoints", 
+                    "subName": "ArcaneRebirth", 
+                    "displayName": "Sorcery Points", 
+                    "subDisplayName": "Arcane Rebirth", 
+                    "combineGlobalResources": true, 
+                    "uses": { 
+                        "calculation": [ 
+                            { 
+                                "type": "static", 
+                                "value": 5
+                            } 
+                        ] 
+                    } 
+                },
+                {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.color",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Purple"
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "sorcerousRestorationUses", 
+                    "subName": "PrismaticRebirth", 
+                    "displayName": "Sorcerous Restoration Uses", 
+                    "subDisplayName": "Prismatic Rebirth", 
+                    "combineGlobalResources": true, 
+                    "uses": { 
+                        "calculation": [
                             { 
                                 "type": "static", 
                                 "value": 3 
