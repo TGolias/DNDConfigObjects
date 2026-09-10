@@ -4934,6 +4934,36 @@
                     }
                 ]
             },
+            "featureActionAdditionalTypes": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "playerConfigForObject.color",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Purple"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "featureAction.name",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerous Restoration"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": ["tempHp"]
+                    }
+                ]
+            },
             "tempHpBonus": {
                 "conditions": [
                     {
@@ -4942,7 +4972,17 @@
                         "equals": [
                             {
                                 "type": "static",
-                                "value": "White"
+                                "value": "Purple"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "parameter",
+                        "propertyPath": "featureAction.name",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Sorcerous Restoration"
                             }
                         ]
                     }
