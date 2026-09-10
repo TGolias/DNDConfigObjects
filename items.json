@@ -5390,9 +5390,9 @@
                             ]
                         }
                     ],
-                    "name": "sorceryPoints", 
+                    "name": "sorceryPointsSorcerer", 
                     "subName": "ArcaneRebirth", 
-                    "displayName": "Sorcery Points", 
+                    "displayName": "Sorcery Points Sorcerer", 
                     "subDisplayName": "Arcane Rebirth", 
                     "combineGlobalResources": true, 
                     "uses": { 
