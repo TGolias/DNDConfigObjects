@@ -590,7 +590,7 @@
                             ]
                         }
                     },
-                    "durationAddendum": {
+                    "componentAddendum": {
                         "conditions": [
                             {
                                 "type": "parameter",
