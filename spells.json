@@ -3740,7 +3740,7 @@
                             "multiplier": [
                                 {
                                     "type": "static",
-                                    "value": 3
+                                    "value": 2
                                 }
                             ]
                         }
