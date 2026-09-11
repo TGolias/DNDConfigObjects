@@ -2239,7 +2239,7 @@
                         {
                             "type": "parameter",
                             "propertyPath": "spell.school",
-                            "includes": [
+                            "equals": [
                                 {
                                     "type": "static",
                                     "value": "Divination"

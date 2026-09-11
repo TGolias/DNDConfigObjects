@@ -200,7 +200,7 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "<b>Magic Bullets Enhanced.</b> Your patron has blessed your regular bullets alongside your magical bullets. Your regular ammunition now counts as magical against resistances and adds +2 to attack and damage rolls."
+                            "value": "<b>Magic Bullets Enhanced.</b> Your patron has blessed your regular bullets alongside your magical bullets. Your regular ammunition now counts as magical against resistances and adds +3 to attack and damage rolls."
                         }
                     ]
                 },
@@ -1358,6 +1358,175 @@
                         ]
                     },
                     {
+                        "name": "Weave Distortion",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weaveghost Echoes"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weaveghost Echoes"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Weave Distortion",
+                                "actions": [
+                                    {
+                                        "name": "Weave Distortion",
+                                        "actionTime": ["Action"],
+                                        "range": "Self",
+                                        "duration": "Up to 1 minute",
+                                        "description": "You can cast the blur spell without using a spell slot once per long rest by expending 2 charges as a magic action. When you do, the effect appears as a shimmering afterimage of spellfire, and the first creature to miss you with an attack while it's active takes 1d6 force damage.\n\nYour body becomes blurred. For the duration, any creature has Disadvantage on attack rolls against you. An attacker is immune to this effect if it perceives you with Blindsight or Truesight.",
+                                        "challengeType": [],
+                                        "type": ["buff"],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Creatures have Disadvantage on attack rolls against you and the first creature to miss you with an attack while this is active takes 1d6 force damage. An attacker is immune to this effect if it perceives you with Blindsight or Truesight."
+                                                }
+                                            ]
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Surge Casting",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spell Bolster"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weaveghost Echoes"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weaveghost Echoes"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weave Distortion"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weave Distortion"
+                                    }
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Surge Casting",
+                                "actions": [
+                                    {
+                                        "name": "Surge Casting",
+                                        "actionTime": ["Free"],
+                                        "actionCondition": "As part of casting a leveled damage dealing spell.",
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "Expend 4 charges as part of casting a leveled damage dealing spell. This turns your spell into an auto critical hit.",
+                                        "challengeType": [],
+                                        "type": [],
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 4
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "name": "Spellfire Bolts",
                         "features": [
                             {
@@ -2247,6 +2416,268 @@
                                                 {
                                                     "type": "static",
                                                     "value": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Leader's Pride",
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "currentChoiceValue",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Spellfire Bolts"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gravity Strike"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Echoes of Valor"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Impossible Flurry"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "playerConfigObjectForChoices.choices.spellscarFeatures",
+                                            "includes": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "currentChoiceValue",
+                                            "notEquals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Iron Tooth of Bloodlust"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ],
+                        "features": [
+                            {
+                                "name": "Leader's Pride",
+                                "actions": [
+                                    {
+                                        "name": "Leader's Pride",
+                                        "actionTime": ["Bonus Action"],
+                                        "range": "Self",
+                                        "duration": "Instantaneous",
+                                        "description": "As a bonus action, expend 4 charges to grant you and your allies advantage on one of the following until the end of your next turn (pick one for the whole group):\n\n1. Attack Rolls\n2. Saving Throws\n3. Death Saves",
+                                        "challengeType": [],
+                                        "type": ["buff"],
+                                        "userInput": [
+                                            {
+                                                "name": "typeOfRollWithAdvantage",
+                                                "displayName": "Type of Rolls with Advantage:",
+                                                "type": "selectList",
+                                                "values": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": ["Attack Rolls", "Saving Throws", "Death Saves"]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "buff": {
+                                            "calculation": [
+                                                {
+                                                    "type": "if-then",
+                                                    "if": [
+                                                        {
+                                                            "type": "parameter",
+                                                            "propertyPath": "userInput.typeOfRollWithAdvantage"
+                                                        }
+                                                    ],
+                                                    "then": [
+                                                        {
+                                                            "type": "multiple-if",
+                                                            "cases": [
+                                                                {
+                                                                    "if": [
+                                                                        {
+                                                                            "type": "parameter",
+                                                                            "propertyPath": "userInput.typeOfRollWithAdvantage",
+                                                                            "equals": [
+                                                                                {
+                                                                                    "type": "static",
+                                                                                    "value": "Attack Rolls"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "then": [
+                                                                        {
+                                                                            "type": "static",
+                                                                            "value": "You and your allies have advantage on Attack Rolls until the end of your next turn."
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "if": [
+                                                                        {
+                                                                            "type": "parameter",
+                                                                            "propertyPath": "userInput.typeOfRollWithAdvantage",
+                                                                            "equals": [
+                                                                                {
+                                                                                    "type": "static",
+                                                                                    "value": "Saving Throws"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "then": [
+                                                                        {
+                                                                            "type": "static",
+                                                                            "value": "You and your allies have advantage on Saving Throws until the end of your next turn."
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "then": [
+                                                                        {
+                                                                            "type": "static",
+                                                                            "value": "You and your allies have advantage on Death Saves until the end of your next turn."
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "aspects": {
+                                            "allAttackAddendum": {
+                                                "conditions": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.typeOfRollWithAdvantage",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Attack Rolls"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Leader's Pride.</b> You and your allies have advantage on Attack Rolls until the end of your next turn."
+                                                    }
+                                                ]
+                                            },
+                                            "allSavingThrowAddendum": {
+                                                "conditions": [
+                                                    {
+                                                        "type": "parameter",
+                                                        "propertyPath": "userInput.typeOfRollWithAdvantage",
+                                                        "equals": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": "Saving Throws"
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "calculation": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "<b>Leader's Pride.</b> You and your allies have advantage on Saving Throws until the end of your next turn."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "cost": {
+                                            "resourceType": "spellfireCharges",
+                                            "calculation": [
+                                                {
+                                                    "type": "static",
+                                                    "value": 4
                                                 }
                                             ]
                                         }

@@ -462,6 +462,58 @@
         ]
     },
     {
+        "name": "Dissonant Whispers",
+        "level": 1,
+        "school": "Enchantment",
+        "spellLists": ["Bard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V"],
+        "duration": "Instantaneous",
+        "description": "One creature of your choice that you can see within range hears a discordant melody in its mind. The target makes a Wisdom saving throw. On a failed save, it takes 3d6 Psychic damage and must immediately use its Reaction, if available, to move as far away from you as it can, using the safest route. On a successful save, the target takes half as much damage only.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 1.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["damage", "debuff"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel"
+                        },
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Psychic"
+                }
+            ]
+        },
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a failed save, the target must immediately use its Reaction, if available, to move as far away from you as it can, using the safest route.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Divine Favor",
         "level": 1,
         "school": "Transmutation",
@@ -1674,6 +1726,28 @@
         ]
     },
     {
+        "name": "Blur",
+        "level": 2,
+        "school": "Illusion",
+        "spellLists": ["Artificer", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "Your body becomes blurred. For the duration, any creature has Disadvantage on attack rolls against you. An attacker is immune to this effect if it perceives you with Blindsight or Truesight.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Creatures have Disadvantage on attack rolls against you. An attacker is immune to this effect if it perceives you with Blindsight or Truesight."
+                }
+            ]
+        }
+    },
+    {
         "name": "Calm Emotions",
         "level": 2,
         "school": "Enchantment",
@@ -2448,6 +2522,40 @@
                 ]
             }
         }
+    },
+    {
+        "name": "Enthrall",
+        "level": 2,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Warlock"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "You weave a distracting string of words, causing creatures of your choice that you can see within range to make a Wisdom saving throw. Any creature you or your companions are fighting automatically succeeds on this save. On a failed save, a target has a -10 penalty to Wisdom (Perception) checks and Passive Perception until the spell ends.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Targets have a -10 penalty to Wisdom (Perception) checks and Passive Perception until the spell ends.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Find Steed",
@@ -3742,6 +3850,117 @@
         "type": []
     },
     {
+        "name": "Dominate Beast",
+        "level": 4,
+        "school": "Enchantment",
+        "spellLists": ["Druid", "Ranger", "Sorcerer"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": {
+            "calculation": [
+                {
+                    "type": "multiple-if",
+                    "cases": [
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 7
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 8 hours"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 6
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 1 hour"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 5
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 10 minutes"
+                                }
+                            ]
+                        },
+                        {
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 1 minute"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "concentration": true,
+        "description": "One Beast you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\nYou have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn’t receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\nYou can command the target to take a Reaction but must take your own Reaction to do so.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 5 (up to 10 minutes), 6 (up to 1 hour), or 7+ (up to 8 hours).",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a failed save, the target does its best to obey your telepathic commands.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Fire Shield",
         "level": 4,
         "school": "Evocation",
@@ -4190,6 +4409,41 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Modify Memory",
+        "level": 5,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 30,
+        "components": ["V", "S"],
+        "duration": "Up to 1 minute",
+        "concentration": true,
+        "description": "You attempt to reshape another creature's memories. One creature that you can see within range makes a Wisdom saving throw. If you are fighting the creature, it has Advantage on the save. On a failed save, the target has the Charmed condition for the duration. While Charmed in this way, the target also has the Incapacitated condition and is unaware of its surroundings, though it can hear you. If it takes any damage or is targeted by another spell, this spell ends, and no memories are modified.\n\nWhile this charm lasts, you can affect the target's memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity, change its memory of the event's details, or create a memory of some other event.\n\nYou must speak to the target to describe how its memories are affected, and it must be able to understand your language for the modified memories to take root. Its mind fills in any gaps in the details of your description. If the spell ends before you finish describing the modified memories, the creature's memory isn't altered. Otherwise, the modified memories take hold when the spell ends.\n\nA modified memory doesn't necessarily affect how a creature behaves, particularly if the memory contradicts the creature's natural inclinations, alignment, or beliefs. An illogical modified memory, such as a false memory of how much the creature enjoyed swimming in acid, is dismissed as a bad dream. The DM might deem a modified memory too nonsensical to affect a creature.\n\nA Remove Curse or Greater Restoration spell cast on the target restores the creature's true memory.\n\n<b>Using a Higher-Level Spell Slot.</b> You can alter the target's memories of an event that took place up to 7 days ago (level 6 spell slot), 30 days ago (level 7 spell slot), 365 days ago (level 8 spell slot), or any time in the creature's past (level 9 spell slot).",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a failed save, the target is susceptible to having its memories modified.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Telekinesis",

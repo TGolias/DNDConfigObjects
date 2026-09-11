@@ -506,6 +506,161 @@
         ]
     },
     {
+        "name": "Enchantment Adept",
+        "type": "General",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "type": "aspect",
+                "value": "highestLevelSpellSlot",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Enchantment Adept Spellcasting",
+                    "description": "<b>Additional Spells.</b> Your prowess allows you to always have certain spells at the ready. When you have spell slots of a level specified in the Enchantment Adept Spells table, you thereafter always have the spells listed for that level and lower prepared.\n\n<b>Subtle Enchantments.</b> When you cast a spell from the Enchantment school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.",
+                    "spellcasting": {
+                        "ability": {
+                            "calculation": [
+                                {
+                                    "type": "aspect",
+                                    "value": "bestSpellcastingFeature",
+                                    "map": [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "value.feature.spellcasting.ability",
+                                            "resultNeedsCalculated": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "spellsKnown": {
+                            "calculation": [
+                                {
+                                    "type": "lowestOf",
+                                    "values": [
+                                        [
+                                            {
+                                                "type": "aspect",
+                                                "value": "highestLevelSpellSlot"
+                                            }
+                                        ],
+                                        [
+                                            {
+                                                "type": "static",
+                                                "value": 5
+                                            }
+                                        ]
+                                    ]
+                                }
+                            ],
+                            "predeterminedSelections": [
+                                {
+                                    "spellName": "Dissonant Whispers"
+                                },
+                                {
+                                    "spellName": "Enthrall"
+                                },
+                                {
+                                    "spellName": "Hold Person"
+                                },
+                                {
+                                    "spellName": "Dominate Beast"
+                                },
+                                {
+                                    "spellName": "Modify Memory"
+                                }
+                            ]
+                        }
+                    },
+                    "durationAddendum": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell"
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.school",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Enchantment"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "spell.level",
+                                "greaterThanOrEqualTo": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Enchantment Adept - Subtle Enchantments.</b> When you cast a spell from the Enchantment school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "choices": [
+            {
+                "property": "additionalStatIncrease",
+                "description": "+1 Stat Increase:",
+                "optionsSource": "CUSTOM",
+                "optionDisplayProperty": "name",
+                "choiceToAttributesMapping": {
+                    "intelligence": "intelligence",
+                    "wisdom": "wisdom",
+                    "charisma": "charisma",
+                    "constitution": "constitution"
+                },
+                "options": [
+                    {
+                        "name": "Intelligence",
+                        "intelligence": 1
+                    },
+                    {
+                        "name": "Wisdom",
+                        "wisdom": 1
+                    },
+                    {
+                        "name": "Charisma",
+                        "charisma": 1
+                    },
+                    {
+                        "name": "Constitution",
+                        "constitution": 1
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Great Weapon Master",
         "type": "General",
         "prerequisites": [
@@ -1619,8 +1774,8 @@
                                             ]
                                         },
                                         {
-                                            "type": "aspect",
-                                            "value": "variables.modifierName",
+                                            "type": "variables",
+                                            "value": "modifierName",
                                             "resultNeedsCalculated": true
                                         }
                                     ]
