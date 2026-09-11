@@ -4,12 +4,12 @@
         "type": "Origin",
         "prerequisites": [
             {
-                "type": "aspect",
-                "value": "featureNames",
-                "includes": [
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
                     {
                         "type": "static",
-                        "value": "Fighting Style"
+                        "value": 1
                     }
                 ]
             }
@@ -1530,6 +1530,46 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Savage Attacker",
+        "type": "Origin",
+        "prerequisites": [
+            {
+                "type": "config",
+                "propertyPath": "level",
+                "greaterThanOrEqualTo": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        ],
+        "aspects": {
+            "features": [
+                {
+                    "name": "Savage Attacker",
+                    "description": "You've trained to deal particularly damaging strikes. Once per turn when you hit a target with a weapon, you can roll the weapon's damage dice twice and use either roll against the target.",
+                    "weaponAttackAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Savage Attacker.</b> Once per turn when you hit a target with a weapon, you can roll the weapon's damage dice twice and use either roll against the target."
+                            }
+                        ]
+                    },
+                    "basicAttacksMenuAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Savage Attacker.</b> Once per turn when you hit a target with a weapon, you can roll the weapon's damage dice twice and use either roll against the target."
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
     },
     {
         "name": "Sentinel",

@@ -3401,7 +3401,7 @@
         "components": ["V", "S"],
         "concentration": true,
         "duration": "Up to 10 minutes",
-        "description": "Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.\n\nIn addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
+        "description": "Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature's space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.\n\nIn addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.\n\n<b>Using a Higher-Level Spell Slot.</b> The damage increases by 1d6 for each spell slot level above 3.",
         "challengeType": [],
         "type": ["damage", "debuff", "buff"],
         "damage": {
@@ -3699,6 +3699,57 @@
         }
     },
     {
+        "name": "Melf's Minute Meteors",
+        "level": 3,
+        "school": "Evocation",
+        "spellLists": ["Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": "Self",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["niter", "sulfur", "pine tar formed into a bead"],
+        "duration": "Up to 10 minutes",
+        "concentration": true,
+        "description": "You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.\n\n<b>At Higher Levels.</b> When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "dexterity",
+        "type": ["damage"],
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Fire"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "name": "meteors",
+                "displayName": "Meteors",
+                "uses": {
+                    "calculation": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "slotLevel",
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 3
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         "name": "Revivify",
         "level": 3,
         "school": "Necromancy",
@@ -3935,7 +3986,7 @@
             ]
         },
         "concentration": true,
-        "description": "One Beast you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\nYou have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn’t receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\nYou can command the target to take a Reaction but must take your own Reaction to do so.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 5 (up to 10 minutes), 6 (up to 1 hour), or 7+ (up to 8 hours).",
+        "description": "One Beast you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\nYou have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn't receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\nYou can command the target to take a Reaction but must take your own Reaction to do so.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 5 (up to 10 minutes), 6 (up to 1 hour), or 7+ (up to 8 hours).",
         "challengeType": ["savingThrow"],
         "savingThrowType": "wisdom",
         "type": ["debuff"],
