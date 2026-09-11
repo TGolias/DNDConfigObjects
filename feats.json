@@ -620,7 +620,7 @@
                         "calculation": [
                             {
                                 "type": "static",
-                                "value": "<b>Enchantment Adept - Subtle Enchantments.</b> When you cast a spell from the Enchantment school using a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
+                                "value": "<b>Enchantment Adept.</b> When you casting this spell with a spell slot, you can cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
                             }
                         ]
                     }
