@@ -6580,6 +6580,82 @@
         }
     },
     {
+        "name": "Weapon +1",
+        "type": "Template",
+        "templateForMultipleItems": {
+            "templateOf": {
+                "calculation": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "item.type",
+                        "equals": [
+                            {
+                                "type": "static",
+                                "value": "Weapon"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": {
+                "calculation": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "item.name"
+                    },
+                    {
+                        "type": "static",
+                        "value": " +1"
+                    }
+                ]
+            },
+            "description": {
+                "calculation": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "item.description"
+                    },
+                    {
+                        "type": "static",
+                        "value": "\n\nYou have a +1 bonus to attack rolls and damage rolls made with this magic weapon."
+                    }
+                ]
+            },
+            "rarity": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Uncommon"
+                    }
+                ]
+            },
+            "cost": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": {}
+                    }
+                ]
+            },
+            "damageBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            },
+            "attackBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 1
+                    }
+                ]
+            }
+        }
+    },
+    {
         "name": "Weaver's Tools",
         "tags": ["Weaver's Tools", "Artisan's Tools"],
         "type": "Tools",
