@@ -200,7 +200,37 @@
                     "calculation": [
                         {
                             "type": "static",
-                            "value": "<b>Magic Bullets Enhanced.</b> Your patron has blessed your regular bullets alongside your magical bullets. Your regular ammunition now counts as magical against resistances and adds +3 to attack and damage rolls."
+                            "value": "<b>Magic Bullets Enhanced.</b> Your regular ammunition now counts as magical against resistances and adds +3 to attack rolls."
+                        }
+                    ]
+                },
+                "weaponDamageAddendum": {
+                    "conditions": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.weaponRange",
+                            "equals": [
+                                {
+                                    "type": "static",
+                                    "value": "Ranged"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "parameter",
+                            "propertyPath": "weapon.tags",
+                            "includes": [
+                                {
+                                    "type": "static",
+                                    "value": "Firearm"
+                                }
+                            ]
+                        }
+                    ],
+                    "calculation": [
+                        {
+                            "type": "static",
+                            "value": "<b>Magic Bullets Enhanced.</b> Your regular ammunition now counts as magical against resistances and adds +3 to damage rolls."
                         }
                     ]
                 },
@@ -3175,7 +3205,7 @@
                                                     }
                                                 ]
                                             },
-                                            "spellAttackAddendum": {
+                                            "spellDamageAddendum": {
                                                 "calculation": [
                                                     {
                                                         "type": "static",
