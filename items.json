@@ -642,6 +642,58 @@
         }
     },
     {
+        "name": "Black Pearl Bracelet",
+        "type": "Wondrous item",
+        "rarity": "Very Rare",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "An exquisite pearl bracelet, all white except for a single obsidian pearl. While wearing it, you can hear distant waves and creaking timbers whenever a storm approaches.\n\nAs an action, you speak the bracelet's command word while standing within 30 feet of a large body of water. An undead ghostly pirate ship rises from the depths in an unoccupied space.\n\nThe ship remains for 24 hours, until reduced to 0 hit points, or until you dismiss it as a bonus action. Once used, this property can't be used again until the next dawn.\n\nThe ship is crewed by 30 brine-zombie pirates who obey only your commands. They can sail, repair sails, load cannons, and perform ordinary ship functions, but they can't leave the vessel.\n\n<b>Curse - Captain's Debt.</b> Attuning to the bracelet curses you until 'Remove Curse' or similar magic ends it, but this also ends attunement.\n\nEach dawn after the ship has been summoned, roll a DC15 Wisdom saving throw. On a failure, your obsession with the sea deepens. Until your next dawn:\n\n- You have disadvantage on saving throws against being charmed by undead or water-based creatures.\n- You cannot willingly move farther than 1 mile from a coastline or other large body of water if one is accessible.\n- You hear the whispers of the ghostly crew, causing you to roll on the longterm madness table (only once).\n\nIf you fail this saving throw three times before the curse is removed, your appearance becomes increasingly ocean-like (seaweed wrapping around limbs, coral horns, salt-stained skin, etc), and you replace your longterm madness with indefinite madness. These failures reset to 0 when the curse is removed, but your madness will remain unless cured.",
+        "aspects": {
+            "features": [
+                {
+                    "name": "Black Pearl Bracelet",
+                    "actions": [
+                        {
+                            "name": "Summon Ship",
+                            "actionTime": ["Action"],
+                            "actionCondition": "While standing within 30 feet of a large body of water.",
+                            "range": 30,
+                            "duration": "Instantaneous",
+                            "description": "As an action, you speak the bracelet's command word while standing within 30 feet of a large body of water. An undead ghostly pirate ship rises from the depths in an unoccupied space.\n\nOn its turn, the ship can take 3 actions, choosing from the options below. It can take only 2 actions if it has fewer than twenty crew and only 1 action if it has fewer than ten. It can't take these actions if it has fewer than three crew members.\n\n<b>Fire Ballistas.</b> The ship can fire its ballista.\n\n<b>Fire Mangonel.</b> The galley can fire its mangonel.\n\n<b>Move.</b> The ship can use its helm to move with its sails.\n\n<b>Hull</b>\nArmor Class 15\nHit Points 300 (damage threshold 15)\n\n<b>Helm</b>\nArmor Class 18\nHit Points 50\nMove up to the speed of one of the ship's sails, with one 90-degree turn. If the helm is destroyed, the ship can't turn.\n\n<b>Sails</b>\nArmor Class 12\nHit Points 100; -5 ft. speed per 25 damage taken\nSpeed (water) 45 ft.; 15 ft. while sailing into the wind; 60 ft. while sailing with the wind\n\n<b>Ballista</b>\nArmor Class 15\nHit Points 50\nRanged Weapon Attack: +6 to hit, range 120/480 ft., one target. Hit: 16 (3d10) piercing damage.\n\n<b>Mangonel</b>\nArmor Class 15\nHit Points 100\nRanged Weapon Attack: +5 to hit, range 200/800 ft. (can't hit targets within 60 ft. of it), one target. Hit: 27 (5d10) bludgeoning damage.\n\nSailing ships are fast-moving designs focused on travel. Warships are slower but more heavily armed vessels capable of taking on more cargo. They share many of the following areas, but, as their map tags reveal, they don't have the exact same facilities.\n\nA sailing ship or warship has the following features:\n\n<b>Ceilings.</b> The ceilings in the lower deck, holds, and cabins are 8 feet high with 6-foot-high doorways.\n\n<b>Doors.</b> The ship's doors are made of wood and have AC 15, 18 hit points, and immunity to poison and psychic damage. A lock can be picked with a successful DC 15 Dexterity check made using thieves' tools, or the door can be forced open with a successful DC 20 Strength (Athletics) check.\n\n<b>Footlockers.</b> Footlockers on the ship are iron and have AC 19, 18 hit points, and immunity to poison and psychic damage.\n\n<b>Light.</b> Hanging lanterns cast bright light throughout the ship.\n\n<b>Rigging.</b> Rigging on the ship can be climbed without an ability check.\n\n<b>Sails.</b> The ship has three 80-foot-tall masts with sails to catch the wind and oars on the lower deck for rowing.\n\n<b>Crew</b>\nA sailing ship or warship requires a large crew to properly sail the vessel. Warships carry extra soldiers to fight battles and fire the siege weapons.\n\n<b>1. Main Deck</b>\nThe main deck of the ship has the following features:\n\n<b>Mangonel.</b> Sailing ships have one mangonel attached to the deck. Warships have two mangonels. Each weapon has 10 mangonel stones stacked and secured near it.\n\n<b>Hatch.</b> A covered, 10-foot-square opening leads to the lower deck (area W8).\n\n<b>Railing.</b> The main deck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it.\n\n<b>Rowboats.</b> Four rowboats are stacked on top of each other on this deck. Ropes and pulleys can hoist these boats in and out of the water.\n\n<b>2. Officers' Quarters</b>\nFour beds stand in the officer's quarters. Beneath each is an iron footlocker that holds the officers' belongings. The officers sleep in shifts so someone remains on duty to command the crew and carry out the captain's orders.\n\n<b>3. Captain's Quarters</b>\nThe captain's quarters hold a bed and a desk. Beneath the bed is an iron footlocker that holds the captain's belongings.\n\n<b>4. Siege Weapon Ammunition</b>\nShelves and rope on the walls of this cabin secure mangonel stones and ballista arrows.\n\n<b>5. Supplies</b>\nThis area holds tools, barrels of tar, rope, extra material to repair sails, and other supplies needed to maintain the ship.\n\n<b>6. Forecastle</b>\nThe forecastle has the following features:\n\n<b>Ballista.</b> A ballista (DMG, ch. 8) is attached to the deck. Ten ballista arrows are stacked and secured nearby.\n\n<b>Figurehead.</b> Warships have an iron figurehead at the front of their forecastle, often shaped to look like a fearsome sea predator. This figurehead serves as the ship's naval ram.\n\n<b>Railing.</b> The forecastle has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it.\n\n<b>7. Quarterdeck</b>\nThe quarterdeck has the following features:\n\n<b>Ballista.</b> On a warship, a ballista (DMG, ch. 8) is attached to the deck. Ten ballista arrows are stacked and secured nearby.\n\n<b>Railing.</b> The quarterdeck has a 3-foot-high rail around its perimeter that provides half cover for Medium creatures and three-quarters cover for Small creatures behind it.\n\n<b>Wheel.</b> The ship's wheel stands at the aft of the quarterdeck.\n\n<b>8. Oar Deck</b>\nTwenty-two benches are built into the deck of the lower deck, each with a 20-foot-long oar. When the ship is rowed, crew members sit on these benches to work the oars. Ten spare oars hang on the walls of the ship.\n\n<b>9. Privy</b>\nBenches line the walls of this room. Four holes carved in them house chamber pots.\n\n<b>10. Medical Cabin</b>\nHooks and shelves on the walls hold medical instruments, bandages, balms, tonics, jars of leeches, and more, ready to treat injuries from combat or sailing mishaps.\n\n<b>11. Guest Cabin and Brig</b>\nThis cabin is meant for guests and visiting high-ranking officials along for the journey. Since warships often have a greater need to house prisoners rather than guests, each bed aboard such a vessel also has a set of manacles (see chapter 5 in the Player's Handbook) attached to its frame.\n\n<b>12. Hold</b>\nThis area houses both passengers and cargo. The ship's off-duty crew sleep on bedrolls among the crates and barrels of food, water, and other supplies.\n\n<b>13. Armory</b>\nThe ship's supply of weapons and armor is held in this cabin. Its walls are fitted with built-in weapon and armor racks. The door to this cabin is usually locked, the key kept by one of the ship's officers.",
+                            "challengeType": [],
+                            "type": ["creatures"],
+                            "creatures": {
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": "Sailing Ship"
+                                    }
+                                ]
+                            },
+                            "cost": {
+                                "uses": {
+                                    "calculation": [
+                                        {
+                                            "type": "static",
+                                            "value": 1
+                                        }
+                                    ]
+                                },
+                                "calculation": [
+                                    {
+                                        "type": "static",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Bloodwell Vial +1",
         "type": "Wondrous item",
         "rarity": "Uncommon",
@@ -2002,6 +2054,70 @@
         }
     },
     {
+        "name": "Dwarven Plate",
+        "type": "Template",
+        "templateOf": "Plate Armor",
+        "rarity": "Very Rare",
+        "cost": {
+            "gold": 5500
+        },
+        "description": "While wearing this Armor, you gain a +2 bonus to Armor Class.\n\nIn addition, if an effect moves you against your will along the ground, you can take a Reaction to reduce the distance you are moved by up to 10 feet.",
+        "aspects": {
+            "armorClassBonus": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 2
+                    }
+                ]
+            },
+            "features": [
+                {
+                    "name": "Reduce Forced Movement",
+                    "actions": [
+                        {
+                            "name": "Reduce Forced Movement",
+                            "actionTime": ["Reaction"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "If an effect moves you against your will along the ground while wearing Dwarven Plate, you can take a Reaction to reduce the distance you are moved by up to 10 feet.",
+                            "challengeType": [],
+                            "type": []
+                        }
+                    ],
+                    "weaponDamageBonus": {
+                        "conditions": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "weapon.properties",
+                                "includes": [
+                                    {
+                                        "type": "static",
+                                        "value": "Heavy"
+                                    }
+                                ]
+                            }
+                        ],
+                        "calculation": [
+                            {
+                                "type": "aspect",
+                                "value": "proficiencyBonus"
+                            }
+                        ]
+                    },
+                    "speedAddendum": {
+                        "calculation": [
+                            {
+                                "type": "static",
+                                "value": "<b>Dwarven Plate.</b> If an effect moves you against your will along the ground, you can take a Reaction to reduce the distance you are moved by up to 10 feet."
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
         "name": "Elven Chain",
         "type": "Template",
         "templateOf": "Chain Shirt",
@@ -2419,10 +2535,10 @@
             },
             "features": [
                 {
-                    "name": "Change illusory appearance",
+                    "name": "Change Illusory Appearance",
                     "actions": [
                         {
-                            "name": "Change illusory appearance",
+                            "name": "Change Illusory Appearance",
                             "actionTime": ["Bonus Action"],
                             "range": "Self",
                             "duration": "Indefinitely",
@@ -2714,16 +2830,16 @@
                 "conditions": [
                     {
                         "type": "aspect",
-                        "value": "equippedItems",
-                        "itemParameterName": "item",
+                        "value": "GetEquippedItemsWithIndexAndPaths",
+                        "itemParameterName": "object",
                         "some": [
                             {
                                 "type": "parameter",
-                                "propertyPath": "item.type",
+                                "propertyPath": "object.playerItem.attuned",
                                 "equals": [
                                     {
-                                        "type": "static",
-                                        "value": "Armor"
+                                        "type": "config",
+                                        "value": "name"
                                     }
                                 ]
                             },
@@ -2733,11 +2849,11 @@
                                     [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "item.armorType",
+                                            "propertyPath": "object.item.name",
                                             "equals": [
                                                 {
                                                     "type": "static",
-                                                    "value": "Light"
+                                                    "value": "Belt of Cloud Giant Strength"
                                                 }
                                             ]
                                         }
@@ -2745,11 +2861,11 @@
                                     [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "item.armorType",
+                                            "propertyPath": "object.item.name",
                                             "equals": [
                                                 {
                                                     "type": "static",
-                                                    "value": "Medium"
+                                                    "value": "Belt of Fire Giant Strength"
                                                 }
                                             ]
                                         }
@@ -2757,11 +2873,59 @@
                                     [
                                         {
                                             "type": "parameter",
-                                            "propertyPath": "item.armorType",
+                                            "propertyPath": "object.item.name",
                                             "equals": [
                                                 {
                                                     "type": "static",
-                                                    "value": "Heavy"
+                                                    "value": "Belt of Frost Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Hill Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Stone Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Storm Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gauntlets of Ogre Power"
                                                 }
                                             ]
                                         }
@@ -2775,6 +2939,353 @@
                     {
                         "type": "static",
                         "value": "<b>Giants' Bane</b> When you roll a 20 on the d20 for an attack roll made with this weapon against a Giant, the creature must succeed on a DC 17 Constitution saving throw or die."
+                    }
+                ]
+            },
+            "strengthOverride": {
+                "conditions": [
+                    {
+                        "type": "aspect",
+                        "value": "GetEquippedItemsWithIndexAndPaths",
+                        "itemParameterName": "object",
+                        "some": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "object.playerItem.attuned",
+                                "equals": [
+                                    {
+                                        "type": "config",
+                                        "value": "name"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "or",
+                                "values": [
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Cloud Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Fire Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Frost Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Hill Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Stone Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Belt of Storm Giant Strength"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    [
+                                        {
+                                            "type": "parameter",
+                                            "propertyPath": "object.item.name",
+                                            "equals": [
+                                                {
+                                                    "type": "static",
+                                                    "value": "Gauntlets of Ogre Power"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "multiple-if",
+                        "cases": [
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Storm Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Cloud Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 30
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Fire Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 29
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Frost Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 27
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Stone Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 27
+                                    }
+                                ]
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "type": "aspect",
+                                        "value": "GetEquippedItemsWithIndexAndPaths",
+                                        "itemParameterName": "object",
+                                        "some": [
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.playerItem.attuned",
+                                                "equals": [
+                                                    {
+                                                        "type": "config",
+                                                        "value": "name"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "parameter",
+                                                "propertyPath": "object.item.name",
+                                                "equals": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": "Belt of Hill Giant Strength"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 25
+                                    }
+                                ]
+                            },
+                            {
+                                "then": [
+                                    {
+                                        "type": "static",
+                                        "value": 23
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },

@@ -647,6 +647,138 @@
         }
     },
     {
+        "name": "Sailing Ship",
+        "size": "Gargantuan",
+        "creatureType": "Vehicle",
+        "alignment": "Unaligned",
+        "hp": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": 300
+                }
+            ]
+        },
+        "cr": 0,
+        "abilityScores": {
+            "strength": 20,
+            "dexterity": 7,
+            "constitution": 17,
+            "intelligence": 0,
+            "wisdom": 0,
+            "charisma": 0
+        },
+        "aspects": {
+            "speed": 45,
+            "armorClass": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 15
+                    }
+                ]
+            },
+            "healthMenuAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "Damage threshold - 15."
+                    }
+                ]
+            },
+            "speedAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "15 ft. while sailing into the wind; 60 ft. while sailing with the wind"
+                    }
+                ]
+            },
+            "proficiencyBonusOverride": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": 0
+                    }
+                ]
+            },
+            "damagetypeImmunities": ["Poison", "Psychic"],
+            "conditionImmunities": ["Blinded", "Charmed", "Deafened", "Exhaustion", "Frightened", "Incapacitated", "Paralyzed", "Petrified", "Poisoned", "Prone", "Stunned", "Unconscious"],
+            "features": [
+                {
+                    "name": "Actions",
+                    "actions": [
+                        {
+                            "name": "Fire Ballistas",
+                            "actionTime": ["Action"],
+                            "range": {
+                                "normal": 120,
+                                "long": 480
+                            },
+                            "duration": "Instantaneous",
+                            "description": "Ranged Weapon Attack: +6, range 120/480 ft., one target. Hit: 16 (3d10) piercing damage.",
+                            "challengeType": ["attackRoll"],
+                            "attackRollType": "unarmedAttack",
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 10,
+                                        "multiplier": [
+                                            {
+                                                "type": "static",
+                                                "value": 3
+                                            }
+                                        ],
+                                        "diceType": "Bludgeoning"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Fire Mangonel",
+                            "actionTime": ["Action"],
+                            "range": {
+                                "normal": 200,
+                                "long": 800
+                            },
+                            "duration": "Instantaneous",
+                            "description": "Ranged Weapon Attack: +5, range 200/800 ft. (can't hit targets within 60 ft. of it), one target. Hit: 27 (5d10) bludgeoning damage.",
+                            "challengeType": ["attackRoll"],
+                            "attackRollType": "unarmedAttack",
+                            "type": ["damage"],
+                            "damage": {
+                                "calculation": [
+                                    {
+                                        "type": "dieRoll",
+                                        "value": 10,
+                                        "multiplier": [
+                                            {
+                                                "type": "static",
+                                                "value": 5
+                                            }
+                                        ],
+                                        "diceType": "Bludgeoning"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Move",
+                            "actionTime": ["Action"],
+                            "range": "Self",
+                            "duration": "Instantaneous",
+                            "description": "The ship can use its helm to move with its sails.",
+                            "challengeType": [],
+                            "type": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Zombie",
         "size": "Medium",
         "creatureType": "Undead",
