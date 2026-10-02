@@ -1293,6 +1293,15 @@
         }
     },
     {
+        "name": "Charlatan's Die",
+        "type": "Wondrous item",
+        "rarity": "Common",
+        "equippable": true,
+        "attunement": true,
+        "weight": 1,
+        "description": "Whenever you roll this six-sided die, you can control which number it rolls."
+    },
+    {
         "name": "Cloak of Protection",
         "type": "Wondrous item",
         "rarity": "Uncommon",
