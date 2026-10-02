@@ -2839,7 +2839,7 @@
                                 "equals": [
                                     {
                                         "type": "config",
-                                        "value": "name"
+                                        "propertyPath": "name"
                                     }
                                 ]
                             },
