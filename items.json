@@ -2613,7 +2613,7 @@
                                 "calculation": [
                                     {
                                         "type": "static",
-                                        "value": "Illusory appearance:"
+                                        "value": "Illusory appearance:\n"
                                     },
                                     {
                                         "type": "parameter",
