@@ -3689,21 +3689,21 @@
                 "weaponType": "Martial",
                 "weaponRange": "Ranged",
                 "range": {
-                    "normal": 40,
-                    "long": 120
+                    "normal": 50,
+                    "long": 150
                 },
-                "properties": ["Reload 6", "Misfire 2"],
-                "tags": ["Revolver", "Firearm", "Martial", "Ranged"],
-                "mastery": "Sap",
+                "properties": ["Reload 15", "Misfire 2"],
+                "tags": ["Semi-Automatic Pistol", "Firearm", "Martial", "Ranged"],
+                "mastery": "Vex",
                 "rarity": "None",
                 "equippable": true,
                 "notHoldable": true,
-                "description": "This is the greatest handgun ever made. Six bullets. More than enough to kill anything that moves.",
+                "description": "A new dawn is breaking, Mr. Marston. This is the age of the machine.",
                 "damage": {
                     "calculation": [
                         {
                             "type": "dieRoll",
-                            "value": 8,
+                            "value": 6,
                             "multiplier": [
                                 {
                                     "type": "static",
@@ -6703,6 +6703,41 @@
                     "type": "dieRoll",
                     "value": 6,
                     "diceType": "Slashing"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Semi-Automatic Pistol",
+        "type": "Weapon",
+        "weaponType": "Martial",
+        "weaponRange": "Ranged",
+        "range": {
+            "normal": 50,
+            "long": 150
+        },
+        "properties": ["Reload 15", "Misfire 2"],
+        "tags": ["Semi-Automatic Pistol", "Firearm", "Martial", "Ranged"],
+        "mastery": "Vex",
+        "rarity": "None",
+        "equippable": true,
+        "weight": 3,
+        "cost": {
+            "gold": 300
+        },
+        "description": "A new dawn is breaking, Mr. Marston. This is the age of the machine.",
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 6,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ],
+                    "diceType": "Piercing"
                 }
             ]
         }
