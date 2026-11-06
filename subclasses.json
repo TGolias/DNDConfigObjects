@@ -784,7 +784,7 @@
                             }
                         },
                         "duration": "Instantaneous",
-                        "description": "When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.",
+                        "description": "When a creature within range takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature doesn't transfer any other effects that might accompany the damage, and this damage can't be reduced in any way.",
                         "challengeType": [],
                         "type": []
                     }
@@ -1161,14 +1161,14 @@
                             }
                         },
                         "duration": "Indefinitely",
-                        "description": "When you and any creatures of your choice within 10 feet of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus.",
+                        "description": "When you and any creatures of your choice range of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus.",
                         "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
                                 {
                                     "type": "static",
-                                    "value": "You and any creatures of your choice within 10 feet gain a bonus to initiative equal to "
+                                    "value": "You and any creatures of your choice range gain a bonus to initiative equal to "
                                 },
                                 {
                                     "type": "aspect",
@@ -1525,14 +1525,14 @@
                             }
                         },
                         "duration": "Indefinitely",
-                        "description": "You, as well any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to your Charisma modifier (minimum of +1). A creature can benefit from this feature from only one paladin at a time.",
+                        "description": "You, as well any fiends and undead range, gain a bonus to melee weapon damage rolls equal to your Charisma modifier (minimum of +1). A creature can benefit from this feature from only one paladin at a time.",
                         "challengeType": [],
                         "type": ["buff"],
                         "buff": {
                             "calculation": [
                                 {
                                     "type": "static",
-                                    "value": "You, as well as any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to "
+                                    "value": "You, as well as any fiends and undead range, gain a bonus to melee weapon damage rolls equal to "
                                 },
                                 {
                                     "type": "highestOf",
