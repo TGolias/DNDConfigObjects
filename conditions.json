@@ -1,5 +1,101 @@
 [
     {
+        "name": "Back from the Dead",
+        "type": ["level"],
+        "levels": 6,
+        "levelsToReduceOnLongRest": 1,
+        "description": "Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.",
+        "highlightColor": "Terrible",
+        "initiativeBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": -1,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.level"
+                        }
+                    ]
+                }
+            ]
+        },
+        "initiativeAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Back from the Dead.</b> Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0."
+                }
+            ]
+        },
+        "allSavingThrowBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": -1,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.level"
+                        }
+                    ]
+                }
+            ]
+        },
+        "allSavingThrowAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Back from the Dead.</b> Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0."
+                }
+            ]
+        },
+        "skillProficiencyAllBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": -1,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.level"
+                        }
+                    ]
+                }
+            ]
+        },
+        "skillProficiencyAllAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Back from the Dead.</b> Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0."
+                }
+            ]
+        },
+        "allAttackBonus": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": -1,
+                    "multiplier": [
+                        {
+                            "type": "parameter",
+                            "propertyPath": "playerConfigForObject.level"
+                        }
+                    ]
+                }
+            ]
+        },
+        "allAttackAddendum": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "<b>Back from the Dead.</b> Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0."
+                }
+            ]
+        }
+    },
+    {
         "name": "Blinded",
         "description": "While you have the Blinded condition, you experience the following effects.\n\n<b>Can't See.</b> You can't see and automatically fail any ability check that requires sight.\n\n<b>Attacks Affected.</b> Attack rolls against you have Advantage, and your attack rolls have Disadvantage.",
         "highlightColor": "Bad",
@@ -158,6 +254,7 @@
         "name": "Exhaustion",
         "type": ["level"],
         "levels": 6,
+        "levelsToReduceOnLongRest": 1,
         "description": "While you have the Exhaustion condition, you experience the following effects.\n\n<b>Exhaustion Levels.</b> This condition is cumulative. Each time you receive it, you gain 1 Exhaustion level. You die if your Exhaustion level is 6.\n\n<b>D20 Tests Affected.</b> When you make a D20 Test, the roll is reduced by 2 times your Exhaustion level.\n\n<b>Speed Reduced.</b> Your Speed is reduced by a number of feet equal to 5 times your Exhaustion level.\n\n<b>Removing Exhaustion Levels.</b> Finishing a Long Rest removes 1 of your Exhaustion levels. When your Exhaustion level reaches 0, the condition ends.",
         "highlightColor": "Terrible",
         "initiativeBonus": {

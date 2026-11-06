@@ -742,7 +742,7 @@
                 "name": "Aura of the Guardian",
                 "actions": [
                     {
-                        "name": "Aura of the Sentinel",
+                        "name": "Aura of the Guardian",
                         "actionTime": ["Reaction"],
                         "range": {
                             "normal": {
@@ -1121,7 +1121,45 @@
                     {
                         "name": "Aura of the Sentinel",
                         "actionTime": ["Free"],
-                        "range": 10,
+                        "range": {
+                            "normal": {
+                                "calculation": [
+                                    {
+                                        "type": "multiple-if",
+                                        "cases": [
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "classLevelPaladin",
+                                                        "greaterThanOrEqualTo": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 18
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 30
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 10
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
                         "duration": "Indefinitely",
                         "description": "When you and any creatures of your choice within 10 feet of you roll initiative, you all gain a bonus to initiative equal to your proficiency bonus.",
                         "challengeType": [],
@@ -1447,7 +1485,45 @@
                     {
                         "name": "Aura of Hate",
                         "actionTime": ["Free"],
-                        "range": 10,
+                        "range": {
+                            "normal": {
+                                "calculation": [
+                                    {
+                                        "type": "multiple-if",
+                                        "cases": [
+                                            {
+                                                "if": [
+                                                    {
+                                                        "type": "aspect",
+                                                        "value": "classLevelPaladin",
+                                                        "greaterThanOrEqualTo": [
+                                                            {
+                                                                "type": "static",
+                                                                "value": 18
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 30
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "then": [
+                                                    {
+                                                        "type": "static",
+                                                        "value": 10
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
                         "duration": "Indefinitely",
                         "description": "You, as well any fiends and undead within 10 feet of you, gain a bonus to melee weapon damage rolls equal to your Charisma modifier (minimum of +1). A creature can benefit from this feature from only one paladin at a time.",
                         "challengeType": [],

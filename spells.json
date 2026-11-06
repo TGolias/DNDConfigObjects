@@ -2604,7 +2604,7 @@
         "concentration": true,
         "description": "Choose a Humanoid that you can see within range. The target must succeed on a Wisdom saving throw or have the Paralyzed condition for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional Humanoid for each spell slot level above 2.",
         "challengeType": ["savingThrow"],
-        "savingThrowType": "charisma",
+        "savingThrowType": "wisdom",
         "type": ["debuff"],
         "debuff": {
             "conditions": ["Paralyzed"],
@@ -4536,6 +4536,185 @@
         "type": []
     },
     {
+        "name": "Hold Monster",
+        "level": 5,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 90,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a straight piece of iron"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "Choose a creature that you can see within range. The target must succeed on a Wisdom saving throw or have the Paralyzed condition for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.\n\n<b>Using a Higher-Level Spell Slot.</b> You can target one additional creature for each spell slot level above 5.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Paralyzed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "The targets have the Paralyzed condition. At the end of each of their turns, the targets repeat the save, ending the spell on themself on a success.\n\nTargets - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who failed their saves?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
+        "name": "Holy Weapon",
+        "level": 5,
+        "school": "Evocation",
+        "spellLists": ["Cleric", "Paladin"],
+        "castingTime": ["Bonus Action"],
+        "range": "Touch",
+        "components": ["V", "S"],
+        "duration": "1 minute",
+        "concentration": true,
+        "description": "You imbue a weapon you touch with holy power. Until the spell ends, the weapon emits bright light in a 30-foot radius and dim light for an additional 30 feet. In addition, weapon attacks made with it deal an extra 2d8 radiant damage on a hit. If the weapon isn't already a magic weapon, it becomes one for the duration. As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance. Each creature of your choice that you can see within 30 feet of the weapon must make a Constitution saving throw. On a failed save, a creature takes 4d8 radiant damage, and it is blinded for 1 minute. On a successful save, a creature takes half as much damage and isn't blinded. At the end of each of its turns, a blinded creature can make a Constitution saving throw, ending the effect on itself on a success.",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "constitution",
+        "type": ["debuff", "buff", "damage"],
+        "debuff": {
+            "conditions": ["Blinded"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance that damages and can blind enemies."
+                }
+            ]
+        },
+        "buff": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 2
+                        }
+                    ]
+                },
+                {
+                    "type": "static",
+                    "value": " Radiant damage dealt on a hit with the weapon touched.\n\nWeapon - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.weaponToEnchant"
+                }
+            ]
+        },
+        "damage": {
+            "calculation": [
+                {
+                    "type": "dieRoll",
+                    "value": 8,
+                    "multiplier": [
+                        {
+                            "type": "static",
+                            "value": 4
+                        }
+                    ],
+                    "diceType": "Radiant"
+                }
+            ]
+        },
+        "aspects": {
+            "weaponDamageAdditional": {
+                "conditions": [
+                    {
+                        "type": "parameter",
+                        "propertyPath": "weapon.name",
+                        "equals": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "playerConfigForObject.userInput.weaponToEnchant"
+                            }
+                        ]
+                    }
+                ],
+                "calculation": [
+                    {
+                        "type": "dieRoll",
+                        "value": 8,
+                        "multiplier": [
+                            {
+                                "type": "static",
+                                "value": 2
+                            }
+                        ],
+                        "diceType": "Radiant"
+                    }
+                ]
+            },
+            "weaponDamageAddendum": {
+                "calculation": [
+                    {
+                        "type": "static",
+                        "value": "<b>Holy Weapon.</b> Your attacks with the weapon touched deals an extra 2d8 Radiant damage on a hit."
+                    }
+                ]
+            }
+        },
+        "userInput": [
+            {
+                "name": "weaponToEnchant",
+                "displayName": "Weapon to Enchant:",
+                "type": "selectList",
+                "values": [
+                    {
+                        "type": "aspect",
+                        "value": "heldItems",
+                        "filter": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.type",
+                                "equals": [
+                                    {
+                                        "type": "static",
+                                        "value": "Weapon"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.magical",
+                                "notEquals": [
+                                    {
+                                        "type": "static",
+                                        "value": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "map": [
+                            {
+                                "type": "parameter",
+                                "propertyPath": "value.name"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "static",
+                        "value": ["Other Weapon"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Mass Cure Wounds",
         "level": 5,
         "school": "Abjuration",
@@ -4608,6 +4787,20 @@
         ]
     },
     {
+        "name": "Raise Dead",
+        "level": 5,
+        "school": "Necromancy",
+        "spellLists": ["Bard", "Cleric", "Paladin"],
+        "castingTime": ["Action"],
+        "range": "Touch",
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a diamond worth 500+ GP, which the spell consumes"],
+        "duration": "Instantaneous",
+        "description": "With a touch, you revive a dead creature if it has been dead no longer than 10 days and it wasn't Undead when it died.\n\nThe creature returns to life with 1 Hit Point. This spell also neutralizes any poisons that affected the creature at the time of death.\n\nThis spell closes all mortal wounds, but it doesn't restore missing body parts. If the creature is lacking body parts or organs integral for its survival - its head, for instance - the spell automatically fails.\n\nComing back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.",
+        "challengeType": [],
+        "type": []
+    },
+    {
         "name": "Telekinesis",
         "level": 5,
         "school": "Transmutation",
@@ -4631,6 +4824,40 @@
                 }
             ]
         }
+    },
+    {
+        "name": "Wall of Force",
+        "level": 5,
+        "school": "Evocation",
+        "spellLists": ["Wizard"],
+        "castingTime": ["Action"],
+        "range": 120,
+        "components": ["V", "S", "M"],
+        "materialComponents": ["a shard of glass"],
+        "duration": "up to 10 minutes",
+        "concentration": true,
+        "description": "An Invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick and lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (you choose which side).\n\nNothing can physically pass through the wall. It is immune to all damage and can't be dispelled by Dispel Magic. A Disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane and blocks ethereal travel through the wall.",
+        "challengeType": [],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Nothing can physically pass through the wall.\n\nWall Shape - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.wallShape"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "wallShape",
+                "displayName": "Wall Shape:",
+                "type": "textField"
+            }
+        ]
     },
     {
         "name": "Wall of Stone",
