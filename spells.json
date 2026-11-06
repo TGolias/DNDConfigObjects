@@ -4370,6 +4370,117 @@
         }
     },
     {
+        "name": "Dominate Person",
+        "level": 5,
+        "school": "Enchantment",
+        "spellLists": ["Bard", "Sorcerer", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": {
+            "calculation": [
+                {
+                    "type": "multiple-if",
+                    "cases": [
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 8
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 8 hours"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 7
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 1 hour"
+                                }
+                            ]
+                        },
+                        {
+                            "if": [
+                                {
+                                    "type": "parameter",
+                                    "propertyPath": "slotLevel",
+                                    "greaterThanOrEqualTo": [
+                                        {
+                                            "type": "static",
+                                            "value": 6
+                                        }
+                                    ]
+                                }
+                            ],
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 10 minutes"
+                                }
+                            ]
+                        },
+                        {
+                            "then": [
+                                {
+                                    "type": "static",
+                                    "value": "Up to 1 minute"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "concentration": true,
+        "description": "One Humanoid you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\nYou have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as 'Attack that creature', 'Move over there', or 'Fetch that object'. The target does its best to obey on its turn. If it completes an order and doesn't receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\nYou can command the target to take a Reaction but must take your own Reaction to do so.\n\n<b>Using a Higher-Level Spell Slot.</b> Your Concentration can last longer with a spell slot of level 6 (up to 10 minutes), 7 (up to 1 hour), or 8+ (up to 8 hours).",
+        "challengeType": ["savingThrow"],
+        "savingThrowType": "wisdom",
+        "type": ["debuff"],
+        "debuff": {
+            "conditions": ["Charmed"],
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "On a failed save, the target does its best to obey your telepathic commands.\n\nTarget - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.targetText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "targetText",
+                "displayName": "Who are you targeting?",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Flame Strike",
         "level": 5,
         "school": "Evocation",
@@ -5295,6 +5406,38 @@
         ]
     },
     {
+        "name": "Demiplane",
+        "level": 8,
+        "school": "Conjuration",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Action"],
+        "range": 60,
+        "components": ["S"],
+        "duration": "1 hour",
+        "description": "You create a shadowy door on a flat solid surface that you can see within range. The door is large enough to allow Medium creatures to pass through unhindered. When opened, the door leads to a demiplane that appears to be an empty room 30 feet in each dimension, made of wood or stone. When the spell ends, the door disappears, and any creatures or objects inside the demiplane remain trapped there, as the door also disappears from the other side.\n\nEach time you cast this spell, you can create a new demiplane, or have the shadowy door connect to a demiplane you created with a previous casting of this spell. Additionally, if you know the nature and contents of a demiplane created by a casting of this spell by another creature, you can have the shadowy door connect to its demiplane instead.",
+        "challengeType": [""],
+        "type": ["buff"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Demiplane - "
+                },
+                {
+                    "type": "parameter",
+                    "propertyPath": "userInput.demiplaneText"
+                }
+            ]
+        },
+        "userInput": [
+            {
+                "name": "demiplaneText",
+                "displayName": "Demiplane:",
+                "type": "textField"
+            }
+        ]
+    },
+    {
         "name": "Earthquake",
         "level": 8,
         "school": "Transmutation",
@@ -5315,6 +5458,66 @@
                 {
                     "type": "static",
                     "value": "Each turn during the duration, creatures on the ground that fail their saves have the Prone condition, and thier Concentration is broken. They also have the possibility of falling down a fissure or taking damage from a falling structure and possibly end up trapped under rubble."
+                }
+            ]
+        }
+    },
+    {
+        "name": "Blade of Disaster",
+        "level": 9,
+        "school": "Conjuration",
+        "spellLists": ["Sorcerer", "Warlock", "Wizard"],
+        "castingTime": ["Bonus Action"],
+        "range": 60,
+        "components": ["V", "S"],
+        "duration": "up to 1 minute",
+        "concentration": true,
+        "description": "You create a blade-shaped planar rift about 3 feet long in an unoccupied space you can see within range. The blade lasts for the duration. When you cast this spell, you can make up to two melee spell attacks with the blade, each one against a creature, loose object, or structure within 5 feet of the blade. On a hit, the target takes 4d12 force damage. This attack scores a critical hit if the number on the d20 is 18 or higher. On a critical hit, the blade deals an extra 8d12 force damage (for a total of 12d12 force damage).\n\nAs a bonus action on your turn, you can move the blade up to 30 feet to an unoccupied space you can see and then make up to two melee spell attacks with it again.\n\nThe blade can harmlessly pass through any barrier, including a <b>Wall of Force</b>.",
+        "challengeType": ["attackRoll", "savingThrow"],
+        "attackRollType": "spellAttack",
+        "attackRollIsMelee": true,
+        "type": ["buff", "damage"],
+        "buff": {
+            "calculation": [
+                {
+                    "type": "static",
+                    "value": "Can make up to two melee spell attacks with the blade."
+                }
+            ]
+        },
+        "damage": {
+            "alternateDamage": [
+                {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 4,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 12
+                                }
+                            ],
+                            "diceType": "Force"
+                        }
+                    ],
+                    "description": "Normal Hit Damage:"
+                },
+                {
+                    "calculation": [
+                        {
+                            "type": "dieRoll",
+                            "value": 12,
+                            "multiplier": [
+                                {
+                                    "type": "static",
+                                    "value": 12
+                                }
+                            ],
+                            "diceType": "Force"
+                        }
+                    ],
+                    "description": "Critical Hit Damage:"
                 }
             ]
         }
